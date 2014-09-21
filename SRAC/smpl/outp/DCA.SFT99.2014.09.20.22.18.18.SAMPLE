@@ -1,0 +1,550 @@
+0     *** === SRAC CODE SYSTEM RUN    DATE : 92-28-09 START TIME= 0: 0: 0:
+              (SRAC:Ver.2005.00, LAST MODIFIED 2005.01.28)
+0     **** CASE ID === DCA1     *** TITLE === DCA Cell 1.2w/o, 28 rod cluster, 22.5cm pitch                            ***
+
+
+     USE OF COLLISION PROB. ROUTINE (NO,CALL:0,1)             1
+     SELECT OF ROUTINE FOR FIX S CALC(NO,PIJ,1D SN ,2D SN , 
+      1D DIFF,2D DIFF:0,1,2,3,4,5)                            1
+     DANCOFF FACTOR BY(INPUT,PIJ,TONE:0,1,2)                  1
+     CALC OF THERMAL RANGE (EXCLUDED,INCLUDED:0,1)            1
+     PROCESS OF RESONANCE 2 RANGE(TABLELOOK,IR,PEACO:0,1,2)   2
+     FLUX CALCULATION BY RANGES(SKIP,CALC:0,1)                1
+     FAST RANGES FOR TRANSPORT CALC(0,1,2,3,4)                4
+     INDICATOR FOR ENRGY STRUCTURE OF UMCROSS (0,1,2,3)       3
+     CALC OF BARE REACTOR SPECTRUM(SKIP,P1,B1:0,1,2)         -2
+     COLLAPSE MACRO X-SECTION BY RANGE(SKIP,CALL:0,1)         1
+     INPUT OF GEOMETRY (NEW,SAME AS PREVIOUS CASE:0,1)        0
+     SELECT ROUTINE FOR EIGENVALUE CALC(NO,PIJ,1D SN,2D SN, 
+      1D DIFF,2D DIFF:0,1,2,3,4,5)                            0
+     COLLAPSE MACRO AFTER EIGENVALUE CALC(SKIP,CALL:0,1)      0
+     PREPARE MACRO FOR CITATION (SKIP,CALL:0,1)               0
+     TOTAL MICRO X-SECTION BY (HARMONIC,ARITHMETIC AV:1,2)    1
+     TRANSPORT MACRO X-SECTION BY (P0,P1,B1,SN:0,1,2,3)       2
+     DIFF COEF (INVERSE TR,BENOIST ISO,BENOIST ANISO:1,2,3)   1
+     REACTION RATE CALCULATION (0,1)                          0
+     PRINT OF MACRO-X (0,1,2)                                 0
+     BURN-UP CALCULATION (0,1:SKIP,EXECUTE)                   0
+0                     << INFORMATION OF PDS-FILES >> 
+
+      PDS FILE NAME             DATA SET NAME                                                       IWR DISP    I/O METHOD        
+   --------------------------------------------------------------------------------------------------------------------------------
+    PUBLIC FAST LIBRARY       E:/SRACW/SRACLIB-EDF70/pds/pfast                                       1  OLD       FILE    
+    PUBLIC THERMAL  LIBRARY   E:/SRACW/SRACLIB-EDF70/pds/pthml                                       1  OLD       FILE    
+    PUBLIC MCROSS LIBRARY     E:/SRACW/SRACLIB-EDF70/pds/pmcrs                                       1  OLD       FILE    
+    USERS  FAST LIBRARY       E:\SRACW\SRAC\tmp\DCA/UFAST                                            3  SCRATCH   CORE    
+    USERS  THERMAL  LIBRARY   E:\SRACW\SRAC\tmp\DCA/UTHERMAL                                         3  SCRATCH   CORE    
+    USERS  MCROSS LIBRARY     E:\SRACW\SRAC\tmp\DCA/UMCROSS                                          3  SCRATCH   CORE    
+    USERS  MACROSCOPIC FINE   E:\SRACW\SRAC\tmp\DCA/MACROWRK                                         3  SCRATCH   CORE    
+    USERS  MACROSCOPIC BROAD  E:\SRACW\SRAC\tmp\DCA/MACRO                                            3  SCRATCH   CORE    
+    USERS  FLUX               E:\SRACW\SRAC\tmp\DCA/FLUX                                             3  SCRATCH   CORE    
+    USERS  MICROSCOPIC        E:\SRACW\SRAC\tmp\DCA/MICREF                                           3  SCRATCH   CORE    
+   --------------------------------------------------------------------------------------------------------------------------------
+     NUMBER OF USER'S FAST GROUPS                          62
+     NUMBER OF USER'S THERMAL GROUPS                       45
+     NUMBER OF USER'S CONDENSED FAST GROUPS                 1
+     NUMBER OF USER'S CONDENSED THERMAL GROUPS              1
+
+     NUMBER OF LIBRARY GROUPS IN THE USER'S FAST GROUP
+                1           1           1           1           1           1           1           1           1           1
+
+                1           1           1           1           1           1           1           1           1           1
+
+                1           1           1           1           1           1           1           1           1           1
+
+                1           1           1           1           1           1           1           1           1           1
+
+                1           1           1           1           1           1           1           1           1           1
+
+                1           1           1           1           1           1           1           1           1           1
+
+                1           1
+     NUMBER OF LIBRARY GROUPS IN THE USER'S THERMAL GROUPS
+                1           1           1           1           1           1           1           1           1           1
+
+                1           1           1           1           1           1           1           1           1           1
+
+                1           1           1           1           1           1           1           1           1           1
+
+                1           1           1           1           1           1           1           1           1           1
+
+                1           1           1           1           1
+     NUMBER OF USER'S GROUPS IN THE CONDENSED FAST GROUP
+               62
+     NUMBER OF USER'S GROUPS IN THE CONDENSED THERMAL GROUP
+               45
+1
+
+                     ### USERFL START ###
+
+
+                                ENERGY GROUP STRUCTURE 
+
+           NEFL: TOTAL NBR OF PUBLIC FAST GROUPS -----  74
+           NETL: TOTAL NBR OF PUBLIC THERMAL GROUPS --  48
+           NEF : TOTAL NBR OF USERS  FAST GROUPS -----  62
+           NET : TOTAL NBR OF USERS  THERMAL GROUPS --  45
+0                FINE   FAST    ENERGY GROUP STRUCTURE (M=1.67482E-24 GRAM,  EV=1.60210E-12 ERG)
+0   GROUP          ENERGY RANGE (EV)               VELOCITY RANGE (CM/SEC)           LETHARGY RANGE
+       1         .10000E+08     .77880E+07         .43740E+10     .38600E+10          .0000      .2500
+       2         .77880E+07     .60653E+07         .38600E+10     .34065E+10          .2500      .5000
+       3         .60653E+07     .47237E+07         .34065E+10     .30062E+10          .5000      .7500
+       4         .47237E+07     .36788E+07         .30062E+10     .26529E+10          .7500     1.0000
+       5         .36788E+07     .28651E+07         .26529E+10     .23412E+10         1.0000     1.2500
+       6         .28651E+07     .22313E+07         .23412E+10     .20661E+10         1.2500     1.5000
+       7         .22313E+07     .17377E+07         .20661E+10     .18233E+10         1.5000     1.7500
+       8         .17377E+07     .13534E+07         .18233E+10     .16091E+10         1.7500     2.0000
+       9         .13534E+07     .10540E+07         .16091E+10     .14200E+10         2.0000     2.2500
+      10         .10540E+07     .82085E+06         .14200E+10     .12532E+10         2.2500     2.5000
+      11         .82085E+06     .63928E+06         .12532E+10     .11059E+10         2.5000     2.7500
+      12         .63928E+06     .49787E+06         .11059E+10     .97596E+09         2.7500     3.0000
+      13         .49787E+06     .38774E+06         .97596E+09     .86129E+09         3.0000     3.2500
+      14         .38774E+06     .30197E+06         .86129E+09     .76008E+09         3.2500     3.5000
+      15         .30197E+06     .23518E+06         .76008E+09     .67077E+09         3.5000     3.7500
+      16         .23518E+06     .18316E+06         .67077E+09     .59195E+09         3.7500     4.0000
+      17         .18316E+06     .14264E+06         .59195E+09     .52240E+09         4.0000     4.2500
+      18         .14264E+06     .11109E+06         .52240E+09     .46101E+09         4.2500     4.5000
+      19         .11109E+06     .86517E+05         .46101E+09     .40684E+09         4.5000     4.7500
+      20         .86517E+05     .67380E+05         .40684E+09     .35904E+09         4.7500     5.0000
+      21         .67380E+05     .52475E+05         .35904E+09     .31685E+09         5.0000     5.2500
+      22         .52475E+05     .40868E+05         .31685E+09     .27962E+09         5.2500     5.5000
+      23         .40868E+05     .31828E+05         .27962E+09     .24676E+09         5.5000     5.7500
+      24         .31828E+05     .24788E+05         .24676E+09     .21777E+09         5.7500     6.0000
+      25         .24788E+05     .19305E+05         .21777E+09     .19218E+09         6.0000     6.2500
+      26         .19305E+05     .15034E+05         .19218E+09     .16960E+09         6.2500     6.5000
+      27         .15034E+05     .11709E+05         .16960E+09     .14967E+09         6.5000     6.7500
+      28         .11709E+05     .91188E+04         .14967E+09     .13208E+09         6.7500     7.0000
+      29         .91188E+04     .71017E+04         .13208E+09     .11656E+09         7.0000     7.2500
+      30         .71017E+04     .55308E+04         .11656E+09     .10287E+09         7.2500     7.5000
+      31         .55308E+04     .43074E+04         .10287E+09     .90779E+08         7.5000     7.7500
+      32         .43074E+04     .33546E+04         .90779E+08     .80112E+08         7.7500     8.0000
+      33         .33546E+04     .26126E+04         .80112E+08     .70699E+08         8.0000     8.2500
+      34         .26126E+04     .20347E+04         .70699E+08     .62391E+08         8.2500     8.5000
+      35         .20347E+04     .15846E+04         .62391E+08     .55060E+08         8.5000     8.7500
+      36         .15846E+04     .12341E+04         .55060E+08     .48590E+08         8.7500     9.0000
+      37         .12341E+04     .96112E+03         .48590E+08     .42881E+08         9.0000     9.2500
+      38         .96112E+03     .74852E+03         .42881E+08     .37842E+08         9.2500     9.5000
+      39         .74852E+03     .58295E+03         .37842E+08     .33396E+08         9.5000     9.7500
+      40         .58295E+03     .45400E+03         .33396E+08     .29472E+08         9.7500    10.0000
+      41         .45400E+03     .35358E+03         .29472E+08     .26009E+08        10.0000    10.2500
+      42         .35358E+03     .27536E+03         .26009E+08     .22953E+08        10.2500    10.5000
+      43         .27536E+03     .21445E+03         .22953E+08     .20255E+08        10.5000    10.7500
+      44         .21445E+03     .16702E+03         .20255E+08     .17875E+08        10.7500    11.0000
+      45         .16702E+03     .13007E+03         .17875E+08     .15775E+08        11.0000    11.2500
+      46         .13007E+03     .10130E+03         .15775E+08     .13921E+08        11.2500    11.5000
+      47         .10130E+03     .78893E+02         .13921E+08     .12286E+08        11.5000    11.7500
+      48         .78893E+02     .61442E+02         .12286E+08     .10842E+08        11.7500    12.0000
+      49         .61442E+02     .47851E+02         .10842E+08     .95680E+07        12.0000    12.2500
+      50         .47851E+02     .37266E+02         .95680E+07     .84437E+07        12.2500    12.5000
+      51         .37266E+02     .29023E+02         .84437E+07     .74516E+07        12.5000    12.7500
+      52         .29023E+02     .22603E+02         .74516E+07     .65760E+07        12.7500    13.0000
+      53         .22603E+02     .17604E+02         .65760E+07     .58033E+07        13.0000    13.2500
+      54         .17604E+02     .13710E+02         .58033E+07     .51214E+07        13.2500    13.5000
+0                FINE   FAST    ENERGY GROUP STRUCTURE (M=1.67482E-24 GRAM,  EV=1.60210E-12 ERG)
+0   GROUP          ENERGY RANGE (EV)               VELOCITY RANGE (CM/SEC)           LETHARGY RANGE
+      55         .13710E+02     .10677E+02         .51214E+07     .45196E+07        13.5000    13.7500
+      56         .10677E+02     .83153E+01         .45196E+07     .39885E+07        13.7500    14.0000
+      57         .83153E+01     .64759E+01         .39885E+07     .35199E+07        14.0000    14.2500
+      58         .64759E+01     .50435E+01         .35199E+07     .31063E+07        14.2500    14.5000
+      59         .50435E+01     .39279E+01         .31063E+07     .27413E+07        14.5000    14.7500
+      60         .39279E+01     .30590E+01         .27413E+07     .24192E+07        14.7500    15.0000
+      61         .30590E+01     .23824E+01         .24192E+07     .21349E+07        15.0000    15.2500
+      62         .23824E+01     .18554E+01         .21349E+07     .18841E+07        15.2500    15.5000
+
+                     ### USERFL END ###
+
+
+0                FINE   THERMAL ENERGY GROUP STRUCTURE (M=1.67482E-24 GRAM,  EV=1.60210E-12 ERG)
+0   GROUP          ENERGY RANGE (EV)               VELOCITY RANGE (CM/SEC)           LETHARGY RANGE
+       1         .18554E+01     .16374E+01         .18841E+07     .17699E+07        15.5000    15.6250
+       2         .16374E+01     .14450E+01         .17699E+07     .16627E+07        15.6250    15.7500
+       3         .14450E+01     .12752E+01         .16627E+07     .15619E+07        15.7500    15.8750
+       4         .12752E+01     .11253E+01         .15619E+07     .14673E+07        15.8750    16.0000
+       5         .11253E+01     .99312E+00         .14673E+07     .13784E+07        16.0000    16.1250
+       6         .99312E+00     .87643E+00         .13784E+07     .12949E+07        16.1250    16.2500
+       7         .87643E+00     .77344E+00         .12949E+07     .12164E+07        16.2500    16.3750
+       8         .77344E+00     .68256E+00         .12164E+07     .11427E+07        16.3750    16.5000
+       9         .68256E+00     .60236E+00         .11427E+07     .10735E+07        16.5000    16.6250
+      10         .60236E+00     .53158E+00         .10735E+07     .10085E+07        16.6250    16.7500
+      11         .53158E+00     .46912E+00         .10085E+07     .94736E+06        16.7500    16.8750
+      12         .46912E+00     .41399E+00         .94736E+06     .88996E+06        16.8750    17.0000
+      13         .41399E+00     .38925E+00         .88996E+06     .86296E+06        17.0000    17.0616
+      14         .38925E+00     .36528E+00         .86296E+06     .83596E+06        17.0616    17.1252
+      15         .36528E+00     .34206E+00         .83596E+06     .80896E+06        17.1252    17.1909
+      16         .34206E+00     .31961E+00         .80896E+06     .78196E+06        17.1909    17.2587
+      17         .31961E+00     .29792E+00         .78196E+06     .75496E+06        17.2587    17.3290
+      18         .29792E+00     .27699E+00         .75496E+06     .72796E+06        17.3290    17.4019
+      19         .27699E+00     .25683E+00         .72796E+06     .70096E+06        17.4019    17.4774
+      20         .25683E+00     .23742E+00         .70096E+06     .67396E+06        17.4774    17.5560
+      21         .23742E+00     .21878E+00         .67396E+06     .64696E+06        17.5560    17.6378
+      22         .21878E+00     .20090E+00         .64696E+06     .61996E+06        17.6378    17.7230
+      23         .20090E+00     .18378E+00         .61996E+06     .59296E+06        17.7230    17.8121
+      24         .18378E+00     .16743E+00         .59296E+06     .56596E+06        17.8121    17.9053
+      25         .16743E+00     .15183E+00         .56596E+06     .53896E+06        17.9053    18.0031
+      26         .15183E+00     .13700E+00         .53896E+06     .51196E+06        18.0031    18.1059
+      27         .13700E+00     .12293E+00         .51196E+06     .48496E+06        18.1059    18.2142
+      28         .12293E+00     .10963E+00         .48496E+06     .45797E+06        18.2142    18.3288
+      29         .10963E+00     .97080E-01         .45797E+06     .43096E+06        18.3288    18.4503
+      30         .97080E-01     .85297E-01         .43096E+06     .40396E+06        18.4503    18.5797
+      31         .85297E-01     .74276E-01         .40396E+06     .37696E+06        18.5797    18.7181
+      32         .74276E-01     .64017E-01         .37696E+06     .34996E+06        18.7181    18.8667
+      33         .64017E-01     .54520E-01         .34996E+06     .32296E+06        18.8667    19.0273
+      34         .54520E-01     .45785E-01         .32296E+06     .29596E+06        19.0273    19.2019
+      35         .45785E-01     .37813E-01         .29596E+06     .26896E+06        19.2019    19.3932
+      36         .37813E-01     .30602E-01         .26896E+06     .24196E+06        19.3932    19.6048
+      37         .30602E-01     .24154E-01         .24196E+06     .21496E+06        19.6048    19.8414
+      38         .24154E-01     .18467E-01         .21496E+06     .18796E+06        19.8414    20.1099
+      39         .18467E-01     .13543E-01         .18796E+06     .16096E+06        20.1099    20.4200
+      40         .13543E-01     .93805E-02         .16096E+06     .13396E+06        20.4200    20.7872
+      41         .93805E-02     .59804E-02         .13396E+06     .10696E+06        20.7872    21.2374
+      42         .59804E-02     .33423E-02         .10696E+06     .79964E+05        21.2374    21.8192
+      43         .33423E-02     .14663E-02         .79964E+05     .52964E+05        21.8192    22.6431
+      44         .14663E-02     .35238E-03         .52964E+05     .25964E+05        22.6431    24.0689
+      45         .35238E-03     .10000E-04         .25964E+05     .43740E+04        24.0689    27.6310
+1DCA1    DCA Cell 1.2w/o, 28 rod cluster, 22.5cm pitch                           *** STEP *** INPUT FOR PIJ *** 
+                     GEOMETRY TYPE                            10     ( ANNULAR ASSEMBLY WITH REGULAR ARRAYS OF PIN RODS )            
+                     NUMBER OF SUB - REGIONS                  27
+                     NUMBER OF  T  - REGIONS                  27
+                     NUMBER OF  R  - REGIONS                  10
+                     NUMBER OF  X  - REGIONS                   1
+                     OUTER BOUNDARY CONDITION (-1,0,1,2)       0
+                     DIRECTIONAL PIJ (1,2)                     1  INDICATED BY IC17
+                     NUMBER OF R OR X MESH                    12
+                     NUMBER OF THETA OR Y MESH                 0
+                     TOTAL NUMBER OF PIN RODS                 28
+                     NUMBER OF RINGS OF PIN ROD ARRAY          3
+                     NUMBER OF LATTICE CELLS TRACED            1
+                     PRINT CONTROL OF PIJ (0,1)                0
+                     ORDER OF GAUSS RADIAL INTEGRATION         6
+                     NO. OF DIVISION FOR ANGULAR INTEGRATION  21
+                     NUMBER OF ANNULAR DIVISION IN A PIN ROD   2
+                     DIVISION BY RPP  (0,1,2)                  2
+                     ANGLE RANGE BY DEGREE                    45
+                     PLOTER OPTION  (0,1)                      1
+0         ===R-REGION NO./T  ===
+                     1           2           2           1           1           3           3           1           1           4
+                     4           1           5           5           5           6           6           6           6           7
+                     8           9          10          10          10          10          10
+0         ===X-REGION NO./R  ===
+                     1           1           1           1           1           1           1           1           1           1
+0         ===MATERIAL NO./R  ===
+                     2           1           1           1           3           3           2           4           2           5
+0         ===NO. PINS ON RING===
+                     4           8          16
+0         ===R-X DIVISION    ===
+            .00000E+00  .21600E+01  .38800E+01  .56000E+01  .58000E+01  .60000E+01  .66250E+01  .68250E+01  .73000E+01  .84000E+01
+            .95000E+01  .11000E+02  .12694E+02
+0         ===PIN R-POSITION  ===
+            .13120E+01  .29990E+01  .47570E+01
+0         ===PIN ANG-POSITION===
+            .00000E+00  .90000E+02  .18000E+03  .27000E+03  .22500E+02  .67500E+02  .11250E+03  .15750E+03  .20250E+03  .24750E+03
+            .29250E+03  .33750E+03  .11250E+02  .33750E+02  .56250E+02  .78750E+02  .10125E+03  .12375E+03  .14625E+03  .16875E+03
+            .19125E+03  .21375E+03  .23625E+03  .25875E+03  .28125E+03  .30375E+03  .32625E+03  .34875E+03
+0         ===PIN SUB-DIVISION===
+            .00000E+00  .72000E+00  .83500E+00
+          RADII  OF  ZONES 
+            1) 0.0000E+00  2) 1.3120E+00  3) 2.1600E+00  4) 2.9990E+00  5) 3.8800E+00  6) 4.7570E+00  7) 5.6000E+00  8) 5.8000E+00
+            9) 6.0000E+00 10) 6.6250E+00 11) 6.8250E+00 12) 7.3000E+00 13) 8.4000E+00 14) 9.5000E+00 15) 1.1000E+01 16) 1.2694E+01
+          VOLUME OF (S)-REGION
+        1) 9.0799E-01   2) 2.8750E+00   3) 3.6394E+00   4) 1.3392E+00   5) 2.0609E+00   6) 6.1820E+00   7) 6.8468E+00   8) 2.4335E+00
+        9) 4.2598E+00  10) 1.2610E+01  11) 1.3448E+01  12) 4.7289E+00  13) 1.6248E+00  14) 4.2710E+00  15) 5.3552E+00  16) 9.7590E+00
+       17) 6.9266E+00  18) 9.2526E+00  19) 7.1628E+00  20) 7.4141E+00  21) 2.4789E+01  22) 8.4509E+00  23) 2.1078E+01  24) 5.4255E+01
+       25) 6.1858E+01  26) 9.6604E+01  27) 1.2610E+02
+          VOLUME OF (T)-REGION
+        1) 9.0799E-01   2) 2.8750E+00   3) 3.6394E+00   4) 1.3392E+00   5) 2.0609E+00   6) 6.1820E+00   7) 6.8468E+00   8) 2.4335E+00
+        9) 4.2598E+00  10) 1.2610E+01  11) 1.3448E+01  12) 4.7289E+00  13) 1.6248E+00  14) 4.2710E+00  15) 5.3552E+00  16) 9.7590E+00
+       17) 6.9266E+00  18) 9.2526E+00  19) 7.1628E+00  20) 7.4141E+00  21) 2.4789E+01  22) 8.4509E+00  23) 2.1078E+01  24) 5.4255E+01
+       25) 6.1858E+01  26) 9.6604E+01  27) 1.2610E+02
+          VOLUME OF (R)-REGION
+        1) 1.5730E+01   2) 6.5144E+00   3) 1.3029E+01   4) 2.6058E+01   5) 1.1251E+01   6) 3.3101E+01   7) 7.4141E+00   8) 2.4789E+01
+        9) 8.4509E+00  10) 3.5989E+02
+          VOLUME OF (X)-REGION
+        1) 5.0623E+02
+          VOLUME OF (M)-REGION
+        1) 3.1595E+01   2) 4.5601E+01   3) 4.4352E+01   4) 2.4789E+01   5) 3.5989E+02
+          TOTAL VOLUME                    5.0623E+02
+
+          VOLUME(NUMERICAL)/VOLUME(ANALYTICAL) 
+            1) 1.02611     2)  .99616     3)  .99966     4)  .99348     5) 1.02236     6)  .99595     7)  .99889
+            8)  .99356     9) 1.01187    10)  .99941    11)  .99944    12) 1.00147    13)  .99310    14) 1.00086
+           15)  .99505    16) 1.00176    17)  .99287    18)  .99941    19)  .99990    20) 1.00009    21)  .99990
+           22)  .99997    23)  .99994    24)  .99978    25)  .99979    26)  .99977    27)  .99977
+0 ***  810 LINES DRAWN ON FT84 ***                                                  ****ELAPSED CPU TIME       0 SEC
+
+     NO. OF MATERIALS USED IN THE CASE =  5
+
+1
+
+                     MACROF
+
+           CASE I.D. : DCA1    
+           TITLE     : DCA Cell 1.2w/o, 28 rod cluster, 22.5cm pitch                           
+
+
+
+                     COMPOSITION DATA LIST
+
+
+                               ## MATERIAL NAME -----  1   FUELX01X ##
+
+           NUMBER OF NUCLIDE -----------        3
+           TEMPERATURE (K) -------------     300.00
+           MEAN CHORD LENGTH -----------    1.48000
+           DANCOFF FACTOR --------------     .00000
+           WEIGHTING FLUX NAME FOR CHI - ASYMPTO.
+           IDENTIFICATION OF NUCLIDE ---    U050001     U080001     O060001
+           NUMBER DENSITY --------------  2.80600E-04 2.27550E-02 4.73870E-02
+           RESONANT INDICATOR ----------      2           2           0
+           LXMICR ----------------------      0           0           0
+           NUCLIDE-WISE DANCOFF FACTOR WILL BE CALCULATED AT SUBROUTINE(MAFSIG) ]] 
+
+                               ## MATERIAL NAME -----  2   CLADX02X ##
+
+           NUMBER OF NUCLIDE -----------        2
+           TEMPERATURE (K) -------------     300.00
+           MEAN CHORD LENGTH -----------     .18000
+           DANCOFF FACTOR --------------     .00000
+           WEIGHTING FLUX NAME FOR CHI - ASYMPTO.
+           IDENTIFICATION OF NUCLIDE ---    AL70001     MGN0001
+           NUMBER DENSITY --------------  5.81000E-02 1.72000E-04
+           RESONANT INDICATOR ----------      0           0
+           LXMICR ----------------------      0           0
+
+                               ## MATERIAL NAME -----  3   H2OMX0WX ##
+
+           NUMBER OF NUCLIDE -----------        2
+           TEMPERATURE (K) -------------     300.00
+           MEAN CHORD LENGTH -----------     .00000
+           DANCOFF FACTOR --------------     .00000
+           WEIGHTING FLUX NAME FOR CHI - ASYMPTO.
+           IDENTIFICATION OF NUCLIDE ---    H01H001     O060001
+           NUMBER DENSITY --------------  6.72400E-02 3.33600E-02
+           RESONANT INDICATOR ----------      0           0
+           LXMICR ----------------------      0           0
+
+                               ## MATERIAL NAME -----  4   AGAPX03X ##
+
+           NUMBER OF NUCLIDE -----------        2
+           TEMPERATURE (K) -------------     300.00
+           MEAN CHORD LENGTH -----------     .00000
+           DANCOFF FACTOR --------------     .00000
+           WEIGHTING FLUX NAME FOR CHI - ASYMPTO.
+           IDENTIFICATION OF NUCLIDE ---    N040001     O060001
+           NUMBER DENSITY --------------  3.96000E-05 1.08000E-05
+           RESONANT INDICATOR ----------      0           0
+           LXMICR ----------------------      0           0
+
+                               ## MATERIAL NAME -----  5   D2OMX03X ##
+
+           NUMBER OF NUCLIDE -----------        3
+           TEMPERATURE (K) -------------     300.00
+           MEAN CHORD LENGTH -----------     .00000
+           DANCOFF FACTOR --------------     .00000
+           WEIGHTING FLUX NAME FOR CHI - ASYMPTO.
+           IDENTIFICATION OF NUCLIDE ---    H01H001     D02D001     O060001
+           NUMBER DENSITY --------------  3.68000E-05 6.65680E-02 3.32200E-02
+           RESONANT INDICATOR ----------      0           0           0
+           LXMICR ----------------------      0           0           0
+
+                               ## RESONANT NUCLIDE NAME LIST ##
+
+           NUMBER OF RESONANT NUCLIDE --      2
+           RESONANT NUCLIDE NAME -------  U05   U08
+
+                               ## STANDARD TEMPERATUE ARRAY LIST (STND) ##
+
+  TAG         :    1        2        3        4        5        6        7        8        9        A
+  TAG         :    B        C
+  TEMPERATURE :    300.00   325.00   350.00   400.00   450.00   500.00   550.00   600.00   900.00  1200.00
+  TEMPERATURE :   1600.00  2100.00
+          STRAGE USED     116380 WITHIN    7000000 IN PIJ2-STEP
+
+
+
+                                    ******************************************
+                                    * CALCULATED NUCLIDE-WISE DANCOFF FACTOR *
+                                    ******************************************
+
+
+                               ## MATERIAL NAME -----  1   FUELX01X ##
+
+           IDENTIFICATION OF NUCLIDE ----    U050001     U080001     O060001
+           NUCLIDE-WISE DANCOFF FACTOR---     .228402     .228402    1.000000
+          STRAGE USED      70357 WITHIN    7000000 IN PIJ2-STEP
+1
+
+          ===PIJ3 STEP===
+          ***DCA1    ***DCA Cell 1.2w/o, 28 rod cluster, 22.5cm pitch                           *** IN FAST     RANGE ***
+
+          ITERATION PARAMETERS 
+          PRINT (1+2+4+8)(FLUX,XEC,PIJ,S)              0
+          MAX OF INNER ITERATIONS PER OUTER           20
+          MAX OF OUTER ITERATIONS                     60
+          EARLIST EXTRAPOLATION                        5
+          NUMBER OF ITERATIONS TESTED                  5
+          MINIMUM DELAY                                5
+          MONITOR PRINT(0,1)(SKIP,PRINT)              -1
+          CONVERGENCE CRITERION OF INNER      .10000E-03
+          CONVERGENCE CRITERION OF OUTER      .10000E-04
+          EXTRAPOLATION CRITERION             .10000E-02
+          OVER-RELAXATION (INITIAL)           .12000E+01
+          MAX EXTRAPOLATION                   .10000E+03
+          BASE FACTOR OF OVER-RELAXATION      .50000E+00
+
+          PROBLEM TYPE  
+          ITYPE (0/1  =EIGENVALUE/FIXED S)             1
+          IRANG (0/1/2=FAST/THERMAL/ALL)               0
+          IFIXS (0/1/2)                                0
+
+0            ITERATION POWER-SCALING   RESIDUE CRITERON
+
+              1          .84317E-01  .10873E+00  .10000E-04
+              2          .73311E-01  .70334E-02  .10000E-04
+              3          .72563E-01  .47191E-03  .10000E-04
+              4          .72537E-01  .25197E-03  .10000E-04
+              5          .72524E-01  .13453E-03  .10000E-04
+              6          .72516E-01  .71822E-04  .10000E-04
+              7          .72513E-01  .38362E-04  .10000E-04
+              8          .72511E-01  .20481E-04  .10000E-04
+              9          .72509E-01  .10945E-04  .10000E-04
+             10          .72509E-01  .58366E-05  .10000E-04
+
+
+
+          === ITERATION END IN PIJF STEP ===
+          === FIXED SOURCE TYPE PROBLEM ===
+          TOTAL THERMAL INNER ITERATION COUNT             0
+          INITIAL SOURCE NORMALIZATION FACTOR    .91472E+02
+          THERMAL SOURCE NORMALIZATION FACTOR    .10000E+01
+          RENORMALIZATION FACTOR (INNER)         .00000E+00
+          RESIDUE IN FINAL INNER ITERATION       .00000E+00
+          FINAL FISSION SOURCE NORMALIZATION     .72509E-01
+          RESIDUE IN FINAL FISSION RATE          .58366E-05
+          STRAGE USED     466531 WITHIN    7000000 IN PIJ2-STEP
+
+
+
+         *** MIX-X-SECTION STEP IN *** FAST ENERGY RANGE
+          *** DCA1    ***DCA Cell 1.2w/o, 28 rod cluster, 22.5cm pitch                           ***
+0         X-REGION  1***
+          SIGNED MAT ID BY R-REG =   2   1   1   1   3   3   2   4   2   5
+          ONE GROUP CONSTANTS
+          * ACTIVATION CROSS SECTION      .81257E-01
+          * FISSION    CROSS SECTION      .56347E-03
+          * NU*FISSION CROSS SECTION      .14844E-02
+          * TOTAL      CROSS SECTION      .25120E+00
+          * DIFFUSION  COEFFICIENT 1      .13270E+01
+          * DIFFUSION  COEFFICIENT 2      .13270E+01
+          * ABSORPTION CROSS SECTION      .26941E-02
+          * SCATTEROUT CROSS SECTION      .13100E-01
+          * INTEGRATED FLUX-X-REGION      .67362E+02
+          STRAGE USED     111020 WITHIN    7000000 IN PIJ2-STEP
+1
+
+          ===PIJ3 STEP===
+          ***DCA1    ***DCA Cell 1.2w/o, 28 rod cluster, 22.5cm pitch                           *** IN THERMAL  RANGE ***
+
+          ITERATION PARAMETERS 
+          PRINT (1+2+4+8)(FLUX,XEC,PIJ,S)              0
+          MAX OF INNER ITERATIONS PER OUTER          200
+          MAX OF OUTER ITERATIONS                      1
+          EARLIST EXTRAPOLATION                        5
+          NUMBER OF ITERATIONS TESTED                  5
+          MINIMUM DELAY                                5
+          MONITOR PRINT(0,1)(SKIP,PRINT)              -1
+          CONVERGENCE CRITERION OF INNER      .10000E-03
+          CONVERGENCE CRITERION OF OUTER      .10000E-04
+          EXTRAPOLATION CRITERION             .10000E-02
+          OVER-RELAXATION (INITIAL)           .12000E+01
+          MAX EXTRAPOLATION                   .10000E+03
+          BASE FACTOR OF OVER-RELAXATION      .50000E+00
+
+          PROBLEM TYPE  
+          ITYPE (0/1  =EIGENVALUE/FIXED S)             1
+          IRANG (0/1/2=FAST/THERMAL/ALL)               1
+          IFIXS (0/1/2)                                0
+
+
+
+
+          === ITERATION END IN PIJF STEP ===
+          === FIXED SOURCE TYPE PROBLEM ===
+          TOTAL THERMAL INNER ITERATION COUNT           146
+          INITIAL SOURCE NORMALIZATION FACTOR    .88243E+00
+          THERMAL SOURCE NORMALIZATION FACTOR    .10000E+01
+          RENORMALIZATION FACTOR (INNER)         .10000E+01
+          RESIDUE IN FINAL INNER ITERATION       .13172E-04
+          FINAL FISSION SOURCE NORMALIZATION     .00000E+00
+          RESIDUE IN FINAL FISSION RATE          .17351E-09
+
+
+
+         *** MIX-X-SECTION STEP IN *** THER ENERGY RANGE
+          *** DCA1    ***DCA Cell 1.2w/o, 28 rod cluster, 22.5cm pitch                           ***
+0         X-REGION  1***
+          SIGNED MAT ID BY R-REG =   2   1   1   1   3   3   2   4   2   5
+          ONE GROUP CONSTANTS
+          * ACTIVATION CROSS SECTION      .48203E+01
+          * FISSION    CROSS SECTION      .53925E-02
+          * NU*FISSION CROSS SECTION      .13140E-01
+          * TOTAL      CROSS SECTION      .46270E+00
+          * DIFFUSION  COEFFICIENT 1      .72040E+00
+          * DIFFUSION  COEFFICIENT 2      .72040E+00
+          * ABSORPTION CROSS SECTION      .99096E-02
+          * SCATTEROUT CROSS SECTION      .10591E-04
+          * INTEGRATED FLUX-X-REGION      .88952E+02
+1            ***  BARE REACTOR SPECTRUM CALCULATION *** OF STEP 15 ***
+          ***DCA1    ***DCA Cell 1.2w/o, 28 rod cluster, 22.5cm pitch                           ***
+          *** BY B1 APPROXIMATION *** BUCKLING SERACH OPTION IS         0 (0/1:NO/YES) 
+          RATIO OF THERMAL SOURCE TO REMOVAL   .10000E+01
+          NEUTRON SPECTRUM PER LETHARGY
+            .32388E+00  .93294E+00  .20690E+01  .32868E+01  .46137E+01  .63697E+01  .58092E+01  .59336E+01  .53887E+01  .50661E+01
+            .61446E+01  .55188E+01  .40556E+01  .51026E+01  .51395E+01  .48137E+01  .44956E+01  .46073E+01  .42574E+01  .45103E+01
+            .42894E+01  .41810E+01  .40085E+01  .42714E+01  .40866E+01  .40265E+01  .39840E+01  .39453E+01  .39108E+01  .38331E+01
+            .38735E+01  .38243E+01  .37914E+01  .37690E+01  .37468E+01  .37244E+01  .36971E+01  .36764E+01  .36504E+01  .36321E+01
+            .36148E+01  .35995E+01  .35723E+01  .35467E+01  .35368E+01  .34790E+01  .34912E+01  .34474E+01  .34556E+01  .34180E+01
+            .33192E+01  .33788E+01  .32154E+01  .33127E+01  .33052E+01  .32772E+01  .31073E+01  .30891E+01  .31667E+01  .31650E+01
+            .31572E+01  .31420E+01  .33315E+01  .33060E+01  .32976E+01  .33574E+01  .34057E+01  .34684E+01  .35403E+01  .36171E+01
+            .37062E+01  .38026E+01  .39108E+01  .40230E+01  .41125E+01  .41765E+01  .42477E+01  .43292E+01  .44299E+01  .45627E+01
+            .47572E+01  .50464E+01  .54720E+01  .61021E+01  .70200E+01  .83040E+01  .10037E+02  .12314E+02  .15193E+02  .18578E+02
+            .22302E+02  .26096E+02  .29561E+02  .32229E+02  .33625E+02  .33370E+02  .31310E+02  .27582E+02  .22620E+02  .17062E+02
+            .11650E+02  .70272E+01  .36025E+01  .14637E+01  .40949E+00  .55985E-01  .13985E-02
+          NEUTRON CURRENT PER LETHARGY
+            .99703E-03  .29183E-02  .58864E-02  .81782E-02  .10335E-01  .14404E-01  .12166E-01  .10780E-01  .84450E-02  .62993E-02
+            .78039E-02  .71289E-02  .40540E-02  .48111E-02  .50440E-02  .47967E-02  .43796E-02  .46441E-02  .41801E-02  .44565E-02
+            .44778E-02  .43186E-02  .38033E-02  .43463E-02  .42599E-02  .41999E-02  .41609E-02  .41217E-02  .40752E-02  .39592E-02
+            .40073E-02  .39473E-02  .39141E-02  .39054E-02  .38975E-02  .38819E-02  .38306E-02  .37987E-02  .37536E-02  .37569E-02
+            .37266E-02  .36961E-02  .36463E-02  .35690E-02  .36594E-02  .34775E-02  .36499E-02  .35116E-02  .35961E-02  .34106E-02
+            .33925E-02  .35054E-02  .32669E-02  .35030E-02  .34612E-02  .34160E-02  .31344E-02  .32768E-02  .33386E-02  .33257E-02
+            .33204E-02  .33016E-02  .35447E-02  .34914E-02  .35225E-02  .35267E-02  .35476E-02  .35880E-02  .36281E-02  .36693E-02
+            .37173E-02  .37719E-02  .38331E-02  .38958E-02  .39403E-02  .39756E-02  .40104E-02  .40485E-02  .40954E-02  .41689E-02
+            .42907E-02  .44889E-02  .47985E-02  .52679E-02  .59475E-02  .68958E-02  .81614E-02  .98063E-02  .11856E-01  .14170E-01
+            .16586E-01  .18887E-01  .20791E-01  .21986E-01  .22181E-01  .21158E-01  .18918E-01  .15726E-01  .12046E-01  .84168E-02
+            .52782E-02  .28853E-02  .13225E-02  .45092E-03  .10631E-03  .13647E-04  .21216E-06
+          FAST FISSION              .89456E-01
+          FAST ABSORPTION           .15753E+00
+          FAST LEAKAGE              .72078E-01
+          TOTAL FISSION             .10469E+01
+          TOTAL ABSORPTION          .87985E+00
+          TOTAL LEAKAGE             .12015E+00
+          K-EFF= 1.04693 K-INF= 1.18990 UNDER GEOMTRICAL BUCKLING=  .90000E-03
+0                COARSE WHOLE   ENERGY GROUP STRUCTURE (M=1.67482E-24 GRAM,  EV=1.60210E-12 ERG)
+0   GROUP          ENERGY RANGE (EV)               VELOCITY RANGE (CM/SEC)           LETHARGY RANGE
+       1         .10000E+08     .18554E+01         .43740E+10     .18841E+07          .0000    15.5000
+       2         .18554E+01     .10000E-04         .18841E+07     .43740E+04        15.5000    27.6310
+
+
+1
+ *** STEP 20 FOR EFFECTIVE X-SECTION IN
+ ===CASEID=DCA1    =TITLE=DCA Cell 1.2w/o, 28 rod cluster, 22.5cm pitch                           ===
+
+                MATERIAL-WISE POWER DISTRIBUTION 
+
+          MTNAME     VOLUME      RELATIVE    FISSILE     FERTILE     CONVERSION
+          NAME        (CC)       POWER       ABSORPTION  CAPTURE     RATIO
+
+          FUELX01X   4.56008E+01 4.26872E-01 4.83577E-01 2.68615E-01 5.55476E-01
+           TOTAL     4.56008E+01 4.26872E-01 4.83577E-01 2.68615E-01 5.55476E-01
+
+
+ =========================== END OF SRAC CALCULATION ==========================

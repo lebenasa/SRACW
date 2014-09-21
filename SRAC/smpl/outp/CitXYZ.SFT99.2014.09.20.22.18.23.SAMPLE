@@ -1,0 +1,1698 @@
+0     *** === SRAC CODE SYSTEM RUN    DATE : 92-28-09 START TIME= 0: 0: 0:
+              (SRAC:Ver.2005.00, LAST MODIFIED 2005.01.28)
+0     **** CASE ID === FUL1     *** TITLE === Cell calculation for inner fuel (3.2 w/o UO2) with PIJ                   ***
+
+
+     USE OF COLLISION PROB. ROUTINE (NO,CALL:0,1)             1
+     SELECT OF ROUTINE FOR FIX S CALC(NO,PIJ,1D SN ,2D SN , 
+      1D DIFF,2D DIFF:0,1,2,3,4,5)                            1
+     DANCOFF FACTOR BY(INPUT,PIJ,TONE:0,1,2)                  1
+     CALC OF THERMAL RANGE (EXCLUDED,INCLUDED:0,1)            1
+     PROCESS OF RESONANCE 2 RANGE(TABLELOOK,IR,PEACO:0,1,2)   2
+     FLUX CALCULATION BY RANGES(SKIP,CALC:0,1)                1
+     FAST RANGES FOR TRANSPORT CALC(0,1,2,3,4)                4
+     INDICATOR FOR ENRGY STRUCTURE OF UMCROSS (0,1,2,3)       3
+     CALC OF BARE REACTOR SPECTRUM(SKIP,P1,B1:0,1,2)         -2
+     COLLAPSE MACRO X-SECTION BY RANGE(SKIP,CALL:0,1)         1
+     INPUT OF GEOMETRY (NEW,SAME AS PREVIOUS CASE:0,1)        0
+     SELECT ROUTINE FOR EIGENVALUE CALC(NO,PIJ,1D SN,2D SN, 
+      1D DIFF,2D DIFF:0,1,2,3,4,5)                            0
+     COLLAPSE MACRO AFTER EIGENVALUE CALC(SKIP,CALL:0,1)      0
+     PREPARE MACRO FOR CITATION (SKIP,CALL:0,1)               0
+     TOTAL MICRO X-SECTION BY (HARMONIC,ARITHMETIC AV:1,2)    1
+     TRANSPORT MACRO X-SECTION BY (P0,P1,B1,SN:0,1,2,3)       2
+     DIFF COEF (INVERSE TR,BENOIST ISO,BENOIST ANISO:1,2,3)   1
+     REACTION RATE CALCULATION (0,1)                          0
+     PRINT OF MACRO-X (0,1,2)                                 0
+     BURN-UP CALCULATION (0,1:SKIP,EXECUTE)                   0
+0                     << INFORMATION OF PDS-FILES >> 
+
+      PDS FILE NAME             DATA SET NAME                                                       IWR DISP    I/O METHOD        
+   --------------------------------------------------------------------------------------------------------------------------------
+    PUBLIC FAST LIBRARY       E:/SRACW/SRACLIB-EDF70/pds/pfast                                       1  OLD       FILE    
+    PUBLIC THERMAL  LIBRARY   E:/SRACW/SRACLIB-EDF70/pds/pthml                                       1  OLD       FILE    
+    PUBLIC MCROSS LIBRARY     E:/SRACW/SRACLIB-EDF70/pds/pmcrs                                       1  OLD       FILE    
+    USERS  FAST LIBRARY       E:\SRACW\SRAC\tmp\CitXYZ/UFAST                                         3  SCRATCH   CORE    
+    USERS  THERMAL  LIBRARY   E:\SRACW\SRAC\tmp\CitXYZ/UTHERMAL                                      3  SCRATCH   CORE    
+    USERS  MCROSS LIBRARY     E:\SRACW\SRAC\tmp\CitXYZ/UMCROSS                                       3  SCRATCH   CORE    
+    USERS  MACROSCOPIC FINE   E:\SRACW\SRAC\tmp\CitXYZ/MACROWRK                                      3  SCRATCH   CORE    
+    USERS  MACROSCOPIC BROAD  E:\SRACW\SRAC\tmp\CitXYZ/MACRO                                         3  SCRATCH   CORE    
+    USERS  FLUX               E:\SRACW\SRAC\tmp\CitXYZ/FLUX                                          3  SCRATCH   CORE    
+    USERS  MICROSCOPIC        E:\SRACW\SRAC\tmp\CitXYZ/MICREF                                        3  SCRATCH   CORE    
+   --------------------------------------------------------------------------------------------------------------------------------
+     NUMBER OF USER'S FAST GROUPS                          62
+     NUMBER OF USER'S THERMAL GROUPS                       45
+     NUMBER OF USER'S CONDENSED FAST GROUPS                 1
+     NUMBER OF USER'S CONDENSED THERMAL GROUPS              1
+
+     NUMBER OF LIBRARY GROUPS IN THE USER'S FAST GROUP
+                1           1           1           1           1           1           1           1           1           1
+
+                1           1           1           1           1           1           1           1           1           1
+
+                1           1           1           1           1           1           1           1           1           1
+
+                1           1           1           1           1           1           1           1           1           1
+
+                1           1           1           1           1           1           1           1           1           1
+
+                1           1           1           1           1           1           1           1           1           1
+
+                1           1
+     NUMBER OF LIBRARY GROUPS IN THE USER'S THERMAL GROUPS
+                1           1           1           1           1           1           1           1           1           1
+
+                1           1           1           1           1           1           1           1           1           1
+
+                1           1           1           1           1           1           1           1           1           1
+
+                1           1           1           1           1           1           1           1           1           1
+
+                1           1           1           1           1
+     NUMBER OF USER'S GROUPS IN THE CONDENSED FAST GROUP
+               62
+     NUMBER OF USER'S GROUPS IN THE CONDENSED THERMAL GROUP
+               45
+1
+
+                     ### USERFL START ###
+
+
+                                ENERGY GROUP STRUCTURE 
+
+           NEFL: TOTAL NBR OF PUBLIC FAST GROUPS -----  74
+           NETL: TOTAL NBR OF PUBLIC THERMAL GROUPS --  48
+           NEF : TOTAL NBR OF USERS  FAST GROUPS -----  62
+           NET : TOTAL NBR OF USERS  THERMAL GROUPS --  45
+0                FINE   FAST    ENERGY GROUP STRUCTURE (M=1.67482E-24 GRAM,  EV=1.60210E-12 ERG)
+0   GROUP          ENERGY RANGE (EV)               VELOCITY RANGE (CM/SEC)           LETHARGY RANGE
+       1         .10000E+08     .77880E+07         .43740E+10     .38600E+10          .0000      .2500
+       2         .77880E+07     .60653E+07         .38600E+10     .34065E+10          .2500      .5000
+       3         .60653E+07     .47237E+07         .34065E+10     .30062E+10          .5000      .7500
+       4         .47237E+07     .36788E+07         .30062E+10     .26529E+10          .7500     1.0000
+       5         .36788E+07     .28651E+07         .26529E+10     .23412E+10         1.0000     1.2500
+       6         .28651E+07     .22313E+07         .23412E+10     .20661E+10         1.2500     1.5000
+       7         .22313E+07     .17377E+07         .20661E+10     .18233E+10         1.5000     1.7500
+       8         .17377E+07     .13534E+07         .18233E+10     .16091E+10         1.7500     2.0000
+       9         .13534E+07     .10540E+07         .16091E+10     .14200E+10         2.0000     2.2500
+      10         .10540E+07     .82085E+06         .14200E+10     .12532E+10         2.2500     2.5000
+      11         .82085E+06     .63928E+06         .12532E+10     .11059E+10         2.5000     2.7500
+      12         .63928E+06     .49787E+06         .11059E+10     .97596E+09         2.7500     3.0000
+      13         .49787E+06     .38774E+06         .97596E+09     .86129E+09         3.0000     3.2500
+      14         .38774E+06     .30197E+06         .86129E+09     .76008E+09         3.2500     3.5000
+      15         .30197E+06     .23518E+06         .76008E+09     .67077E+09         3.5000     3.7500
+      16         .23518E+06     .18316E+06         .67077E+09     .59195E+09         3.7500     4.0000
+      17         .18316E+06     .14264E+06         .59195E+09     .52240E+09         4.0000     4.2500
+      18         .14264E+06     .11109E+06         .52240E+09     .46101E+09         4.2500     4.5000
+      19         .11109E+06     .86517E+05         .46101E+09     .40684E+09         4.5000     4.7500
+      20         .86517E+05     .67380E+05         .40684E+09     .35904E+09         4.7500     5.0000
+      21         .67380E+05     .52475E+05         .35904E+09     .31685E+09         5.0000     5.2500
+      22         .52475E+05     .40868E+05         .31685E+09     .27962E+09         5.2500     5.5000
+      23         .40868E+05     .31828E+05         .27962E+09     .24676E+09         5.5000     5.7500
+      24         .31828E+05     .24788E+05         .24676E+09     .21777E+09         5.7500     6.0000
+      25         .24788E+05     .19305E+05         .21777E+09     .19218E+09         6.0000     6.2500
+      26         .19305E+05     .15034E+05         .19218E+09     .16960E+09         6.2500     6.5000
+      27         .15034E+05     .11709E+05         .16960E+09     .14967E+09         6.5000     6.7500
+      28         .11709E+05     .91188E+04         .14967E+09     .13208E+09         6.7500     7.0000
+      29         .91188E+04     .71017E+04         .13208E+09     .11656E+09         7.0000     7.2500
+      30         .71017E+04     .55308E+04         .11656E+09     .10287E+09         7.2500     7.5000
+      31         .55308E+04     .43074E+04         .10287E+09     .90779E+08         7.5000     7.7500
+      32         .43074E+04     .33546E+04         .90779E+08     .80112E+08         7.7500     8.0000
+      33         .33546E+04     .26126E+04         .80112E+08     .70699E+08         8.0000     8.2500
+      34         .26126E+04     .20347E+04         .70699E+08     .62391E+08         8.2500     8.5000
+      35         .20347E+04     .15846E+04         .62391E+08     .55060E+08         8.5000     8.7500
+      36         .15846E+04     .12341E+04         .55060E+08     .48590E+08         8.7500     9.0000
+      37         .12341E+04     .96112E+03         .48590E+08     .42881E+08         9.0000     9.2500
+      38         .96112E+03     .74852E+03         .42881E+08     .37842E+08         9.2500     9.5000
+      39         .74852E+03     .58295E+03         .37842E+08     .33396E+08         9.5000     9.7500
+      40         .58295E+03     .45400E+03         .33396E+08     .29472E+08         9.7500    10.0000
+      41         .45400E+03     .35358E+03         .29472E+08     .26009E+08        10.0000    10.2500
+      42         .35358E+03     .27536E+03         .26009E+08     .22953E+08        10.2500    10.5000
+      43         .27536E+03     .21445E+03         .22953E+08     .20255E+08        10.5000    10.7500
+      44         .21445E+03     .16702E+03         .20255E+08     .17875E+08        10.7500    11.0000
+      45         .16702E+03     .13007E+03         .17875E+08     .15775E+08        11.0000    11.2500
+      46         .13007E+03     .10130E+03         .15775E+08     .13921E+08        11.2500    11.5000
+      47         .10130E+03     .78893E+02         .13921E+08     .12286E+08        11.5000    11.7500
+      48         .78893E+02     .61442E+02         .12286E+08     .10842E+08        11.7500    12.0000
+      49         .61442E+02     .47851E+02         .10842E+08     .95680E+07        12.0000    12.2500
+      50         .47851E+02     .37266E+02         .95680E+07     .84437E+07        12.2500    12.5000
+      51         .37266E+02     .29023E+02         .84437E+07     .74516E+07        12.5000    12.7500
+      52         .29023E+02     .22603E+02         .74516E+07     .65760E+07        12.7500    13.0000
+      53         .22603E+02     .17604E+02         .65760E+07     .58033E+07        13.0000    13.2500
+      54         .17604E+02     .13710E+02         .58033E+07     .51214E+07        13.2500    13.5000
+0                FINE   FAST    ENERGY GROUP STRUCTURE (M=1.67482E-24 GRAM,  EV=1.60210E-12 ERG)
+0   GROUP          ENERGY RANGE (EV)               VELOCITY RANGE (CM/SEC)           LETHARGY RANGE
+      55         .13710E+02     .10677E+02         .51214E+07     .45196E+07        13.5000    13.7500
+      56         .10677E+02     .83153E+01         .45196E+07     .39885E+07        13.7500    14.0000
+      57         .83153E+01     .64759E+01         .39885E+07     .35199E+07        14.0000    14.2500
+      58         .64759E+01     .50435E+01         .35199E+07     .31063E+07        14.2500    14.5000
+      59         .50435E+01     .39279E+01         .31063E+07     .27413E+07        14.5000    14.7500
+      60         .39279E+01     .30590E+01         .27413E+07     .24192E+07        14.7500    15.0000
+      61         .30590E+01     .23824E+01         .24192E+07     .21349E+07        15.0000    15.2500
+      62         .23824E+01     .18554E+01         .21349E+07     .18841E+07        15.2500    15.5000
+
+                     ### USERFL END ###
+
+
+0                FINE   THERMAL ENERGY GROUP STRUCTURE (M=1.67482E-24 GRAM,  EV=1.60210E-12 ERG)
+0   GROUP          ENERGY RANGE (EV)               VELOCITY RANGE (CM/SEC)           LETHARGY RANGE
+       1         .18554E+01     .16374E+01         .18841E+07     .17699E+07        15.5000    15.6250
+       2         .16374E+01     .14450E+01         .17699E+07     .16627E+07        15.6250    15.7500
+       3         .14450E+01     .12752E+01         .16627E+07     .15619E+07        15.7500    15.8750
+       4         .12752E+01     .11253E+01         .15619E+07     .14673E+07        15.8750    16.0000
+       5         .11253E+01     .99312E+00         .14673E+07     .13784E+07        16.0000    16.1250
+       6         .99312E+00     .87643E+00         .13784E+07     .12949E+07        16.1250    16.2500
+       7         .87643E+00     .77344E+00         .12949E+07     .12164E+07        16.2500    16.3750
+       8         .77344E+00     .68256E+00         .12164E+07     .11427E+07        16.3750    16.5000
+       9         .68256E+00     .60236E+00         .11427E+07     .10735E+07        16.5000    16.6250
+      10         .60236E+00     .53158E+00         .10735E+07     .10085E+07        16.6250    16.7500
+      11         .53158E+00     .46912E+00         .10085E+07     .94736E+06        16.7500    16.8750
+      12         .46912E+00     .41399E+00         .94736E+06     .88996E+06        16.8750    17.0000
+      13         .41399E+00     .38925E+00         .88996E+06     .86296E+06        17.0000    17.0616
+      14         .38925E+00     .36528E+00         .86296E+06     .83596E+06        17.0616    17.1252
+      15         .36528E+00     .34206E+00         .83596E+06     .80896E+06        17.1252    17.1909
+      16         .34206E+00     .31961E+00         .80896E+06     .78196E+06        17.1909    17.2587
+      17         .31961E+00     .29792E+00         .78196E+06     .75496E+06        17.2587    17.3290
+      18         .29792E+00     .27699E+00         .75496E+06     .72796E+06        17.3290    17.4019
+      19         .27699E+00     .25683E+00         .72796E+06     .70096E+06        17.4019    17.4774
+      20         .25683E+00     .23742E+00         .70096E+06     .67396E+06        17.4774    17.5560
+      21         .23742E+00     .21878E+00         .67396E+06     .64696E+06        17.5560    17.6378
+      22         .21878E+00     .20090E+00         .64696E+06     .61996E+06        17.6378    17.7230
+      23         .20090E+00     .18378E+00         .61996E+06     .59296E+06        17.7230    17.8121
+      24         .18378E+00     .16743E+00         .59296E+06     .56596E+06        17.8121    17.9053
+      25         .16743E+00     .15183E+00         .56596E+06     .53896E+06        17.9053    18.0031
+      26         .15183E+00     .13700E+00         .53896E+06     .51196E+06        18.0031    18.1059
+      27         .13700E+00     .12293E+00         .51196E+06     .48496E+06        18.1059    18.2142
+      28         .12293E+00     .10963E+00         .48496E+06     .45797E+06        18.2142    18.3288
+      29         .10963E+00     .97080E-01         .45797E+06     .43096E+06        18.3288    18.4503
+      30         .97080E-01     .85297E-01         .43096E+06     .40396E+06        18.4503    18.5797
+      31         .85297E-01     .74276E-01         .40396E+06     .37696E+06        18.5797    18.7181
+      32         .74276E-01     .64017E-01         .37696E+06     .34996E+06        18.7181    18.8667
+      33         .64017E-01     .54520E-01         .34996E+06     .32296E+06        18.8667    19.0273
+      34         .54520E-01     .45785E-01         .32296E+06     .29596E+06        19.0273    19.2019
+      35         .45785E-01     .37813E-01         .29596E+06     .26896E+06        19.2019    19.3932
+      36         .37813E-01     .30602E-01         .26896E+06     .24196E+06        19.3932    19.6048
+      37         .30602E-01     .24154E-01         .24196E+06     .21496E+06        19.6048    19.8414
+      38         .24154E-01     .18467E-01         .21496E+06     .18796E+06        19.8414    20.1099
+      39         .18467E-01     .13543E-01         .18796E+06     .16096E+06        20.1099    20.4200
+      40         .13543E-01     .93805E-02         .16096E+06     .13396E+06        20.4200    20.7872
+      41         .93805E-02     .59804E-02         .13396E+06     .10696E+06        20.7872    21.2374
+      42         .59804E-02     .33423E-02         .10696E+06     .79964E+05        21.2374    21.8192
+      43         .33423E-02     .14663E-02         .79964E+05     .52964E+05        21.8192    22.6431
+      44         .14663E-02     .35238E-03         .52964E+05     .25964E+05        22.6431    24.0689
+      45         .35238E-03     .10000E-04         .25964E+05     .43740E+04        24.0689    27.6310
+1FUL1    Cell calculation for inner fuel (3.2 w/o UO2) with PIJ                  *** STEP *** INPUT FOR PIJ *** 
+                     GEOMETRY TYPE                             4     ( SQUARE CYLINDER )                                             
+                     NUMBER OF SUB - REGIONS                   7
+                     NUMBER OF  T  - REGIONS                   7
+                     NUMBER OF  R  - REGIONS                   3
+                     NUMBER OF  X  - REGIONS                   1
+                     OUTER BOUNDARY CONDITION (-1,0,1,2)       1
+                     DIRECTIONAL PIJ (1,2)                     1  INDICATED BY IC17
+                     NUMBER OF R OR X MESH                     7
+                     NUMBER OF THETA OR Y MESH                 0
+                     TOTAL NUMBER OF PIN RODS                  0
+                     NUMBER OF RINGS OF PIN ROD ARRAY          0
+                     NUMBER OF LATTICE CELLS TRACED            5
+                     PRINT CONTROL OF PIJ (0,1)                0
+                     ORDER OF GAUSS RADIAL INTEGRATION         6
+                     NO. OF DIVISION FOR ANGULAR INTEGRATION  45
+                     NUMBER OF ANNULAR DIVISION IN A PIN ROD   0
+                     DIVISION BY RPP  (0,1,2)                  0
+                     ANGLE RANGE BY DEGREE                    90
+                     PLOTER OPTION  (0,1)                      0
+0         ===R-REGION NO./T  ===
+                     1           1           1           2           3           3           3
+0         ===X-REGION NO./R  ===
+                     1           1           1
+0         ===MATERIAL NO./R  ===
+                     1           2           3
+0         ===R-X DIVISION    ===
+            .00000E+00  .23671E+00  .33476E+00  .41000E+00  .47500E+00  .52670E+00  .57830E+00  .63000E+00
+  STRAGE USED      69026 FROM    7000000
+
+          VOLUME OF (S)-REGION
+        1) 1.7603E-01   2) 1.7603E-01   3) 1.7603E-01   4) 1.8072E-01   5) 1.6270E-01   6) 1.7913E-01   7) 5.3695E-01
+          VOLUME OF (T)-REGION
+        1) 1.7603E-01   2) 1.7603E-01   3) 1.7603E-01   4) 1.8072E-01   5) 1.6270E-01   6) 1.7913E-01   7) 5.3695E-01
+          VOLUME OF (R)-REGION
+        1) 5.2810E-01   2) 1.8072E-01   3) 8.7878E-01
+          VOLUME OF (X)-REGION
+        1) 1.5876E+00
+          TOTAL VOLUME                    1.5876E+00
+
+          VOLUME(NUMERICAL)/VOLUME(ANALYTICAL) 
+            1) 1.00027     2)  .99924     3)  .99967     4)  .99978     5)  .99986     6)  .99988     7) 1.00263
+0 *** 1780 LINES DRAWN ON FT84 ***                                                  ****ELAPSED CPU TIME       0 SEC
+
+     NO. OF MATERIALS USED IN THE CASE =  4
+
+1
+
+                     MACROF
+
+           CASE I.D. : FUL1    
+           TITLE     : Cell calculation for inner fuel (3.2 w/o UO2) with PIJ                  
+
+
+
+                     COMPOSITION DATA LIST
+
+
+                               ## MATERIAL NAME -----  1   FUE1X01X ##
+
+           NUMBER OF NUCLIDE -----------        3
+           TEMPERATURE (K) -------------     900.00
+           MEAN CHORD LENGTH -----------     .82000
+           DANCOFF FACTOR --------------     .00000
+           WEIGHTING FLUX NAME FOR CHI - ASYMPTO.
+           IDENTIFICATION OF NUCLIDE ---    U050009     U080009     O060009
+           NUMBER DENSITY --------------  7.22700E-04 2.15850E-02 4.46160E-02
+           RESONANT INDICATOR ----------      2           2           0
+           LXMICR ----------------------      0           0           0
+           NUCLIDE-WISE DANCOFF FACTOR WILL BE CALCULATED AT SUBROUTINE(MAFSIG) ]] 
+
+                               ## MATERIAL NAME -----  2   CLD1X02X ##
+
+           NUMBER OF NUCLIDE -----------        3
+           TEMPERATURE (K) -------------     600.00
+           MEAN CHORD LENGTH -----------     .13000
+           DANCOFF FACTOR --------------     .00000
+           WEIGHTING FLUX NAME FOR CHI - ASYMPTO.
+           IDENTIFICATION OF NUCLIDE ---    ZRN0008     CRN0008     FEN0008
+           NUMBER DENSITY --------------  3.80320E-02 6.71520E-05 1.31290E-04
+           RESONANT INDICATOR ----------      0           0           0
+           LXMICR ----------------------      0           0           0
+
+                               ## MATERIAL NAME -----  3   MOD1X03X ##
+
+           NUMBER OF NUCLIDE -----------        2
+           TEMPERATURE (K) -------------     581.00
+           MEAN CHORD LENGTH -----------    1.00000
+           DANCOFF FACTOR --------------     .00000
+           WEIGHTING FLUX NAME FOR CHI - ASYMPTO.
+           IDENTIFICATION OF NUCLIDE ---    H01H008     O060008
+           NUMBER DENSITY --------------  4.75080E-02 2.37540E-02
+           RESONANT INDICATOR ----------      0           0
+           LXMICR ----------------------      0           0
+
+                               ## MATERIAL NAME -----  4   REFLX04X ##
+
+           NUMBER OF NUCLIDE -----------        6
+           TEMPERATURE (K) -------------     581.00
+           MEAN CHORD LENGTH -----------    1.00000
+           DANCOFF FACTOR --------------     .00000
+           WEIGHTING FLUX NAME FOR CHI - ASYMPTO.
+           IDENTIFICATION OF NUCLIDE ---    H01H008     O060008     FEN0008     CRN0008     NIN0008
+                                            MN50008
+           NUMBER DENSITY --------------  4.75080E-02 2.37540E-02 1.78860E-02 5.21400E-03 2.42940E-03
+                                          2.59770E-04
+           RESONANT INDICATOR ----------      0           0           0           0           0
+                                              0
+           LXMICR ----------------------      0           0           0           0           0
+                                              0
+
+                               ## RESONANT NUCLIDE NAME LIST ##
+
+           NUMBER OF RESONANT NUCLIDE --      2
+           RESONANT NUCLIDE NAME -------  U05   U08
+
+                               ## STANDARD TEMPERATUE ARRAY LIST (STND) ##
+
+  TAG         :    1        2        3        4        5        6        7        8        9        A
+  TAG         :    B        C
+  TEMPERATURE :    300.00   325.00   350.00   400.00   450.00   500.00   550.00   600.00   900.00  1200.00
+  TEMPERATURE :   1600.00  2100.00
+          STRAGE USED      91371 WITHIN    7000000 IN PIJ2-STEP
+
+
+
+                                    ******************************************
+                                    * CALCULATED NUCLIDE-WISE DANCOFF FACTOR *
+                                    ******************************************
+
+
+                               ## MATERIAL NAME -----  1   FUE1X01X ##
+
+           IDENTIFICATION OF NUCLIDE ----    U050009     U080009     O060009
+           NUCLIDE-WISE DANCOFF FACTOR---     .351965     .351965    1.000000
+          STRAGE USED      44158 WITHIN    7000000 IN PIJ2-STEP
+1
+
+          ===PIJ3 STEP===
+          ***FUL1    ***Cell calculation for inner fuel (3.2 w/o UO2) with PIJ                  *** IN FAST     RANGE ***
+
+          ITERATION PARAMETERS 
+          PRINT (1+2+4+8)(FLUX,XEC,PIJ,S)              0
+          MAX OF INNER ITERATIONS PER OUTER           50
+          MAX OF OUTER ITERATIONS                     50
+          EARLIST EXTRAPOLATION                        5
+          NUMBER OF ITERATIONS TESTED                  5
+          MINIMUM DELAY                                5
+          MONITOR PRINT(0,1)(SKIP,PRINT)              -1
+          CONVERGENCE CRITERION OF INNER      .10000E-03
+          CONVERGENCE CRITERION OF OUTER      .10000E-04
+          EXTRAPOLATION CRITERION             .10000E-02
+          OVER-RELAXATION (INITIAL)           .10000E+01
+          MAX EXTRAPOLATION                   .10000E+02
+          BASE FACTOR OF OVER-RELAXATION      .50000E+00
+
+          PROBLEM TYPE  
+          ITYPE (0/1  =EIGENVALUE/FIXED S)             1
+          IRANG (0/1/2=FAST/THERMAL/ALL)               0
+          IFIXS (0/1/2)                                0
+
+0            ITERATION POWER-SCALING   RESIDUE CRITERON
+
+              1          .17182E+00  .33414E-01  .10000E-04
+              2          .17687E+00  .50433E-02  .10000E-04
+              3          .17763E+00  .76123E-03  .10000E-04
+              4          .17769E+00  .43803E-03  .10000E-04
+              5          .17772E+00  .25211E-03  .10000E-04
+              6          .17774E+00  .14508E-03  .10000E-04
+              7          .17775E+00  .83447E-04  .10000E-04
+              8          .17776E+00  .48086E-04  .10000E-04
+              9          .17776E+00  .27642E-04  .10000E-04
+             10          .17776E+00  .15870E-04  .10000E-04
+             11          .17776E+00  .91791E-05  .10000E-04
+
+
+
+          === ITERATION END IN PIJF STEP ===
+          === FIXED SOURCE TYPE PROBLEM ===
+          TOTAL THERMAL INNER ITERATION COUNT             0
+          INITIAL SOURCE NORMALIZATION FACTOR    .27233E+01
+          THERMAL SOURCE NORMALIZATION FACTOR    .10000E+01
+          RENORMALIZATION FACTOR (INNER)         .00000E+00
+          RESIDUE IN FINAL INNER ITERATION       .00000E+00
+          FINAL FISSION SOURCE NORMALIZATION     .17776E+00
+          RESIDUE IN FINAL FISSION RATE          .91791E-05
+          STRAGE USED     138827 WITHIN    7000000 IN PIJ2-STEP
+
+
+
+         *** MIX-X-SECTION STEP IN *** FAST ENERGY RANGE
+          *** FUL1    ***Cell calculation for inner fuel (3.2 w/o UO2) with PIJ                  ***
+0         X-REGION  1***
+          SIGNED MAT ID BY R-REG =   1   2   3
+          ONE GROUP CONSTANTS
+          * ACTIVATION CROSS SECTION      .45598E-01
+          * FISSION    CROSS SECTION      .25381E-02
+          * NU*FISSION CROSS SECTION      .65104E-02
+          * TOTAL      CROSS SECTION      .23272E+00
+          * DIFFUSION  COEFFICIENT 1      .14323E+01
+          * DIFFUSION  COEFFICIENT 2      .14323E+01
+          * ABSORPTION CROSS SECTION      .96077E-02
+          * SCATTEROUT CROSS SECTION      .16238E-01
+          * INTEGRATED FLUX-X-REGION      .44456E+02
+          STRAGE USED     124206 WITHIN    7000000 IN PIJ2-STEP
+1
+
+          ===PIJ3 STEP===
+          ***FUL1    ***Cell calculation for inner fuel (3.2 w/o UO2) with PIJ                  *** IN THERMAL  RANGE ***
+
+          ITERATION PARAMETERS 
+          PRINT (1+2+4+8)(FLUX,XEC,PIJ,S)              0
+          MAX OF INNER ITERATIONS PER OUTER          200
+          MAX OF OUTER ITERATIONS                      1
+          EARLIST EXTRAPOLATION                        5
+          NUMBER OF ITERATIONS TESTED                  5
+          MINIMUM DELAY                                5
+          MONITOR PRINT(0,1)(SKIP,PRINT)              -1
+          CONVERGENCE CRITERION OF INNER      .10000E-03
+          CONVERGENCE CRITERION OF OUTER      .10000E-04
+          EXTRAPOLATION CRITERION             .10000E-02
+          OVER-RELAXATION (INITIAL)           .10000E+01
+          MAX EXTRAPOLATION                   .10000E+02
+          BASE FACTOR OF OVER-RELAXATION      .50000E+00
+
+          PROBLEM TYPE  
+          ITYPE (0/1  =EIGENVALUE/FIXED S)             1
+          IRANG (0/1/2=FAST/THERMAL/ALL)               1
+          IFIXS (0/1/2)                                0
+
+
+
+
+          === ITERATION END IN PIJF STEP ===
+          === FIXED SOURCE TYPE PROBLEM ===
+          TOTAL THERMAL INNER ITERATION COUNT            22
+          INITIAL SOURCE NORMALIZATION FACTOR    .72190E+00
+          THERMAL SOURCE NORMALIZATION FACTOR    .10000E+01
+          RENORMALIZATION FACTOR (INNER)         .10000E+01
+          RESIDUE IN FINAL INNER ITERATION       .22420E-05
+          FINAL FISSION SOURCE NORMALIZATION     .00000E+00
+          RESIDUE IN FINAL FISSION RATE          .50265E-11
+
+
+
+         *** MIX-X-SECTION STEP IN *** THER ENERGY RANGE
+          *** FUL1    ***Cell calculation for inner fuel (3.2 w/o UO2) with PIJ                  ***
+0         X-REGION  1***
+          SIGNED MAT ID BY R-REG =   1   2   3
+          ONE GROUP CONSTANTS
+          * ACTIVATION CROSS SECTION      .29426E+01
+          * FISSION    CROSS SECTION      .53256E-01
+          * NU*FISSION CROSS SECTION      .12977E+00
+          * TOTAL      CROSS SECTION      .74287E+00
+          * DIFFUSION  COEFFICIENT 1      .44871E+00
+          * DIFFUSION  COEFFICIENT 2      .44871E+00
+          * ABSORPTION CROSS SECTION      .75820E-01
+          * SCATTEROUT CROSS SECTION      .23657E-03
+          * INTEGRATED FLUX-X-REGION      .94916E+01
+1            ***  BARE REACTOR SPECTRUM CALCULATION *** OF STEP 15 ***
+          ***FUL1    ***Cell calculation for inner fuel (3.2 w/o UO2) with PIJ                  ***
+          *** BY B1 APPROXIMATION *** BUCKLING SERACH OPTION IS         0 (0/1:NO/YES) 
+          RATIO OF THERMAL SOURCE TO REMOVAL   .10000E+01
+          NEUTRON SPECTRUM PER LETHARGY
+            .36971E+00  .10550E+01  .22833E+01  .35106E+01  .50312E+01  .71374E+01  .64842E+01  .68526E+01  .64002E+01  .61354E+01
+            .74189E+01  .63396E+01  .43231E+01  .50122E+01  .44793E+01  .38704E+01  .34081E+01  .30337E+01  .27512E+01  .25188E+01
+            .23494E+01  .21700E+01  .21026E+01  .19911E+01  .19039E+01  .18664E+01  .18127E+01  .17688E+01  .17297E+01  .17187E+01
+            .16909E+01  .16713E+01  .16137E+01  .16610E+01  .16197E+01  .16101E+01  .15893E+01  .15731E+01  .15465E+01  .15393E+01
+            .15298E+01  .14905E+01  .14807E+01  .14534E+01  .14560E+01  .13619E+01  .14197E+01  .13510E+01  .13748E+01  .13330E+01
+            .11840E+01  .13031E+01  .10528E+01  .12402E+01  .12178E+01  .11851E+01  .95231E+00  .98909E+00  .11167E+01  .11155E+01
+            .11246E+01  .11164E+01  .12041E+01  .11805E+01  .11723E+01  .11575E+01  .11626E+01  .11901E+01  .12145E+01  .12347E+01
+            .12618E+01  .12896E+01  .13293E+01  .13812E+01  .14406E+01  .14836E+01  .15430E+01  .16188E+01  .17162E+01  .18317E+01
+            .19797E+01  .21576E+01  .23480E+01  .25493E+01  .27491E+01  .29298E+01  .30850E+01  .31996E+01  .32565E+01  .32506E+01
+            .31685E+01  .30143E+01  .27857E+01  .24975E+01  .21608E+01  .17991E+01  .14329E+01  .10852E+01  .77528E+00  .51631E+00
+            .31542E+00  .17254E+00  .80952E-01  .30622E-01  .80159E-02  .10129E-02  .24054E-04
+          NEUTRON CURRENT PER LETHARGY
+            .13700E-19  .39148E-19  .75937E-19  .10040E-18  .13126E-18  .19310E-18  .16113E-18  .15024E-18  .12270E-18  .94892E-19
+            .11695E-18  .10139E-18  .57224E-19  .59048E-19  .52749E-19  .45343E-19  .38817E-19  .33366E-19  .29264E-19  .25791E-19
+            .23349E-19  .20717E-19  .19703E-19  .18349E-19  .17084E-19  .15996E-19  .15616E-19  .15354E-19  .14613E-19  .13988E-19
+            .14024E-19  .13363E-19  .12782E-19  .13347E-19  .13320E-19  .13160E-19  .12965E-19  .12711E-19  .12270E-19  .12482E-19
+            .12389E-19  .11472E-19  .11570E-19  .10846E-19  .11751E-19  .99272E-20  .11559E-19  .10328E-19  .11132E-19  .98769E-20
+            .88101E-20  .10445E-19  .77107E-20  .10326E-19  .99236E-20  .95565E-20  .87566E-20  .84013E-20  .95161E-20  .94317E-20
+            .95807E-20  .94980E-20  .10351E-19  .10070E-19  .10079E-19  .97180E-20  .96299E-20  .98255E-20  .99140E-20  .99444E-20
+            .99743E-20  .99701E-20  .99685E-20  .99707E-20  .10027E-19  .10058E-19  .10142E-19  .10288E-19  .10520E-19  .10843E-19
+            .11324E-19  .11935E-19  .12571E-19  .13195E-19  .13737E-19  .14122E-19  .14321E-19  .14280E-19  .13952E-19  .13338E-19
+            .12422E-19  .11254E-19  .98681E-20  .83519E-20  .67753E-20  .52400E-20  .38299E-20  .26228E-20  .16669E-20  .97040E-21
+            .50883E-21  .23401E-21  .89801E-22  .26675E-22  .50543E-23  .38950E-24  .41205E-26
+          FAST FISSION              .24901E+00
+          FAST ABSORPTION           .36790E+00
+          FAST LEAKAGE              .54262E-18
+          TOTAL FISSION             .13309E+01
+          TOTAL ABSORPTION          .10000E+01
+          TOTAL LEAKAGE             .58391E-18
+          K-EFF= 1.33085 K-INF= 1.33085 UNDER GEOMTRICAL BUCKLING=  .10000E-19
+0                COARSE WHOLE   ENERGY GROUP STRUCTURE (M=1.67482E-24 GRAM,  EV=1.60210E-12 ERG)
+0   GROUP          ENERGY RANGE (EV)               VELOCITY RANGE (CM/SEC)           LETHARGY RANGE
+       1         .10000E+08     .18554E+01         .43740E+10     .18841E+07          .0000    15.5000
+       2         .18554E+01     .10000E-04         .18841E+07     .43740E+04        15.5000    27.6310
+
+
+1
+ *** STEP 20 FOR EFFECTIVE X-SECTION IN
+ ===CASEID=FUL1    =TITLE=Cell calculation for inner fuel (3.2 w/o UO2) with PIJ                  ===
+
+                MATERIAL-WISE POWER DISTRIBUTION 
+
+          MTNAME     VOLUME      RELATIVE    FISSILE     FERTILE     CONVERSION
+          NAME        (CC)       POWER       ABSORPTION  CAPTURE     RATIO
+
+          FUE1X01X   5.28101E-01 5.41122E-01 6.21999E-01 2.95746E-01 4.75476E-01
+           TOTAL     5.28101E-01 5.41122E-01 6.21999E-01 2.95746E-01 4.75476E-01
+
+1     **** CASE ID === FUL2     *** TITLE === Outer fuel (2.1 w/o UO2), Same geometry with the above case              ***
+
+
+     USE OF COLLISION PROB. ROUTINE (NO,CALL:0,1)             1
+     SELECT OF ROUTINE FOR FIX S CALC(NO,PIJ,1D SN ,2D SN , 
+      1D DIFF,2D DIFF:0,1,2,3,4,5)                            1
+     DANCOFF FACTOR BY(INPUT,PIJ,TONE:0,1,2)                  1
+     CALC OF THERMAL RANGE (EXCLUDED,INCLUDED:0,1)            1
+     PROCESS OF RESONANCE 2 RANGE(TABLELOOK,IR,PEACO:0,1,2)   2
+     FLUX CALCULATION BY RANGES(SKIP,CALC:0,1)                1
+     FAST RANGES FOR TRANSPORT CALC(0,1,2,3,4)                4
+     INDICATOR FOR ENRGY STRUCTURE OF UMCROSS (0,1,2,3)       3
+     CALC OF BARE REACTOR SPECTRUM(SKIP,P1,B1:0,1,2)         -2
+     COLLAPSE MACRO X-SECTION BY RANGE(SKIP,CALL:0,1)         1
+     INPUT OF GEOMETRY (NEW,SAME AS PREVIOUS CASE:0,1)        1
+     SELECT ROUTINE FOR EIGENVALUE CALC(NO,PIJ,1D SN,2D SN, 
+      1D DIFF,2D DIFF:0,1,2,3,4,5)                            0
+     COLLAPSE MACRO AFTER EIGENVALUE CALC(SKIP,CALL:0,1)      0
+     PREPARE MACRO FOR CITATION (SKIP,CALL:0,1)               0
+     TOTAL MICRO X-SECTION BY (HARMONIC,ARITHMETIC AV:1,2)    1
+     TRANSPORT MACRO X-SECTION BY (P0,P1,B1,SN:0,1,2,3)       2
+     DIFF COEF (INVERSE TR,BENOIST ISO,BENOIST ANISO:1,2,3)   1
+     REACTION RATE CALCULATION (0,1)                          0
+     PRINT OF MACRO-X (0,1,2)                                 0
+     BURN-UP CALCULATION (0,1:SKIP,EXECUTE)                   0
+
+     NO. OF MATERIALS USED IN THE CASE =  3
+
+1
+
+                     MACROF
+
+           CASE I.D. : FUL2    
+           TITLE     : Outer fuel (2.1 w/o UO2), Same geometry with the above case             
+
+
+
+                     COMPOSITION DATA LIST
+
+
+                               ## MATERIAL NAME -----  1   FUE2X06X ##
+
+           NUMBER OF NUCLIDE -----------        3
+           TEMPERATURE (K) -------------     900.00
+           MEAN CHORD LENGTH -----------     .82000
+           DANCOFF FACTOR --------------     .00000
+           WEIGHTING FLUX NAME FOR CHI - ASYMPTO.
+           IDENTIFICATION OF NUCLIDE ---    U050009     U080009     O060009
+           NUMBER DENSITY --------------  4.74280E-04 2.18310E-02 4.46100E-02
+           RESONANT INDICATOR ----------      2           2           0
+           LXMICR ----------------------      0           0           0
+           NUCLIDE-WISE DANCOFF FACTOR WILL BE CALCULATED AT SUBROUTINE(MAFSIG) ]] 
+
+                               ## MATERIAL NAME -----  2   CLD2X07X ##
+
+           NUMBER OF NUCLIDE -----------        3
+           TEMPERATURE (K) -------------     600.00
+           MEAN CHORD LENGTH -----------     .13000
+           DANCOFF FACTOR --------------     .00000
+           WEIGHTING FLUX NAME FOR CHI - ASYMPTO.
+           IDENTIFICATION OF NUCLIDE ---    ZRN0008     CRN0008     FEN0008
+           NUMBER DENSITY --------------  3.80320E-02 6.71520E-05 1.31290E-04
+           RESONANT INDICATOR ----------      0           0           0
+           LXMICR ----------------------      0           0           0
+
+                               ## MATERIAL NAME -----  3   MOD2X08X ##
+
+           NUMBER OF NUCLIDE -----------        2
+           TEMPERATURE (K) -------------     581.00
+           MEAN CHORD LENGTH -----------    1.00000
+           DANCOFF FACTOR --------------     .00000
+           WEIGHTING FLUX NAME FOR CHI - ASYMPTO.
+           IDENTIFICATION OF NUCLIDE ---    H01H008     O060008
+           NUMBER DENSITY --------------  4.75080E-02 2.37540E-02
+           RESONANT INDICATOR ----------      0           0
+           LXMICR ----------------------      0           0
+
+                               ## RESONANT NUCLIDE NAME LIST ##
+
+           NUMBER OF RESONANT NUCLIDE --      2
+           RESONANT NUCLIDE NAME -------  U05   U08
+
+                               ## STANDARD TEMPERATUE ARRAY LIST (STND) ##
+
+  TAG         :    1        2        3        4        5        6        7        8        9        A
+  TAG         :    B        C
+  TEMPERATURE :    300.00   325.00   350.00   400.00   450.00   500.00   550.00   600.00   900.00  1200.00
+  TEMPERATURE :   1600.00  2100.00
+          STRAGE USED      88142 WITHIN    7000000 IN PIJ2-STEP
+
+
+
+                                    ******************************************
+                                    * CALCULATED NUCLIDE-WISE DANCOFF FACTOR *
+                                    ******************************************
+
+
+                               ## MATERIAL NAME -----  1   FUE2X06X ##
+
+           IDENTIFICATION OF NUCLIDE ----    U050009     U080009     O060009
+           NUCLIDE-WISE DANCOFF FACTOR---     .351965     .351965    1.000000
+          STRAGE USED      44158 WITHIN    7000000 IN PIJ2-STEP
+1
+
+          ===PIJ3 STEP===
+          ***FUL2    ***Outer fuel (2.1 w/o UO2), Same geometry with the above case             *** IN FAST     RANGE ***
+
+          ITERATION PARAMETERS 
+          PRINT (1+2+4+8)(FLUX,XEC,PIJ,S)              0
+          MAX OF INNER ITERATIONS PER OUTER           50
+          MAX OF OUTER ITERATIONS                     50
+          EARLIST EXTRAPOLATION                        5
+          NUMBER OF ITERATIONS TESTED                  5
+          MINIMUM DELAY                                5
+          MONITOR PRINT(0,1)(SKIP,PRINT)              -1
+          CONVERGENCE CRITERION OF INNER      .10000E-03
+          CONVERGENCE CRITERION OF OUTER      .10000E-04
+          EXTRAPOLATION CRITERION             .10000E-02
+          OVER-RELAXATION (INITIAL)           .10000E+01
+          MAX EXTRAPOLATION                   .10000E+02
+          BASE FACTOR OF OVER-RELAXATION      .50000E+00
+
+          PROBLEM TYPE  
+          ITYPE (0/1  =EIGENVALUE/FIXED S)             1
+          IRANG (0/1/2=FAST/THERMAL/ALL)               0
+          IFIXS (0/1/2)                                0
+
+0            ITERATION POWER-SCALING   RESIDUE CRITERON
+
+              1          .15397E+00  .19129E-01  .10000E-04
+              2          .15146E+00  .25107E-02  .10000E-04
+              3          .15113E+00  .32949E-03  .10000E-04
+              4          .15111E+00  .18635E-03  .10000E-04
+              5          .15110E+00  .10547E-03  .10000E-04
+              6          .15109E+00  .59634E-04  .10000E-04
+              7          .15108E+00  .33751E-04  .10000E-04
+              8          .15108E+00  .19088E-04  .10000E-04
+              9          .15108E+00  .10788E-04  .10000E-04
+             10          .15108E+00  .60946E-05  .10000E-04
+
+
+
+          === ITERATION END IN PIJF STEP ===
+          === FIXED SOURCE TYPE PROBLEM ===
+          TOTAL THERMAL INNER ITERATION COUNT             0
+          INITIAL SOURCE NORMALIZATION FACTOR    .17875E+01
+          THERMAL SOURCE NORMALIZATION FACTOR    .10000E+01
+          RENORMALIZATION FACTOR (INNER)         .00000E+00
+          RESIDUE IN FINAL INNER ITERATION       .00000E+00
+          FINAL FISSION SOURCE NORMALIZATION     .15108E+00
+          RESIDUE IN FINAL FISSION RATE          .60946E-05
+
+
+                                    ENERGY GROUP STRUCTURE FOR USER'S MCROSS
+0                              ENERGY (EV)           LETHAGY         NUMBER OF   START     LENGTH OF
+                       NO.  UPPER   -    LOWER       WIDTH           I.M. GROUP  POSITION  SUBSECTION 
+                        1 961.1165  -  748.5183       .25000         100   100     1         500
+                        2 748.5183  -  582.9467       .25000         100   200   101
+                        3 582.9467  -  453.9993       .25000         100   300   201
+                        4 453.9993  -  353.5750       .25000         100   400   301
+                        5 353.5750  -  275.3645       .25000         100   500   401
+                        6 275.3645  -  214.4541       .25000         100   600     1         500
+                        7 214.4541  -  167.0170       .25000         100   700   101
+                        8 167.0170  -  130.0730       .25000         100   800   201
+                        9 130.0730  -  101.3009       .25000          50   850   301
+                       10 101.3009  -   78.8932       .25000          50   900   351
+                       11  78.8932  -   61.4421       .25000          50   950   401
+                       12  61.4421  -   47.8512       .25000          50  1000   451
+                       13  47.8512  -   37.2665       .25000          50  1050     1         500
+                       14  37.2665  -   29.0232       .25000          50  1100    51
+                       15  29.0232  -   22.6033       .25000          50  1150   101
+                       16  22.6033  -   17.6035       .25000          50  1200   151
+                       17  17.6035  -   13.7096       .25000          50  1250   201
+                       18  13.7096  -   10.6770       .25000          50  1300   251
+                       19  10.6770  -    8.3153       .25000          50  1350   301
+                       20   8.3153  -    6.4760       .25000          50  1400   351
+                       21   6.4760  -    5.0435       .25000          50  1450   401
+                       22   5.0435  -    3.9279       .25000          50  1500   451
+                       23   3.9279  -    3.0590       .25000          50  1550     1         150
+                       24   3.0590  -    2.3824       .25000          50  1600    51
+                       25   2.3824  -    1.8554       .25000          50  1650   101
+          STRAGE USED     138773 WITHIN    7000000 IN PIJ2-STEP
+
+
+
+         *** MIX-X-SECTION STEP IN *** FAST ENERGY RANGE
+          *** FUL2    ***Outer fuel (2.1 w/o UO2), Same geometry with the above case             ***
+0         X-REGION  1***
+          SIGNED MAT ID BY R-REG =   1   2   3
+          ONE GROUP CONSTANTS
+          * ACTIVATION CROSS SECTION      .46828E-01
+          * FISSION    CROSS SECTION      .19976E-02
+          * NU*FISSION CROSS SECTION      .51857E-02
+          * TOTAL      CROSS SECTION      .23328E+00
+          * DIFFUSION  COEFFICIENT 1      .14289E+01
+          * DIFFUSION  COEFFICIENT 2      .14289E+01
+          * ABSORPTION CROSS SECTION      .89225E-02
+          * SCATTEROUT CROSS SECTION      .16764E-01
+          * INTEGRATED FLUX-X-REGION      .43758E+02
+          STRAGE USED     124206 WITHIN    7000000 IN PIJ2-STEP
+1
+
+          ===PIJ3 STEP===
+          ***FUL2    ***Outer fuel (2.1 w/o UO2), Same geometry with the above case             *** IN THERMAL  RANGE ***
+
+          ITERATION PARAMETERS 
+          PRINT (1+2+4+8)(FLUX,XEC,PIJ,S)              0
+          MAX OF INNER ITERATIONS PER OUTER          200
+          MAX OF OUTER ITERATIONS                      1
+          EARLIST EXTRAPOLATION                        5
+          NUMBER OF ITERATIONS TESTED                  5
+          MINIMUM DELAY                                5
+          MONITOR PRINT(0,1)(SKIP,PRINT)              -1
+          CONVERGENCE CRITERION OF INNER      .10000E-03
+          CONVERGENCE CRITERION OF OUTER      .10000E-04
+          EXTRAPOLATION CRITERION             .10000E-02
+          OVER-RELAXATION (INITIAL)           .10000E+01
+          MAX EXTRAPOLATION                   .10000E+02
+          BASE FACTOR OF OVER-RELAXATION      .50000E+00
+
+          PROBLEM TYPE  
+          ITYPE (0/1  =EIGENVALUE/FIXED S)             1
+          IRANG (0/1/2=FAST/THERMAL/ALL)               1
+          IFIXS (0/1/2)                                0
+
+
+
+
+          === ITERATION END IN PIJF STEP ===
+          === FIXED SOURCE TYPE PROBLEM ===
+          TOTAL THERMAL INNER ITERATION COUNT            22
+          INITIAL SOURCE NORMALIZATION FACTOR    .73355E+00
+          THERMAL SOURCE NORMALIZATION FACTOR    .10000E+01
+          RENORMALIZATION FACTOR (INNER)         .10000E+01
+          RESIDUE IN FINAL INNER ITERATION       .24171E-05
+          FINAL FISSION SOURCE NORMALIZATION     .00000E+00
+          RESIDUE IN FINAL FISSION RATE          .58423E-11
+
+
+
+         *** MIX-X-SECTION STEP IN *** THER ENERGY RANGE
+          *** FUL2    ***Outer fuel (2.1 w/o UO2), Same geometry with the above case             ***
+0         X-REGION  1***
+          SIGNED MAT ID BY R-REG =   1   2   3
+          ONE GROUP CONSTANTS
+          * ACTIVATION CROSS SECTION      .31221E+01
+          * FISSION    CROSS SECTION      .38401E-01
+          * NU*FISSION CROSS SECTION      .93571E-01
+          * TOTAL      CROSS SECTION      .75674E+00
+          * DIFFUSION  COEFFICIENT 1      .44048E+00
+          * DIFFUSION  COEFFICIENT 2      .44048E+00
+          * ABSORPTION CROSS SECTION      .59334E-01
+          * SCATTEROUT CROSS SECTION      .18564E-03
+          * INTEGRATED FLUX-X-REGION      .12324E+02
+1            ***  BARE REACTOR SPECTRUM CALCULATION *** OF STEP 15 ***
+          ***FUL2    ***Outer fuel (2.1 w/o UO2), Same geometry with the above case             ***
+          *** BY B1 APPROXIMATION *** BUCKLING SERACH OPTION IS         0 (0/1:NO/YES) 
+          RATIO OF THERMAL SOURCE TO REMOVAL   .10000E+01
+          NEUTRON SPECTRUM PER LETHARGY
+            .36964E+00  .10549E+01  .22831E+01  .35102E+01  .50307E+01  .71369E+01  .64841E+01  .68536E+01  .64041E+01  .61418E+01
+            .74305E+01  .63515E+01  .43312E+01  .50224E+01  .44891E+01  .38792E+01  .34161E+01  .30411E+01  .27581E+01  .25254E+01
+            .23558E+01  .21761E+01  .21088E+01  .19972E+01  .19100E+01  .18726E+01  .18190E+01  .17753E+01  .17363E+01  .17257E+01
+            .16982E+01  .16791E+01  .16216E+01  .16701E+01  .16295E+01  .16205E+01  .16006E+01  .15853E+01  .15599E+01  .15546E+01
+            .15453E+01  .15075E+01  .15015E+01  .14745E+01  .14797E+01  .13849E+01  .14468E+01  .13771E+01  .14134E+01  .13692E+01
+            .12231E+01  .13458E+01  .10889E+01  .12827E+01  .12719E+01  .12442E+01  .98834E+00  .10274E+01  .11604E+01  .11644E+01
+            .11706E+01  .11640E+01  .12549E+01  .12310E+01  .12250E+01  .12220E+01  .12329E+01  .12585E+01  .12848E+01  .13088E+01
+            .13421E+01  .13801E+01  .14372E+01  .15190E+01  .16123E+01  .16867E+01  .17859E+01  .19114E+01  .20688E+01  .22545E+01
+            .24847E+01  .27569E+01  .30527E+01  .33682E+01  .36870E+01  .39860E+01  .42524E+01  .44629E+01  .45928E+01  .46302E+01
+            .45553E+01  .43695E+01  .40697E+01  .36742E+01  .32003E+01  .26808E+01  .21472E+01  .16347E+01  .11733E+01  .78464E+00
+            .48103E+00  .26383E+00  .12412E+00  .46960E-01  .12300E-01  .15544E-02  .36490E-04
+          NEUTRON CURRENT PER LETHARGY
+            .13702E-19  .39156E-19  .75946E-19  .10041E-18  .13126E-18  .19310E-18  .16113E-18  .15025E-18  .12276E-18  .94978E-19
+            .11711E-18  .10155E-18  .57316E-19  .59155E-19  .52853E-19  .45438E-19  .38902E-19  .33441E-19  .29332E-19  .25854E-19
+            .23409E-19  .20772E-19  .19758E-19  .18403E-19  .17138E-19  .16049E-19  .15672E-19  .15413E-19  .14672E-19  .14049E-19
+            .14089E-19  .13430E-19  .12849E-19  .13429E-19  .13414E-19  .13259E-19  .13073E-19  .12826E-19  .12393E-19  .12626E-19
+            .12532E-19  .11622E-19  .11760E-19  .11023E-19  .11977E-19  .10114E-19  .11825E-19  .10557E-19  .11518E-19  .10176E-19
+            .91719E-20  .10855E-19  .80298E-20  .10750E-19  .10463E-19  .10140E-19  .90150E-20  .87719E-20  .99306E-20  .99028E-20
+            .10010E-19  .99497E-20  .10828E-19  .10541E-19  .10579E-19  .10341E-19  .10303E-19  .10462E-19  .10558E-19  .10615E-19
+            .10688E-19  .10751E-19  .10860E-19  .11044E-19  .11301E-19  .11512E-19  .11820E-19  .12236E-19  .12782E-19  .13456E-19
+            .14332E-19  .15384E-19  .16492E-19  .17607E-19  .18631E-19  .19459E-19  .20028E-19  .20250E-19  .20045E-19  .19396E-19
+            .18272E-19  .16731E-19  .14819E-19  .12661E-19  .10365E-19  .80844E-20  .59568E-20  .41105E-20  .26310E-20  .15419E-20
+            .81340E-21  .37605E-21  .14510E-21  .43182E-22  .81957E-23  .63189E-24  .65276E-26
+          FAST FISSION              .19927E+00
+          FAST ABSORPTION           .34361E+00
+          FAST LEAKAGE              .54511E-18
+          TOTAL FISSION             .12344E+01
+          TOTAL ABSORPTION          .10000E+01
+          TOTAL LEAKAGE             .59795E-18
+          K-EFF= 1.23438 K-INF= 1.23438 UNDER GEOMTRICAL BUCKLING=  .10000E-19
+
+
+1
+ *** STEP 20 FOR EFFECTIVE X-SECTION IN
+ ===CASEID=FUL2    =TITLE=Outer fuel (2.1 w/o UO2), Same geometry with the above case             ===
+
+                MATERIAL-WISE POWER DISTRIBUTION 
+
+          MTNAME     VOLUME      RELATIVE    FISSILE     FERTILE     CONVERSION
+          NAME        (CC)       POWER       ABSORPTION  CAPTURE     RATIO
+
+          FUE2X06X   5.28101E-01 5.01617E-01 5.67586E-01 3.34261E-01 5.88918E-01
+           TOTAL     5.28101E-01 5.01617E-01 5.67586E-01 3.34261E-01 5.88918E-01
+
+1     **** CASE ID === CORE     *** TITLE === Sample for CITATION-3D(X-Y-Z), 1/8 CORE                                  ***
+
+
+     USE OF COLLISION PROB. ROUTINE (NO,CALL:0,1)             0
+     SELECT OF ROUTINE FOR FIX S CALC(NO,PIJ,1D SN ,2D SN , 
+      1D DIFF,2D DIFF:0,1,2,3,4,5)                            0
+     DANCOFF FACTOR BY(INPUT,PIJ,TONE:0,1,2)                  0
+     CALC OF THERMAL RANGE (EXCLUDED,INCLUDED:0,1)            1
+     PROCESS OF RESONANCE 2 RANGE(TABLELOOK,IR,PEACO:0,1,2)   0
+     FLUX CALCULATION BY RANGES(SKIP,CALC:0,1)                0
+     FAST RANGES FOR TRANSPORT CALC(0,1,2,3,4)                0
+     INDICATOR FOR ENRGY STRUCTURE OF UMCROSS (0,1,2,3)       0
+     CALC OF BARE REACTOR SPECTRUM(SKIP,P1,B1:0,1,2)          0
+     COLLAPSE MACRO X-SECTION BY RANGE(SKIP,CALL:0,1)         1
+     INPUT OF GEOMETRY (NEW,SAME AS PREVIOUS CASE:0,1)        0
+     SELECT ROUTINE FOR EIGENVALUE CALC(NO,PIJ,1D SN,2D SN, 
+      1D DIFF,2D DIFF:0,1,2,3,4,5)                            5
+     COLLAPSE MACRO AFTER EIGENVALUE CALC(SKIP,CALL:0,1)      0
+     PREPARE MACRO FOR CITATION (SKIP,CALL:0,1)               0
+     TOTAL MICRO X-SECTION BY (HARMONIC,ARITHMETIC AV:1,2)    2
+     TRANSPORT MACRO X-SECTION BY (P0,P1,B1,SN:0,1,2,3)       0
+     DIFF COEF (INVERSE TR,BENOIST ISO,BENOIST ANISO:1,2,3)   1
+     REACTION RATE CALCULATION (0,1)                          0
+     PRINT OF MACRO-X (0,1,2)                                 0
+     BURN-UP CALCULATION (0,1:SKIP,EXECUTE)                   0
+
+
+          ***** MULTI-DIMENSIONAL DIFFUSION CODE INPUT STEP-I *****
+
+
+      NUMBER OF MATERIALS USED IN THIS ROUTINE                                            3
+      NUMBER OF X-REGIONS ( =0 MIX CROSS SECTION STEP IS SKIPPED)                         0
+      OPTION TO SELECT DIFFUSION COEFFICIENT (1,2,3,<0) = (D1,D2,D1&D2,SPECIAL)          -1
+      OPTION OF MATERIAL DEPENDENT FISSION SPECTRUM USE (0,1) = (NO,YES)                  1
+      OPTION OF DELAYED NEUTRON DATA CREATE ON MACRO FILE (0,1) = (NO,YES)                1
+1                      **********CITATION - REVISION 2 (JULY 1971) - SUPPLEMENT 3 (JULY 1972)**********
+0                              *********THIS JOB WAS RUN ON  92-28-09********************************
+
+
+
+
+
+ 5.0cm mesh size in each direction                                       
+ EPS(FLUX) < 1.0E-4, EPS(KEFF) < 1.0E-5,  ZONE 4:BLACKNESS               
+0
+0GENERAL CONTROL INPUT - SECTION 001
+0   0   0   0   0   0   0   0   0   0   0   0   1   0   0   0   0   0   0   0   0   0   0   0   0
+    1   0   0   0   0   0   0   0   0   0   0   1   1   0   0   0   0   0   0   0   0   0   0   1
+  900 100  10   2   3   0   0   0   0   0   0   0   0   0   0   0   0   0  60  30  60  30  60 120
+   1.500000E+00  5.000000E-01  1.000000E+10  1.000000E+24  0.000000E+00  1.000000E+00
+0
+0NEUTRON FLUX PROBLEM DESCRIPTION - SECTION 003
+0   0   0   0   0  11   0   0   0   0   0   1   0   0   1   0   1   4   1   0   0   0   0   0   0
+   1.000000E-04  1.000000E-05  1.000000E-04  1.000000E-04  1.000000E-04  0.000000E+00
+   0.000000E+00  0.000000E+00  3.411000E+03  1.000000E+00  1.250000E-01  0.000000E+00
+0
+0LEFT,TOP,RIGHT,BOTTOM,FRONT,BACK BOUNDARY CONDITIONS ARE
+   0.000000E+00  4.692000E-01  4.692000E-01  0.000000E+00  4.692000E-01  0.000000E+00
+0
+0ROD BND. CONSTANT FOR ALL GROUPS IN ZONE  4  IS  4.692000E-01
+0 THREE DIMENSIONAL SLAB GEOMETRY (X,Y,Z)  WIDTH  1.700000E+02  HEIGHT  1.700000E+02  DEPTH  1.900000E+02
+
+
+0 REGION SPECIFICATIONS
+    PTS  REGION WIDTH
+      2  1.000000E+01     4  2.000000E+01     4  2.000000E+01     4  2.000000E+01     4  2.000000E+01     4  2.000000E+01
+      4  2.000000E+01     4  2.000000E+01     4  2.000000E+01
+0   PTS  REGION HEIGHT
+      4  2.000000E+01     4  2.000000E+01     4  2.000000E+01     4  2.000000E+01     4  2.000000E+01     4  2.000000E+01
+      4  2.000000E+01     4  2.000000E+01     2  1.000000E+01
+0   PTS  REGION DEPTH
+      4  2.000000E+01    34  1.700000E+02
+0 X-DIR. POINTS  34         Y-DIR. POINTS  34         Z-DIR. POINTS  38
+0 DISTANCES TO MESH INTERVAL INTERFACES
+0    J   DIST.
+     2   5.000    3  10.000    4  15.000    5  20.000    6  25.000    7  30.000    8  35.000    9  40.000   10  45.000
+    11  50.000   12  55.000   13  60.000   14  65.000   15  70.000   16  75.000   17  80.000   18  85.000   19  90.000
+    20  95.000   21 100.000   22 105.000   23 110.000   24 115.000   25 120.000   26 125.000   27 130.000   28 135.000
+    29 140.000   30 145.000   31 150.000   32 155.000   33 160.000   34 165.000   35 170.000
+0    I   DIST.
+     2   5.000    3  10.000    4  15.000    5  20.000    6  25.000    7  30.000    8  35.000    9  40.000   10  45.000
+    11  50.000   12  55.000   13  60.000   14  65.000   15  70.000   16  75.000   17  80.000   18  85.000   19  90.000
+    20  95.000   21 100.000   22 105.000   23 110.000   24 115.000   25 120.000   26 125.000   27 130.000   28 135.000
+    29 140.000   30 145.000   31 150.000   32 155.000   33 160.000   34 165.000   35 170.000
+0    KB   DIST
+     2   5.000    3  10.000    4  15.000    5  20.000    6  25.000    7  30.000    8  35.000    9  40.000   10  45.000
+    11  50.000   12  55.000   13  60.000   14  65.000   15  70.000   16  75.000   17  80.000   18  85.000   19  90.000
+    20  95.000   21 100.000   22 105.000   23 110.000   24 115.000   25 120.000   26 125.000   27 130.000   28 135.000
+    29 140.000   30 145.000   31 150.000   32 155.000   33 160.000   34 165.000   35 170.000   36 175.000   37 180.000
+    38 185.000   39 190.000
+0 DISTANCES TO FLUX POINTS
+0    J   DIST.
+     1   2.500    2   7.500    3  12.500    4  17.500    5  22.500    6  27.500    7  32.500    8  37.500    9  42.500
+    10  47.500   11  52.500   12  57.500   13  62.500   14  67.500   15  72.500   16  77.500   17  82.500   18  87.500
+    19  92.500   20  97.500   21 102.500   22 107.500   23 112.500   24 117.500   25 122.500   26 127.500   27 132.500
+    28 137.500   29 142.500   30 147.500   31 152.500   32 157.500   33 162.500   34 167.500
+0    I   DIST.
+     1   2.500    2   7.500    3  12.500    4  17.500    5  22.500    6  27.500    7  32.500    8  37.500    9  42.500
+    10  47.500   11  52.500   12  57.500   13  62.500   14  67.500   15  72.500   16  77.500   17  82.500   18  87.500
+    19  92.500   20  97.500   21 102.500   22 107.500   23 112.500   24 117.500   25 122.500   26 127.500   27 132.500
+    28 137.500   29 142.500   30 147.500   31 152.500   32 157.500   33 162.500   34 167.500
+0    KB   DIST
+     1   2.500    2   7.500    3  12.500    4  17.500    5  22.500    6  27.500    7  32.500    8  37.500    9  42.500
+    10  47.500   11  52.500   12  57.500   13  62.500   14  67.500   15  72.500   16  77.500   17  82.500   18  87.500
+    19  92.500   20  97.500   21 102.500   22 107.500   23 112.500   24 117.500   25 122.500   26 127.500   27 132.500
+    28 137.500   29 142.500   30 147.500   31 152.500   32 157.500   33 162.500   34 167.500   35 172.500   36 177.500
+    37 182.500   38 187.500
+0
+0ZONE INPUT BY REGION
+0  PLANE NUMBER  1
+    3   3   3   3   4   4   4   4   4
+    3   3   3   3   3   3   4   4   4
+    3   3   3   3   3   3   3   4   4
+    3   3   3   3   3   3   3   3   4
+    3   3   3   3   3   3   3   3   4
+    3   3   3   3   3   3   3   3   3
+    3   3   3   3   3   3   3   3   3
+    3   3   3   3   3   3   3   3   3
+    3   3   3   3   3   3   3   3   3
+0  PLANE NUMBER  2
+    3   3   3   3   4   4   4   4   4
+    2   2   2   3   3   3   4   4   4
+    1   1   2   2   2   3   3   4   4
+    1   1   1   1   2   2   3   3   4
+    1   1   1   1   1   2   2   3   4
+    1   1   1   1   1   1   2   3   3
+    1   1   1   1   1   1   2   2   3
+    1   1   1   1   1   1   1   2   3
+    1   1   1   1   1   1   1   2   3
+0MEMORY LOCATIONS RESERVED FOR DATA STORAGE---7000000
+ MEMORY LOCATIONS USED FOR THIS PROBLEM------- 623855
+ MEMORY LOCATIONS NOT USED--------------------6376145
+          STORAGE USED         7 FROM      9981 IN CIT1 STEP
+          MATERIAL NO.
+                   1         2         3
+
+     NO. OF MATERIALS USED IN THE CASE =  3
+
+1                      **********CITATION - REVISION 2 (JULY 1971) - SUPPLEMENT 3 (JULY 1972)**********
+0                              *********THIS JOB WAS RUN ON  92-28-09********************************
+
+
+
+
+
+ 5.0cm mesh size in each direction                                       
+ EPS(FLUX) < 1.0E-4, EPS(KEFF) < 1.0E-5,  ZONE 4:BLACKNESS               
+0CORE STORAGE DIFFERENCE (WORDS) EQUATION CONSTANTS I/OINSTEAD OF STORED  179452
+0
+0EQUATION CONSTANTS WILL BE STORED IN CORE
+0NUMBER OF---COLUMNS, ROWS, PLANES, GROUPS, UPSCAT, DOWNSCAT, REGIONS, AND ZONES       34   34   38    2    1    1  162    4
+0MEMORY LOCATIONS RESERVED FOR DATA STORAGE---7000000
+ MEMORY LOCATIONS USED FOR THIS PROBLEM------- 623975
+ MEMORY LOCATIONS NOT USED--------------------6376025
+15.0cm mesh size in each direction                                       
+ EPS(FLUX) < 1.0E-4, EPS(KEFF) < 1.0E-5,  ZONE 4:BLACKNESS               
+ LINE RELAXATION WILL BE DONE ON ROWS -   1 INNER ITERATION(S)
+ ITERATION  FLUX CHANGE    BETA      MU-1      MU-2      MU-3            K
+     1      1.67828E+00 1.000E+00 3.357E+00-1.747E+00 0.000E+00      1.002537
+0ERROR STOP NUMBER 12   1   1   1   1 -7.31121E+10
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+     2     -1.02168E+01 1.976E+00-1.630E+01-8.043E-01 6.484E-01      2.051331
+0ERROR STOP NUMBER 12   1   1   1   1 -4.28930E+09
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+     3      2.47824E+03 1.953E+00 2.236E+03-2.317E+03-1.883E+00       .432963
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+     4      1.70246E+05 1.932E+00 1.703E+05-8.753E+04-1.290E+00      2.023970
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+     5      3.38172E+04 1.912E+00 3.382E+04-1.113E+04-8.792E-01       .569224
+0ERROR STOP NUMBER 12   1   1   1   1 -2.39819E+09
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+     6     -8.73877E+04 1.895E+00-8.739E+04 4.061E+03-8.375E-01      1.652285
+0ERROR STOP NUMBER 12   1   1   1   1 -6.54933E+08
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+     7     -6.53843E+04 1.879E+00-6.538E+04 2.509E+04-7.270E-01       .830210
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+     8      8.52536E+03 1.866E+00 8.525E+03-8.408E+03-5.774E-01      1.434639
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+     9     -6.61840E+04 1.855E+00-6.619E+04 7.472E+03-5.653E-01      1.156029
+0ERROR STOP NUMBER 12   1   1   1   1 -1.31248E+10
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+    10      5.52679E+04 1.845E+00 5.527E+04-2.515E+04 9.698E-02      1.209430
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+    11      4.88698E+04 1.837E+00 4.887E+04-7.757E+03-7.895E+00      1.625803
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+    12      1.53686E+04 1.831E+00 1.537E+04-8.312E+03-2.078E+00       .942797
+0ERROR STOP NUMBER 12   1   1   1   1 -6.42893E+10
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+    13     -2.79715E+04 1.825E+00-2.797E+04 6.120E+03-1.403E+00      2.076980
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+    14     -2.30837E+05 1.821E+00-2.308E+05 2.374E+03-1.209E+00       .770899
+0ERROR STOP NUMBER 12   1   1   1   1 -1.34276E+11
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+    15     -2.36353E+04 1.817E+00-2.364E+04 2.002E+04-1.167E+00      2.185770
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+    16      3.12779E+04 1.814E+00 3.128E+04-5.181E+03-1.018E+00       .732044
+0ERROR STOP NUMBER 12   1   1   1   1 -4.35041E+10
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+    17      6.77369E+04 1.811E+00 6.774E+04-3.075E+04-1.031E+00      2.021586
+0ERROR STOP NUMBER 12   1   1   1   1 -1.48466E+10
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+    18      1.24617E+04 1.809E+00 1.246E+04-4.509E+03-9.211E-01       .792641
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+    19      2.29801E+04 1.808E+00 2.298E+04-1.239E+04-9.257E-01      1.803353
+0ERROR STOP NUMBER 12   1   1   1   1 -4.90557E+10
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+    20     -4.74330E+03 1.807E+00-4.744E+03 3.139E+03-8.564E-01       .907894
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+    21      6.67758E+03 1.644E+00 6.676E+03-4.325E+03-6.237E-01      1.516254
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+    22     -1.14207E+04 1.644E+00-1.142E+04 1.069E+04-5.112E-01      1.162825
+0ERROR STOP NUMBER 12   1   1   1   1 -1.37326E+10
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+    23     -1.60218E+05 1.644E+00-1.602E+05 9.214E+04-4.850E-01      1.347236
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+    24      4.28727E+03 1.644E+00 4.287E+03-2.437E+03-4.801E-01      1.263570
+0ERROR STOP NUMBER 12   1   1   1   1 -1.39789E+10
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+    25     -8.45383E+03 1.644E+00-8.456E+03 1.460E+03-3.615E-01      1.300836
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+    26     -6.33203E+03 1.644E+00-6.331E+03 3.705E+03-2.859E-01      1.296259
+0ERROR STOP NUMBER 12   1   1   1   1 -5.55456E+09
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+    27      2.94690E+03 1.644E+00 2.946E+03-1.336E+03 8.266E-01      1.290188
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+    28     -9.54032E+03 1.644E+00-9.544E+03 7.232E+03-1.218E+00      1.303272
+0ERROR STOP NUMBER 12   1   1   1   1 -1.94215E+09
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+    29     -2.14439E+04 1.644E+00-2.144E+04 4.977E+03-1.383E+00      1.291472
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+    30     -5.63354E+03 1.644E+00-5.633E+03 4.290E+03-6.672E-01      1.302422
+0ERROR STOP NUMBER 12   1   1   1   1 -3.90220E+08
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+    31     -2.82932E+03 1.516E+00-2.829E+03 2.753E+03-7.149E-01      1.295777
+0ERROR STOP NUMBER 12   1   1   1   1 -6.69467E+07
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+    32      6.11809E+03 1.516E+00 6.116E+03-5.482E+03-3.751E-01      1.299579
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+    33     -8.87900E+03 1.516E+00-8.880E+03 1.533E+03-7.255E-01      1.298072
+0ERROR STOP NUMBER 12   1   1   1   1 -2.34313E+08
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+    34      9.68384E+03 1.516E+00 9.683E+03-6.125E+02-1.165E-01      1.299076
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+    35      1.12186E+05 1.516E+00 1.122E+05-4.263E+03-3.227E+00      1.298889
+0ERROR STOP NUMBER 12   1   1   1   1 -5.61181E+07
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+    36      2.45111E+03 1.516E+00 2.451E+03-1.654E+03 4.047E-01      1.299194
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+    37      2.72730E+04 1.516E+00 2.728E+04-1.594E+04 1.501E+00      1.299281
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+    38     -4.87859E+03 1.516E+00-4.879E+03 1.282E+03 8.329E-01      1.299428
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+    39     -6.75937E+03 1.516E+00-6.758E+03 6.345E+02 9.972E-01      1.299545
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+    40      9.68540E+02 1.516E+00 9.684E+02-6.599E+02 9.566E-01      1.299655
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+    41      1.75126E+04 1.412E+00 1.753E+04-8.141E+02 2.743E-01      1.299750
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+    42     -9.38736E+02 1.412E+00-9.388E+02 4.537E+02 1.578E+00      1.299833
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+    43     -1.84801E+03 1.412E+00-1.846E+03 2.898E+02 9.337E-01      1.299911
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+    44     -5.40175E+03 1.412E+00-5.399E+03 3.000E+03 1.006E+00      1.299982
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+    45     -3.54906E+02 1.412E+00-3.548E+02 2.578E+02 9.766E-01      1.300049
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+    46      5.25597E+02 1.412E+00 5.241E+02-2.154E+02 9.791E-01      1.300112
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+    47     -3.88241E+02 1.412E+00-3.890E+02 4.494E+01 9.747E-01      1.300172
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+    48      7.87683E+02 1.412E+00 7.857E+02-1.479E+02 9.744E-01      1.300230
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+    49     -4.13580E+02 1.412E+00-4.141E+02 1.038E+01 9.725E-01      1.300286
+    50      1.02032E+01 1.412E+00 1.018E+01-8.255E-01 9.719E-01      1.300339
+    51      2.13968E+00 1.330E+00 2.349E+00 1.938E-01 3.319E-01      1.300386
+    52      8.03360E-01 1.330E+00 1.179E+00 3.042E-01 1.381E+00      1.300431
+    53      4.49057E-01 1.330E+00 1.008E+00 3.662E-01 9.595E-01      1.300475
+    54      2.32912E-01 1.330E+00 7.516E-01 4.352E-01 9.924E-01      1.300517
+    55     -1.26040E-01 1.330E+00-6.672E-01-5.185E-01 9.802E-01      1.300558
+    56      6.64724E-02 1.330E+00-4.609E-01-5.781E-01 9.785E-01      1.300598
+    57     -3.45116E-02 1.330E+00-5.537E-01-2.558E-01 9.768E-01      1.300637
+    58     -1.57866E-02 1.330E+00 4.416E-01 6.146E-01 9.758E-01      1.300676
+    59     -1.26700E-02 1.330E+00 7.899E-01 5.332E-01 9.753E-01      1.300714
+    60     -1.12647E-02 1.330E+00 8.778E-01 9.781E-01 9.750E-01      1.300751
+    61     -8.52317E-03 1.330E+00 7.481E-01 9.779E-01 9.747E-01      1.300787
+    62     -9.08214E-03 1.330E+00 1.057E+00 9.777E-01 9.747E-01      1.300823
+    63     -6.54000E-03 1.330E+00 7.136E-01 9.776E-01 9.748E-01      1.300858
+    64     -6.38556E-03 1.330E+00 9.700E-01 9.776E-01 9.749E-01      1.300893
+    65     -5.65678E-03 1.330E+00 8.802E-01 9.776E-01 9.749E-01      1.300928
+    66     -5.28342E-03 1.330E+00 9.287E-01 9.775E-01 9.749E-01      1.300962
+    67     -5.05131E-03 1.330E+00 9.510E-01 9.778E-01 9.750E-01      1.300995
+    68     -4.86439E-03 1.330E+00 9.581E-01 9.777E-01 9.757E-01      1.301028
+    69     -4.64064E-03 1.330E+00 9.494E-01 9.778E-01 9.757E-01      1.301061
+    70     -4.47166E-03 1.330E+00 9.591E-01 9.779E-01 9.761E-01      1.301093
+    71     -4.29434E-03 1.330E+00 9.561E-01 9.781E-01 9.760E-01      1.301125
+    72     -4.14336E-03 1.330E+00 9.607E-01 9.781E-01 9.766E-01      1.301156
+    73     -3.99512E-03 1.330E+00 9.602E-01 9.783E-01 9.770E-01      1.301187
+    74     -3.85928E-03 1.330E+00 9.621E-01 9.783E-01 9.772E-01
+           -1.26322E-01   EXTRAPOLATION WITH      32.6062            1.302221
+    75     -3.33691E-03 1.000E+00 8.613E-01 4.127E-01 3.218E+01      1.302231
+    76     -4.90224E-03 1.330E+00 1.464E+00 1.502E+00 8.263E-03      1.302251
+    77     -4.57466E-03 1.330E+00 9.286E-01 8.788E-01 8.564E-01      1.302269
+    78     -4.32283E-03 1.330E+00 9.406E-01 9.433E-01 1.117E+00      1.302287
+    79     -3.94344E-03 1.330E+00 9.083E-01 9.468E-01 9.729E-01      1.302305
+    80     -3.91543E-03 1.330E+00 9.890E-01 9.695E-01 1.007E+00      1.302323
+    81     -3.94058E-03 1.330E+00 1.002E+00 9.937E-01 1.010E+00      1.302341
+    82     -3.71295E-03 1.330E+00 9.385E-01 9.837E-01 1.006E+00      1.302359
+    83     -3.59511E-03 1.330E+00 9.647E-01 9.646E-01 1.008E+00      1.302377
+    84     -3.47763E-03 1.330E+00 9.638E-01 9.643E-01 1.008E+00      1.302394
+    85     -3.36850E-03 1.330E+00 9.652E-01 9.697E-01 1.006E+00      1.302411
+    86     -3.26169E-03 1.330E+00 9.650E-01 9.761E-01 1.007E+00      1.302428
+    87     -3.16221E-03 1.330E+00 9.663E-01 9.740E-01 1.005E+00      1.302445
+    88     -3.06672E-03 1.330E+00 9.667E-01 9.740E-01 1.004E+00      1.302461
+    89     -2.97230E-03 1.330E+00 9.662E-01 9.762E-01 1.002E+00      1.302478
+    90     -2.88850E-03 1.330E+00 9.689E-01 9.790E-01 1.002E+00      1.302494
+    91     -2.80440E-03 1.330E+00 9.681E-01 9.831E-01 1.001E+00      1.302510
+    92     -2.72644E-03 1.330E+00 9.695E-01 9.827E-01 1.002E+00      1.302526
+    93     -2.65354E-03 1.330E+00 9.706E-01 9.839E-01 9.988E-01      1.302541
+    94     -2.58064E-03 1.330E+00 9.699E-01 9.837E-01 1.000E+00      1.302556
+    95     -2.51544E-03 1.330E+00 9.722E-01 9.832E-01 9.985E-01      1.302572
+    96     -2.45214E-03 1.330E+00 9.724E-01 9.840E-01 9.992E-01      1.302586
+    97     -2.38961E-03 1.330E+00 9.721E-01 9.830E-01 9.966E-01      1.302601
+    98     -2.33543E-03 1.330E+00 9.750E-01 9.844E-01 9.982E-01      1.302615
+    99     -2.28077E-03 1.330E+00 9.743E-01 9.833E-01 9.971E-01      1.302630
+   100     -2.22892E-03 1.330E+00 9.750E-01 9.840E-01 9.962E-01      1.302644
+   101     -2.18266E-03 1.330E+00 9.771E-01 9.837E-01 9.965E-01      1.302657
+   102     -2.13486E-03 1.330E+00 9.760E-01 9.840E-01 9.962E-01      1.302671
+   103     -2.09230E-03 1.330E+00 9.780E-01 9.841E-01 9.957E-01      1.302684
+   104     -2.05249E-03 1.330E+00 9.789E-01 9.838E-01 9.938E-01      1.302697
+   105     -2.01237E-03 1.330E+00 9.784E-01 9.839E-01 9.950E-01      1.302710
+   106     -1.97750E-03 1.330E+00 9.807E-01 9.847E-01 9.940E-01      1.302723
+   107     -1.94234E-03 1.330E+00 9.803E-01 9.834E-01 9.942E-01      1.302735
+   108     -1.91039E-03 1.330E+00 9.816E-01 9.851E-01 9.921E-01      1.302747
+   109     -1.88100E-03 1.330E+00 9.827E-01 9.837E-01 9.967E-01      1.302760
+   110     -1.85066E-03 1.330E+00 9.820E-01 9.851E-01 9.921E-01      1.302771
+   111     -1.82617E-03 1.330E+00 9.849E-01 9.837E-01 9.942E-01      1.302783
+   112     -1.79982E-03 1.330E+00 9.838E-01 9.846E-01 9.909E-01      1.302794
+   113     -1.77681E-03 1.330E+00 9.854E-01 9.849E-01 9.924E-01      1.302806
+   114     -1.75601E-03 1.330E+00 9.865E-01 9.841E-01 9.936E-01      1.302817
+   115     -1.73497E-03 1.330E+00 9.863E-01 9.847E-01 9.918E-01      1.302828
+   116     -1.71703E-03 1.330E+00 9.879E-01 9.845E-01 9.917E-01      1.302838
+   117     -1.69969E-03 1.330E+00 9.882E-01 9.850E-01 9.914E-01      1.302849
+   118     -1.68294E-03 1.330E+00 9.885E-01 9.843E-01 9.937E-01      1.302859
+   119     -1.66911E-03 1.330E+00 9.901E-01 9.853E-01 9.912E-01      1.302869
+   120     -1.65540E-03 1.330E+00 9.901E-01 9.844E-01 9.904E-01      1.302879
+   121     -1.64402E-03 1.330E+00 9.915E-01 9.849E-01 9.902E-01      1.302889
+   122     -1.63323E-03 1.330E+00 9.918E-01 9.848E-01 9.930E-01      1.302899
+   123     -1.62321E-03 1.330E+00 9.922E-01 9.855E-01 9.904E-01      1.302908
+   124     -1.61535E-03 1.330E+00 9.935E-01 9.843E-01 9.911E-01      1.302917
+   125     -1.61022E-03 1.330E+00 9.952E-01 9.850E-01 9.884E-01      1.302927
+   126     -1.60855E-03 1.330E+00 9.974E-01 9.855E-01 9.932E-01      1.302936
+   127     -1.60754E-03 1.330E+00 9.978E-01 9.847E-01 9.871E-01      1.302944
+   128     -1.60158E-03 1.330E+00 9.947E-01 9.848E-01 9.916E-01      1.302953
+   129     -1.59627E-03 1.330E+00 9.951E-01 9.855E-01 9.893E-01      1.302962
+   130     -1.59049E-03 1.330E+00 9.948E-01 9.850E-01 9.899E-01      1.302970
+   131     -1.58399E-03 1.330E+00 9.943E-01 9.851E-01 9.891E-01
+           -1.18992E-01   EXTRAPOLATION WITH      75.0000            1.303595
+   132     -1.02359E-03 1.000E+00 6.452E-01 1.197E+00 7.527E+01      1.303594
+   133      1.05894E-03 1.330E+00-1.033E+00-1.251E+00 2.701E-03      1.303591
+   134      9.65118E-04 1.330E+00 9.124E-01 1.036E+00 8.647E-01      1.303589
+   135      9.06944E-04 1.330E+00 9.406E-01 6.786E-01 9.320E-01      1.303586
+   136      8.42690E-04 1.330E+00 9.300E-01 1.122E+00 9.945E-01      1.303584
+   137      7.81655E-04 1.330E+00 9.284E-01 7.050E-01 9.518E-01      1.303582
+   138      7.91669E-04 1.330E+00 1.014E+00 1.058E+00 9.698E-01      1.303579
+   139      7.38621E-04 1.330E+00 9.337E-01 8.397E-01 9.522E-01      1.303577
+   140      7.10249E-04 1.330E+00 9.623E-01 8.679E-01 9.526E-01      1.303575
+   141      6.80089E-04 1.330E+00 9.582E-01 1.204E+00 9.632E-01      1.303573
+   142      6.53863E-04 1.330E+00 9.621E-01 5.362E-01 9.663E-01      1.303571
+   143      6.28471E-04 1.330E+00 9.618E-01 1.136E+00 9.477E-01      1.303569
+   144      6.04153E-04 1.330E+00 9.619E-01 6.292E-01 9.480E-01      1.303567
+   145      5.81264E-04 1.330E+00 9.627E-01 1.286E+00 9.406E-01      1.303565
+   146      5.58734E-04 1.330E+00 9.618E-01 3.136E-01 9.914E-01      1.303563
+   147      5.37872E-04 1.330E+00 9.632E-01 9.717E-01 9.220E-01      1.303561
+   148      5.17368E-04 1.330E+00 9.624E-01 9.783E-01 9.573E-01      1.303559
+   149      4.98295E-04 1.330E+00 9.636E-01 9.711E-01 9.611E-01      1.303558
+   150      4.79460E-04 1.330E+00 9.627E-01 9.737E-01 9.420E-01      1.303556
+   151      4.61936E-04 1.330E+00 9.639E-01 9.748E-01 9.774E-01      1.303554
+   152      4.45724E-04 1.330E+00 9.653E-01 9.751E-01 9.124E-01      1.303553
+   153      4.29630E-04 1.330E+00 9.643E-01 9.735E-01 9.556E-01      1.303551
+   154      4.14371E-04 1.330E+00 9.649E-01 9.757E-01 9.739E-01      1.303550
+   155      4.00305E-04 1.330E+00 9.665E-01 9.751E-01 9.512E-01      1.303548
+   156      3.85761E-04 1.330E+00 9.641E-01 9.796E-01 9.715E-01      1.303547
+   157      3.72529E-04 1.330E+00 9.661E-01 9.656E-01 9.399E-01      1.303545
+   158      3.60131E-04 1.330E+00 9.671E-01 9.816E-01 9.753E-01      1.303544
+   159      3.48091E-04 1.330E+00 9.669E-01 9.703E-01 9.131E-01      1.303543
+   160      3.36409E-04 1.330E+00 9.668E-01 9.751E-01 9.442E-01      1.303542
+   161      3.25441E-04 1.330E+00 9.677E-01 9.791E-01 9.438E-01      1.303540
+   162      3.14951E-04 1.330E+00 9.681E-01 9.703E-01 9.710E-01      1.303539
+   163      3.04461E-04 1.330E+00 9.670E-01 9.780E-01 9.743E-01      1.303538
+   164      2.95043E-04 1.330E+00 9.694E-01 9.787E-01 9.421E-01      1.303537
+   165      2.86460E-04 1.330E+00 9.712E-01 9.757E-01 9.879E-01      1.303536
+   166      2.76804E-04 1.330E+00 9.666E-01 9.725E-01 9.152E-01      1.303535
+   167      2.68459E-04 1.330E+00 9.701E-01 9.771E-01 9.414E-01      1.303533
+   168      2.60353E-04 1.330E+00 9.701E-01 9.766E-01 9.655E-01      1.303532
+   169      2.52962E-04 1.330E+00 9.719E-01 9.774E-01 9.454E-01      1.303532
+   170      2.45094E-04 1.330E+00 9.691E-01 9.841E-01 9.708E-01      1.303531
+   171      2.38419E-04 1.330E+00 9.730E-01 9.795E-01 9.119E-01      1.303530
+   172      2.31504E-04 1.330E+00 9.712E-01 9.805E-01 1.044E+00
+            9.36419E-03   EXTRAPOLATION WITH      40.4597            1.303492
+   173      3.11732E-04 1.000E+00 1.347E+00 3.075E+00 3.918E+01      1.303492
+   174      2.71678E-04 1.330E+00 8.718E-01 6.757E-01-3.800E-02      1.303492
+   175      3.68476E-04 1.330E+00 1.357E+00 9.141E-01 5.163E-01      1.303492
+   176      2.27213E-04 1.330E+00 6.169E-01 1.107E+00 9.937E-01      1.303492
+   177      3.06487E-04 1.330E+00 1.349E+00 9.187E-01 9.397E-01      1.303492
+   178      2.42114E-04 1.330E+00 7.902E-01 1.578E+00 1.004E+00      1.303493
+   179      3.48091E-04 1.330E+00 1.438E+00 4.632E-01 9.285E-01      1.303493
+   180      1.74522E-04 1.330E+00 5.015E-01 2.404E+00 1.003E+00      1.303493
+   181      2.64168E-04 1.330E+00 1.514E+00 3.171E-01 8.413E-01      1.303493
+   182      1.35303E-04 1.330E+00 5.123E-01 1.778E+00 9.934E-01      1.303493
+   183      1.82509E-04 1.330E+00 1.349E+00 4.717E-01 7.929E-01      1.303493
+   184      1.12534E-04 1.330E+00 6.167E-01 9.240E-01 1.126E+00      1.303493
+   185      9.51290E-05 1.330E+00 8.454E-01 9.195E-01 9.059E-01      1.303493
+0END OF EIGENVALUE CALCULATION - ITERATION TIME   .028 MINUTES
+0CONVERGENCE INDICATION BY MINIMIZING THE SUM OF THE SQUARES OF THE RESIDUES - RELATIVE ABSORPTION  1.0000019   K  1.3034968
+0    LEAKAGE  2.37362E+15  TOTAL LOSSES  2.47855E+19  TOTAL PRODUCTIONS  3.23078E+19  REACTOR POWER(WATTS)  3.41100E+09
+0ADJOINT PROBLEM FOLLOWS
+ ITERATION  FLUX CHANGE    BETA      MU-1      MU-2      MU-3            K
+     1      9.56187E+29 1.000E+00 1.912E+30-1.782E+00 0.000E+00      1.303493
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+     2      2.44576E+02 1.976E+00 2.446E+02 2.349E-01 0.000E+00      1.303493
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+     3     -4.25498E+04 1.953E+00-4.272E+04 8.153E+02 0.000E+00      1.303493
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+     4      1.10791E+02 1.932E+00 1.108E+02-4.510E+01 0.000E+00      1.303493
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+     5      1.94795E+04 1.912E+00 1.966E+04-2.221E+03 0.000E+00      1.303493
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+     6     -3.55054E+04 1.895E+00-3.551E+04 4.060E+03 0.000E+00      1.303493
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+     7      5.53959E+03 1.879E+00 5.539E+03-2.459E+03 0.000E+00      1.303493
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+     8      2.05648E+03 1.866E+00 2.057E+03-1.441E+03 0.000E+00      1.303493
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+     9     -1.38179E+04 1.855E+00-1.382E+04 1.407E+03 0.000E+00      1.303493
+0ERROR STOP NUMBER 12   1   1   1   1 -6.62411E-20
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+    10     -1.49640E+03 1.845E+00-1.496E+03 7.265E+02 0.000E+00      1.303493
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+    11      3.03855E+04 1.837E+00 3.037E+04-1.096E+04 0.000E+00      1.303493
+0ERROR STOP NUMBER 12   1   1   1   1 -1.05065E-19
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+    12      2.04875E+04 1.831E+00 2.049E+04-9.109E+03 0.000E+00      1.303493
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+    13      7.26168E+03 1.825E+00 7.262E+03-2.658E+03 0.000E+00      1.303493
+0ERROR STOP NUMBER 12   1   1   1   1 -2.84714E-20
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+    14     -4.64261E+03 1.821E+00-4.643E+03 3.123E+03 0.000E+00      1.303493
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+    15     -1.41498E+04 1.817E+00-1.415E+04 1.192E+04 0.000E+00      1.303493
+0ERROR STOP NUMBER 12   1   1   1   1 -1.53269E-20
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+    16     -6.07362E+03 1.814E+00-6.073E+03 3.232E+03 0.000E+00      1.303493
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+    17      5.19989E+04 1.811E+00 5.199E+04-2.853E+04 0.000E+00      1.303493
+0ERROR STOP NUMBER 12   1   1   1   1 -5.23317E-20
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+    18      2.09634E+03 1.809E+00 2.096E+03-1.627E+03 0.000E+00      1.303493
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+    19     -3.49047E+03 1.808E+00-3.492E+03 1.691E+03 0.000E+00      1.303493
+0ERROR STOP NUMBER 12   1   1   1   1 -5.32318E-20
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+    20     -1.39263E+04 1.807E+00-1.392E+04 5.836E+03 0.000E+00      1.303493
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+    21      2.20086E+04 1.644E+00 2.201E+04-1.213E+03 0.000E+00      1.303493
+0ERROR STOP NUMBER 12   1   1   1   1 -1.12871E-20
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+    22      1.21226E+04 1.644E+00 1.212E+04-4.036E+03 0.000E+00      1.303493
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+    23      2.22102E+03 1.644E+00 2.221E+03-1.884E+03 0.000E+00      1.303493
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+    24     -2.03738E+03 1.644E+00-2.038E+03 8.511E+02 0.000E+00      1.303493
+0ERROR STOP NUMBER 12   1   1   1   1 -1.16198E-21
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+    25      4.99211E+03 1.644E+00 4.990E+03-1.255E+03 0.000E+00      1.303493
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+    26      2.96283E+04 1.644E+00 2.963E+04-1.150E+03 0.000E+00      1.303493
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+    27      6.61065E+04 1.644E+00 6.611E+04-3.626E+02 0.000E+00      1.303493
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+    28      3.09331E+02 1.644E+00 3.093E+02-3.005E+02 0.000E+00      1.303493
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+    29      1.92023E+03 1.644E+00 1.926E+03-1.241E+03 0.000E+00      1.303493
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+    30      3.81968E+03 1.644E+00 3.822E+03-8.784E+02 0.000E+00      1.303493
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+    31     -1.19263E+03 1.516E+00-1.193E+03 6.905E+02 0.000E+00      1.303493
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+    32     -1.67116E+03 1.516E+00-1.670E+03 3.405E+02 0.000E+00      1.303493
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+    33      3.93499E+03 1.516E+00 3.933E+03-4.513E+02 0.000E+00      1.303493
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+    34     -4.99617E+02 1.516E+00-4.997E+02 4.296E+01 0.000E+00      1.303493
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+    35      2.96660E+03 1.516E+00 2.961E+03-8.450E+01 0.000E+00      1.303493
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+    36     -4.62238E+02 1.516E+00-4.624E+02 1.050E+02 0.000E+00      1.303493
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+    37      7.46343E+02 1.516E+00 7.447E+02-3.925E+02 0.000E+00      1.303493
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+    38      4.73625E+02 1.516E+00 4.743E+02-9.315E+01 0.000E+00      1.303493
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+    39     -5.89409E+01 1.516E+00-5.907E+01 5.674E+01 0.000E+00      1.303493
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+    40     -3.45811E+01 1.516E+00-3.399E+01 1.340E+01 0.000E+00      1.303493
+0ERROR STOP NUMBER 12
+ A NEGATIVE FLUX WAS CALCULATED, OR FLUX WAS CALCULATED GREATER THAN 1.0E+35
+    41     -3.86386E+01 1.412E+00-3.752E+01 1.275E+01 0.000E+00      1.303493
+    42      2.86620E+00 1.412E+00 2.792E+00-6.169E-01 0.000E+00      1.303493
+    43      8.31454E-01 1.412E+00 1.122E+00 3.878E-01 0.000E+00      1.303493
+    44      5.05917E-01 1.412E+00 1.114E+00 2.536E-01 0.000E+00      1.303493
+    45      2.01245E-01 1.412E+00 5.990E-01 4.765E-01 0.000E+00      1.303493
+    46      1.25957E-01 1.412E+00 7.518E-01 4.865E-01 0.000E+00      1.303493
+    47      7.34781E-02 1.412E+00 6.568E-01 5.518E-01 0.000E+00      1.303493
+    48      4.06599E-02 1.412E+00 5.940E-01 6.054E-01 0.000E+00      1.303493
+    49      2.55921E-02 1.412E+00 6.550E-01 5.619E-01 0.000E+00      1.303493
+    50      1.62537E-02 1.412E+00 6.514E-01 5.189E-01 0.000E+00      1.303493
+    51      9.75633E-03 1.412E+00 6.100E-01 6.133E-01 0.000E+00      1.303493
+    52      7.63535E-03 1.412E+00 7.902E-01 5.320E-01 0.000E+00      1.303493
+    53      6.28257E-03 1.412E+00 8.291E-01 8.771E-01 0.000E+00      1.303493
+    54      4.61888E-03 1.412E+00 7.398E-01 6.396E-01 0.000E+00      1.303493
+    55      4.55248E-03 1.412E+00 9.902E-01 2.360E-01 0.000E+00      1.303493
+    56      2.75600E-03 1.412E+00 6.081E-01 8.787E-01 0.000E+00      1.303493
+    57      2.45965E-03 1.412E+00 8.949E-01 9.830E-01 0.000E+00      1.303493
+    58      2.05624E-03 1.412E+00 8.380E-01 9.831E-01 0.000E+00      1.303493
+    59      2.02143E-03 1.412E+00 9.851E-01 9.818E-01 0.000E+00      1.303493
+    60      1.90604E-03 1.412E+00 9.448E-01 9.842E-01 0.000E+00      1.303493
+    61      1.88076E-03 1.412E+00 9.886E-01 9.838E-01 0.000E+00      1.303493
+    62      1.85943E-03 1.412E+00 9.905E-01 9.837E-01 0.000E+00      1.303493
+    63      1.83785E-03 1.412E+00 9.902E-01 9.853E-01 0.000E+00      1.303493
+    64      1.81890E-03 1.412E+00 9.915E-01 9.823E-01 0.000E+00      1.303493
+    65      1.80066E-03 1.412E+00 9.918E-01 9.846E-01 0.000E+00      1.303493
+    66      1.78683E-03 1.412E+00 9.941E-01 9.840E-01 0.000E+00      1.303493
+    67      1.78075E-03 1.412E+00 9.984E-01 9.846E-01 0.000E+00      1.303493
+    68      1.76704E-03 1.412E+00 9.941E-01 9.852E-01 0.000E+00      1.303493
+    69      1.75619E-03 1.412E+00 9.956E-01 9.838E-01 0.000E+00      1.303493
+    70      1.74379E-03 1.412E+00 9.947E-01 9.858E-01 0.000E+00      1.303493
+    71      1.73473E-03 1.412E+00 9.965E-01 9.829E-01 0.000E+00      1.303493
+    72      1.73104E-03 1.412E+00 9.996E-01 9.850E-01 0.000E+00      1.303493
+    73      1.71530E-03 1.412E+00 9.926E-01 9.840E-01 0.000E+00      1.303493
+    74      1.71363E-03 1.412E+00 1.001E+00 9.847E-01 0.000E+00      1.303493
+    75      1.69587E-03 1.412E+00 9.913E-01 9.840E-01 0.000E+00      1.303493
+    76      1.68967E-03 1.412E+00 9.980E-01 9.842E-01 0.000E+00      1.303493
+    77      1.67334E-03 1.412E+00 9.920E-01 9.840E-01 0.000E+00      1.303493
+    78      1.66929E-03 1.412E+00 9.992E-01 9.844E-01 0.000E+00      1.303493
+    79      1.65319E-03 1.412E+00 9.920E-01 9.831E-01 0.000E+00      1.303493
+    80      1.65224E-03 1.412E+00 1.001E+00 9.846E-01 0.000E+00      1.303493
+    81      1.62780E-03 1.412E+00 9.868E-01 9.832E-01 0.000E+00      1.303493
+    82      1.62423E-03 1.412E+00 9.994E-01 9.843E-01 0.000E+00      1.303493
+    83      1.60444E-03 1.412E+00 9.894E-01 9.835E-01 0.000E+00      1.303493
+    84      1.60527E-03 1.412E+00 1.002E+00 9.831E-01 0.000E+00      1.303493
+    85      1.57952E-03 1.412E+00 9.855E-01 9.847E-01 0.000E+00      1.303493
+    86      1.57976E-03 1.412E+00 1.002E+00 9.835E-01 0.000E+00      1.303493
+    87      1.49298E-03 1.354E+00 9.466E-01 9.287E-01 0.000E+00      1.303493
+    88      1.48451E-03 1.354E+00 9.958E-01 9.806E-01 0.000E+00      1.303493
+    89      1.46151E-03 1.354E+00 9.860E-01 9.785E-01 0.000E+00      1.303493
+    90      1.44517E-03 1.354E+00 9.903E-01 9.791E-01 0.000E+00      1.303493
+    91      1.37877E-03 1.303E+00 9.554E-01 9.274E-01 0.000E+00      1.303493
+    92      1.35410E-03 1.303E+00 9.835E-01 9.587E-01 0.000E+00      1.303493
+    93      1.34754E-03 1.303E+00 9.965E-01 9.655E-01 0.000E+00      1.303493
+    94      1.31750E-03 1.303E+00 9.790E-01 9.808E-01 0.000E+00      1.303493
+    95      1.30951E-03 1.303E+00 9.952E-01 9.730E-01 0.000E+00      1.303493
+    96      1.26064E-03 1.303E+00 9.639E-01 9.730E-01 0.000E+00      1.303493
+    97      1.25360E-03 1.303E+00 9.957E-01 9.734E-01 0.000E+00      1.303493
+    98      1.22285E-03 1.303E+00 9.767E-01 9.865E-01 0.000E+00      1.303493
+    99      1.20699E-03 1.303E+00 9.882E-01 9.861E-01 0.000E+00      1.303493
+   100      1.16634E-03 1.303E+00 9.675E-01 9.853E-01 0.000E+00      1.303493
+   101      1.15514E-03 1.303E+00 9.915E-01 9.854E-01 0.000E+00      1.303493
+   102      1.12915E-03 1.303E+00 9.786E-01 9.876E-01 0.000E+00      1.303493
+   103      1.11961E-03 1.303E+00 9.927E-01 9.850E-01 0.000E+00      1.303493
+   104      1.09780E-03 1.303E+00 9.816E-01 9.860E-01 0.000E+00      1.303493
+   105      1.08325E-03 1.303E+00 9.878E-01 9.868E-01 0.000E+00      1.303493
+   106      1.06812E-03 1.303E+00 9.871E-01 9.870E-01 0.000E+00      1.303493
+   107      1.04880E-03 1.303E+00 9.830E-01 9.855E-01 0.000E+00      1.303493
+   108      1.03474E-03 1.303E+00 9.876E-01 9.863E-01 0.000E+00      1.303493
+   109      1.01912E-03 1.303E+00 9.859E-01 9.861E-01 0.000E+00      1.303493
+   110      1.00350E-03 1.303E+00 9.857E-01 9.883E-01 0.000E+00      1.303493
+   111      9.88960E-04 1.303E+00 9.865E-01 9.857E-01 0.000E+00      1.303493
+   112      9.74655E-04 1.303E+00 9.865E-01 9.859E-01 0.000E+00      1.303493
+   113      9.59992E-04 1.303E+00 9.859E-01 9.889E-01 0.000E+00      1.303493
+   114      9.45330E-04 1.303E+00 9.857E-01 9.873E-01 0.000E+00      1.303493
+   115      9.31025E-04 1.303E+00 9.858E-01 9.854E-01 0.000E+00      1.303493
+   116      9.18865E-04 1.303E+00 9.879E-01 9.885E-01 0.000E+00      1.303493
+   117      9.02057E-04 1.303E+00 9.826E-01 9.887E-01 0.000E+00      1.303493
+   118      8.92043E-04 1.303E+00 9.898E-01 9.859E-01 0.000E+00      1.303493
+   119      8.77023E-04 1.303E+00 9.840E-01 9.873E-01 0.000E+00      1.303493
+   120      8.62598E-04 1.303E+00 9.844E-01 9.879E-01 0.000E+00      1.303493
+   121      8.54373E-04 1.303E+00 9.913E-01 9.889E-01 0.000E+00      1.303493
+   122      8.36372E-04 1.303E+00 9.798E-01 9.860E-01 0.000E+00      1.303493
+   123      8.27670E-04 1.303E+00 9.904E-01 9.866E-01 0.000E+00      1.303493
+   124      8.13961E-04 1.303E+00 9.843E-01 9.865E-01 0.000E+00      1.303493
+   125      7.99060E-04 1.303E+00 9.825E-01 9.888E-01 0.000E+00      1.303493
+   126      7.90715E-04 1.303E+00 9.903E-01 9.882E-01 0.000E+00      1.303493
+   127      7.75695E-04 1.303E+00 9.818E-01 9.856E-01 0.000E+00      1.303493
+   128      7.66277E-04 1.303E+00 9.886E-01 9.875E-01 0.000E+00      1.303493
+   129      7.51853E-04 1.303E+00 9.819E-01 9.873E-01 0.000E+00      1.303493
+   130      7.43389E-04 1.303E+00 9.895E-01 9.880E-01 0.000E+00      1.303493
+   131      7.29561E-04 1.303E+00 9.821E-01 9.857E-01 0.000E+00      1.303493
+   132      7.20501E-04 1.303E+00 9.883E-01 9.886E-01 0.000E+00      1.303493
+   133      7.07865E-04 1.303E+00 9.832E-01 9.881E-01 0.000E+00      1.303493
+   134      6.98090E-04 1.303E+00 9.869E-01 9.861E-01 0.000E+00      1.303493
+   135      6.86407E-04 1.303E+00 9.840E-01 9.868E-01 0.000E+00      1.303493
+   136      6.77824E-04 1.303E+00 9.882E-01 9.862E-01 0.000E+00      1.303493
+   137      6.65545E-04 1.303E+00 9.826E-01 9.874E-01 0.000E+00      1.303493
+   138      6.57797E-04 1.303E+00 9.890E-01 9.897E-01 0.000E+00      1.303493
+   139      6.45638E-04 1.303E+00 9.822E-01 9.876E-01 0.000E+00      1.303493
+   140      6.36220E-04 1.303E+00 9.860E-01 9.870E-01 0.000E+00      1.303493
+   141      6.27041E-04 1.303E+00 9.862E-01 9.883E-01 0.000E+00      1.303493
+   142      6.16074E-04 1.303E+00 9.831E-01 9.851E-01 0.000E+00      1.303493
+   143      6.08683E-04 1.303E+00 9.886E-01 9.880E-01 0.000E+00      1.303493
+   144      5.97835E-04 1.303E+00 9.828E-01 9.863E-01 0.000E+00      1.303493
+   145      5.90920E-04 1.303E+00 9.890E-01 9.882E-01 0.000E+00      1.303493
+   146      5.80788E-04 1.303E+00 9.834E-01 9.860E-01 0.000E+00      1.303493
+   147      5.70178E-04 1.303E+00 9.823E-01 9.879E-01 0.000E+00      1.303493
+   148      5.63979E-04 1.303E+00 9.897E-01 9.878E-01 0.000E+00      1.303493
+   149      5.55277E-04 1.303E+00 9.851E-01 9.860E-01 0.000E+00      1.303493
+   150      5.45740E-04 1.303E+00 9.834E-01 9.858E-01 0.000E+00      1.303493
+   151      5.38826E-04 1.303E+00 9.879E-01 9.873E-01 0.000E+00      1.303493
+   152      5.26547E-04 1.303E+00 9.777E-01 9.889E-01 0.000E+00      1.303493
+   153      5.23567E-04 1.303E+00 9.949E-01 9.847E-01 0.000E+00      1.303493
+   154      5.11646E-04 1.303E+00 9.777E-01 9.874E-01 0.000E+00      1.303493
+   155      5.06878E-04 1.303E+00 9.912E-01 9.878E-01 0.000E+00      1.303493
+   156      4.97341E-04 1.303E+00 9.817E-01 9.865E-01 0.000E+00      1.303493
+   157      4.92215E-04 1.303E+00 9.902E-01 9.900E-01 0.000E+00      1.303493
+   158      4.81606E-04 1.303E+00 9.789E-01 9.855E-01 0.000E+00      1.303493
+   159      4.77076E-04 1.303E+00 9.911E-01 9.853E-01 0.000E+00      1.303493
+   160      4.68612E-04 1.303E+00 9.827E-01 9.883E-01 0.000E+00      1.303493
+   161      4.61459E-04 1.303E+00 9.852E-01 9.901E-01 0.000E+00      1.303493
+   162      4.54426E-04 1.303E+00 9.852E-01 9.861E-01 0.000E+00      1.303493
+   163      4.47750E-04 1.303E+00 9.858E-01 9.872E-01 0.000E+00      1.303493
+   164      4.40121E-04 1.303E+00 9.834E-01 9.864E-01 0.000E+00      1.303493
+   165      4.34160E-04 1.303E+00 9.869E-01 9.883E-01 0.000E+00      1.303493
+   166      4.26650E-04 1.303E+00 9.831E-01 9.888E-01 0.000E+00      1.303493
+   167      4.20570E-04 1.303E+00 9.862E-01 9.810E-01 0.000E+00      1.303493
+   168      4.15325E-04 1.303E+00 9.879E-01 9.892E-01 0.000E+00      1.303493
+   169      4.07100E-04 1.303E+00 9.806E-01 9.833E-01 0.000E+00      1.303493
+   170      4.03404E-04 1.303E+00 9.913E-01 9.896E-01 0.000E+00      1.303493
+   171      3.96132E-04 1.303E+00 9.824E-01 9.910E-01 0.000E+00      1.303493
+   172      3.90410E-04 1.303E+00 9.859E-01 9.805E-01 0.000E+00      1.303493
+   173      3.84212E-04 1.303E+00 9.845E-01 9.877E-01 0.000E+00      1.303493
+   174      3.78847E-04 1.303E+00 9.864E-01 9.891E-01 0.000E+00      1.303493
+   175      3.73363E-04 1.303E+00 9.859E-01 9.882E-01 0.000E+00      1.303493
+   176      3.65973E-04 1.303E+00 9.806E-01 9.873E-01 0.000E+00      1.303493
+   177      3.64423E-04 1.303E+00 9.961E-01 9.823E-01 0.000E+00      1.303493
+   178      3.54409E-04 1.303E+00 9.729E-01 9.902E-01 0.000E+00      1.303493
+   179      3.51906E-04 1.303E+00 9.933E-01 9.884E-01 0.000E+00      1.303493
+   180      3.48806E-04 1.303E+00 9.915E-01 9.825E-01 0.000E+00      1.303493
+   181      3.40700E-04 1.303E+00 9.771E-01 9.889E-01 0.000E+00      1.303493
+   182      3.39389E-04 1.303E+00 9.965E-01 9.897E-01 0.000E+00      1.303493
+   183      3.31879E-04 1.303E+00 9.782E-01 9.826E-01 0.000E+00      1.303493
+   184      3.27229E-04 1.303E+00 9.863E-01 9.911E-01 0.000E+00      1.303493
+   185      3.21746E-04 1.303E+00 9.836E-01 9.911E-01 0.000E+00      1.303493
+   186      3.18289E-04 1.303E+00 9.896E-01 9.901E-01 0.000E+00      1.303493
+   187      3.11494E-04 1.303E+00 9.790E-01 9.764E-01 0.000E+00      1.303493
+   188      3.09706E-04 1.303E+00 9.946E-01 9.925E-01 0.000E+00      1.303493
+   189      3.02792E-04 1.303E+00 9.780E-01 9.822E-01 0.000E+00      1.303493
+   190      3.02911E-04 1.303E+00 1.001E+00 9.895E-01 0.000E+00      1.303493
+   191      2.93970E-04 1.303E+00 9.708E-01 9.826E-01 0.000E+00      1.303493
+   192      2.90990E-04 1.303E+00 9.902E-01 9.921E-01 0.000E+00      1.303493
+   193      2.86937E-04 1.303E+00 9.864E-01 9.881E-01 0.000E+00      1.303493
+   194      2.82288E-04 1.303E+00 9.841E-01 9.840E-01 0.000E+00      1.303493
+   195      2.75970E-04 1.303E+00 9.779E-01 9.868E-01 0.000E+00      1.303493
+   196      2.75373E-04 1.303E+00 9.981E-01 9.928E-01 0.000E+00      1.303493
+   197      2.68459E-04 1.303E+00 9.752E-01 9.844E-01 0.000E+00      1.303493
+   198      2.67863E-04 1.303E+00 9.980E-01 9.821E-01 0.000E+00      1.303493
+   199      2.59280E-04 1.303E+00 9.682E-01 9.892E-01 0.000E+00      1.303493
+   200      2.58803E-04 1.303E+00 9.984E-01 9.826E-01 0.000E+00      1.303493
+   201      2.54393E-04 1.303E+00 9.832E-01 9.878E-01 0.000E+00      1.303493
+   202      2.48432E-04 1.303E+00 9.768E-01 9.888E-01 0.000E+00      1.303493
+   203      2.48194E-04 1.303E+00 9.993E-01 9.864E-01 0.000E+00      1.303493
+   204      2.41041E-04 1.303E+00 9.714E-01 9.908E-01 0.000E+00      1.303493
+   205      2.40803E-04 1.303E+00 9.993E-01 9.827E-01 0.000E+00      1.303493
+   206      2.35915E-04 1.303E+00 9.799E-01 9.847E-01 0.000E+00      1.303493
+   207      2.36034E-04 1.303E+00 1.001E+00 9.857E-01 0.000E+00      1.303493
+   208      2.30193E-04 1.303E+00 9.755E-01 9.867E-01 0.000E+00      1.303493
+   209      2.29001E-04 1.303E+00 9.951E-01 9.889E-01 0.000E+00      1.303493
+   210      2.22206E-04 1.303E+00 9.706E-01 9.851E-01 0.000E+00      1.303493
+   211      2.20537E-04 1.303E+00 9.927E-01 9.899E-01 0.000E+00      1.303493
+   212      2.15173E-04 1.303E+00 9.759E-01 9.860E-01 0.000E+00      1.303493
+   213      2.13861E-04 1.303E+00 9.941E-01 9.884E-01 0.000E+00      1.303493
+   214      2.09808E-04 1.303E+00 9.813E-01 9.856E-01 0.000E+00      1.303493
+   215      2.06947E-04 1.303E+00 9.866E-01 9.907E-01 0.000E+00      1.303493
+   216      2.03848E-04 1.303E+00 9.852E-01 9.813E-01 0.000E+00      1.303493
+   217      2.03371E-04 1.303E+00 9.979E-01 9.945E-01 0.000E+00      1.303493
+   218      1.97887E-04 1.303E+00 9.732E-01 9.822E-01 0.000E+00      1.303493
+   219      1.97887E-04 1.303E+00 1.000E+00 9.833E-01 0.000E+00      1.303493
+   220      1.91927E-04 1.303E+00 9.701E-01 9.886E-01 0.000E+00      1.303493
+   221      1.91808E-04 1.303E+00 9.996E-01 9.899E-01 0.000E+00      1.303493
+   222      1.87397E-04 1.303E+00 9.772E-01 9.812E-01 0.000E+00      1.303493
+   223      1.87516E-04 1.303E+00 1.001E+00 9.852E-01 0.000E+00      1.303493
+   224      1.75238E-04 1.260E+00 9.347E-01 9.491E-01 0.000E+00      1.303493
+   225      1.74642E-04 1.260E+00 9.968E-01 9.795E-01 0.000E+00      1.303493
+   226      1.70112E-04 1.260E+00 9.742E-01 9.871E-01 0.000E+00      1.303493
+   227      1.68681E-04 1.260E+00 9.918E-01 9.804E-01 0.000E+00      1.303493
+   228      1.65582E-04 1.260E+00 9.818E-01 9.834E-01 0.000E+00      1.303493
+   229      1.63436E-04 1.260E+00 9.872E-01 9.848E-01 0.000E+00      1.303493
+   230      1.61171E-04 1.260E+00 9.863E-01 9.691E-01 0.000E+00      1.303493
+   231      1.59979E-04 1.260E+00 9.928E-01 9.893E-01 0.000E+00      1.303493
+   232      1.57118E-04 1.260E+00 9.823E-01 9.821E-01 0.000E+00      1.303493
+   233      1.52469E-04 1.260E+00 9.706E-01 9.890E-01 0.000E+00      1.303493
+   234      1.49727E-04 1.260E+00 9.822E-01 9.944E-01 0.000E+00      1.303493
+   235      1.47700E-04 1.260E+00 9.866E-01 9.796E-01 0.000E+00      1.303493
+   236      1.46151E-04 1.260E+00 9.897E-01 9.905E-01 0.000E+00      1.303493
+   237      1.42813E-04 1.260E+00 9.773E-01 9.809E-01 0.000E+00      1.303493
+   238      1.43051E-04 1.260E+00 1.002E+00 9.922E-01 0.000E+00      1.303493
+   239      1.38879E-04 1.260E+00 9.710E-01 9.882E-01 0.000E+00      1.303493
+   240      1.38044E-04 1.260E+00 9.941E-01 9.940E-01 0.000E+00      1.303493
+   241      1.34706E-04 1.260E+00 9.760E-01 9.920E-01 0.000E+00      1.303493
+   242      1.33991E-04 1.260E+00 9.948E-01 9.738E-01 0.000E+00      1.303493
+   243      1.31726E-04 1.260E+00 9.832E-01 9.896E-01 0.000E+00      1.303493
+   244      1.30177E-04 1.260E+00 9.884E-01 9.854E-01 0.000E+00      1.303493
+   245      1.28031E-04 1.260E+00 9.836E-01 9.894E-01 0.000E+00
+            9.36396E-03   EXTRAPOLATION WITH      73.1384            1.303493
+   246      1.82390E-04 1.000E+00 1.425E+00 5.852E+00 0.000E+00      1.303493
+   247      1.91092E-04 1.260E+00 1.048E+00 6.980E-01 0.000E+00      1.303493
+   248     -1.42515E-04 1.260E+00-7.459E-01-1.110E+00 0.000E+00      1.303493
+   249      1.40309E-04 1.260E+00-9.844E-01-6.823E-01 0.000E+00      1.303493
+   250     -1.05560E-04 1.260E+00-7.524E-01-1.182E+00 0.000E+00      1.303493
+   251     -1.08004E-04 1.260E+00 1.023E+00 1.006E+00 0.000E+00      1.303493
+   252     -1.28925E-04 1.260E+00 1.194E+00 8.755E-01 0.000E+00      1.303493
+   253      1.16587E-04 1.260E+00-9.042E-01-7.780E-01 0.000E+00      1.303493
+   254     -8.21352E-05 1.260E+00-7.046E-01-1.060E+00 0.000E+00      1.303493
+0END OF ADJOINT CALCULATION - ITERATION TIME   .028 MINUTES
+0CONVERGENCE INDICATION BY MINIMIZING THE SUM OF THE SQUARES OF THE RESIDUES - RELATIVE ABSORPTION  1.0000010   K  1.3034946
+0
+0ZONE AVERAGE POWER DENSITIES(WATTS/CC)
+    1.91275E+02  3.45828E+01  0.00000E+00  0.00000E+00
+0
+0THE MAXIMUM POWER DENSITY(WATTS/CC) AT ROW  34  AND COLUMN   1  AND LINE  38  IS   5.059289E+02
+0THE AVERAGE POWER DENSITY ALONG ROW  34  IS  3.080025E+02  AND THE RELATIVE POWER DENSITIES(FRACTION OF AVERAGE) ARE
+   1.642613E+00  1.637129E+00  1.626191E+00  1.609858E+00  1.588216E+00  1.561381E+00  1.529496E+00  1.492731E+00  1.451282E+00
+   1.405371E+00  1.355242E+00  1.301167E+00  1.243435E+00  1.182362E+00  1.118282E+00  1.051554E+00  9.825575E-01  9.116969E-01
+   8.393992E-01  7.661140E-01  6.923095E-01  6.184599E-01  5.450312E-01  4.725197E-01  4.019148E-01  3.379527E-01  2.266603E-01
+   1.795850E-01  1.335814E-01  9.590803E-02  0.000000E+00  0.000000E+00  0.000000E+00  0.000000E+00
+0THE AVERAGE POWER DENSITY DOWN COLUMN   1  IS  3.079047E+02  AND THE RELATIVE POWER DENSITIES ARE
+   0.000000E+00  0.000000E+00  0.000000E+00  0.000000E+00  9.585661E-02  1.335098E-01  1.794891E-01  2.265403E-01  3.377763E-01
+   4.017097E-01  4.722859E-01  5.447720E-01  6.181806E-01  6.920167E-01  7.658149E-01  8.391022E-01  9.114116E-01  9.822933E-01
+   1.051320E+00  1.118088E+00  1.182216E+00  1.243345E+00  1.301139E+00  1.355280E+00  1.405477E+00  1.451457E+00  1.492973E+00
+   1.529802E+00  1.561745E+00  1.588631E+00  1.610315E+00  1.626681E+00  1.637640E+00  1.643134E+00
+0THE AVERAGE POWER DENSITY ALONG LINE  38  IS  3.379394E+02  AND THE RELATIVE POWER DENSITIES ARE
+   0.000000E+00  0.000000E+00  0.000000E+00  0.000000E+00  1.612207E-01  2.151725E-01  2.783405E-01  3.424571E-01  4.061390E-01
+   4.690683E-01  5.310937E-01  5.920905E-01  6.519408E-01  7.105287E-01  7.677424E-01  8.234712E-01  8.776085E-01  9.300502E-01
+   9.806957E-01  1.029448E+00  1.076213E+00  1.120901E+00  1.163427E+00  1.203708E+00  1.241666E+00  1.277230E+00  1.310329E+00
+   1.340901E+00  1.368886E+00  1.394229E+00  1.416881E+00  1.436800E+00  1.453945E+00  1.468283E+00  1.479788E+00  1.488435E+00
+   1.494210E+00  1.497100E+00
+15.0cm mesh size in each direction                                       
+ EPS(FLUX) < 1.0E-4, EPS(KEFF) < 1.0E-5,  ZONE 4:BLACKNESS               
+0K-EFFECTIVE IS  1.303493E+00
+0BIG DADDY IS  1.811137E+04
+0PROMPT-NEUTRON LIFETIME IS  2.41627E-05  SEC.
+ PROMPT-NEUTRON GENERATION TIME IS  1.85369E-05  SEC.
+0DELAYED NEUTRON FRACTION IS  7.08813E-03
+0EFFECTIVE DELAYED NEUTRON FRACTION FOR EACH GROUP
+   2.04629E-04  1.12683E-03  1.10932E-03  3.25009E-03  1.04796E-03  3.49293E-04
+0EFFECTIVE DELAYED NEUTRON DECAY CONSTANTS FOR EACH GROUP
+   1.24908E-02  3.16540E-02  1.10106E-01  3.20237E-01  1.34581E+00  8.85025E+00
+0END OF CASE - TOTAL CPU TIME WAS    .06 MINUTES   TOTAL CLOCK TIME WAS    .00 MINUTES
+ ***************************************************************************************************************
+ ***************************************************************************************************************
+0                              *********THIS JOB WAS RUN ON  92-28-09********************************
+
+
+
+
+
+0JOB ENDED NORMALLY
+
+ =========================== END OF SRAC CALCULATION ==========================

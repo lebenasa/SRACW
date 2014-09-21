@@ -1,0 +1,2924 @@
+0     *** === SRAC CODE SYSTEM RUN    DATE : 92-28-09 START TIME= 0: 0: 0:
+              (SRAC:Ver.2005.00, LAST MODIFIED 2005.01.28)
+0     **** CASE ID === CELL     *** TITLE === CRAC:  60.0 G/L : TEMP 40 C : HNO3 1 NOL : 53.52 CM HIGHT : DOPPLER 1    ***
+
+
+     USE OF COLLISION PROB. ROUTINE (NO,CALL:0,1)             1
+     SELECT OF ROUTINE FOR FIX S CALC(NO,PIJ,1D SN ,2D SN , 
+      1D DIFF,2D DIFF:0,1,2,3,4,5)                            1
+     DANCOFF FACTOR BY(INPUT,PIJ,TONE:0,1,2)                  1
+     CALC OF THERMAL RANGE (EXCLUDED,INCLUDED:0,1)            1
+     PROCESS OF RESONANCE 2 RANGE(TABLELOOK,IR,PEACO:0,1,2)   2
+     FLUX CALCULATION BY RANGES(SKIP,CALC:0,1)                1
+     FAST RANGES FOR TRANSPORT CALC(0,1,2,3,4)                4
+     INDICATOR FOR ENRGY STRUCTURE OF UMCROSS (0,1,2,3)       3
+     CALC OF BARE REACTOR SPECTRUM(SKIP,P1,B1:0,1,2)         -2
+     COLLAPSE MACRO X-SECTION BY RANGE(SKIP,CALL:0,1)         0
+     INPUT OF GEOMETRY (NEW,SAME AS PREVIOUS CASE:0,1)        0
+     SELECT ROUTINE FOR EIGENVALUE CALC(NO,PIJ,1D SN,2D SN, 
+      1D DIFF,2D DIFF:0,1,2,3,4,5)                            0
+     COLLAPSE MACRO AFTER EIGENVALUE CALC(SKIP,CALL:0,1)      1
+     PREPARE MACRO FOR CITATION (SKIP,CALL:0,1)               0
+     TOTAL MICRO X-SECTION BY (HARMONIC,ARITHMETIC AV:1,2)    2
+     TRANSPORT MACRO X-SECTION BY (P0,P1,B1,SN:0,1,2,3)       1
+     DIFF COEF (INVERSE TR,BENOIST ISO,BENOIST ANISO:1,2,3)   1
+     REACTION RATE CALCULATION (0,1)                          0
+     PRINT OF MACRO-X (0,1,2)                                 0
+     BURN-UP CALCULATION (0,1:SKIP,EXECUTE)                   0
+0                     << INFORMATION OF PDS-FILES >> 
+
+      PDS FILE NAME             DATA SET NAME                                                       IWR DISP    I/O METHOD        
+   --------------------------------------------------------------------------------------------------------------------------------
+    PUBLIC FAST LIBRARY       E:/SRACW/SRACLIB-EDF70/pds/pfast                                       1  OLD       FILE    
+    PUBLIC THERMAL  LIBRARY   E:/SRACW/SRACLIB-EDF70/pds/pthml                                       1  OLD       FILE    
+    PUBLIC MCROSS LIBRARY     E:/SRACW/SRACLIB-EDF70/pds/pmcrs                                       1  OLD       FILE    
+    USERS  FAST LIBRARY       E:\SRACW\SRAC\tmp\SnSmpl/UFAST                                         3  SCRATCH   CORE    
+    USERS  THERMAL  LIBRARY   E:\SRACW\SRAC\tmp\SnSmpl/UTHERMAL                                      3  SCRATCH   CORE    
+    USERS  MCROSS LIBRARY     E:\SRACW\SRAC\tmp\SnSmpl/UMCROSS                                       3  SCRATCH   CORE    
+    USERS  MACROSCOPIC FINE   E:\SRACW\SRAC\tmp\SnSmpl/MACROWRK                                      3  SCRATCH   CORE    
+    USERS  MACROSCOPIC BROAD  E:\SRACW\SRAC\tmp\SnSmpl/MACRO                                         3  SCRATCH   CORE    
+    USERS  FLUX               E:\SRACW\SRAC\tmp\SnSmpl/FLUX                                          3  SCRATCH   CORE    
+    USERS  MICROSCOPIC        E:\SRACW\SRAC\tmp\SnSmpl/MICREF                                        3  SCRATCH   CORE    
+   --------------------------------------------------------------------------------------------------------------------------------
+     NUMBER OF USER'S FAST GROUPS                          61
+     NUMBER OF USER'S THERMAL GROUPS                       46
+     NUMBER OF USER'S CONDENSED FAST GROUPS                11
+     NUMBER OF USER'S CONDENSED THERMAL GROUPS              7
+
+     NUMBER OF LIBRARY GROUPS IN THE USER'S FAST GROUP
+                1           1           1           1           1           1           1           1           1           1
+
+                1           1           1           1           1           1           1           1           1           1
+
+                1           1           1           1           1           1           1           1           1           1
+
+                1           1           1           1           1           1           1           1           1           1
+
+                1           1           1           1           1           1           1           1           1           1
+
+                1           1           1           1           1           1           1           1           1           1
+
+                1
+     NUMBER OF LIBRARY GROUPS IN THE USER'S THERMAL GROUPS
+                1           1           1           1           1           1           1           1           1           1
+
+                1           1           1           1           1           1           1           1           1           1
+
+                1           1           1           1           1           1           1           1           1           1
+
+                1           1           1           1           1           1           1           1           1           1
+
+                1           1           1           1           1           1
+     NUMBER OF USER'S GROUPS IN THE CONDENSED FAST GROUP
+                2           2           6           2           3           5           8           8           9           8
+
+                8
+     NUMBER OF USER'S GROUPS IN THE CONDENSED THERMAL GROUP
+                7           6           6           6           6           6           9
+1
+
+                     ### USERFL START ###
+
+
+                                ENERGY GROUP STRUCTURE 
+
+           NEFL: TOTAL NBR OF PUBLIC FAST GROUPS -----  74
+           NETL: TOTAL NBR OF PUBLIC THERMAL GROUPS --  48
+           NEF : TOTAL NBR OF USERS  FAST GROUPS -----  61
+           NET : TOTAL NBR OF USERS  THERMAL GROUPS --  46
+0                FINE   FAST    ENERGY GROUP STRUCTURE (M=1.67482E-24 GRAM,  EV=1.60210E-12 ERG)
+0   GROUP          ENERGY RANGE (EV)               VELOCITY RANGE (CM/SEC)           LETHARGY RANGE
+       1         .10000E+08     .77880E+07         .43740E+10     .38600E+10          .0000      .2500
+       2         .77880E+07     .60653E+07         .38600E+10     .34065E+10          .2500      .5000
+       3         .60653E+07     .47237E+07         .34065E+10     .30062E+10          .5000      .7500
+       4         .47237E+07     .36788E+07         .30062E+10     .26529E+10          .7500     1.0000
+       5         .36788E+07     .28651E+07         .26529E+10     .23412E+10         1.0000     1.2500
+       6         .28651E+07     .22313E+07         .23412E+10     .20661E+10         1.2500     1.5000
+       7         .22313E+07     .17377E+07         .20661E+10     .18233E+10         1.5000     1.7500
+       8         .17377E+07     .13534E+07         .18233E+10     .16091E+10         1.7500     2.0000
+       9         .13534E+07     .10540E+07         .16091E+10     .14200E+10         2.0000     2.2500
+      10         .10540E+07     .82085E+06         .14200E+10     .12532E+10         2.2500     2.5000
+      11         .82085E+06     .63928E+06         .12532E+10     .11059E+10         2.5000     2.7500
+      12         .63928E+06     .49787E+06         .11059E+10     .97596E+09         2.7500     3.0000
+      13         .49787E+06     .38774E+06         .97596E+09     .86129E+09         3.0000     3.2500
+      14         .38774E+06     .30197E+06         .86129E+09     .76008E+09         3.2500     3.5000
+      15         .30197E+06     .23518E+06         .76008E+09     .67077E+09         3.5000     3.7500
+      16         .23518E+06     .18316E+06         .67077E+09     .59195E+09         3.7500     4.0000
+      17         .18316E+06     .14264E+06         .59195E+09     .52240E+09         4.0000     4.2500
+      18         .14264E+06     .11109E+06         .52240E+09     .46101E+09         4.2500     4.5000
+      19         .11109E+06     .86517E+05         .46101E+09     .40684E+09         4.5000     4.7500
+      20         .86517E+05     .67380E+05         .40684E+09     .35904E+09         4.7500     5.0000
+      21         .67380E+05     .52475E+05         .35904E+09     .31685E+09         5.0000     5.2500
+      22         .52475E+05     .40868E+05         .31685E+09     .27962E+09         5.2500     5.5000
+      23         .40868E+05     .31828E+05         .27962E+09     .24676E+09         5.5000     5.7500
+      24         .31828E+05     .24788E+05         .24676E+09     .21777E+09         5.7500     6.0000
+      25         .24788E+05     .19305E+05         .21777E+09     .19218E+09         6.0000     6.2500
+      26         .19305E+05     .15034E+05         .19218E+09     .16960E+09         6.2500     6.5000
+      27         .15034E+05     .11709E+05         .16960E+09     .14967E+09         6.5000     6.7500
+      28         .11709E+05     .91188E+04         .14967E+09     .13208E+09         6.7500     7.0000
+      29         .91188E+04     .71017E+04         .13208E+09     .11656E+09         7.0000     7.2500
+      30         .71017E+04     .55308E+04         .11656E+09     .10287E+09         7.2500     7.5000
+      31         .55308E+04     .43074E+04         .10287E+09     .90779E+08         7.5000     7.7500
+      32         .43074E+04     .33546E+04         .90779E+08     .80112E+08         7.7500     8.0000
+      33         .33546E+04     .26126E+04         .80112E+08     .70699E+08         8.0000     8.2500
+      34         .26126E+04     .20347E+04         .70699E+08     .62391E+08         8.2500     8.5000
+      35         .20347E+04     .15846E+04         .62391E+08     .55060E+08         8.5000     8.7500
+      36         .15846E+04     .12341E+04         .55060E+08     .48590E+08         8.7500     9.0000
+      37         .12341E+04     .96112E+03         .48590E+08     .42881E+08         9.0000     9.2500
+      38         .96112E+03     .74852E+03         .42881E+08     .37842E+08         9.2500     9.5000
+      39         .74852E+03     .58295E+03         .37842E+08     .33396E+08         9.5000     9.7500
+      40         .58295E+03     .45400E+03         .33396E+08     .29472E+08         9.7500    10.0000
+      41         .45400E+03     .35358E+03         .29472E+08     .26009E+08        10.0000    10.2500
+      42         .35358E+03     .27536E+03         .26009E+08     .22953E+08        10.2500    10.5000
+      43         .27536E+03     .21445E+03         .22953E+08     .20255E+08        10.5000    10.7500
+      44         .21445E+03     .16702E+03         .20255E+08     .17875E+08        10.7500    11.0000
+      45         .16702E+03     .13007E+03         .17875E+08     .15775E+08        11.0000    11.2500
+      46         .13007E+03     .10130E+03         .15775E+08     .13921E+08        11.2500    11.5000
+      47         .10130E+03     .78893E+02         .13921E+08     .12286E+08        11.5000    11.7500
+      48         .78893E+02     .61442E+02         .12286E+08     .10842E+08        11.7500    12.0000
+      49         .61442E+02     .47851E+02         .10842E+08     .95680E+07        12.0000    12.2500
+      50         .47851E+02     .37266E+02         .95680E+07     .84437E+07        12.2500    12.5000
+      51         .37266E+02     .29023E+02         .84437E+07     .74516E+07        12.5000    12.7500
+      52         .29023E+02     .22603E+02         .74516E+07     .65760E+07        12.7500    13.0000
+      53         .22603E+02     .17604E+02         .65760E+07     .58033E+07        13.0000    13.2500
+      54         .17604E+02     .13710E+02         .58033E+07     .51214E+07        13.2500    13.5000
+0                FINE   FAST    ENERGY GROUP STRUCTURE (M=1.67482E-24 GRAM,  EV=1.60210E-12 ERG)
+0   GROUP          ENERGY RANGE (EV)               VELOCITY RANGE (CM/SEC)           LETHARGY RANGE
+      55         .13710E+02     .10677E+02         .51214E+07     .45196E+07        13.5000    13.7500
+      56         .10677E+02     .83153E+01         .45196E+07     .39885E+07        13.7500    14.0000
+      57         .83153E+01     .64759E+01         .39885E+07     .35199E+07        14.0000    14.2500
+      58         .64759E+01     .50435E+01         .35199E+07     .31063E+07        14.2500    14.5000
+      59         .50435E+01     .39279E+01         .31063E+07     .27413E+07        14.5000    14.7500
+      60         .39279E+01     .30590E+01         .27413E+07     .24192E+07        14.7500    15.0000
+      61         .30590E+01     .23824E+01         .24192E+07     .21349E+07        15.0000    15.2500
+
+                     ### USERFL END ###
+
+
+0                FINE   THERMAL ENERGY GROUP STRUCTURE (M=1.67482E-24 GRAM,  EV=1.60210E-12 ERG)
+0   GROUP          ENERGY RANGE (EV)               VELOCITY RANGE (CM/SEC)           LETHARGY RANGE
+       1         .23824E+01     .18554E+01         .21349E+07     .18841E+07        15.2500    15.5000
+       2         .18554E+01     .16374E+01         .18841E+07     .17699E+07        15.5000    15.6250
+       3         .16374E+01     .14450E+01         .17699E+07     .16627E+07        15.6250    15.7500
+       4         .14450E+01     .12752E+01         .16627E+07     .15619E+07        15.7500    15.8750
+       5         .12752E+01     .11253E+01         .15619E+07     .14673E+07        15.8750    16.0000
+       6         .11253E+01     .99312E+00         .14673E+07     .13784E+07        16.0000    16.1250
+       7         .99312E+00     .87643E+00         .13784E+07     .12949E+07        16.1250    16.2500
+       8         .87643E+00     .77344E+00         .12949E+07     .12164E+07        16.2500    16.3750
+       9         .77344E+00     .68256E+00         .12164E+07     .11427E+07        16.3750    16.5000
+      10         .68256E+00     .60236E+00         .11427E+07     .10735E+07        16.5000    16.6250
+      11         .60236E+00     .53158E+00         .10735E+07     .10085E+07        16.6250    16.7500
+      12         .53158E+00     .46912E+00         .10085E+07     .94736E+06        16.7500    16.8750
+      13         .46912E+00     .41399E+00         .94736E+06     .88996E+06        16.8750    17.0000
+      14         .41399E+00     .38925E+00         .88996E+06     .86296E+06        17.0000    17.0616
+      15         .38925E+00     .36528E+00         .86296E+06     .83596E+06        17.0616    17.1252
+      16         .36528E+00     .34206E+00         .83596E+06     .80896E+06        17.1252    17.1909
+      17         .34206E+00     .31961E+00         .80896E+06     .78196E+06        17.1909    17.2587
+      18         .31961E+00     .29792E+00         .78196E+06     .75496E+06        17.2587    17.3290
+      19         .29792E+00     .27699E+00         .75496E+06     .72796E+06        17.3290    17.4019
+      20         .27699E+00     .25683E+00         .72796E+06     .70096E+06        17.4019    17.4774
+      21         .25683E+00     .23742E+00         .70096E+06     .67396E+06        17.4774    17.5560
+      22         .23742E+00     .21878E+00         .67396E+06     .64696E+06        17.5560    17.6378
+      23         .21878E+00     .20090E+00         .64696E+06     .61996E+06        17.6378    17.7230
+      24         .20090E+00     .18378E+00         .61996E+06     .59296E+06        17.7230    17.8121
+      25         .18378E+00     .16743E+00         .59296E+06     .56596E+06        17.8121    17.9053
+      26         .16743E+00     .15183E+00         .56596E+06     .53896E+06        17.9053    18.0031
+      27         .15183E+00     .13700E+00         .53896E+06     .51196E+06        18.0031    18.1059
+      28         .13700E+00     .12293E+00         .51196E+06     .48496E+06        18.1059    18.2142
+      29         .12293E+00     .10963E+00         .48496E+06     .45797E+06        18.2142    18.3288
+      30         .10963E+00     .97080E-01         .45797E+06     .43096E+06        18.3288    18.4503
+      31         .97080E-01     .85297E-01         .43096E+06     .40396E+06        18.4503    18.5797
+      32         .85297E-01     .74276E-01         .40396E+06     .37696E+06        18.5797    18.7181
+      33         .74276E-01     .64017E-01         .37696E+06     .34996E+06        18.7181    18.8667
+      34         .64017E-01     .54520E-01         .34996E+06     .32296E+06        18.8667    19.0273
+      35         .54520E-01     .45785E-01         .32296E+06     .29596E+06        19.0273    19.2019
+      36         .45785E-01     .37813E-01         .29596E+06     .26896E+06        19.2019    19.3932
+      37         .37813E-01     .30602E-01         .26896E+06     .24196E+06        19.3932    19.6048
+      38         .30602E-01     .24154E-01         .24196E+06     .21496E+06        19.6048    19.8414
+      39         .24154E-01     .18467E-01         .21496E+06     .18796E+06        19.8414    20.1099
+      40         .18467E-01     .13543E-01         .18796E+06     .16096E+06        20.1099    20.4200
+      41         .13543E-01     .93805E-02         .16096E+06     .13396E+06        20.4200    20.7872
+      42         .93805E-02     .59804E-02         .13396E+06     .10696E+06        20.7872    21.2374
+      43         .59804E-02     .33423E-02         .10696E+06     .79964E+05        21.2374    21.8192
+      44         .33423E-02     .14663E-02         .79964E+05     .52964E+05        21.8192    22.6431
+      45         .14663E-02     .35238E-03         .52964E+05     .25964E+05        22.6431    24.0689
+      46         .35238E-03     .10000E-04         .25964E+05     .43740E+04        24.0689    27.6310
+1CELL    CRAC:  60.0 G/L : TEMP 40 C : HNO3 1 NOL : 53.52 CM HIGHT : DOPPLER 1   *** STEP *** INPUT FOR PIJ *** 
+                     GEOMETRY TYPE                             3     ( CIRCULAR CYLINDER )                                           
+                     NUMBER OF SUB - REGIONS                  20
+                     NUMBER OF  T  - REGIONS                  20
+                     NUMBER OF  R  - REGIONS                  20
+                     NUMBER OF  X  - REGIONS                   2
+                     OUTER BOUNDARY CONDITION (-1,0,1,2)       2
+                     DIRECTIONAL PIJ (1,2)                     1  INDICATED BY IC17
+                     NUMBER OF R OR X MESH                    20
+                     NUMBER OF THETA OR Y MESH                 0
+                     TOTAL NUMBER OF PIN RODS                  0
+                     NUMBER OF RINGS OF PIN ROD ARRAY          0
+                     NUMBER OF LATTICE CELLS TRACED            1
+                     PRINT CONTROL OF PIJ (0,1)                0
+                     ORDER OF GAUSS RADIAL INTEGRATION        10
+                     NO. OF DIVISION FOR ANGULAR INTEGRATION  30
+                     NUMBER OF ANNULAR DIVISION IN A PIN ROD   0
+                     DIVISION BY RPP  (0,1,2)                  0
+                     ANGLE RANGE BY DEGREE                    60
+                     PLOTER OPTION  (0,1)                      0
+0         ===X-REGION NO./R  ===
+                     1           1           1           1           1           1           1           1           1           1
+                     1           1           1           1           1           1           1           1           1           2
+0         ===MATERIAL NO./R  ===
+                     1           1           1           1           1           1           1           1           1           1
+                     1           1           1           1           1           1           1           1           1           2
+0         ===R-X DIVISION    ===
+            .00000E+00  .95000E+00  .19500E+01  .27000E+01  .34500E+01  .42000E+01  .49500E+01  .57000E+01  .64500E+01  .72000E+01
+            .79500E+01  .87000E+01  .94500E+01  .10200E+02  .10950E+02  .11700E+02  .12450E+02  .13200E+02  .13950E+02  .14700E+02
+            .15000E+02
+  STRAGE USED      21065 FROM    7000000
+
+          VOLUME OF (S)-REGION
+        1) 2.8353E+00   2) 9.1106E+00   3) 1.0956E+01   4) 1.4491E+01   5) 1.8025E+01   6) 2.1559E+01   7) 2.5093E+01   8) 2.8628E+01
+        9) 3.2162E+01  10) 3.5696E+01  11) 3.9231E+01  12) 4.2765E+01  13) 4.6299E+01  14) 4.9833E+01  15) 5.3368E+01  16) 5.6902E+01
+       17) 6.0436E+01  18) 6.3971E+01  19) 6.7505E+01  20) 2.7992E+01
+          VOLUME OF (T)-REGION
+        1) 2.8353E+00   2) 9.1106E+00   3) 1.0956E+01   4) 1.4491E+01   5) 1.8025E+01   6) 2.1559E+01   7) 2.5093E+01   8) 2.8628E+01
+        9) 3.2162E+01  10) 3.5696E+01  11) 3.9231E+01  12) 4.2765E+01  13) 4.6299E+01  14) 4.9833E+01  15) 5.3368E+01  16) 5.6902E+01
+       17) 6.0436E+01  18) 6.3971E+01  19) 6.7505E+01  20) 2.7992E+01
+          VOLUME OF (X)-REGION
+        1) 6.7887E+02   2) 2.7992E+01
+          VOLUME OF (M)-REGION
+        1) 6.7887E+02   2) 2.7992E+01
+          TOTAL VOLUME                    7.0686E+02
+
+          VOLUME(NUMERICAL)/VOLUME(ANALYTICAL) 
+            1) 1.00007     2)  .99977     3)  .99985     4)  .99989     5)  .99991     6)  .99992     7)  .99993
+            8)  .99994     9)  .99995    10)  .99995    11)  .99995    12)  .99996    13)  .99996    14)  .99996
+           15)  .99997    16)  .99997    17)  .99997    18)  .99997    19)  .99997    20) 1.00001
+0 ***  200 LINES DRAWN ON FT84 ***                                                  ****ELAPSED CPU TIME       0 SEC
+
+     NO. OF MATERIALS USED IN THE CASE =  2
+
+1
+
+                     MACROF
+
+           CASE I.D. : CELL    
+           TITLE     : CRAC:  60.0 G/L : TEMP 40 C : HNO3 1 NOL : 53.52 CM HIGHT : DOPPLER 1   
+
+
+
+                     COMPOSITION DATA LIST
+
+
+                               ## MATERIAL NAME -----  1   FUELX0FX ##
+
+           NUMBER OF NUCLIDE -----------        5
+           TEMPERATURE (K) -------------     313.15
+           MEAN CHORD LENGTH -----------   29.40000
+           DANCOFF FACTOR --------------     .00000
+           WEIGHTING FLUX NAME FOR CHI - ASYMPTO.
+           IDENTIFICATION OF NUCLIDE ---    H01H002     N040002     O060002     U050002     U080002
+ 
+           NUMBER DENSITY --------------  6.45244E-02 9.02153E-04 3.49747E-02 1.41980E-04 1.03898E-05
+ 
+           RESONANT INDICATOR ----------      0           0           0           2           2
+ 
+           LXMICR ----------------------      0           0           0           0           0
+ 
+           NUCLIDE-WISE DANCOFF FACTOR WILL BE CALCULATED AT SUBROUTINE(MAFSIG) ]] 
+
+                               ## MATERIAL NAME -----  2   CLDDX0CX ##
+
+           NUMBER OF NUCLIDE -----------        7
+           TEMPERATURE (K) -------------     293.15
+           MEAN CHORD LENGTH -----------     .60000
+           DANCOFF FACTOR --------------     .00000
+           WEIGHTING FLUX NAME FOR CHI - ASYMPTO.
+           IDENTIFICATION OF NUCLIDE ---    C020001     SIN0001     CRN0001     MN50001     FEN0001
+                                            NIN0001     S0N0001
+           NUMBER DENSITY --------------  3.17290E-04 1.69620E-03 1.74080E-02 1.73430E-03 5.78720E-02
+                                          8.11160E-03 4.45720E-05
+           RESONANT INDICATOR ----------      0           0           2           2           2
+                                              2           0
+           LXMICR ----------------------      0           0           0           0           0
+                                              0           0
+           NUCLIDE-WISE DANCOFF FACTOR WILL BE CALCULATED AT SUBROUTINE(MAFSIG) ]] 
+
+                               ## RESONANT NUCLIDE NAME LIST ##
+
+           NUMBER OF RESONANT NUCLIDE --      6
+           RESONANT NUCLIDE NAME -------  U05   U08   CRN   MN5   FEN   NIN
+
+                               ## STANDARD TEMPERATUE ARRAY LIST (STND) ##
+
+  TAG         :    1        2        3        4        5        6        7        8        9        A
+  TAG         :    B        C
+  TEMPERATURE :    300.00   325.00   350.00   400.00   450.00   500.00   550.00   600.00   900.00  1200.00
+  TEMPERATURE :   1600.00  2100.00
+          STRAGE USED      51600 WITHIN    7000000 IN PIJ2-STEP
+          STRAGE USED      51600 WITHIN    7000000 IN PIJ2-STEP
+
+
+
+                                    ******************************************
+                                    * CALCULATED NUCLIDE-WISE DANCOFF FACTOR *
+                                    ******************************************
+
+
+                               ## MATERIAL NAME -----  1   FUELX0FX ##
+
+           IDENTIFICATION OF NUCLIDE ----    H010002     N040002     O060002     U050002     U080002
+ 
+           NUCLIDE-WISE DANCOFF FACTOR---    1.000000    1.000000    1.000000     .638545     .638545
+ 
+
+                               ## MATERIAL NAME -----  2   CLDDX0CX ##
+
+           IDENTIFICATION OF NUCLIDE ----    C020001     SIN0001     CRN0001     MN50001     FEN0001
+                                             NIN0001     S0N0001
+           NUCLIDE-WISE DANCOFF FACTOR---    1.000000    1.000000     .505235     .505235     .505235
+                                              .505235    1.000000
+          STRAGE USED      78536 WITHIN    7000000 IN PIJ2-STEP
+1
+
+          ===PIJ3 STEP===
+          ***CELL    ***CRAC:  60.0 G/L : TEMP 40 C : HNO3 1 NOL : 53.52 CM HIGHT : DOPPLER 1   *** IN FAST     RANGE ***
+
+          ITERATION PARAMETERS 
+          PRINT (1+2+4+8)(FLUX,XEC,PIJ,S)              0
+          MAX OF INNER ITERATIONS PER OUTER          100
+          MAX OF OUTER ITERATIONS                    100
+          EARLIST EXTRAPOLATION                        5
+          NUMBER OF ITERATIONS TESTED                  5
+          MINIMUM DELAY                                5
+          MONITOR PRINT(0,1)(SKIP,PRINT)              -1
+          CONVERGENCE CRITERION OF INNER      .10000E-03
+          CONVERGENCE CRITERION OF OUTER      .10000E-04
+          EXTRAPOLATION CRITERION             .10000E-02
+          OVER-RELAXATION (INITIAL)           .10000E+01
+          MAX EXTRAPOLATION                   .10000E+02
+          BASE FACTOR OF OVER-RELAXATION      .50000E+00
+
+          PROBLEM TYPE  
+          ITYPE (0/1  =EIGENVALUE/FIXED S)             1
+          IRANG (0/1/2=FAST/THERMAL/ALL)               0
+          IFIXS (0/1/2)                                0
+
+0            ITERATION POWER-SCALING   RESIDUE CRITERON
+
+              1          .12891E-01  .16351E-01  .10000E-04
+              2          .12161E-01  .18150E-03  .10000E-04
+              3          .12152E-01  .22610E-05  .10000E-04
+              4          .12152E-01  .11450E-05  .10000E-04
+              5          .12152E-01  .57982E-06  .10000E-04
+              6          .12152E-01  .29365E-06  .10000E-04
+              7          .12152E-01  .14870E-06  .10000E-04
+              8          .12152E-01  .75165E-07  .10000E-04
+
+
+
+          === ITERATION END IN PIJF STEP ===
+          === FIXED SOURCE TYPE PROBLEM ===
+          TOTAL THERMAL INNER ITERATION COUNT             0
+          INITIAL SOURCE NORMALIZATION FACTOR    .69018E+03
+          THERMAL SOURCE NORMALIZATION FACTOR    .10000E+01
+          RENORMALIZATION FACTOR (INNER)         .00000E+00
+          RESIDUE IN FINAL INNER ITERATION       .00000E+00
+          FINAL FISSION SOURCE NORMALIZATION     .12152E-01
+          RESIDUE IN FINAL FISSION RATE          .75165E-07
+          NOTE ---> NUCLIDE 0CRN0001(CLDDF0C2) IS NOT TREATED WITH PEACO BECAUSE IT HAS NO MCROSS LIBRARY
+          NOTE ---> NUCLIDE 0MN50001(CLDDF0C2) IS NOT TREATED WITH PEACO BECAUSE IT HAS NO MCROSS LIBRARY
+          NOTE ---> NUCLIDE 0FEN0001(CLDDF0C2) IS NOT TREATED WITH PEACO BECAUSE IT HAS NO MCROSS LIBRARY
+          NOTE ---> NUCLIDE 0NIN0001(CLDDF0C2) IS NOT TREATED WITH PEACO BECAUSE IT HAS NO MCROSS LIBRARY
+          STRAGE USED     529488 WITHIN    7000000 IN PIJ2-STEP
+
+
+
+         *** MIX-X-SECTION STEP IN *** FAST ENERGY RANGE
+          *** CELL    ***CRAC:  60.0 G/L : TEMP 40 C : HNO3 1 NOL : 53.52 CM HIGHT : DOPPLER 1   ***
+0         X-REGION  1***
+          SIGNED MAT ID BY R-REG =   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   2
+          ONE GROUP CONSTANTS
+          * ACTIVATION CROSS SECTION      .43682E-01
+          * FISSION    CROSS SECTION      .10452E-02
+          * NU*FISSION CROSS SECTION      .25671E-02
+          * TOTAL      CROSS SECTION      .24838E+00
+          * DIFFUSION  COEFFICIENT 1      .13420E+01
+          * DIFFUSION  COEFFICIENT 2      .13420E+01
+          * ABSORPTION CROSS SECTION      .21015E-02
+          * SCATTEROUT CROSS SECTION      .44312E-01
+          * INTEGRATED FLUX-X-REGION      .13933E+02
+0         X-REGION  2***
+          SIGNED MAT ID BY R-REG =   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   2
+          ONE GROUP CONSTANTS
+          * ACTIVATION CROSS SECTION      .54258E-01
+          * FISSION    CROSS SECTION      .00000E+00
+          * NU*FISSION CROSS SECTION      .00000E+00
+          * TOTAL      CROSS SECTION      .29501E+00
+          * DIFFUSION  COEFFICIENT 1      .11299E+01
+          * DIFFUSION  COEFFICIENT 2      .11299E+01
+          * ABSORPTION CROSS SECTION      .34167E-02
+          * SCATTEROUT CROSS SECTION      .13331E-02
+          * INTEGRATED FLUX-X-REGION      .27887E+00
+0         PSUEDO 1 X-REGION FOR HOMOSP
+          SIGNED X-R ID BY R-REG =   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   2
+          ONE GROUP CONSTANTS
+          * ACTIVATION CROSS SECTION      .43890E-01
+          * FISSION    CROSS SECTION      .10247E-02
+          * NU*FISSION CROSS SECTION      .25167E-02
+          * TOTAL      CROSS SECTION      .43838E+00
+          * DIFFUSION  COEFFICIENT 1      .16412E+01
+          * DIFFUSION  COEFFICIENT 2      .16412E+01
+          * ABSORPTION CROSS SECTION      .21273E-02
+          * SCATTEROUT CROSS SECTION      .43468E-01
+          * INTEGRATED FLUX-X-REGION      .14212E+02
+          STRAGE USED      78538 WITHIN    7000000 IN PIJ2-STEP
+1
+
+          ===PIJ3 STEP===
+          ***CELL    ***CRAC:  60.0 G/L : TEMP 40 C : HNO3 1 NOL : 53.52 CM HIGHT : DOPPLER 1   *** IN THERMAL  RANGE ***
+
+          ITERATION PARAMETERS 
+          PRINT (1+2+4+8)(FLUX,XEC,PIJ,S)              0
+          MAX OF INNER ITERATIONS PER OUTER          200
+          MAX OF OUTER ITERATIONS                      1
+          EARLIST EXTRAPOLATION                        5
+          NUMBER OF ITERATIONS TESTED                  5
+          MINIMUM DELAY                                5
+          MONITOR PRINT(0,1)(SKIP,PRINT)              -1
+          CONVERGENCE CRITERION OF INNER      .10000E-03
+          CONVERGENCE CRITERION OF OUTER      .10000E-04
+          EXTRAPOLATION CRITERION             .10000E-02
+          OVER-RELAXATION (INITIAL)           .10000E+01
+          MAX EXTRAPOLATION                   .10000E+02
+          BASE FACTOR OF OVER-RELAXATION      .50000E+00
+
+          PROBLEM TYPE  
+          ITYPE (0/1  =EIGENVALUE/FIXED S)             1
+          IRANG (0/1/2=FAST/THERMAL/ALL)               1
+          IFIXS (0/1/2)                                0
+
+
+
+
+          === ITERATION END IN PIJF STEP ===
+          === FIXED SOURCE TYPE PROBLEM ===
+          TOTAL THERMAL INNER ITERATION COUNT           200
+          INITIAL SOURCE NORMALIZATION FACTOR    .61777E+00
+          THERMAL SOURCE NORMALIZATION FACTOR    .10000E+01
+          RENORMALIZATION FACTOR (INNER)         .10000E+01
+          RESIDUE IN FINAL INNER ITERATION       .16616E-04
+          FINAL FISSION SOURCE NORMALIZATION     .00000E+00
+          RESIDUE IN FINAL FISSION RATE          .27608E-09
+
+
+
+         *** MIX-X-SECTION STEP IN *** THER ENERGY RANGE
+          *** CELL    ***CRAC:  60.0 G/L : TEMP 40 C : HNO3 1 NOL : 53.52 CM HIGHT : DOPPLER 1   ***
+0         X-REGION  1***
+          SIGNED MAT ID BY R-REG =   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   2
+          ONE GROUP CONSTANTS
+          * ACTIVATION CROSS SECTION      .43809E+01
+          * FISSION    CROSS SECTION      .55048E-01
+          * NU*FISSION CROSS SECTION      .13414E+00
+          * TOTAL      CROSS SECTION      .16778E+01
+          * DIFFUSION  COEFFICIENT 1      .19867E+00
+          * DIFFUSION  COEFFICIENT 2      .19867E+00
+          * ABSORPTION CROSS SECTION      .80699E-01
+          * SCATTEROUT CROSS SECTION      .22273E-04
+          * INTEGRATED FLUX-X-REGION      .75423E+01
+0         X-REGION  2***
+          SIGNED MAT ID BY R-REG =   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   2
+          ONE GROUP CONSTANTS
+          * ACTIVATION CROSS SECTION      .37188E+01
+          * FISSION    CROSS SECTION      .00000E+00
+          * NU*FISSION CROSS SECTION      .00000E+00
+          * TOTAL      CROSS SECTION      .99682E+00
+          * DIFFUSION  COEFFICIENT 1      .33440E+00
+          * DIFFUSION  COEFFICIENT 2      .33440E+00
+          * ABSORPTION CROSS SECTION      .15454E+00
+          * SCATTEROUT CROSS SECTION      .15777E-03
+          * INTEGRATED FLUX-X-REGION      .57841E-01
+0         PSUEDO 1 X-REGION FOR HOMOSP
+          SIGNED X-R ID BY R-REG =   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   2
+          ONE GROUP CONSTANTS
+          * ACTIVATION CROSS SECTION      .43758E+01
+          * FISSION    CROSS SECTION      .54629E-01
+          * NU*FISSION CROSS SECTION      .13311E+00
+          * TOTAL      CROSS SECTION      .25220E+01
+          * DIFFUSION  COEFFICIENT 1      .19925E+00
+          * DIFFUSION  COEFFICIENT 2      .19925E+00
+          * ABSORPTION CROSS SECTION      .81261E-01
+          * SCATTEROUT CROSS SECTION      .23304E-04
+          * INTEGRATED FLUX-X-REGION      .76001E+01
+1            ***  BARE REACTOR SPECTRUM CALCULATION *** OF STEP 15 ***
+          ***CELL    ***CRAC:  60.0 G/L : TEMP 40 C : HNO3 1 NOL : 53.52 CM HIGHT : DOPPLER 1   ***
+          *** BY B1 APPROXIMATION ***
+          RATIO OF THERMAL SOURCE TO REMOVAL   .10000E+01
+          NEUTRON SPECTRUM PER LETHARGY
+            .19230E+00  .51152E+00  .11170E+01  .18026E+01  .25372E+01  .33123E+01  .30822E+01  .30708E+01  .27183E+01  .24377E+01
+            .24583E+01  .19855E+01  .14809E+01  .15414E+01  .13205E+01  .11418E+01  .10099E+01  .90400E+00  .82141E+00  .75492E+00
+            .70002E+00  .65705E+00  .62211E+00  .59548E+00  .57342E+00  .55579E+00  .54306E+00  .53158E+00  .52210E+00  .51561E+00
+            .50936E+00  .50452E+00  .50007E+00  .49642E+00  .49388E+00  .49085E+00  .48800E+00  .48913E+00  .48807E+00  .48599E+00
+            .48331E+00  .48038E+00  .48397E+00  .47910E+00  .47691E+00  .47488E+00  .47318E+00  .47155E+00  .46767E+00  .46669E+00
+            .46198E+00  .46138E+00  .45626E+00  .45705E+00  .45213E+00  .44849E+00  .44880E+00  .44609E+00  .44597E+00  .44280E+00
+            .44182E+00  .45265E+00  .45416E+00  .45756E+00  .46152E+00  .46138E+00  .46539E+00  .47083E+00  .47804E+00  .48454E+00
+            .49344E+00  .50089E+00  .50886E+00  .51371E+00  .51856E+00  .51984E+00  .52345E+00  .52896E+00  .53852E+00  .55087E+00
+            .57202E+00  .60502E+00  .65043E+00  .71716E+00  .81024E+00  .93295E+00  .10964E+01  .13063E+01  .15611E+01  .18511E+01
+            .21557E+01  .24519E+01  .27031E+01  .28742E+01  .29279E+01  .28398E+01  .26035E+01  .22405E+01  .17947E+01  .13234E+01
+            .88403E+00  .52217E+00  .26231E+00  .10478E+00  .28891E-01  .38784E-02  .96078E-04
+          NEUTRON CURRENT PER LETHARGY
+            .10875E-01  .28691E-01  .58399E-01  .85743E-01  .11195E+00  .14685E+00  .13223E+00  .12006E+00  .97478E-01  .74260E-01
+            .75312E-01  .64709E-01  .42140E-01  .38893E-01  .33773E-01  .28956E-01  .24807E-01  .21353E-01  .18646E-01  .16463E-01
+            .14679E-01  .13240E-01  .12071E-01  .11054E-01  .10421E-01  .97741E-02  .92738E-02  .88621E-02  .84368E-02  .81735E-02
+            .79256E-02  .77183E-02  .75530E-02  .73621E-02  .72726E-02  .71676E-02  .70545E-02  .70208E-02  .69498E-02  .68738E-02
+            .67730E-02  .66270E-02  .66952E-02  .66214E-02  .65763E-02  .65275E-02  .64903E-02  .64544E-02  .63783E-02  .63604E-02
+            .62603E-02  .62592E-02  .61582E-02  .61844E-02  .60936E-02  .60291E-02  .60428E-02  .60023E-02  .60069E-02  .59537E-02
+            .59452E-02  .61138E-02  .61425E-02  .61386E-02  .61408E-02  .60783E-02  .60617E-02  .60780E-02  .60884E-02  .60860E-02
+            .60834E-02  .60478E-02  .59730E-02  .58321E-02  .57035E-02  .55980E-02  .54956E-02  .53983E-02  .53189E-02  .52604E-02
+            .52532E-02  .53135E-02  .54405E-02  .56770E-02  .60346E-02  .65147E-02  .71714E-02  .80212E-02  .90347E-02  .10112E-01
+            .11122E-01  .11947E-01  .12435E-01  .12465E-01  .11910E-01  .10708E-01  .89490E-02  .68955E-02  .48736E-02  .31409E-02
+            .18256E-02  .93735E-03  .40911E-03  .14091E-03  .32267E-04  .31917E-05  .41870E-07
+          FAST FISSION              .34453E-01
+          FAST ABSORPTION           .28904E-01
+          FAST LEAKAGE              .38573E+00
+          TOTAL FISSION             .93419E+00
+          TOTAL ABSORPTION          .57828E+00
+          TOTAL LEAKAGE             .42172E+00
+          K-EFF=  .93419 K-INF= 1.61546 UNDER GEOMTRICAL BUCKLING=  .23783E-01
+
+
+1
+ *** STEP 20 FOR EFFECTIVE X-SECTION IN
+ ===CASEID=CELL    =TITLE=CRAC:  60.0 G/L : TEMP 40 C : HNO3 1 NOL : 53.52 CM HIGHT : DOPPLER 1   ===
+
+                MATERIAL-WISE POWER DISTRIBUTION 
+
+          MTNAME     VOLUME      RELATIVE    FISSILE     FERTILE     CONVERSION
+          NAME        (CC)       POWER       ABSORPTION  CAPTURE     RATIO
+
+          FUELX0FX   6.78866E+02 3.83275E-01 4.54823E-01 1.37336E-03 3.01955E-03
+           TOTAL     6.78866E+02 3.83275E-01 4.54823E-01 1.37336E-03 3.01955E-03
+
+1     **** CASE ID === ANIS     *** TITLE === WHOLE CORE 107G CALCULATION USING ANISN(S8P1) TO GET CONDENSED X-SEC.    ***
+
+
+     USE OF COLLISION PROB. ROUTINE (NO,CALL:0,1)             0
+     SELECT OF ROUTINE FOR FIX S CALC(NO,PIJ,1D SN ,2D SN , 
+      1D DIFF,2D DIFF:0,1,2,3,4,5)                            0
+     DANCOFF FACTOR BY(INPUT,PIJ,TONE:0,1,2)                  0
+     CALC OF THERMAL RANGE (EXCLUDED,INCLUDED:0,1)            1
+     PROCESS OF RESONANCE 2 RANGE(TABLELOOK,IR,PEACO:0,1,2)   0
+     FLUX CALCULATION BY RANGES(SKIP,CALC:0,1)                0
+     FAST RANGES FOR TRANSPORT CALC(0,1,2,3,4)                0
+     INDICATOR FOR ENRGY STRUCTURE OF UMCROSS (0,1,2,3)       0
+     CALC OF BARE REACTOR SPECTRUM(SKIP,P1,B1:0,1,2)          0
+     COLLAPSE MACRO X-SECTION BY RANGE(SKIP,CALL:0,1)         0
+     INPUT OF GEOMETRY (NEW,SAME AS PREVIOUS CASE:0,1)        0
+     SELECT ROUTINE FOR EIGENVALUE CALC(NO,PIJ,1D SN,2D SN, 
+      1D DIFF,2D DIFF:0,1,2,3,4,5)                           -2
+     COLLAPSE MACRO AFTER EIGENVALUE CALC(SKIP,CALL:0,1)      1
+     PREPARE MACRO FOR CITATION (SKIP,CALL:0,1)               0
+     TOTAL MICRO X-SECTION BY (HARMONIC,ARITHMETIC AV:1,2)    2
+     TRANSPORT MACRO X-SECTION BY (P0,P1,B1,SN:0,1,2,3)       3
+     DIFF COEF (INVERSE TR,BENOIST ISO,BENOIST ANISO:1,2,3)  -1
+     REACTION RATE CALCULATION (0,1)                          0
+     PRINT OF MACRO-X (0,1,2)                                 0
+     BURN-UP CALCULATION (0,1:SKIP,EXECUTE)                   0
+1         **** CASE ANIS     **** TITLE WHOLE CORE 107G CALCULATION USING ANISN(S8P1) TO GET CONDENSED X-SEC.    ** STEP - ANISN - 
+0   15& ARRAY     36 ENTRIES READ
+0   16* ARRAY     14 ENTRIES READ
+0     T
+0    4* ARRAY     21 ENTRIES READ
+0    8& ARRAY     20 ENTRIES READ
+0    9& ARRAY      3 ENTRIES READ
+0   19& ARRAY      3 ENTRIES READ
+0   27& ARRAY      3 ENTRIES READ
+0     T
+0   337 LOCATIONS WILL BE USED FOR THIS PROBLEM
+0 ID    PROBLEM ID NO.                    1       ITH   0/1 = REG./ADJ.                     0
+  ISCT  ORDER OF SCATTERING               1       ISN   QUADRATURE ORDER                    8
+  IGE   1/2/3 = PLA/CYL/SPH               2       IBL   0/1/2/3 = NO REFL/REFL/PER/WHITE    1
+  IBR   RT. B.C. SAME AS LEFT B.C.,IBL    0       IZM   NO. OF ZONES                        3
+  IM    No. OF INTERVALS                 20       IEVT  0/1/2/3/4/5/6=Q/K/ALPHA/C/Z/R/H     1
+  IGM   NO. OF GROUPS                   107       IHT   POS. OF SIGMA T                     0
+  IHS   POS. OF SIGMA GG                  0       IHM   TABLE LENGTH                        0
+  MS    MIXING TABLE LENGTH               0       MCR   NO. MATLS. FROM CARDS               0
+  MTP   NO. MATLS. FROM LIB TAPE          0       MT    NO. OF MATLS                        0
+  IDFM  0/1=NONE/DENSITY FACTORS(21*)     0       IPVT  0/1/2=NONE/K/ALPHA                  0
+  IQM   0/1=NONE/DIST. SOURCE             0       IPM   0/1/IM=NONE/S(MM,IPP)/S(MM,IM)      0
+  IPP   INTERVAL OF SHELL SOURCE          0       IIM   INNER ITER. MAX.                   50
+  ID1   0/1/2/3=NO/PRNT ND/PNCH N/BOTH    0       ID2   0/1/2=NO/X-SEC TAPE/PREV            0
+  ID3   0/N=NO/N ACT. BY ZONE             0       ID4   0/1=NO/N ACT. BY INT.               0
+  ICM   OUTER ITER. MAX.                150       IDAT1 0/1/2=NO/MIN/MAX TAPE               0
+  IDAT2 0/1=NO/DIFFUSION(24$)             0       IFG   0/1=NO/FEW GRP.                     0
+  IFLU  0/1/2=BOTH/LINEAR/STEP            0       IFN   0/1/2=INPUT 2*/3*/PREV. CASE        0
+  IPRT  0/1= PRINT X-SEC/DO NOT           1       IXTR  0/1=CALC/READ P-L CONSTANTS         0
+0 EV    EIGENVALUE GUESS        0.00000E+00       EVM   EIGENVALUE MODIFIER       0.00000E+00
+  EPS   PRECISION DESIRED       1.00000E-05       BF    BUCKLING FACTOR           1.42089E+00
+  DY    CYL OR PLA HEIGHT       5.39490E+01       DZ    PLANE DEPTH               0.00000E+00
+  DFM1  HT. FOR VOID CORR.      0.00000E+00       XNF   NORM. FACTOR              0.00000E+00
+  PV    IPVT=1/2 - K/ALPHA      0.00000E+00       RYF   LAMBDA2 RELAXATION        5.00000E-01
+  XLAL  PT CNVRG EPS. IF .NE.0  5.00000E-05       XLAH  1-LAMBDA MAX.-SEARCH      5.00000E-02
+  EQL   EV CHANGE EPS.-SEARCH   1.00000E-02       XNPM  NEW PARAM. MOD.-SEARCH    0.00000E+00
+0 INT.  ZONE NUMBER     RADIUS        AREA        VOLUME    DENS FACTOR
+     1       1            0            0       2.83529E+00                                                    
+     2       1       9.50000E-01  5.96903E+00  9.11062E+00                                                    
+     3       1       1.95000E+00  1.22522E+01  1.09563E+01                                                    
+     4       1       2.70000E+00  1.69646E+01  1.44906E+01                                                    
+     5       1       3.45000E+00  2.16770E+01  1.80249E+01                                                    
+     6       1       4.20000E+00  2.63894E+01  2.15592E+01                                                    
+     7       1       4.95000E+00  3.11018E+01  2.50935E+01                                                    
+     8       1       5.70000E+00  3.58142E+01  2.86278E+01                                                    
+     9       1       6.45000E+00  4.05265E+01  3.21620E+01                                                    
+    10       1       7.20000E+00  4.52389E+01  3.56964E+01                                                    
+    11       1       7.95000E+00  4.99513E+01  3.92306E+01                                                    
+    12       1       8.70000E+00  5.46637E+01  4.27650E+01                                                    
+    13       1       9.45000E+00  5.93761E+01  4.62992E+01                                                    
+    14       1       1.02000E+01  6.40885E+01  4.98335E+01                                                    
+    15       1       1.09500E+01  6.88009E+01  5.33678E+01                                                    
+    16       1       1.17000E+01  7.35133E+01  5.69021E+01                                                    
+    17       1       1.24500E+01  7.82257E+01  6.04364E+01                                                    
+    18       2       1.32000E+01  8.29380E+01  6.39706E+01                                                    
+    19       2       1.39500E+01  8.76504E+01  6.75050E+01                                                    
+    20       3       1.47000E+01  9.23628E+01  2.79916E+01                                                    
+    21               1.50000E+01  9.42478E+01                                                                 
+0        RT ALBEDO    LFT ALBEDO  DIFF MARKER   MAT'L/ZONE   L OF P(L)   RADIUS MOD  X-REG'N/ZONE
+     1                                              1            1            0            1                  
+     2                                              1            1            0            2                  
+     3                                              2            1            0            3                  
+0             CROSS SECTION MIXING TABLE                             ANGULAR  QUADRATURE  CONSTANTS
+         MIXTURE     COMPONENT    NO. DENSITY               COSINE (MU)     WEIGHT    REFL DIRECT   WT. X COS.
+     1                                                     -9.75900E-01       0            9     ********     
+     2                                                     -9.51190E-01  6.04938E-02       9      -5.75411E-02
+     3                                                     -7.86796E-01  4.53704E-02       8      -3.56972E-02
+     4                                                     -5.77350E-01  4.53704E-02       7      -2.61946E-02
+     5                                                     -2.18218E-01  6.04938E-02       6      -1.32008E-02
+     6                                                      2.18218E-01  6.04938E-02       5       1.32008E-02
+     7                                                      5.77350E-01  4.53704E-02       4       2.61946E-02
+     8                                                      7.86796E-01  4.53704E-02       3       3.56972E-02
+     9                                                      9.51190E-01  6.04938E-02       2       5.75411E-02
+    10                                                     -8.16496E-01       0           16     ********     
+    11                                                     -7.86796E-01  4.53704E-02      16      -3.56972E-02
+    12                                                     -5.77350E-01  4.62962E-02      15      -2.67291E-02
+    13                                                     -2.18218E-01  4.53704E-02      14      -9.90063E-03
+    14                                                      2.18218E-01  4.53704E-02      13       9.90063E-03
+    15                                                      5.77350E-01  4.62962E-02      12       2.67291E-02
+    16                                                      7.86796E-01  4.53704E-02      11       3.56972E-02
+    17                                                     -6.17213E-01       0           21     ********     
+    18                                                     -5.77350E-01  4.53704E-02      21      -2.61946E-02
+    19                                                     -2.18218E-01  4.53704E-02      20      -9.90063E-03
+    20                                                      2.18218E-01  4.53704E-02      19       9.90063E-03
+    21                                                      5.77350E-01  4.53704E-02      18       2.61946E-02
+    22                                                     -3.08607E-01       0           24     ********     
+    23                                                     -2.18218E-01  6.04938E-02      24      -1.32008E-02
+    24                                                      2.18218E-01  6.04938E-02      23       1.32008E-02
+ NUMBER OF MATERIALS         =   2
+ MAT.ID BY ZONE (INPUT)      =   1   1   2
+ M REG  BY ZONE              =   1   1   2
+ SIGNED MAT.ID BY ZONE       =  -1  -1  -2
+ SEQUENTIAL MAT.POS. BY ZONE =   1   1   3
+ SIGNED MAT.ID BY MATERIAL   =  -1  -2
+ NUMBER OF X-REGIONS         =   3
+ VOLUME  MATERIAL   =   .67887E+03   .27992E+02
+
+     NO. OF MATERIALS USED IN THE CASE =  2
+
+1          ** CASE ANIS     ** TITLE WHOLE CORE 107G CALCULATION USING ANISN(S8P1) TO GET CONDENSED X-SEC.     STEP - ANISN2 -
+0 *VELOCITIES*
+ 2.98228E+03 2.63185E+03 2.32260E+03 2.04969E+03 1.80884E+03 1.59630E+03 1.40873E+03 1.24320E+03 1.09712E+03 9.68205E+02
+ 8.54438E+02 7.54039E+02 6.65437E+02 5.87246E+02 5.18243E+02 4.57348E+02 4.03607E+02 3.56183E+02 3.14330E+02 2.77395E+02
+ 2.44801E+02 2.16036E+02 1.90651E+02 1.68249E+02 1.48479E+02 1.31032E+02 1.15636E+02 1.02048E+02 9.00571E+01 7.94751E+01
+ 7.01365E+01 6.18953E+01 5.46224E+01 4.82041E+01 4.25399E+01 3.75414E+01 3.31302E+01 2.92373E+01 2.58018E+01 2.27700E+01
+ 2.00945E+01 1.77333E+01 1.56496E+01 1.38107E+01 1.21879E+01 1.07558E+01 9.49195E+00 8.37661E+00 7.39234E+00 6.52371E+00
+ 5.75716E+00 5.08067E+00 4.48368E+00 3.95684E+00 3.49189E+00 3.08158E+00 2.71949E+00 2.39994E+00 2.11794E+00 1.86907E+00
+ 1.64945E+00 1.45564E+00 1.32151E+00 1.24144E+00 1.16623E+00 1.09557E+00 1.02919E+00 9.66836E-01 9.08258E-01 8.53230E-01
+ 8.01535E-01 7.52972E-01 7.07352E-01 6.64496E-01 6.33739E-01 6.14221E-01 5.94703E-01 5.75185E-01 5.55668E-01 5.36150E-01
+ 5.16633E-01 4.97117E-01 4.77600E-01 4.58084E-01 4.38568E-01 4.19053E-01 3.99538E-01 3.80024E-01 3.60510E-01 3.40998E-01
+ 3.21486E-01 3.01975E-01 2.82465E-01 2.62957E-01 2.43452E-01 2.23948E-01 2.04448E-01 1.84952E-01 1.65463E-01 1.45981E-01
+ 1.26511E-01 1.07059E-01 8.76381E-02 6.82738E-02 4.90334E-02 3.01551E-02 1.34606E-02
+0 *FISSION SPECTRUM*
+ 7.23302E-03 1.85185E-02 4.11604E-02 7.01020E-02 9.83758E-02 1.17487E-01 1.21849E-01 1.13137E-01 9.75817E-02 8.00965E-02
+ 6.32803E-02 4.84086E-02 3.58703E-02 2.59099E-02 1.84323E-02 1.29827E-02 9.08196E-03 6.32260E-03 4.38712E-03 3.03667E-03
+ 2.09799E-03 1.44759E-03 9.97857E-04 6.87357E-04 4.73217E-04 3.25658E-04 2.24038E-04 1.54098E-04 1.05987E-04 7.28777E-05
+ 5.01061E-05 3.44469E-05 2.36799E-05 1.62775E-05 1.11886E-05 7.69017E-06 5.28564E-06 3.63349E-06 2.49738E-06 1.71648E-06
+ 1.17974E-06 8.10836E-07 5.57280E-07 3.83009E-07 2.63229E-07 1.80904E-07 1.24353E-07 8.54671E-08 5.87405E-08 4.03716E-08
+ 2.77468E-08 1.90698E-08 1.31062E-08 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00
+ 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00
+ 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00
+ 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00
+ 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00
+ 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00
+      POSITION SIGMA-T                       5
+      TABLE LENGTH                          89
+      POSITION SIGMA-GG                     42
+
+         1  CELLA014   P- 0 CONVERTED
+         2  CELLA013   P- 1 CONVERTED
+         3  CELLA024   P- 0 CONVERTED
+         4  CELLA023   P- 1 CONVERTED
+0   337 LOCATIONS WILL BE USED FOR THIS PROBLEM ( /SN1C/ 'SN2' )
+0 49600 LOCATIONS WILL BE USED FOR THIS PROBLEM ( /SN2C/ ) 
+0 38888 LOCATIONS WILL BE USED TO READ CROSS SECTIONS ( /SN2C/ )
+0 ELEMENTS FROM LIBRARY TAPE
+         1     1      CELLA014    CELLA014                            
+         2     2      CELLA013    CELLA013                            
+         3     3      CELLA024    CELLA024                            
+         4     4      CELLA023    CELLA023                            
+          FISSION GUESS
+                  1.08589E+00   1.08589E+00   1.08589E+00   1.08589E+00   1.08589E+00   1.08589E+00
+                  1.08589E+00   1.08589E+00   1.08589E+00   1.08589E+00   1.08589E+00   1.08589E+00
+                  1.08589E+00   1.08589E+00   1.08589E+00   1.08589E+00   1.08589E+00   1.08589E+00
+                  1.08589E+00   0.00000E+00
+1 OUTER INNER       NEUT BAL    UPSCATTER RATIO    EIGENVALUE        LAMBDA1         LAMBDA2
+      0     0   0.0000000E+00   0.0000000E+00   0.0000000E+00   0.0000000E+00   0.0000000E+00
+      1     0   9.9999958E-01   0.0000000E+00   1.2626417E-01   1.2626417E-01   0.0000000E+00
+      2   582   1.0000002E+00   2.0571206E+00   4.0130681E-01   3.1783111E+00   1.2335129E+00
+      3  1202   9.9999940E-01   1.2034192E+00   6.2070245E-01   1.5467030E+00   1.2137239E+00
+      4  1816   1.0000002E+00   1.0678430E+00   7.8357720E-01   1.2624040E+00   1.1766663E+00
+      5  2389   9.9999988E-01   1.0260779E+00   8.7718052E-01   1.1194564E+00   1.1118627E+00
+      6  2929   9.9999976E-01   1.0107205E+00   9.2365968E-01   1.0529870E+00   1.0577939E+00
+      7  3433   1.0000007E+00   1.0046389E+00   9.4566166E-01   1.0238204E+00   1.0272315E+00
+      8  3912   1.0000001E+00   1.0021293E+00   9.5629680E-01   1.0112463E+00   1.0127137E+00
+      9  4358   1.0000004E+00   1.0010625E+00   9.6183443E-01   1.0057907E+00   1.0062330E+00
+     10  4789   1.0000000E+00   1.0005907E+00   9.6504498E-01   1.0033380E+00   1.0033642E+00
+     11  5219   1.0000004E+00   1.0003709E+00   9.6714413E-01   1.0021752E+00   1.0020515E+00
+     12  5643   9.9999976E-01   1.0002636E+00   9.6868646E-01   1.0015948E+00   1.0014132E+00
+     13  6061   9.9999988E-01   1.0002035E+00   9.6990407E-01   1.0012569E+00   1.0010798E+00
+     14  6478   9.9999976E-01   1.0001673E+00   9.7091919E-01   1.0010467E+00   1.0008789E+00
+     15  6893   9.9999958E-01   1.0001425E+00   9.7179180E-01   1.0008987E+00   1.0007466E+00
+     16  7306   1.0000001E+00   1.0001229E+00   9.7254848E-01   1.0007787E+00   1.0006492E+00
+     17  7712   9.9999988E-01   1.0001081E+00   9.7321826E-01   1.0006887E+00   1.0005698E+00
+     18  8111   1.0000002E+00   1.0000969E+00   9.7382009E-01   1.0006185E+00   1.0005060E+00
+     19  8509   9.9999958E-01   1.0000864E+00   9.7435701E-01   1.0005513E+00   1.0004562E+00
+     20  8903   1.0000001E+00   1.0000765E+00   9.7483408E-01   1.0004896E+00   1.0004085E+00
+     21  9283   1.0000002E+00   1.0000702E+00   9.7527200E-01   1.0004492E+00   1.0003654E+00
+     22  9648   9.9999976E-01   1.0000625E+00   9.7566187E-01   1.0003997E+00   1.0003343E+00
+     23 10009   9.9999988E-01   1.0000563E+00   9.7601432E-01   1.0003613E+00   1.0002996E+00
+     24 10372   9.9999988E-01   1.0000511E+00   9.7633511E-01   1.0003287E+00   1.0002712E+00
+     25 10731   1.0000000E+00   1.0000461E+00   9.7662419E-01   1.0002961E+00   1.0002470E+00
+     26 11089   9.9999958E-01   1.0000415E+00   9.7688496E-01   1.0002670E+00   1.0002238E+00
+     27 11446   9.9999964E-01   1.0000387E+00   9.7712874E-01   1.0002495E+00   1.0002025E+00
+     28 11801   1.0000004E+00   1.0000345E+00   9.7734499E-01   1.0002214E+00   1.0001870E+00
+     29 12154   1.0000001E+00   1.0000314E+00   9.7754264E-01   1.0002022E+00   1.0001676E+00
+     30 12508   1.0000002E+00   1.0000290E+00   9.7772539E-01   1.0001869E+00   1.0001537E+00
+     31 12861   1.0000001E+00   1.0000253E+00   9.7788507E-01   1.0001633E+00   1.0001413E+00
+     32 13214   9.9999964E-01   1.0000246E+00   9.7803998E-01   1.0001584E+00   1.0001264E+00
+     33 13569   1.0000000E+00   1.0000221E+00   9.7817880E-01   1.0001419E+00   1.0001190E+00
+     34 13922   9.9999964E-01   1.0000206E+00   9.7830862E-01   1.0001327E+00   1.0001079E+00
+     35 14274   1.0000000E+00   1.0000173E+00   9.7841781E-01   1.0001116E+00   1.0000999E+00
+     36 14621   9.9999964E-01   1.0000170E+00   9.7852558E-01   1.0001101E+00   1.0000869E+00
+     37 14970   1.0000002E+00   1.0000151E+00   9.7862089E-01   1.0000974E+00   1.0000826E+00
+     38 15316   1.0000002E+00   1.0000150E+00   9.7871530E-01   1.0000964E+00   1.0000749E+00
+     39 15658   1.0000001E+00   1.0000117E+00   9.7878939E-01   1.0000757E+00   1.0000719E+00
+     40 15997   1.0000001E+00   1.0000113E+00   9.7886217E-01   1.0000744E+00   1.0000600E+00
+     41 16337   9.9999988E-01   1.0000110E+00   9.7893196E-01   1.0000713E+00   1.0000570E+00
+     42 16676   1.0000005E+00   1.0000093E+00   9.7899127E-01   1.0000606E+00   1.0000539E+00
+     43 17014   1.0000001E+00   1.0000085E+00   9.7904575E-01   1.0000557E+00   1.0000476E+00
+     44 17352   9.9999988E-01   1.0000089E+00   9.7910267E-01   1.0000582E+00   1.0000434E+00
+     45 17690   9.9999976E-01   1.0000079E+00   9.7915214E-01   1.0000505E+00   1.0000432E+00
+     46 18025   9.9999988E-01   1.0000076E+00   9.7920007E-01   1.0000489E+00   1.0000384E+00
+     47 18359   9.9999976E-01   1.0000066E+00   9.7924095E-01   1.0000418E+00   1.0000365E+00
+     48 18692   9.9999958E-01   1.0000054E+00   9.7927481E-01   1.0000346E+00   1.0000321E+00
+     49 19019   9.9999976E-01   1.0000048E+00   9.7930545E-01   1.0000312E+00   1.0000274E+00
+     50 19343   9.9999988E-01   1.0000049E+00   9.7933757E-01   1.0000328E+00   1.0000250E+00
+     51 19665   9.9999988E-01   1.0000049E+00   9.7936833E-01   1.0000314E+00   1.0000248E+00
+     52 19983   1.0000000E+00   1.0000046E+00   9.7939795E-01   1.0000303E+00   1.0000235E+00
+     53 20286   9.9999964E-01   1.0000036E+00   9.7942078E-01   1.0000234E+00   1.0000224E+00
+     54 20577   1.0000002E+00   1.0000035E+00   9.7944331E-01   1.0000230E+00   1.0000180E+00
+     55 20842   9.9999976E-01   1.0000029E+00   9.7946155E-01   1.0000186E+00   1.0000175E+00
+     56 21087   1.0000000E+00   1.0000030E+00   9.7948027E-01   1.0000192E+00   1.0000145E+00
+     57 21331   1.0000000E+00   1.0000036E+00   9.7950256E-01   1.0000228E+00   1.0000144E+00
+     58 21574   9.9999976E-01   1.0000023E+00   9.7951645E-01   1.0000142E+00   1.0000162E+00
+     59 21809   9.9999988E-01   1.0000026E+00   9.7953242E-01   1.0000163E+00   1.0000114E+00
+     60 22045   1.0000001E+00   1.0000012E+00   9.7953987E-01   1.0000076E+00   1.0000118E+00
++                                                                                              ANG. FLX ON  4
+     61 22277   9.9999964E-01   1.0000021E+00   9.7955418E-01   1.0000145E+00   1.0000083E+00
+     62 22509   9.9999976E-01   1.0000015E+00   9.7956389E-01   1.0000099E+00   1.0000100E+00
++                                                                                              ANG. FLX ON  4
+     63 22740   9.9999964E-01   1.0000018E+00   9.7957534E-01   1.0000117E+00   1.0000085E+00
+     64 22968   1.0000005E+00   1.0000014E+00   9.7958446E-01   1.0000093E+00   1.0000081E+00
++                                                                                              ANG. FLX ON  4
+     65 23194   1.0000001E+00   1.0000015E+00   9.7959453E-01   1.0000103E+00   1.0000074E+00
+     66 23417   9.9999964E-01   1.0000015E+00   9.7960407E-01   1.0000097E+00   1.0000076E+00
++                                                                                              ANG. FLX ON  4
+     67 23635   1.0000005E+00   1.0000006E+00   9.7960818E-01   1.0000042E+00   1.0000068E+00  FINAL MONITOR
+1 WHOLE CORE 107G CALCULATION USING ANISN(S8P1) TO GET CONDENSED X-SEC.   
+0 INT. ZONE NUMBER     RADIUS    INT. MIDPOINT    AREA        VOLUME    FISSION DENS
+     1        1      0.00000E+00  4.75000E-01  0.00000E+00  2.83529E+00  2.01052E+00
+     2        1      9.50000E-01  1.45000E+00  5.96903E+00  9.11062E+00  1.99160E+00
+     3        1      1.95000E+00  2.32500E+00  1.22522E+01  1.09563E+01  1.96004E+00
+     4        1      2.70000E+00  3.07500E+00  1.69646E+01  1.44906E+01  1.92041E+00
+     5        1      3.45000E+00  3.82500E+00  2.16770E+01  1.80249E+01  1.87030E+00
+     6        1      4.20000E+00  4.57500E+00  2.63894E+01  2.15592E+01  1.81012E+00
+     7        1      4.95000E+00  5.32500E+00  3.11018E+01  2.50935E+01  1.74023E+00
+     8        1      5.70000E+00  6.07500E+00  3.58142E+01  2.86278E+01  1.66120E+00
+     9        1      6.45000E+00  6.82500E+00  4.05265E+01  3.21620E+01  1.57341E+00
+    10        1      7.20000E+00  7.57500E+00  4.52389E+01  3.56964E+01  1.47755E+00
+    11        1      7.95000E+00  8.32500E+00  4.99513E+01  3.92306E+01  1.37387E+00
+    12        1      8.70000E+00  9.07500E+00  5.46637E+01  4.27650E+01  1.26315E+00
+    13        1      9.45000E+00  9.82500E+00  5.93761E+01  4.62992E+01  1.14521E+00
+    14        1      1.02000E+01  1.05750E+01  6.40885E+01  4.98335E+01  1.02080E+00
+    15        1      1.09500E+01  1.13250E+01  6.88009E+01  5.33678E+01  8.88544E-01
+    16        1      1.17000E+01  1.20750E+01  7.35133E+01  5.69021E+01  7.49009E-01
+    17        1      1.24500E+01  1.28250E+01  7.82257E+01  6.04364E+01  5.97330E-01
+    18        2      1.32000E+01  1.35750E+01  8.29380E+01  6.39706E+01  4.34082E-01
+    19        2      1.39500E+01  1.43250E+01  8.76504E+01  6.75050E+01  2.36519E-01
+    20        3      1.47000E+01  1.48500E+01  9.23628E+01  2.79916E+01  0.00000E+00
+    21               1.50000E+01               9.42478E+01
+1 WHOLE CORE 107G CALCULATION USING ANISN(S8P1) TO GET CONDENSED X-SEC.   
+
+
+
+         *** MIX-X-SECTION STEP IN *** ALL  ENERGY RANGE
+          *** ANIS    ***WHOLE CORE 107G CALCULATION USING ANISN(S8P1) TO GET CONDENSED X-SEC.   ***
+0         X-REGION  1***
+          SIGNED MAT ID BY R-REG =   1   1   2
+          ONE GROUP CONSTANTS
+          * ACTIVATION CROSS SECTION      .14882E+01
+          * FISSION    CROSS SECTION      .19022E-01
+          * NU*FISSION CROSS SECTION      .46364E-01
+          * TOTAL      CROSS SECTION      .34967E+00
+          * DIFFUSION  COEFFICIENT 1      .95328E+00
+          * DIFFUSION  COEFFICIENT 2      .95328E+00
+          * ABSORPTION CROSS SECTION      .28262E-01
+          * SCATTEROUT CROSS SECTION      .00000E+00
+          * INTEGRATED FLUX-X-REGION      .14632E+05
+0         X-REGION  2***
+          SIGNED MAT ID BY R-REG =   1   1   2
+          ONE GROUP CONSTANTS
+          * ACTIVATION CROSS SECTION      .11535E+01
+          * FISSION    CROSS SECTION      .14759E-01
+          * NU*FISSION CROSS SECTION      .35979E-01
+          * TOTAL      CROSS SECTION      .31724E+00
+          * DIFFUSION  COEFFICIENT 1      .10507E+01
+          * DIFFUSION  COEFFICIENT 2      .10507E+01
+          * ABSORPTION CROSS SECTION      .22068E-01
+          * SCATTEROUT CROSS SECTION      .00000E+00
+          * INTEGRATED FLUX-X-REGION      .12155E+04
+0         X-REGION  3***
+          SIGNED MAT ID BY R-REG =   1   1   2
+          ONE GROUP CONSTANTS
+          * ACTIVATION CROSS SECTION      .59346E+00
+          * FISSION    CROSS SECTION      .00000E+00
+          * NU*FISSION CROSS SECTION      .00000E+00
+          * TOTAL      CROSS SECTION      .31431E+00
+          * DIFFUSION  COEFFICIENT 1      .10605E+01
+          * DIFFUSION  COEFFICIENT 2      .10605E+01
+          * ABSORPTION CROSS SECTION      .25738E-01
+          * SCATTEROUT CROSS SECTION      .00000E+00
+          * INTEGRATED FLUX-X-REGION      .14238E+03
+0                COARSE WHOLE   ENERGY GROUP STRUCTURE (M=1.67482E-24 GRAM,  EV=1.60210E-12 ERG)
+0   GROUP          ENERGY RANGE (EV)               VELOCITY RANGE (CM/SEC)           LETHARGY RANGE
+       1         .10000E+08     .60653E+07         .43740E+10     .34065E+10          .0000      .5000
+       2         .60653E+07     .36788E+07         .34065E+10     .26529E+10          .5000     1.0000
+       3         .36788E+07     .82085E+06         .26529E+10     .12532E+10         1.0000     2.5000
+       4         .82085E+06     .49787E+06         .12532E+10     .97596E+09         2.5000     3.0000
+       5         .49787E+06     .23518E+06         .97596E+09     .67077E+09         3.0000     3.7500
+       6         .23518E+06     .67380E+05         .67077E+09     .35904E+09         3.7500     5.0000
+       7         .67380E+05     .91188E+04         .35904E+09     .13208E+09         5.0000     7.0000
+       8         .91188E+04     .12341E+04         .13208E+09     .48590E+08         7.0000     9.0000
+       9         .12341E+04     .13007E+03         .48590E+08     .15775E+08         9.0000    11.2500
+      10         .13007E+03     .17604E+02         .15775E+08     .58033E+07        11.2500    13.2500
+      11         .17604E+02     .23824E+01         .58033E+07     .21349E+07        13.2500    15.2500
+      12         .23824E+01     .87643E+00         .21349E+07     .12949E+07        15.2500    16.2500
+      13         .87643E+00     .41399E+00         .12949E+07     .88996E+06        16.2500    17.0000
+      14         .41399E+00     .27699E+00         .88996E+06     .72796E+06        17.0000    17.4019
+      15         .27699E+00     .16743E+00         .72796E+06     .56596E+06        17.4019    17.9053
+      16         .16743E+00     .85297E-01         .56596E+06     .40396E+06        17.9053    18.5797
+      17         .85297E-01     .30602E-01         .40396E+06     .24196E+06        18.5797    19.6048
+      18         .30602E-01     .10000E-04         .24196E+06     .43740E+04        19.6048    27.6310
+1     **** CASE ID === TWOC     *** TITLE === WHOLE CORE 18 G CALCULATION USING TWOTRAN-2 (S8P1)                       ***
+
+
+     USE OF COLLISION PROB. ROUTINE (NO,CALL:0,1)             0
+     SELECT OF ROUTINE FOR FIX S CALC(NO,PIJ,1D SN ,2D SN , 
+      1D DIFF,2D DIFF:0,1,2,3,4,5)                            0
+     DANCOFF FACTOR BY(INPUT,PIJ,TONE:0,1,2)                  0
+     CALC OF THERMAL RANGE (EXCLUDED,INCLUDED:0,1)            1
+     PROCESS OF RESONANCE 2 RANGE(TABLELOOK,IR,PEACO:0,1,2)   0
+     FLUX CALCULATION BY RANGES(SKIP,CALC:0,1)                0
+     FAST RANGES FOR TRANSPORT CALC(0,1,2,3,4)                0
+     INDICATOR FOR ENRGY STRUCTURE OF UMCROSS (0,1,2,3)       0
+     CALC OF BARE REACTOR SPECTRUM(SKIP,P1,B1:0,1,2)          0
+     COLLAPSE MACRO X-SECTION BY RANGE(SKIP,CALL:0,1)         1
+     INPUT OF GEOMETRY (NEW,SAME AS PREVIOUS CASE:0,1)        0
+     SELECT ROUTINE FOR EIGENVALUE CALC(NO,PIJ,1D SN,2D SN, 
+      1D DIFF,2D DIFF:0,1,2,3,4,5)                            3
+     COLLAPSE MACRO AFTER EIGENVALUE CALC(SKIP,CALL:0,1)      0
+     PREPARE MACRO FOR CITATION (SKIP,CALL:0,1)               0
+     TOTAL MICRO X-SECTION BY (HARMONIC,ARITHMETIC AV:1,2)    2
+     TRANSPORT MACRO X-SECTION BY (P0,P1,B1,SN:0,1,2,3)       0
+     DIFF COEF (INVERSE TR,BENOIST ISO,BENOIST ANISO:1,2,3)   1
+     REACTION RATE CALCULATION (0,1)                          0
+     PRINT OF MACRO-X (0,1,2)                                 0
+     BURN-UP CALCULATION (0,1:SKIP,EXECUTE)                   0
+1
+     THIS CASE WAS PROCESSED BY THE TWOTRAN-II CODE OF 04/24/73 ON   92-28-09
+ WHOLE CORE 18 G CALCULATION USING TWOTRAN-2 (S8P1) : 2D-RZ : FORWARD    
+0   0 ITH    0/1 DIRECT/ADJOINT
+    1 ISCT   0/N ISOTROPIC/NTH ORDER ANISOTROPIC
+    8 ISN    SN ORDER ( +/- BUILT-IN/STANDARD INTERFACE FILE ) 
+   18 IGM    NO. GROUPS
+    4 IM     NO. COARSE MESH R INTERVALS 
+    4 JM     NO. COARSE MESH Z INTERVALS 
+  1 0 0 0    LEFT,RIGHT,BOTTOM,TOP BOUNDARY CONDITION 0/1/2/3 VACUUM/REFLECTIVE/WHITE/PERODIC 
+    1 IEVT   0/1/2/3/4  Q/K/ALPHA/C/DELTA  CALCULATION    
+    0 ISTART -5/-4/-3/-2/-1/0/1/2/3/4/6 STARTING OPTIONS ( MINUS FOR ISOTROPIC COMPONENT ONLY ) SEE MANUAL FOR DETAILS 
+
+    3 MT     TOTAL NO. OF MATERIALS
+   3   0     STANDARD INTERFACE/CARD INPUT MATERIALS 
+    0 MS     NO. OF MIXTURE INSTRUCTIONS
+    0 IHT    ROW OF TOTAL CROSS SECTION
+    0 IHS    ROW OF SELF SCATTER CROSS SECTION
+    0 IHM    LAST ROW OF CROSS SECTION TABLE
+    0 IQOPT  0/1/2/3/4/5 NONE/SAME AS ISTART FOR SOURCE DISTRIBUTION
+    0 IQAN   0/N  ISOTROPIC/NTH ORDER ANISOTROPIC SOURCE
+  0 0 0      IQR/IQB/IQT RIGHT,BOTTOM,TOP BOUNDARY SOURCE ( 0/1 NO/YES ) 
+    0 IPVT   0/1/2 NONE/K/ALPHA  PARAMETRIC EIGENVALUE TYPE 
+   30 IITL   MAX NO. INNER ITERATIONS 
+    0 IXM    0/1 NO/YES MODIFY R RADII (IEVT=4 ONLY)
+
+    0 IYM    0/1 NO/YES MODIFY Z RADII (IEVT=4 ONLY)
+  700 ITLIM  0/N NONE/SECONDS TIME LIMIT 
+    2 IGEOM  1/2/3 (X,Y)/(R,Z)/(R,T) GEOMETRY 
+    0 IEDOPT 0/1/2/3/4=NONE/N EDIT OPTIONS SEE MANUAL FOR DETAILS 
+    0 ISDF   0/1 NO/YES INPUT FINE MESH DENSITY FACTORS 
+    1 I1     0/1 YES/NO FULL INPUT FLUX PRINT 
+    2 I2     0/1/2 ALL/ISOTROPIC/NONE FINAL FLUX PRINT 
+    2 I3     0/1/2 ALL/MIXED/NONE CROSS SECTION PRINT 
+    1 I4     0/1 YES/NO FINAL FISSION PRINT 
+    3 I5     0/1/2/3 ALL/READQF/NORMALIZED/NONE INPUT SOURCE PRINT 
+    0 I6     0/1 YES/NO COARSE MESH BALANCE TABLE PRINT 
+    1 IANG   -1/0/1 PRINT AND STORE/NO/STORE ANGULAR FLUX 
+    0 IMC    NO. OF HORIZON. MAT.MESH INTERVALS (IF.NE.0, REBAL.MESH.NE.MAT.MESH WHICH IS EDIT MESH) 
+    0 JMC    NO. OF VERTICAL MAT.MESH INTERVALS
+    0 IFO    0/1 NO/YES STANDARD INTERFACE FILE OUTPUT 
+
+
+   0.000E+00 EV     EIGENVALUE GUESS
+   0.000E+00 EVM    EIGENVALUE MODIFIER
+   0.000E+00 PV     PARAMETRIC EIGENVALUE 
+   1.000E-02 XLAL   SEARCH LAMBDA LOWER LIMIT
+   5.000E-01 XLAH   SEARCH LAMBDA UPPER LIMIT
+   1.000E-03 XLAX   FINE MESH SEARCH PRECISION 
+
+   1.000E-05 EPS    CONVERGENCE PRECISION 
+   1.000E+00 NORM   NORMALIZATION AMPLITUDE
+   1.000E+00 POD    PARAMETER OSCILLATION DAMPER 
+   0.000E+00 BHGT   TOTAL BUCKLING HEIGHT IN CM FOR (X,Y) AND (R,T) ONLY 
+
+
+0INPUT FINE R MESH      4
+            8           5           2           1
+0INPUT FINE Z MESH      4
+            2          25           2           1
+
+
+0STORAGE    REQUIRED ALLOWED
+ SMALL CORE    1137    9998
+ LARGE CORE
+
+
+
+
+ S 8 CONSTANTS
+
+                   MU             ETA            WEIGHT
+
+
+       1       .19232747E+00   .96229947E+00   .29197117E-01
+       2       .57735026E+00   .79352176E+00   .23313807E-01
+       3       .19232747E+00   .79352176E+00   .23313807E-01
+       4       .79352176E+00   .57735026E+00   .23313807E-01
+       5       .57735026E+00   .57735026E+00   .22525800E-01
+       6       .19232747E+00   .57735026E+00   .23313807E-01
+       7       .96229947E+00   .19232747E+00   .29197117E-01
+       8       .79352176E+00   .19232747E+00   .23313807E-01
+       9       .57735026E+00   .19232747E+00   .23313807E-01
+      10       .19232747E+00   .19232747E+00   .29197117E-01
+0INPUT COARSE RMESH     5
+   0.0000E+00  8.0000E+00  1.3200E+01  1.4700E+01  1.5000E+01
+0INPUT COARSE ZMESH     5
+   0.0000E+00  1.5000E+00  5.2449E+01  5.3949E+01  5.4249E+01
+0INPUT CROSS SEC ID    16
+           -2          -2          -2          -3          -1          -1          -2          -3          -2          -2
+           -2          -3          -3          -3          -3          -3
+1*****************************************************REBALANCE MAP*****************************************************
+0       Z                                 MATERIALS BY BROAD ZONE, ORIGIN AT LOWER LEFT.
+    ROW   M                               M IS NUMBER OF FINE INTERVALS
+ BROAD ROW(COLUMN).
+    54.2490  1000000000000000000000000
+             1     *     *     *     0
+      4   1  1  -3 *  -3 *  -3 *  -3 0
+             1     *     *     *     0
+    53.9490  1***********************0
+             1     *     *     *     0
+      3   2  1  -2 *  -2 *  -2 *  -3 0
+             1     *     *     *     0
+    52.4490  1***********************0
+             1     *     *     *     0
+      2  25  1  -1 *  -1 *  -2 *  -3 0
+             1     *     *     *     0
+     1.5000  1***********************0
+             1     *     *     *     0
+      1   2  1  -2 *  -2 *  -2 *  -3 0
+             1     *     *     *     0
+      .0000  1000000000000000000000000
+       R     0.    8.   13.   14.   15.
+              0     0  2000  7000     0
+0      M        8     5     2     1
+    COLUMN      1     2     3     4
+0INPUT X-REG / ZONE    16
+ ALL ENTRIES =            0
+ ZONE ID BY MESH WAS WRITTEN ON FILE  2
+ NUMBER OF MATERIALS         =  3
+ MAT.NO BY ZONE (MAT SPEC II.8)
+            -2  -2  -2  -3  -1  -1  -2  -3  -2  -2  -2  -3  -3  -3  -3  -3
+ MAT.REGION BY ZONE (IN SEQ TWTRN INPT FILE)
+            -1  -1  -1  -3  -5  -5  -1  -3  -1  -1  -1  -3  -3  -3  -3  -3
+ MAT. NO. BY MAT.REGION
+            -2  -3  -1
+ VOLUME FOR EACH MATERIAL
+    .87352E+04   .17222E+04   .27889E+05
+ VOLUME FOR EACH ZONE
+    .30159E+03   .51949E+03   .19721E+03   .41987E+02   .10244E+05   .17645E+05   .66986E+04   .14261E+04   .30159E+03   .51949E+03
+    .19721E+03   .41987E+02   .60318E+02   .10390E+03   .39443E+02   .83975E+01
+
+     NO. OF MATERIALS USED IN THE CASE =  3
+
+0 *VELOCITIES*
+ 2.83419E+03 2.20727E+03 1.49994E+03 8.12010E+02 6.05413E+02 3.88946E+02 1.95574E+02 7.19476E+01 2.61168E+01 8.59292E+00
+ 3.16116E+00 1.27648E+00 8.03249E-01 5.87787E-01 4.71392E-01 3.55474E-01 2.40727E-01 1.23718E-01
+0 *FISSION SPECTRUM*
+ 2.57515E-02 1.11262E-01 6.28527E-01 1.11689E-01 8.02125E-02 3.58111E-02 6.40780E-03 3.22254E-04 1.63271E-05 5.49759E-07
+ 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00
+      POSITION SIGMA-T                       6
+      TABLE LENGTH                          21
+      POSITION SIGMA-GG                     12
+
+         1  ANISA021 CONVERTED
+         2  ANISA031 CONVERTED
+         3  ANISA011 CONVERTED
+
+
+0STORAGE    REQUIRED ALLOWED
+ SMALL CORE    7858 6999998
+ LARGE CORE   80058 6992140
+0**************************************************INPUT CROSS SECTIONS****************************************
+0     INTERFACE FILE ISOTXS IS USED TO OBTAIN INPUT CROSS SECTIONS
+0MACRO  FILE NAME 
+ MACRO  USER IDENTIFICATION 
+ MACRO 
+      0 VERSION  
+     18 NGROUP   
+      3 NISO     
+      5 MAXUP    
+      9 MAXD     
+      0 MAXORD   
+      0 ICHIST   
+      1 NSCMAX   
+      1 NCBLOK   
+      1 NSBLOK   
+
+
+0SRAC  ACROSCOPIC CROSSSECTION  FOR TWOTRAN                              
+0ISOTOPE   ABSOLUTE   TEMPERATURE   MAX ORDER     MAX GROUPS     MAX GROUPS       ISOTROPIC NUCLIDE
+ LABEL     LABEL     (DEG K)       OF SCATTER    OF UPSCATTER   OF DOWNSCATTER   POSITION IN TABLE
+ ANISA0               0.00000E+00        2             5              9                  2
+ ANISA0               0.00000E+00        2             5              9                  4
+ ANISA0               0.00000E+00        2             5              9                  6
+0IN MATERIAL  1,GROUP  3 INPUT ABSORPTION (  .30575E-03).NE.EFFECTIVE ABSORPTION (  .30573E-03)
+0IN MATERIAL  3,GROUP  3 INPUT ABSORPTION (  .78105E-03).NE.EFFECTIVE ABSORPTION (  .78102E-03)
+0IN MATERIAL  5,GROUP  3 INPUT ABSORPTION (  .30449E-03).NE.EFFECTIVE ABSORPTION (  .30447E-03)
+0IN MATERIAL  3,GROUP  4 INPUT ABSORPTION (  .46527E-03).NE.EFFECTIVE ABSORPTION (  .46525E-03)
+0IN MATERIAL  5,GROUP  4 INPUT ABSORPTION (  .23358E-03).NE.EFFECTIVE ABSORPTION (  .23361E-03)
+0IN MATERIAL  1,GROUP  5 INPUT ABSORPTION (  .21918E-03).NE.EFFECTIVE ABSORPTION (  .21923E-03)
+0IN MATERIAL  5,GROUP  5 INPUT ABSORPTION (  .21913E-03).NE.EFFECTIVE ABSORPTION (  .21909E-03)
+0IN MATERIAL  1,GROUP  6 INPUT ABSORPTION (  .27058E-03).NE.EFFECTIVE ABSORPTION (  .27058E-03)
+0IN MATERIAL  5,GROUP  6 INPUT ABSORPTION (  .27061E-03).NE.EFFECTIVE ABSORPTION (  .27062E-03)
+0IN MATERIAL  1,GROUP  7 INPUT ABSORPTION (  .44501E-03).NE.EFFECTIVE ABSORPTION (  .44498E-03)
+0IN MATERIAL  3,GROUP  7 INPUT ABSORPTION (  .10699E-02).NE.EFFECTIVE ABSORPTION (  .10699E-02)
+0IN MATERIAL  5,GROUP  7 INPUT ABSORPTION (  .44543E-03).NE.EFFECTIVE ABSORPTION (  .44559E-03)
+0IN MATERIAL  1,GROUP  8 INPUT ABSORPTION (  .10520E-02).NE.EFFECTIVE ABSORPTION (  .10519E-02)
+0IN MATERIAL  1,GROUP  9 INPUT ABSORPTION (  .33391E-02).NE.EFFECTIVE ABSORPTION (  .33390E-02)
+0* * * * *  INPUT FOR FLUX   * * * * * 
+
+0 ZERO FLUX
+0
+ GROUP FISSION SPECTRUM    VELOCITIES
+
+   1      2.5751483E-02   2.8341938E+03
+   2      1.1126243E-01   2.2072720E+03
+   3      6.2852669E-01   1.4999399E+03
+   4      1.1168890E-01   8.1201013E+02
+   5      8.0212519E-02   6.0541266E+02
+   6      3.5811059E-02   3.8894568E+02
+   7      6.4078039E-03   1.9557393E+02
+   8      3.2225382E-04   7.1947617E+01
+   9      1.6327078E-05   2.6116785E+01
+  10      5.4975879E-07   8.5929184E+00
+  11      0.0000000E+00   3.1611605E+00
+  12      0.0000000E+00   1.2764785E+00
+  13      0.0000000E+00   8.0324936E-01
+  14      0.0000000E+00   5.8778697E-01
+  15      0.0000000E+00   4.7139156E-01
+  16      0.0000000E+00   3.5547447E-01
+  17      0.0000000E+00   2.4072734E-01
+  18      0.0000000E+00   1.2371762E-01
+  19      1.0000001E+00   0.0000000E+00
+0
+ EPSO   1.00E-05      XLAX   1.00E-03
+ EPSI   1.00E-05      XLAH   5.00E-01
+ EPSR   5.00E-06      XLAL   1.00E-02
+ EPSX   1.00E-05      POD    1.00E+00
+ NORM   1.00E+00      BHGT   0.00E+00
+
+ IITL   29
+
+
+
+
+ TIME IN    OUTER       INNER       NEUTRON       EIGENVALUE     EIGENVALUE       LAMBDA        REBALANCE
+ MINUTES ITARATIONS  ITERATIONS     BALANCE                        SLOPE                       CONVERGENCE 
+                    TOTAL BY GROUP 
+  2.67E-04     0       0           0.00000000E+00 0.00000000E+00 0.00000000E+00 0.00000000E+00 0.00000000E+00
+    2.50E-04                 1   6
+    0.00E+00                 2   7
+    2.67E-04                 3  11
+    0.00E+00                 4   9
+    2.67E-04                 5  11
+    2.50E-04                 6  12
+    2.67E-04                 7  15
+    2.50E-04                 8  15
+    2.67E-04                 9  16
+    2.67E-04                10  15
+    2.50E-04                11  14
+    0.00E+00                12  11
+    2.67E-04                13  11
+    2.50E-04                14   9
+    0.00E+00                15  10
+    2.67E-04                16  12
+    2.67E-04                17  18
+    5.17E-04                18  17
+  4.17E-03     1     219          -2.38418579E-07 4.49061126E-01 0.00000000E+00 2.12531552E-01 1.31231546E+00
+    0.00E+00                 1   6
+    2.50E-04                 2   8
+    2.67E-04                 3  13
+    0.00E+00                 4  10
+    2.67E-04                 5  13
+    2.50E-04                 6  14
+    2.67E-04                 7  19
+    5.17E-04                 8  20
+    2.67E-04                 9  21
+    2.50E-04                10  19
+    2.67E-04                11  19
+    2.50E-04                12  14
+    2.67E-04                13  14
+    2.67E-04                14  12
+    2.50E-04                15  13
+    2.67E-04                16  16
+    5.17E-04                17  25
+    2.67E-04                18  30 8.82E-06
+  8.85E-03     2     286           0.00000000E+00 7.06225872E-01 0.00000000E+00 1.15017414E+00 3.96191120E-01
+    2.50E-04                 1   6
+    0.00E+00                 2   7
+    2.67E-04                 3  12
+    2.50E-04                 4   9
+    0.00E+00                 5  11
+    2.67E-04                 6  13
+    2.67E-04                 7  17
+    2.50E-04                 8  17
+    5.17E-04                 9  18
+    2.67E-04                10  17
+    2.67E-04                11  17
+    2.50E-04                12  13
+    0.00E+00                13  12
+    2.67E-04                14  11
+    2.50E-04                15  12
+    2.67E-04                16  15
+    5.17E-04                17  24
+    2.67E-04                18  28
+  1.33E-02     3     259          -1.19209290E-07 7.38145053E-01 0.00000000E+00 1.04519689E+00 1.63874626E-01
+    2.50E-04                 1   6
+    0.00E+00                 2   7
+    2.67E-04                 3  11
+    2.67E-04                 4   9
+    0.00E+00                 5  10
+    2.50E-04                 6  12
+    2.67E-04                 7  15
+    2.50E-04                 8  16
+    2.67E-04                 9  17
+    2.67E-04                10  15
+    2.50E-04                11  15
+    2.67E-04                12  11
+    2.50E-04                13  11
+    0.00E+00                14  10
+    2.67E-04                15  11
+    2.67E-04                16  14
+    2.50E-04                17  23
+    5.17E-04                18  27
+  1.74E-02     4     240          -2.38418579E-07 8.68956268E-01 0.00000000E+00 1.17721605E+00 6.41155243E-02
+    2.67E-04                 1   6
+    0.00E+00                 2   7
+    2.67E-04                 3  11
+    0.00E+00                 4   8
+    2.50E-04                 5  10
+    2.67E-04                 6  11
+    2.50E-04                 7  15
+    2.67E-04                 8  15
+    2.67E-04                 9  16
+    2.50E-04                10  15
+    2.67E-04                11  15
+    2.50E-04                12  11
+    0.00E+00                13  11
+    2.67E-04                14   9
+    2.67E-04                15  11
+    2.50E-04                16  14
+    2.67E-04                17  22
+    5.17E-04                18  26
+  2.16E-02     5     233           7.74860382E-07 9.26788151E-01 0.00000000E+00 1.06655335E+00 2.57197618E-02
+    0.00E+00                 1   5
+    2.67E-04                 2   7
+    0.00E+00                 3  11
+    2.50E-04                 4   8
+    0.00E+00                 5  10
+    2.67E-04                 6  11
+    2.50E-04                 7  15
+    2.67E-04                 8  15
+    2.67E-04                 9  16
+    2.50E-04                10  15
+    2.67E-04                11  14
+    2.50E-04                12  11
+    0.00E+00                13  11
+    2.67E-04                14   9
+    2.67E-04                15  11
+    2.50E-04                16  14
+    2.67E-04                17  22
+    5.17E-04                18  26
+  2.55E-02     6     231          -5.96046448E-07 9.50357497E-01 0.00000000E+00 1.02543128E+00 1.13482475E-02
+    0.00E+00                 1   5
+    2.67E-04                 2   7
+    0.00E+00                 3  11
+    2.50E-04                 4   8
+    2.67E-04                 5  10
+    0.00E+00                 6  11
+    2.50E-04                 7  14
+    2.67E-04                 8  15
+    2.67E-04                 9  16
+    2.50E-04                10  14
+    2.67E-04                11  14
+    2.50E-04                12  11
+    2.67E-04                13  11
+    0.00E+00                14   9
+    2.67E-04                15  10
+    2.50E-04                16  14
+    2.67E-04                17  22
+    5.17E-04                18  25
+  2.94E-02     7     227          -3.57627869E-07 9.60413396E-01 0.00000000E+00 1.01058125E+00 5.78570366E-03
+    0.00E+00                 1   5
+    2.67E-04                 2   7
+    0.00E+00                 3  10
+    2.50E-04                 4   8
+    0.00E+00                 5  10
+    2.67E-04                 6  11
+    2.50E-04                 7  14
+    2.67E-04                 8  15
+    2.67E-04                 9  15
+    2.50E-04                10  14
+    2.67E-04                11  14
+    2.50E-04                12  11
+    0.00E+00                13  10
+    2.67E-04                14   9
+    2.67E-04                15  10
+    2.50E-04                16  14
+    2.67E-04                17  21
+    2.50E-04                18  25
+  3.33E-02     8     223           3.57627869E-07 9.65335608E-01 0.00000000E+00 1.00512505E+00 5.30374050E-03
+    0.00E+00                 1   5
+    0.00E+00                 2   7
+    2.67E-04                 3  10
+    0.00E+00                 4   8
+    2.50E-04                 5  10
+    2.67E-04                 6  11
+    2.50E-04                 7  14
+    2.67E-04                 8  14
+    2.67E-04                 9  15
+    2.50E-04                10  14
+    0.00E+00                11  14
+    2.67E-04                12  11
+    2.50E-04                13  10
+    0.00E+00                14   9
+    2.67E-04                15  10
+    2.67E-04                16  13
+    2.50E-04                17  21
+    5.17E-04                18  24
+  3.69E-02     9     220           5.96046448E-08 9.68226314E-01 0.00000000E+00 1.00299454E+00 4.97210026E-03
+    0.00E+00                 1   5
+    2.67E-04                 2   7
+    0.00E+00                 3  10
+    2.67E-04                 4   8
+    2.50E-04                 5  10
+    0.00E+00                 6  11
+    5.17E-04                 7  14
+    2.67E-04                 8  14
+    2.67E-04                 9  15
+    2.50E-04                10  14
+    2.67E-04                11  14
+    0.00E+00                12  10
+    2.50E-04                13  10
+    2.67E-04                14   9
+    0.00E+00                15  10
+    2.67E-04                16  13
+    2.50E-04                17  21
+    5.17E-04                18  24
+  4.08E-02    10     219           4.17232513E-07 9.70220625E-01 0.00000000E+00 1.00205982E+00 4.53549623E-03
+    0.00E+00                 1   5
+    2.67E-04                 2   6
+    0.00E+00                 3  10
+    2.67E-04                 4   8
+    2.50E-04                 5  10
+    0.00E+00                 6  11
+    2.67E-04                 7  14
+    2.50E-04                 8  14
+    2.67E-04                 9  15
+    2.67E-04                10  14
+    2.50E-04                11  14
+    2.67E-04                12  10
+    0.00E+00                13  10
+    2.50E-04                14   9
+    2.67E-04                15  10
+    0.00E+00                16  13
+    5.17E-04                17  20
+    2.67E-04                18  23
+  4.45E-02    11     216          -1.19209290E-07 9.71757829E-01 0.00000000E+00 1.00158441E+00 4.08768654E-03
+    2.50E-04                 1   5
+    0.00E+00                 2   6
+    2.67E-04                 3  10
+    0.00E+00                 4   8
+    2.67E-04                 5   9
+    0.00E+00                 6  10
+    2.50E-04                 7  13
+    2.67E-04                 8  14
+    2.50E-04                 9  15
+    2.67E-04                10  14
+    2.67E-04                11  13
+    2.50E-04                12  10
+    0.00E+00                13  10
+    2.67E-04                14   9
+    0.00E+00                15  10
+    2.50E-04                16  13
+    5.33E-04                17  20
+    2.50E-04                18  23
+  4.81E-02    12     212           5.96046448E-07 9.73016500E-01 0.00000000E+00 1.00129533E+00 3.67403030E-03
+    2.67E-04                 1   5
+    0.00E+00                 2   6
+    2.50E-04                 3  10
+    0.00E+00                 4   8
+    0.00E+00                 5   9
+    2.67E-04                 6  10
+    2.67E-04                 7  13
+    2.50E-04                 8  14
+    2.67E-04                 9  15
+    0.00E+00                10  13
+    2.50E-04                11  13
+    2.67E-04                12  10
+    2.67E-04                13  10
+    0.00E+00                14   8
+    2.50E-04                15  10
+    2.67E-04                16  13
+    2.50E-04                17  20
+    5.33E-04                18  23
+  5.18E-02    13     210           4.17232513E-07 9.74084020E-01 0.00000000E+00 1.00109708E+00 3.30710411E-03
+    0.00E+00                 1   5
+    2.50E-04                 2   6
+    0.00E+00                 3  10
+    2.67E-04                 4   7
+    0.00E+00                 5   9
+    2.50E-04                 6  10
+    2.67E-04                 7  13
+    2.67E-04                 8  13
+    2.50E-04                 9  14
+    2.67E-04                10  13
+    0.00E+00                11  13
+    2.50E-04                12  10
+    2.67E-04                13  10
+    0.00E+00                14   8
+    2.67E-04                15  10
+    2.50E-04                16  13
+    2.67E-04                17  20
+    5.17E-04                18  22
+  5.54E-02    14     206           4.17232513E-07 9.75006521E-01 0.00000000E+00 1.00094700E+00 2.98255682E-03
+    0.00E+00                 1   5
+    0.00E+00                 2   6
+    2.67E-04                 3  10
+    2.50E-04                 4   8
+    0.00E+00                 5   9
+    0.00E+00                 6  10
+    2.67E-04                 7  13
+    2.50E-04                 8  13
+    2.67E-04                 9  14
+    2.67E-04                10  13
+    2.50E-04                11  13
+    0.00E+00                12  10
+    2.67E-04                13  10
+    0.00E+00                14   8
+    2.50E-04                15   9
+    2.67E-04                16  12
+    2.67E-04                17  19
+    2.50E-04                18  22
+  5.88E-02    15     204           4.76837158E-07 9.75813150E-01 0.00000000E+00 1.00082731E+00 2.69544125E-03
+    0.00E+00                 1   5
+    0.00E+00                 2   6
+    2.50E-04                 3  10
+    0.00E+00                 4   7
+    2.67E-04                 5   9
+    2.67E-04                 6  10
+    0.00E+00                 7  13
+    2.50E-04                 8  13
+    2.67E-04                 9  14
+    2.50E-04                10  13
+    2.67E-04                11  13
+    2.67E-04                12  10
+    0.00E+00                13  10
+    2.50E-04                14   8
+    0.00E+00                15   9
+    2.67E-04                16  12
+    2.50E-04                17  19
+    5.33E-04                18  22
+  6.22E-02    16     203          -1.19209290E-07 9.76528585E-01 0.00000000E+00 1.00073314E+00 2.46626139E-03
+    0.00E+00                 1   5
+    2.50E-04                 2   6
+    0.00E+00                 3   9
+    2.67E-04                 4   7
+    0.00E+00                 5   9
+    2.50E-04                 6  10
+    2.67E-04                 7  13
+    2.67E-04                 8  13
+    0.00E+00                 9  14
+    2.50E-04                10  13
+    2.67E-04                11  13
+    2.50E-04                12  10
+    0.00E+00                13   9
+    2.67E-04                14   8
+    2.67E-04                15   9
+    0.00E+00                16  12
+    5.17E-04                17  19
+    2.50E-04                18  21
+  6.55E-02    17     200          -1.19209290E-07 9.77162063E-01 0.00000000E+00 1.00064874E+00 2.25228071E-03
+    0.00E+00                 1   5
+    2.67E-04                 2   6
+    0.00E+00                 3   9
+    2.67E-04                 4   7
+    0.00E+00                 5   9
+    2.50E-04                 6  10
+    2.67E-04                 7  13
+    2.50E-04                 8  13
+    2.67E-04                 9  14
+    2.67E-04                10  13
+    0.00E+00                11  12
+    2.50E-04                12  10
+    2.67E-04                13   9
+    0.00E+00                14   8
+    2.50E-04                15   9
+    0.00E+00                16  12
+    5.33E-04                17  18
+    0.00E+00                18  21
+  6.86E-02    18     198           9.53674316E-07 9.77731407E-01 0.00000000E+00 1.00058270E+00 2.06017494E-03
+    0.00E+00                 1   5
+    2.50E-04                 2   6
+    0.00E+00                 3   9
+    2.67E-04                 4   7
+    0.00E+00                 5   9
+    2.50E-04                 6  10
+    2.67E-04                 7  12
+    2.67E-04                 8  13
+    2.50E-04                 9  13
+    0.00E+00                10  12
+    2.67E-04                11  12
+    2.50E-04                12   9
+    0.00E+00                13   9
+    2.67E-04                14   8
+    2.67E-04                15   9
+    0.00E+00                16  12
+    5.17E-04                17  18
+    2.50E-04                18  21
+  7.20E-02    19     194          -1.19209290E-07 9.78240371E-01 0.00000000E+00 1.00052059E+00 1.88231468E-03
+    0.00E+00                 1   5
+    2.67E-04                 2   6
+    0.00E+00                 3   9
+    2.67E-04                 4   7
+    0.00E+00                 5   9
+    2.50E-04                 6  10
+    0.00E+00                 7  12
+    0.00E+00                 8  12
+    2.67E-04                 9  13
+    2.50E-04                10  12
+    2.67E-04                11  12
+    0.00E+00                12   9
+    2.67E-04                13   9
+    2.50E-04                14   8
+    0.00E+00                15   9
+    2.67E-04                16  12
+    2.50E-04                17  18
+    2.67E-04                18  20
+  7.51E-02    20     192          -3.57627869E-07 9.78700101E-01 0.00000000E+00 1.00046992E+00 1.72162056E-03
+    0.00E+00                 1   5
+    0.00E+00                 2   6
+    2.50E-04                 3   9
+    0.00E+00                 4   7
+    2.67E-04                 5   8
+    0.00E+00                 6   9
+    2.50E-04                 7  12
+    2.67E-04                 8  12
+    2.67E-04                 9  13
+    2.50E-04                10  12
+    0.00E+00                11  12
+    2.67E-04                12   9
+    2.50E-04                13   9
+    0.00E+00                14   8
+    2.67E-04                15   9
+    0.00E+00                16  11
+    5.17E-04                17  18
+    2.67E-04                18  20
+  7.83E-02    21     189          -3.57627869E-07 9.79115605E-01 0.00000000E+00 1.00042450E+00 1.57576799E-03
+    0.00E+00                 1   5
+    2.50E-04                 2   6
+    0.00E+00                 3   9
+    2.67E-04                 4   7
+    0.00E+00                 5   8
+    2.67E-04                 6   9
+    2.50E-04                 7  12
+    0.00E+00                 8  12
+    2.67E-04                 9  13
+    2.50E-04                10  12
+    2.67E-04                11  12
+    0.00E+00                12   9
+    2.67E-04                13   9
+    2.50E-04                14   8
+    0.00E+00                15   9
+    2.67E-04                16  11
+    2.50E-04                17  17
+    5.33E-04                18  20
+  8.17E-02    22     188          -7.15255737E-07 9.79491353E-01 0.00000000E+00 1.00038373E+00 1.44195557E-03
+    0.00E+00                 1   5
+    0.00E+00                 2   6
+    2.50E-04                 3   9
+    2.67E-04                 4   7
+    0.00E+00                 5   8
+    2.50E-04                 6   9
+    0.00E+00                 7  12
+    2.67E-04                 8  12
+    2.67E-04                 9  13
+    2.50E-04                10  12
+    2.67E-04                11  12
+    0.00E+00                12   9
+    0.00E+00                13   9
+    0.00E+00                14   8
+    2.50E-04                15   9
+    2.67E-04                16  11
+    2.67E-04                17  17
+    2.50E-04                18  19
+  8.45E-02    23     187          -1.19209290E-07 9.79832292E-01 0.00000000E+00 1.00034809E+00 1.31970644E-03
+    0.00E+00                 1   5
+    2.67E-04                 2   6
+    0.00E+00                 3   9
+    2.50E-04                 4   7
+    0.00E+00                 5   8
+    2.67E-04                 6   9
+    2.67E-04                 7  12
+    2.50E-04                 8  12
+    0.00E+00                 9  12
+    2.67E-04                10  12
+    2.50E-04                11  12
+    0.00E+00                12   9
+    2.67E-04                13   9
+    2.67E-04                14   7
+    0.00E+00                15   9
+    2.50E-04                16  11
+    2.67E-04                17  17
+    2.50E-04                18  19
+  8.76E-02    24     185           2.98023224E-07 9.80143607E-01 0.00000000E+00 1.00031769E+00 1.20985508E-03
+    2.67E-04                 1   5
+    0.00E+00                 2   6
+    2.67E-04                 3   9
+    0.00E+00                 4   7
+    2.50E-04                 5   8
+    0.00E+00                 6   9
+    2.67E-04                 7  11
+    2.50E-04                 8  12
+    0.00E+00                 9  12
+    2.67E-04                10  11
+    2.67E-04                11  11
+    2.50E-04                12   9
+    0.00E+00                13   9
+    2.67E-04                14   7
+    0.00E+00                15   8
+    2.50E-04                16  11
+    2.67E-04                17  17
+    2.67E-04                18  19
+  9.08E-02    25     181           0.00000000E+00 9.80424702E-01 0.00000000E+00 1.00028682E+00 1.10656023E-03
+    2.50E-04                 1   5
+    0.00E+00                 2   6
+    2.67E-04                 3   9
+    0.00E+00                 4   7
+    2.50E-04                 5   8
+    0.00E+00                 6   9
+    2.67E-04                 7  11
+    2.67E-04                 8  12
+    0.00E+00                 9  12
+    2.50E-04                10  11
+    2.67E-04                11  11
+    0.00E+00                12   9
+    2.50E-04                13   8
+    2.67E-04                14   7
+    0.00E+00                15   8
+    2.67E-04                16  11
+    2.50E-04                17  16
+    2.67E-04                18  19
+  9.39E-02    26     179           5.96046448E-08 9.80683506E-01 0.00000000E+00 1.00026393E+00 1.01560354E-03
+    2.50E-04                 1   5
+    0.00E+00                 2   6
+    0.00E+00                 3   9
+    2.67E-04                 4   7
+    0.00E+00                 5   8
+    2.67E-04                 6   9
+    2.50E-04                 7  11
+    0.00E+00                 8  11
+    2.67E-04                 9  12
+    2.50E-04                10  11
+    2.67E-04                11  11
+    0.00E+00                12   8
+    2.67E-04                13   8
+    0.00E+00                14   7
+    2.50E-04                15   8
+    2.67E-04                16  11
+    2.50E-04                17  16
+    2.67E-04                18  18
+  9.70E-02    27     176          -1.19209290E-07 9.80918288E-01 0.00000000E+00 1.00023937E+00 9.30845737E-04
+    0.00E+00                 1   5
+    2.67E-04                 2   6
+    0.00E+00                 3   9
+    2.50E-04                 4   7
+    0.00E+00                 5   8
+    2.67E-04                 6   9
+    2.50E-04                 7  11
+    0.00E+00                 8  11
+    0.00E+00                 9  12
+    2.67E-04                10  11
+    2.67E-04                11  11
+    0.00E+00                12   8
+    2.50E-04                13   8
+    0.00E+00                14   7
+    0.00E+00                15   8
+    2.67E-04                16  10
+    2.50E-04                17  16
+    2.67E-04                18  18
+  9.96E-02    28     175          -5.96046448E-07 9.81132329E-01 0.00000000E+00 1.00021827E+00 8.52644444E-04
+    0.00E+00                 1   5
+    2.67E-04                 2   6
+    0.00E+00                 3   9
+    2.50E-04                 4   6
+    0.00E+00                 5   8
+    2.67E-04                 6   8
+    2.50E-04                 7  11
+    0.00E+00                 8  11
+    2.67E-04                 9  12
+    2.67E-04                10  11
+    2.50E-04                11  11
+    0.00E+00                12   8
+    2.67E-04                13   8
+    0.00E+00                14   7
+    2.50E-04                15   8
+    0.00E+00                16  10
+    2.67E-04                17  15
+    5.17E-04                18  18
+  1.03E-01    29     172           5.96046448E-08 9.81328726E-01 0.00000000E+00 1.00020015E+00 7.82668591E-04
+    0.00E+00                 1   4
+    0.00E+00                 2   5
+    2.67E-04                 3   8
+    0.00E+00                 4   6
+    2.50E-04                 5   8
+    0.00E+00                 6   8
+    2.67E-04                 7  11
+    2.67E-04                 8  11
+    2.50E-04                 9  11
+    0.00E+00                10  11
+    0.00E+00                11  10
+    2.67E-04                12   8
+    0.00E+00                13   8
+    2.50E-04                14   7
+    0.00E+00                15   8
+    2.67E-04                16  10
+    2.67E-04                17  15
+    2.50E-04                18  17
+  1.05E-01    30     166           1.13248825E-06 9.81507599E-01 0.00000000E+00 1.00018227E+00 7.17878342E-04
+    2.67E-04                 1   4
+    0.00E+00                 2   5
+    0.00E+00                 3   8
+    2.50E-04                 4   6
+    0.00E+00                 5   7
+    2.67E-04                 6   8
+    0.00E+00                 7  11
+    2.67E-04                 8  11
+    2.50E-04                 9  11
+    2.67E-04                10  10
+    0.00E+00                11  10
+    2.50E-04                12   8
+    0.00E+00                13   8
+    2.67E-04                14   7
+    0.00E+00                15   8
+    2.67E-04                16  10
+    2.50E-04                17  15
+    2.67E-04                18  17
+  1.08E-01    31     164           8.94069672E-07 9.81670976E-01 0.00000000E+00 1.00016642E+00 6.57975674E-04
+    0.00E+00                 1   4
+    2.50E-04                 2   5
+    0.00E+00                 3   8
+    0.00E+00                 4   6
+    0.00E+00                 5   7
+    2.67E-04                 6   8
+    0.00E+00                 7  10
+    2.67E-04                 8  11
+    2.50E-04                 9  11
+    0.00E+00                10  10
+    2.67E-04                11  10
+    2.50E-04                12   8
+    0.00E+00                13   8
+    2.67E-04                14   7
+    0.00E+00                15   8
+    0.00E+00                16  10
+    2.67E-04                17  15
+    2.50E-04                18  17
+  1.11E-01    32     163          -4.76837158E-07 9.81821597E-01 0.00000000E+00 1.00015342E+00 6.05165958E-04
+    0.00E+00                 1   4
+    2.67E-04                 2   5
+    0.00E+00                 3   8
+    2.50E-04                 4   6
+    0.00E+00                 5   7
+    2.67E-04                 6   8
+    0.00E+00                 7  10
+    2.67E-04                 8  10
+    2.50E-04                 9  11
+    0.00E+00                10  10
+    2.67E-04                11  10
+    2.50E-04                12   8
+    0.00E+00                13   8
+    2.67E-04                14   7
+    0.00E+00                15   8
+    2.67E-04                16  10
+    2.50E-04                17  14
+    2.67E-04                18  16
+  1.13E-01    33     160           0.00000000E+00 9.81958926E-01 0.00000000E+00 1.00013983E+00 5.54978848E-04
+    0.00E+00                 1   4
+    0.00E+00                 2   5
+    2.50E-04                 3   8
+    0.00E+00                 4   6
+    2.67E-04                 5   7
+    0.00E+00                 6   8
+    2.67E-04                 7  10
+    2.50E-04                 8  10
+    0.00E+00                 9  11
+    2.67E-04                10  10
+    2.50E-04                11  10
+    0.00E+00                12   8
+    2.67E-04                13   8
+    0.00E+00                14   7
+    2.67E-04                15   7
+    0.00E+00                16   9
+    2.50E-04                17  14
+    2.67E-04                18  16
+  1.16E-01    34     158           2.38418579E-07 9.82084334E-01 0.00000000E+00 1.00012767E+00 5.09381294E-04
+    2.50E-04                 1   4
+    0.00E+00                 2   5
+    0.00E+00                 3   8
+    0.00E+00                 4   6
+    0.00E+00                 5   7
+    2.67E-04                 6   8
+    0.00E+00                 7  10
+    2.67E-04                 8  10
+    2.50E-04                 9  10
+    0.00E+00                10  10
+    2.67E-04                11  10
+    2.50E-04                12   8
+    0.00E+00                13   7
+    0.00E+00                14   6
+    2.67E-04                15   7
+    2.67E-04                16   9
+    0.00E+00                17  14
+    5.17E-04                18  16
+  1.19E-01    35     155          -7.15255737E-07 9.82199311E-01 0.00000000E+00 1.00011706E+00 4.67479229E-04
+    0.00E+00                 1   4
+    0.00E+00                 2   5
+    2.50E-04                 3   8
+    0.00E+00                 4   6
+    2.67E-04                 5   7
+    0.00E+00                 6   8
+    2.67E-04                 7  10
+    0.00E+00                 8  10
+    2.50E-04                 9  10
+    2.67E-04                10  10
+    0.00E+00                11  10
+    2.50E-04                12   8
+    0.00E+00                13   7
+    2.67E-04                14   6
+    0.00E+00                15   7
+    2.67E-04                16   9
+    2.50E-04                17  14
+    2.67E-04                18  15
+  1.21E-01    36     154           1.78813934E-07 9.82304454E-01 0.00000000E+00 1.00010705E+00 4.29391861E-04
+    0.00E+00                 1   4
+    0.00E+00                 2   5
+    2.50E-04                 3   8
+    0.00E+00                 4   6
+    2.67E-04                 5   7
+    0.00E+00                 6   7
+    2.67E-04                 7   9
+    2.50E-04                 8  10
+    0.00E+00                 9  10
+    2.67E-04                10   9
+    0.00E+00                11   9
+    2.50E-04                12   7
+    0.00E+00                13   7
+    2.67E-04                14   6
+    0.00E+00                15   7
+    2.67E-04                16   9
+    2.50E-04                17  13
+    2.67E-04                18  15
+  1.24E-01    37     148           0.00000000E+00 9.82401550E-01 0.00000000E+00 1.00009882E+00 3.93509865E-04
+    0.00E+00                 1   4
+    0.00E+00                 2   5
+    2.50E-04                 3   7
+    0.00E+00                 4   6
+    2.67E-04                 5   7
+    0.00E+00                 6   7
+    2.67E-04                 7   9
+    0.00E+00                 8  10
+    2.50E-04                 9  10
+    2.67E-04                10   9
+    0.00E+00                11   9
+    2.50E-04                12   7
+    0.00E+00                13   7
+    2.67E-04                14   6
+    0.00E+00                15   7
+    2.67E-04                16   9
+    0.00E+00                17  13
+    2.50E-04                18  15
+  1.26E-01    38     147           2.98023224E-07 9.82490361E-01 0.00000000E+00 1.00009036E+00 3.61859798E-04
+    2.67E-04                 1   4
+    0.00E+00                 2   5
+    2.50E-04                 3   7
+    0.00E+00                 4   6
+    0.00E+00                 5   7
+    2.67E-04                 6   7
+    0.00E+00                 7   9
+    2.67E-04                 8   9
+    2.50E-04                 9  10
+    0.00E+00                10   9
+    2.67E-04                11   9
+    0.00E+00                12   7
+    2.50E-04                13   7
+    0.00E+00                14   6
+    2.67E-04                15   7
+    0.00E+00                16   9
+    2.67E-04                17  13
+    2.50E-04                18  15
+  1.29E-01    39     146           8.94069672E-07 9.82571840E-01 0.00000000E+00 1.00008297E+00 3.33130360E-04
+    0.00E+00                 1   4
+    2.67E-04                 2   5
+    0.00E+00                 3   7
+    2.50E-04                 4   6
+    0.00E+00                 5   7
+    0.00E+00                 6   7
+    2.67E-04                 7   9
+    2.67E-04                 8   9
+    0.00E+00                 9  10
+    2.50E-04                10   9
+    2.67E-04                11   9
+    0.00E+00                12   7
+    2.50E-04                13   7
+    0.00E+00                14   6
+    0.00E+00                15   7
+    2.67E-04                16   9
+    2.67E-04                17  13
+    2.50E-04                18  14
+  1.31E-01    40     145           0.00000000E+00 9.82645988E-01 0.00000000E+00 1.00007546E+00 3.06189060E-04
+    0.00E+00                 1   4
+    0.00E+00                 2   5
+    2.67E-04                 3   7
+    0.00E+00                 4   6
+    2.50E-04                 5   6
+    0.00E+00                 6   7
+    2.67E-04                 7   9
+    2.67E-04                 8   9
+    2.50E-04                 9  10
+    0.00E+00                10   9
+    2.67E-04                11   9
+    0.00E+00                12   7
+    2.50E-04                13   7
+    0.00E+00                14   6
+    2.67E-04                15   7
+    0.00E+00                16   8
+    2.67E-04                17  12
+    2.50E-04                18  14
+  1.34E-01    41     142          -4.76837158E-07 9.82714832E-01 0.00000000E+00 1.00007010E+00 2.81155109E-04
+    0.00E+00                 1   4
+    2.67E-04                 2   5
+    0.00E+00                 3   7
+    0.00E+00                 4   5
+    2.50E-04                 5   6
+    0.00E+00                 6   7
+    2.67E-04                 7   9
+    0.00E+00                 8   9
+    2.67E-04                 9   9
+    2.50E-04                10   9
+    0.00E+00                11   8
+    2.67E-04                12   7
+    0.00E+00                13   7
+    0.00E+00                14   6
+    2.50E-04                15   7
+    0.00E+00                16   8
+    2.67E-04                17  12
+    2.67E-04                18  14
+  1.36E-01    42     139          -4.76837158E-07 9.82777655E-01 0.00000000E+00 1.00006402E+00 2.58028507E-04
+    2.50E-04                 1   4
+    0.00E+00                 2   5
+    0.00E+00                 3   7
+    2.67E-04                 4   5
+    0.00E+00                 5   6
+    2.50E-04                 6   7
+    2.67E-04                 7   8
+    0.00E+00                 8   9
+    2.67E-04                 9   9
+    0.00E+00                10   8
+    2.50E-04                11   8
+    0.00E+00                12   7
+    2.67E-04                13   7
+    0.00E+00                14   6
+    2.50E-04                15   7
+    0.00E+00                16   8
+    2.67E-04                17  12
+    2.67E-04                18  13
+  1.39E-01    43     136          -5.96046448E-07 9.82835472E-01 0.00000000E+00 1.00005877E+00 2.37286091E-04
+    0.00E+00                 1   4
+    0.00E+00                 2   5
+    2.50E-04                 3   7
+    0.00E+00                 4   5
+    2.67E-04                 5   6
+    0.00E+00                 6   7
+    2.50E-04                 7   8
+    0.00E+00                 8   8
+    2.67E-04                 9   9
+    0.00E+00                10   8
+    2.67E-04                11   8
+    0.00E+00                12   7
+    2.50E-04                13   7
+    0.00E+00                14   6
+    2.67E-04                15   6
+    0.00E+00                16   8
+    2.50E-04                17  12
+    2.67E-04                18  13
+  1.41E-01    44     134           7.15255737E-07 9.82888222E-01 0.00000000E+00 1.00005364E+00 2.18391418E-04
+    0.00E+00                 1   4
+    0.00E+00                 2   5
+    2.67E-04                 3   7
+    0.00E+00                 4   5
+    2.50E-04                 5   6
+    0.00E+00                 6   7
+    0.00E+00                 7   8
+    2.67E-04                 8   8
+    2.50E-04                 9   9
+    0.00E+00                10   8
+    0.00E+00                11   8
+    0.00E+00                12   6
+    2.67E-04                13   6
+    0.00E+00                14   6
+    0.00E+00                15   6
+    2.67E-04                16   8
+    2.50E-04                17  12
+    2.67E-04                18  13
+  1.43E-01    45     132          -9.53674316E-07 9.82936263E-01 0.00000000E+00 1.00004888E+00 2.00271606E-04
+    0.00E+00                 1   4
+    0.00E+00                 2   5
+    2.50E-04                 3   7
+    0.00E+00                 4   5
+    0.00E+00                 5   6
+    2.67E-04                 6   6
+    0.00E+00                 7   8
+    2.67E-04                 8   8
+    0.00E+00                 9   9
+    2.50E-04                10   8
+    0.00E+00                11   8
+    2.67E-04                12   6
+    0.00E+00                13   6
+    2.50E-04                14   6
+    0.00E+00                15   6
+    2.67E-04                16   8
+    0.00E+00                17  11
+    2.67E-04                18  12
+  1.45E-01    46     129          -7.15255737E-07 9.82981741E-01 0.00000000E+00 1.00004625E+00 1.84357166E-04
+    0.00E+00                 1   4
+    2.50E-04                 2   5
+    0.00E+00                 3   7
+    2.67E-04                 4   5
+    0.00E+00                 5   6
+    0.00E+00                 6   6
+    2.50E-04                 7   8
+    0.00E+00                 8   8
+    0.00E+00                 9   8
+    2.67E-04                10   8
+    0.00E+00                11   8
+    2.67E-04                12   6
+    0.00E+00                13   6
+    0.00E+00                14   5
+    2.50E-04                15   6
+    0.00E+00                16   8
+    2.67E-04                17  11
+    2.50E-04                18  12
+  1.47E-01    47     127           4.17232513E-07 9.83022392E-01 0.00000000E+00 1.00004137E+00 1.69098377E-04
+    0.00E+00                 1   4
+    0.00E+00                 2   5
+    2.67E-04                 3   7
+    0.00E+00                 4   5
+    2.67E-04                 5   6
+    0.00E+00                 6   6
+    2.50E-04                 7   8
+    0.00E+00                 8   8
+    2.67E-04                 9   8
+    0.00E+00                10   8
+    2.50E-04                11   8
+    0.00E+00                12   6
+    2.67E-04                13   6
+    0.00E+00                14   5
+    0.00E+00                15   6
+    2.67E-04                16   7
+    0.00E+00                17  11
+    2.50E-04                18  12
+  1.49E-01    48     126          -1.19209290E-07 9.83059406E-01 0.00000000E+00 1.00003767E+00 1.55627728E-04
+    0.00E+00                 1   4
+    2.67E-04                 2   5
+    0.00E+00                 3   7
+    2.50E-04                 4   5
+    0.00E+00                 5   6
+    0.00E+00                 6   6
+    2.67E-04                 7   8
+    0.00E+00                 8   8
+    2.67E-04                 9   8
+    0.00E+00                10   7
+    2.50E-04                11   8
+    0.00E+00                12   6
+    2.67E-04                13   6
+    0.00E+00                14   5
+    0.00E+00                15   6
+    2.50E-04                16   7
+    2.67E-04                17  10
+    0.00E+00                18  11
+  1.52E-01    49     123          -1.19209290E-07 9.83094215E-01 0.00000000E+00 1.00003541E+00 1.42037868E-04
+    2.67E-04                 1   4
+    0.00E+00                 2   4
+    0.00E+00                 3   6
+    2.50E-04                 4   5
+    0.00E+00                 5   5
+    0.00E+00                 6   6
+    2.67E-04                 7   7
+    0.00E+00                 8   8
+    2.50E-04                 9   8
+    0.00E+00                10   7
+    2.67E-04                11   7
+    0.00E+00                12   6
+    2.67E-04                13   6
+    0.00E+00                14   5
+    0.00E+00                15   6
+    2.50E-04                16   7
+    0.00E+00                17  10
+    2.67E-04                18  11
+  1.54E-01    50     118           6.55651093E-07 9.83126819E-01 0.00000000E+00 1.00003314E+00 1.31309032E-04
+    0.00E+00                 1   4
+    2.50E-04                 2   4
+    0.00E+00                 3   6
+    0.00E+00                 4   5
+    2.67E-04                 5   5
+    0.00E+00                 6   6
+    2.67E-04                 7   7
+    0.00E+00                 8   7
+    2.50E-04                 9   8
+    0.00E+00                10   7
+    2.67E-04                11   7
+    0.00E+00                12   6
+    0.00E+00                13   6
+    2.50E-04                14   5
+    0.00E+00                15   6
+    2.67E-04                16   7
+    0.00E+00                17  10
+    2.67E-04                18  11
+  1.56E-01    51     117           5.96046448E-08 9.83155251E-01 0.00000000E+00 1.00002897E+00 1.20580196E-04
+    0.00E+00                 1   3
+    0.00E+00                 2   4
+    2.50E-04                 3   6
+    0.00E+00                 4   5
+    2.67E-04                 5   5
+    0.00E+00                 6   6
+    0.00E+00                 7   7
+    2.50E-04                 8   7
+    0.00E+00                 9   8
+    2.67E-04                10   7
+    0.00E+00                11   7
+    2.67E-04                12   6
+    0.00E+00                13   6
+    2.50E-04                14   5
+    0.00E+00                15   5
+    0.00E+00                16   7
+    2.67E-04                17  10
+    2.50E-04                18  11
+  1.58E-01    52     115           1.78813934E-07 9.83180940E-01 0.00000000E+00 1.00002611E+00 1.10685825E-04
+    0.00E+00                 1   3
+    0.00E+00                 2   4
+    2.67E-04                 3   6
+    0.00E+00                 4   5
+    0.00E+00                 5   5
+    2.67E-04                 6   6
+    0.00E+00                 7   7
+    2.50E-04                 8   7
+    0.00E+00                 9   7
+    2.67E-04                10   7
+    0.00E+00                11   7
+    0.00E+00                12   6
+    2.50E-04                13   6
+    0.00E+00                14   5
+    2.67E-04                15   5
+    0.00E+00                16   7
+    2.67E-04                17   9
+    0.00E+00                18  10
+  1.60E-01    53     112          -2.38418579E-07 9.83205974E-01 0.00000000E+00 1.00002539E+00 1.02102757E-04
+    2.50E-04                 1   3
+    0.00E+00                 2   4
+    0.00E+00                 3   6
+    0.00E+00                 4   4
+    2.67E-04                 5   5
+    0.00E+00                 6   6
+    2.50E-04                 7   7
+    0.00E+00                 8   7
+    2.67E-04                 9   7
+    0.00E+00                10   6
+    0.00E+00                11   7
+    2.67E-04                12   6
+    0.00E+00                13   5
+    2.50E-04                14   5
+    0.00E+00                15   5
+    0.00E+00                16   7
+    2.67E-04                17   9
+    2.50E-04                18  10
+  1.62E-01    54     109          -2.38418579E-07 9.83228445E-01 0.00000000E+00 1.00002289E+00 9.38773155E-05
+    0.00E+00                 1   3
+    0.00E+00                 2   4
+    2.67E-04                 3   6
+    0.00E+00                 4   4
+    0.00E+00                 5   5
+    2.67E-04                 6   5
+    0.00E+00                 7   7
+    2.50E-04                 8   7
+    0.00E+00                 9   7
+    2.67E-04                10   6
+    0.00E+00                11   6
+    0.00E+00                12   5
+    2.50E-04                13   5
+    0.00E+00                14   5
+    0.00E+00                15   5
+    2.67E-04                16   6
+    0.00E+00                17   9
+    2.67E-04                18  10
+  1.64E-01    55     105           2.38418579E-07 9.83248949E-01 0.00000000E+00 1.00002086E+00 8.60691071E-05
+    0.00E+00                 1   3
+    2.50E-04                 2   4
+    0.00E+00                 3   6
+    0.00E+00                 4   4
+    2.67E-04                 5   5
+    0.00E+00                 6   5
+    0.00E+00                 7   6
+    2.50E-04                 8   7
+    0.00E+00                 9   7
+    2.67E-04                10   6
+    0.00E+00                11   6
+    0.00E+00                12   5
+    2.67E-04                13   5
+    0.00E+00                14   5
+    2.50E-04                15   5
+    0.00E+00                16   6
+    2.67E-04                17   9
+    0.00E+00                18  10
+  1.65E-01    56     104           2.38418579E-07 9.83267605E-01 0.00000000E+00 1.00001895E+00 7.90357590E-05
+    0.00E+00                 1   3
+    2.50E-04                 2   4
+    0.00E+00                 3   5
+    0.00E+00                 4   4
+    2.67E-04                 5   5
+    0.00E+00                 6   5
+    0.00E+00                 7   6
+    2.67E-04                 8   6
+    0.00E+00                 9   6
+    2.50E-04                10   6
+    0.00E+00                11   6
+    0.00E+00                12   5
+    0.00E+00                13   5
+    2.67E-04                14   4
+    0.00E+00                15   5
+    0.00E+00                16   6
+    2.50E-04                17   8
+    0.00E+00                18   9
+  1.67E-01    57      98          -2.38418579E-07 9.83285844E-01 0.00000000E+00 1.00001848E+00 7.33733177E-05
+    0.00E+00                 1   3
+    0.00E+00                 2   4
+    0.00E+00                 3   5
+    2.67E-04                 4   4
+    0.00E+00                 5   5
+    0.00E+00                 6   5
+    2.50E-04                 7   6
+    0.00E+00                 8   6
+    2.67E-04                 9   6
+    0.00E+00                10   6
+    0.00E+00                11   6
+    2.50E-04                12   5
+    0.00E+00                13   5
+    0.00E+00                14   4
+    2.67E-04                15   5
+    0.00E+00                16   6
+    2.67E-04                17   8
+    0.00E+00                18   9
+  1.69E-01    58      98           2.98023224E-07 9.83301640E-01 0.00000000E+00 1.00001609E+00 6.74128532E-05
+    2.50E-04                 1   3
+    0.00E+00                 2   4
+    0.00E+00                 3   5
+    0.00E+00                 4   4
+    0.00E+00                 5   5
+    0.00E+00                 6   5
+    2.67E-04                 7   6
+    0.00E+00                 8   6
+    0.00E+00                 9   6
+    2.50E-04                10   6
+    0.00E+00                11   6
+    2.67E-04                12   5
+    0.00E+00                13   5
+    0.00E+00                14   4
+    2.67E-04                15   5
+    0.00E+00                16   6
+    0.00E+00                17   8
+    2.50E-04                18   9
+  1.70E-01    59      98          -1.19209290E-07 9.83316004E-01 0.00000000E+00 1.00001466E+00 6.22868538E-05
+    0.00E+00                 1   3
+    2.67E-04                 2   4
+    0.00E+00                 3   5
+    0.00E+00                 4   4
+    0.00E+00                 5   5
+    2.50E-04                 6   5
+    0.00E+00                 7   6
+    2.67E-04                 8   6
+    0.00E+00                 9   6
+    0.00E+00                10   6
+    2.67E-04                11   6
+    0.00E+00                12   5
+    2.50E-04                13   5
+    0.00E+00                14   4
+    0.00E+00                15   5
+    2.67E-04                16   6
+    0.00E+00                17   8
+    2.50E-04                18   9
+  1.72E-01    60      98           8.94069672E-07 9.83329833E-01 0.00000000E+00 1.00001407E+00 5.84125519E-05
+    0.00E+00                 1   3
+    0.00E+00                 2   4
+    2.67E-04                 3   5
+    0.00E+00                 4   4
+    0.00E+00                 5   4
+    0.00E+00                 6   5
+    2.67E-04                 7   6
+    0.00E+00                 8   6
+    2.50E-04                 9   6
+    0.00E+00                10   6
+    2.67E-04                11   6
+    0.00E+00                12   5
+    0.00E+00                13   5
+    0.00E+00                14   4
+    2.50E-04                15   5
+    0.00E+00                16   6
+    2.67E-04                17   7
+    0.00E+00                18   8
+  1.74E-01    61      95          -3.57627869E-07 9.83342409E-01 0.00000000E+00 1.00001276E+00 5.32865524E-05
+    0.00E+00                 1   3
+    2.67E-04                 2   4
+    0.00E+00                 3   5
+    0.00E+00                 4   4
+    2.50E-04                 5   4
+    0.00E+00                 6   5
+    0.00E+00                 7   5
+    2.67E-04                 8   6
+    0.00E+00                 9   6
+    0.00E+00                10   5
+    2.50E-04                11   5
+    0.00E+00                12   4
+    0.00E+00                13   4
+    2.67E-04                14   4
+    0.00E+00                15   4
+    0.00E+00                16   5
+    2.67E-04                17   7
+    0.00E+00                18   8
+  1.75E-01    62      88           5.96046448E-08 9.83353615E-01 0.00000000E+00 1.00001132E+00 4.80413437E-05
+    0.00E+00                 1   3
+    2.50E-04                 2   3
+    0.00E+00                 3   5
+    0.00E+00                 4   4
+    2.67E-04                 5   4
+    0.00E+00                 6   4
+    0.00E+00                 7   5
+    2.50E-04                 8   5
+    0.00E+00                 9   6
+    0.00E+00                10   5
+    2.67E-04                11   5
+    0.00E+00                12   4
+    0.00E+00                13   4
+    2.67E-04                14   4
+    0.00E+00                15   4
+    0.00E+00                16   5
+    2.50E-04                17   7
+    0.00E+00                18   8
+  1.77E-01    63      85           2.38418579E-07 9.83363748E-01 0.00000000E+00 1.00001037E+00 4.44650650E-05
+    0.00E+00                 1   3
+    2.67E-04                 2   3
+    0.00E+00                 3   5
+    0.00E+00                 4   4
+    2.50E-04                 5   4
+    0.00E+00                 6   4
+    0.00E+00                 7   5
+    2.67E-04                 8   5
+    0.00E+00                 9   5
+    0.00E+00                10   5
+    2.67E-04                11   5
+    0.00E+00                12   4
+    0.00E+00                13   4
+    0.00E+00                14   4
+    2.50E-04                15   4
+    0.00E+00                16   5
+    0.00E+00                17   7
+    2.67E-04                18   7
+  1.78E-01    64      83           5.96046448E-08 9.83373106E-01 0.00000000E+00 1.00000954E+00 4.10676003E-05
+0
+
+
+0COARSE MESH BALANCE TABLE FOR GROUP   1
+
+
+
+0ZONE  SOURCE      LEFT       RIGHT     BOTTOM       TOP     ABSORPTION   LEFT       RIGHT      BOTTOM      TOP
+        INFLOW     INFLOW     INFLOW     INFLOW                OUTFLOW    OUTFLOW    OUTFLOW    OUTFLOW
+
+     1 5.0070E-05 0.0000E+00 1.5912E-05 0.0000E+00 2.7735E-04 5.5774E-05 0.0000E+00 4.4461E-05 2.2040E-04 2.2699E-05
+     2 4.9133E-05 4.4461E-05 3.7224E-06 0.0000E+00 2.9518E-04 6.0816E-05 1.5912E-05 5.5599E-05 2.3755E-04 2.2624E-05
+     3 6.5781E-06 5.5599E-05 5.5785E-07 0.0000E+00 6.4092E-05 1.3743E-05 3.7224E-06 5.2344E-05 5.3707E-05 3.3109E-06
+     4 0.0000E+00 5.2344E-05 0.0000E+00 0.0000E+00 1.0516E-05 3.3509E-06 5.5785E-07 4.9567E-05 9.0184E-06 3.6528E-07
+     5 1.2116E-02 0.0000E+00 2.7698E-03 2.2699E-05 2.5628E-05 7.8598E-03 0.0000E+00 6.5095E-03 2.7735E-04 2.8794E-04
+     6 1.1845E-02 6.5095E-03 6.3137E-04 2.2624E-05 2.6031E-05 8.2183E-03 2.7698E-03 7.4454E-03 2.9518E-04 3.0591E-04
+     7 1.5601E-03 7.4454E-03 3.5078E-05 3.3109E-06 4.1392E-06 1.6561E-03 6.3137E-04 6.6304E-03 6.4092E-05 6.6053E-05
+     8 0.0000E+00 6.6304E-03 0.0000E+00 3.6528E-07 5.1493E-07 3.8034E-04 3.5078E-05 6.1945E-03 1.0516E-05 1.0805E-05
+     9 5.8788E-05 0.0000E+00 1.7145E-05 2.8794E-04 1.1383E-06 5.9772E-05 0.0000E+00 4.8434E-05 2.5628E-05 2.3117E-04
+    10 5.7665E-05 4.8434E-05 3.8304E-06 3.0591E-04 1.5092E-06 6.5169E-05 1.7145E-05 6.0476E-05 2.6031E-05 2.4853E-04
+    11 7.7172E-06 6.0476E-05 5.3814E-07 6.6053E-05 4.8414E-07 1.4715E-05 3.8304E-06 5.6828E-05 4.1392E-06 5.5756E-05
+    12 0.0000E+00 5.6828E-05 0.0000E+00 1.0805E-05 1.2968E-07 3.5915E-06 5.3814E-07 5.3790E-05 5.1493E-07 9.3281E-06
+    13 0.0000E+00 0.0000E+00 2.2527E-06 2.3117E-04 0.0000E+00 1.2926E-05 0.0000E+00 7.1517E-06 1.1383E-06 2.1221E-04
+    14 0.0000E+00 7.1517E-06 4.5764E-07 2.4853E-04 0.0000E+00 1.4319E-05 2.2527E-06 9.2906E-06 1.5092E-06 2.2877E-04
+    15 0.0000E+00 9.2906E-06 1.3410E-07 5.5756E-05 0.0000E+00 3.3943E-06 4.5764E-07 8.9514E-06 4.8414E-07 5.1893E-05
+    16 0.0000E+00 8.9514E-06 0.0000E+00 9.3281E-06 0.0000E+00 5.9215E-07 1.3410E-07 8.6071E-06 1.2968E-07 8.8165E-06
+0
+
+
+0COARSE MESH BALANCE TABLE FOR GROUP   2
+
+
+
+0ZONE  SOURCE      LEFT       RIGHT     BOTTOM       TOP     ABSORPTION   LEFT       RIGHT      BOTTOM      TOP
+        INFLOW     INFLOW     INFLOW     INFLOW                OUTFLOW    OUTFLOW    OUTFLOW    OUTFLOW
+
+     1 2.3971E-04 0.0000E+00 6.9699E-05 0.0000E+00 1.0285E-03 2.6892E-04 0.0000E+00 1.6725E-04 7.9565E-04 1.0612E-04
+     2 2.3778E-04 1.6725E-04 1.8568E-05 0.0000E+00 1.0749E-03 2.8625E-04 6.9699E-05 1.9498E-04 8.4019E-04 1.0735E-04
+     3 3.4182E-05 1.9498E-04 3.2085E-06 0.0000E+00 2.1806E-04 6.0605E-05 1.8568E-05 1.7698E-04 1.7660E-04 1.7687E-05
+     4 6.7183E-07 1.7698E-04 0.0000E+00 0.0000E+00 3.4061E-05 1.0579E-05 3.2085E-06 1.6730E-04 2.8293E-05 2.3347E-06
+     5 5.5644E-02 0.0000E+00 1.1961E-02 1.0612E-04 1.2429E-04 4.0018E-02 0.0000E+00 2.5718E-02 1.0285E-03 1.0717E-03
+     6 5.4621E-02 2.5718E-02 3.0631E-03 1.0735E-04 1.2699E-04 4.1375E-02 1.1961E-02 2.8107E-02 1.0749E-03 1.1184E-03
+     7 7.4345E-03 2.8107E-02 3.2417E-04 1.7687E-05 2.1848E-05 8.0337E-03 3.0631E-03 2.4364E-02 2.1806E-04 2.2586E-04
+     8 7.6254E-05 2.4364E-02 0.0000E+00 2.3347E-06 2.9912E-06 1.3314E-03 3.2417E-04 2.2721E-02 3.4061E-05 3.5170E-05
+     9 2.7906E-04 0.0000E+00 7.6351E-05 1.0717E-03 1.1511E-05 2.9131E-04 0.0000E+00 1.8352E-04 1.2429E-04 8.3947E-04
+    10 2.7646E-04 1.8352E-04 1.9974E-05 1.1184E-03 1.3086E-05 3.0996E-04 7.6351E-05 2.1351E-04 1.2699E-04 8.8466E-04
+    11 3.9511E-05 2.1351E-04 3.3351E-06 2.2586E-04 3.2742E-06 6.5540E-05 1.9974E-05 1.9341E-04 2.1848E-05 1.8472E-04
+    12 7.2007E-07 1.9341E-04 0.0000E+00 3.5170E-05 6.3842E-07 1.1433E-05 3.3351E-06 1.8270E-04 2.9912E-06 2.9475E-05
+    13 2.5915E-06 0.0000E+00 9.9402E-06 8.3947E-04 0.0000E+00 4.5487E-05 0.0000E+00 2.5996E-05 1.1511E-05 7.6900E-04
+    14 2.8708E-06 2.5996E-05 2.5776E-06 8.8466E-04 0.0000E+00 4.9035E-05 9.9402E-06 3.1362E-05 1.3086E-05 8.1269E-04
+    15 6.8053E-07 3.1362E-05 6.1864E-07 1.8472E-04 0.0000E+00 1.0817E-05 2.5776E-06 2.9164E-05 3.2742E-06 1.7155E-04
+    16 1.1872E-07 2.9164E-05 0.0000E+00 2.9475E-05 0.0000E+00 1.8013E-06 6.1864E-07 2.7949E-05 6.3842E-07 2.7751E-05
+0
+
+
+0COARSE MESH BALANCE TABLE FOR GROUP   3
+
+
+
+0ZONE  SOURCE      LEFT       RIGHT     BOTTOM       TOP     ABSORPTION   LEFT       RIGHT      BOTTOM      TOP
+        INFLOW     INFLOW     INFLOW     INFLOW                OUTFLOW    OUTFLOW    OUTFLOW    OUTFLOW
+
+     1 1.4577E-03 0.0000E+00 4.4028E-04 0.0000E+00 5.1944E-03 1.6025E-03 0.0000E+00 8.5906E-04 3.8680E-03 7.6283E-04
+     2 1.4507E-03 8.5906E-04 1.4245E-04 0.0000E+00 5.3220E-03 1.6593E-03 4.4028E-04 9.0966E-04 3.9881E-03 7.7694E-04
+     3 2.1415E-04 9.0966E-04 3.5252E-05 0.0000E+00 1.0015E-03 3.2565E-04 1.4245E-04 7.8192E-04 7.6757E-04 1.4294E-04
+     4 9.7950E-06 7.8192E-04 0.0000E+00 0.0000E+00 1.4655E-04 1.1479E-05 3.5252E-05 7.5474E-04 1.1505E-04 2.1735E-05
+     5 3.3064E-01 0.0000E+00 7.4538E-02 7.6283E-04 9.4607E-04 2.5598E-01 0.0000E+00 1.4027E-01 5.1944E-03 5.4404E-03
+     6 3.2523E-01 1.4027E-01 2.3415E-02 7.7694E-04 9.6473E-04 2.6142E-01 7.4538E-02 1.4381E-01 5.3220E-03 5.5696E-03
+     7 4.5114E-02 1.4381E-01 4.9975E-03 1.4294E-04 1.7802E-04 4.8672E-02 2.3415E-02 1.2011E-01 1.0015E-03 1.0454E-03
+     8 1.2084E-03 1.2011E-01 0.0000E+00 2.1735E-05 2.6652E-05 1.6552E-03 4.9975E-03 1.1441E-01 1.4655E-04 1.5261E-04
+     9 1.6899E-03 0.0000E+00 4.9815E-04 5.4404E-03 1.7882E-04 1.7784E-03 0.0000E+00 9.5954E-04 9.4607E-04 4.1232E-03
+    10 1.6795E-03 9.5954E-04 1.6238E-04 5.5696E-03 1.8827E-04 1.8397E-03 4.9815E-04 1.0109E-03 9.6473E-04 4.2458E-03
+    11 2.4625E-04 1.0109E-03 3.9183E-05 1.0454E-03 3.8567E-05 3.5982E-04 1.6238E-04 8.6633E-04 1.7802E-04 8.1377E-04
+    12 1.0568E-05 8.6633E-04 0.0000E+00 1.5261E-04 5.3732E-06 1.2618E-05 3.9183E-05 8.3492E-04 2.6652E-05 1.2151E-04
+    13 4.1244E-05 0.0000E+00 6.5424E-05 4.1232E-03 0.0000E+00 5.7150E-05 0.0000E+00 1.2971E-04 1.7882E-04 3.8642E-03
+    14 4.4688E-05 1.2971E-04 2.3029E-05 4.2458E-03 0.0000E+00 5.9614E-05 6.5424E-05 1.4008E-04 1.8827E-04 3.9898E-03
+    15 9.9969E-06 1.4008E-04 5.1855E-06 8.1377E-04 0.0000E+00 1.1975E-05 2.3029E-05 1.2297E-04 3.8567E-05 7.7249E-04
+    16 1.6806E-06 1.2297E-04 0.0000E+00 1.2151E-04 0.0000E+00 1.8433E-06 5.1855E-06 1.1849E-04 5.3732E-06 1.1527E-04
+0
+
+
+0COARSE MESH BALANCE TABLE FOR GROUP   4
+
+
+
+0ZONE  SOURCE      LEFT       RIGHT     BOTTOM       TOP     ABSORPTION   LEFT       RIGHT      BOTTOM      TOP
+        INFLOW     INFLOW     INFLOW     INFLOW                OUTFLOW    OUTFLOW    OUTFLOW    OUTFLOW
+
+     1 9.4871E-04 0.0000E+00 1.2421E-04 0.0000E+00 1.2018E-03 9.5190E-04 0.0000E+00 2.0535E-04 8.6723E-04 2.5020E-04
+     2 9.7128E-04 2.0535E-04 4.8261E-05 0.0000E+00 1.2262E-03 9.7757E-04 1.2421E-04 2.0330E-04 8.8902E-04 2.5699E-04
+     3 1.7776E-04 2.0330E-04 1.1188E-05 0.0000E+00 2.2320E-04 1.8497E-04 4.8261E-05 1.6829E-04 1.6429E-04 4.9634E-05
+     4 7.6791E-06 1.6829E-04 0.0000E+00 0.0000E+00 3.0490E-05 1.6040E-06 1.1188E-05 1.6350E-04 2.2766E-05 7.4055E-06
+     5 1.6953E-01 0.0000E+00 2.0767E-02 2.5020E-04 3.0409E-04 1.5408E-01 0.0000E+00 3.4307E-02 1.2018E-03 1.2632E-03
+     6 1.7089E-01 3.4307E-02 7.6152E-03 2.5699E-04 3.1197E-04 1.5670E-01 2.0767E-02 3.3401E-02 1.2262E-03 1.2882E-03
+     7 2.8973E-02 3.3401E-02 1.7256E-03 4.9634E-05 5.9736E-05 2.9043E-02 7.6152E-03 2.7093E-02 2.2320E-04 2.3418E-04
+     8 1.0768E-03 2.7093E-02 0.0000E+00 7.4055E-06 8.7635E-06 2.4834E-04 1.7256E-03 2.6150E-02 3.0490E-05 3.1954E-05
+     9 1.0662E-03 0.0000E+00 1.4088E-04 1.2632E-03 6.1944E-05 1.0650E-03 0.0000E+00 2.3070E-04 3.0409E-04 9.3247E-04
+    10 1.0901E-03 2.3070E-04 5.4997E-05 1.2882E-03 6.4228E-05 1.0928E-03 1.4088E-04 2.2741E-04 3.1197E-04 9.5504E-04
+    11 1.9823E-04 2.2741E-04 1.2607E-05 2.3418E-04 1.2382E-05 2.0618E-04 5.4997E-05 1.8776E-04 5.9736E-05 1.7613E-04
+    12 8.4113E-06 1.8776E-04 0.0000E+00 3.1954E-05 1.5616E-06 1.7800E-06 1.2607E-05 1.8218E-04 8.7635E-06 2.4348E-05
+    13 3.7105E-05 0.0000E+00 1.8251E-05 9.3247E-04 0.0000E+00 8.6439E-06 0.0000E+00 2.9722E-05 6.1944E-05 8.8752E-04
+    14 3.8954E-05 2.9722E-05 7.6704E-06 9.5504E-04 0.0000E+00 8.9078E-06 1.8251E-05 2.9578E-05 6.4228E-05 9.1042E-04
+    15 7.9776E-06 2.9578E-05 1.5136E-06 1.7613E-04 0.0000E+00 1.6943E-06 7.6704E-06 2.4776E-05 1.2382E-05 1.6868E-04
+    16 1.2492E-06 2.4776E-05 0.0000E+00 2.4348E-05 0.0000E+00 2.4084E-07 1.5136E-06 2.3882E-05 1.5616E-06 2.3175E-05
+0
+
+
+0COARSE MESH BALANCE TABLE FOR GROUP   5
+
+
+
+0ZONE  SOURCE      LEFT       RIGHT     BOTTOM       TOP     ABSORPTION   LEFT       RIGHT      BOTTOM      TOP
+        INFLOW     INFLOW     INFLOW     INFLOW                OUTFLOW    OUTFLOW    OUTFLOW    OUTFLOW
+
+     1 1.1765E-03 0.0000E+00 1.2898E-04 0.0000E+00 1.0968E-03 1.1445E-03 0.0000E+00 1.9348E-04 7.7230E-04 2.9207E-04
+     2 1.2058E-03 1.9348E-04 5.5467E-05 0.0000E+00 1.1177E-03 1.1710E-03 1.2898E-04 1.8302E-04 7.8987E-04 2.9958E-04
+     3 2.2361E-04 1.8302E-04 1.1015E-05 0.0000E+00 2.0045E-04 2.1605E-04 5.5467E-05 1.4674E-04 1.4229E-04 5.7549E-05
+     4 5.5502E-06 1.4674E-04 0.0000E+00 0.0000E+00 2.5303E-05 1.0326E-06 1.1015E-05 1.3941E-04 1.8035E-05 8.0979E-06
+     5 2.0143E-01 0.0000E+00 2.1389E-02 2.9207E-04 3.4829E-04 1.8866E-01 0.0000E+00 3.2547E-02 1.0968E-03 1.1564E-03
+     6 2.0373E-01 3.2547E-02 8.7726E-03 2.9958E-04 3.5677E-04 1.9150E-01 2.1389E-02 3.0530E-02 1.1177E-03 1.1777E-03
+     7 3.5920E-02 3.0530E-02 1.7915E-03 5.7549E-05 6.7862E-05 3.4923E-02 8.7726E-03 2.4260E-02 2.0045E-04 2.1110E-04
+     8 7.9860E-04 2.4260E-02 0.0000E+00 8.0979E-06 9.4027E-06 1.6723E-04 1.7915E-03 2.3065E-02 2.5303E-05 2.6646E-05
+     9 1.3200E-03 0.0000E+00 1.4592E-04 1.1564E-03 6.4534E-05 1.2829E-03 0.0000E+00 2.1747E-04 3.4829E-04 8.3809E-04
+    10 1.3514E-03 2.1747E-04 6.2873E-05 1.1777E-03 6.6366E-05 1.3117E-03 1.4592E-04 2.0496E-04 3.5677E-04 8.5645E-04
+    11 2.4937E-04 2.0496E-04 1.2466E-05 2.1110E-04 1.2237E-05 2.4137E-04 6.2873E-05 1.6393E-04 6.7862E-05 1.5410E-04
+    12 6.0995E-06 1.6393E-04 0.0000E+00 2.6646E-05 1.4321E-06 1.1496E-06 1.2466E-05 1.5559E-04 9.4027E-06 1.9499E-05
+    13 2.7597E-05 0.0000E+00 1.8061E-05 8.3809E-04 0.0000E+00 5.8536E-06 0.0000E+00 2.6288E-05 6.4534E-05 7.8707E-04
+    14 2.8830E-05 2.6288E-05 8.3047E-06 8.5645E-04 0.0000E+00 5.9961E-06 1.8061E-05 2.4720E-05 6.6366E-05 8.0473E-04
+    15 5.7905E-06 2.4720E-05 1.3911E-06 1.5410E-04 0.0000E+00 1.0965E-06 8.3047E-06 1.9846E-05 1.2237E-05 1.4452E-04
+    16 8.8475E-07 1.9846E-05 0.0000E+00 1.9499E-05 0.0000E+00 1.4419E-07 1.3911E-06 1.8893E-05 1.4321E-06 1.8368E-05
+0
+
+
+0COARSE MESH BALANCE TABLE FOR GROUP   6
+
+
+
+0ZONE  SOURCE      LEFT       RIGHT     BOTTOM       TOP     ABSORPTION   LEFT       RIGHT      BOTTOM      TOP
+        INFLOW     INFLOW     INFLOW     INFLOW                OUTFLOW    OUTFLOW    OUTFLOW    OUTFLOW
+
+     1 1.5146E-03 0.0000E+00 1.4302E-04 0.0000E+00 1.1357E-03 1.4562E-03 0.0000E+00 2.0380E-04 7.9289E-04 3.4039E-04
+     2 1.5521E-03 2.0380E-04 6.4854E-05 0.0000E+00 1.1571E-03 1.4878E-03 1.4302E-04 1.8841E-04 8.0976E-04 3.4891E-04
+     3 2.8837E-04 1.8841E-04 1.3327E-05 0.0000E+00 2.0671E-04 2.7191E-04 6.4854E-05 1.4868E-04 1.4389E-04 6.7504E-05
+     4 2.9314E-06 1.4868E-04 0.0000E+00 0.0000E+00 2.4552E-05 6.6493E-07 1.3327E-05 1.3597E-04 1.6816E-05 9.3801E-06
+     5 2.5233E-01 0.0000E+00 2.3486E-02 3.4039E-04 4.0516E-04 2.3997E-01 0.0000E+00 3.4252E-02 1.1357E-03 1.1986E-03
+     6 2.5591E-01 3.4252E-02 1.0233E-02 3.4891E-04 4.1472E-04 2.4367E-01 2.3486E-02 3.1633E-02 1.1571E-03 1.2206E-03
+     7 4.6210E-02 3.1633E-02 2.2644E-03 6.7504E-05 7.9286E-05 4.4605E-02 1.0233E-02 2.4991E-02 2.0671E-04 2.1810E-04
+     8 4.3329E-04 2.4991E-02 0.0000E+00 9.3801E-06 1.0826E-05 1.1100E-04 2.2644E-03 2.3018E-02 2.4552E-05 2.5949E-05
+     9 1.6971E-03 0.0000E+00 1.6216E-04 1.1986E-03 8.1532E-05 1.6394E-03 0.0000E+00 2.2981E-04 4.0516E-04 8.6502E-04
+    10 1.7375E-03 2.2981E-04 7.3642E-05 1.2206E-03 8.3369E-05 1.6736E-03 1.6216E-04 2.1171E-04 4.1472E-04 8.8281E-04
+    11 3.2168E-04 2.1171E-04 1.5161E-05 2.1810E-04 1.4839E-05 3.0504E-04 7.3642E-05 1.6665E-04 7.9286E-05 1.5686E-04
+    12 3.2294E-06 1.6665E-04 0.0000E+00 2.5949E-05 1.6047E-06 7.4399E-07 1.5161E-05 1.5235E-04 1.0826E-05 1.8356E-05
+    13 1.5020E-05 0.0000E+00 1.9592E-05 8.6502E-04 0.0000E+00 3.8904E-06 0.0000E+00 2.6590E-05 8.1532E-05 7.8762E-04
+    14 1.5620E-05 2.6590E-05 9.6123E-06 8.8281E-04 0.0000E+00 3.9723E-06 1.9592E-05 2.4051E-05 8.3369E-05 8.0365E-04
+    15 3.0690E-06 2.4051E-05 1.5638E-06 1.5686E-04 0.0000E+00 7.0937E-07 9.6123E-06 1.8647E-05 1.4839E-05 1.4173E-04
+    16 4.5353E-07 1.8647E-05 0.0000E+00 1.8356E-05 0.0000E+00 8.7057E-08 1.5638E-06 1.7320E-05 1.6047E-06 1.6881E-05
+0
+
+
+0COARSE MESH BALANCE TABLE FOR GROUP   7
+
+
+
+0ZONE  SOURCE      LEFT       RIGHT     BOTTOM       TOP     ABSORPTION   LEFT       RIGHT      BOTTOM      TOP
+        INFLOW     INFLOW     INFLOW     INFLOW                OUTFLOW    OUTFLOW    OUTFLOW    OUTFLOW
+
+     1 1.7551E-03 0.0000E+00 1.5250E-04 0.0000E+00 1.0903E-03 1.6493E-03 0.0000E+00 2.0076E-04 7.3547E-04 4.1228E-04
+     2 1.7951E-03 2.0076E-04 7.5530E-05 0.0000E+00 1.1094E-03 1.6804E-03 1.5250E-04 1.7777E-04 7.4929E-04 4.2089E-04
+     3 3.3023E-04 1.7777E-04 1.6659E-05 0.0000E+00 1.9639E-04 3.0057E-04 7.5530E-05 1.3536E-04 1.3051E-04 7.9082E-05
+     4 9.6506E-07 1.3536E-04 0.0000E+00 0.0000E+00 2.1385E-05 1.0374E-06 1.6659E-05 1.1615E-04 1.3567E-05 1.0300E-05
+     5 2.8924E-01 0.0000E+00 2.5504E-02 4.1228E-04 4.8729E-04 2.7910E-01 0.0000E+00 3.4297E-02 1.0903E-03 1.1557E-03
+     6 2.9371E-01 3.4297E-02 1.2377E-02 4.2089E-04 4.9686E-04 2.8306E-01 2.5504E-02 3.0445E-02 1.1094E-03 1.1755E-03
+     7 5.3691E-02 3.0445E-02 2.9724E-03 7.9082E-05 9.2377E-05 5.1028E-02 1.2377E-02 2.3471E-02 1.9639E-04 2.0820E-04
+     8 1.5159E-04 2.3471E-02 0.0000E+00 1.0300E-05 1.1830E-05 1.8139E-04 2.9724E-03 2.0447E-02 2.1385E-05 2.2754E-05
+     9 1.9725E-03 0.0000E+00 1.7446E-04 1.1557E-03 1.0693E-04 1.8781E-03 0.0000E+00 2.2878E-04 4.8729E-04 8.1547E-04
+    10 2.0160E-03 2.2878E-04 8.6372E-05 1.1755E-03 1.0879E-04 1.9120E-03 1.7446E-04 2.0191E-04 4.9686E-04 8.3022E-04
+    11 3.6978E-04 2.0191E-04 1.9129E-05 2.0820E-04 1.8657E-05 3.4095E-04 8.6372E-05 1.5333E-04 9.2377E-05 1.4465E-04
+    12 1.0714E-06 1.5333E-04 0.0000E+00 2.2754E-05 1.8571E-06 1.1756E-06 1.9129E-05 1.3173E-04 1.1830E-05 1.5147E-05
+    13 5.2838E-06 0.0000E+00 1.9792E-05 8.1547E-04 0.0000E+00 6.3636E-06 0.0000E+00 2.4622E-05 1.0693E-04 7.0263E-04
+    14 5.4447E-06 2.4622E-05 1.0578E-05 8.3022E-04 0.0000E+00 6.4733E-06 1.9792E-05 2.1025E-05 1.0879E-04 7.1478E-04
+    15 1.0196E-06 2.1025E-05 1.8146E-06 1.4465E-04 0.0000E+00 1.1192E-06 1.0578E-05 1.5315E-05 1.8657E-05 1.2284E-04
+    16 1.3764E-07 1.5315E-05 0.0000E+00 1.5147E-05 0.0000E+00 1.2367E-07 1.8146E-06 1.3542E-05 1.8571E-06 1.3262E-05
+0
+
+
+0COARSE MESH BALANCE TABLE FOR GROUP   8
+
+
+
+0ZONE  SOURCE      LEFT       RIGHT     BOTTOM       TOP     ABSORPTION   LEFT       RIGHT      BOTTOM      TOP
+        INFLOW     INFLOW     INFLOW     INFLOW                OUTFLOW    OUTFLOW    OUTFLOW    OUTFLOW
+
+     1 1.6610E-03 0.0000E+00 1.2822E-04 0.0000E+00 8.7138E-04 1.5566E-03 0.0000E+00 1.6120E-04 5.6702E-04 3.7579E-04
+     2 1.6932E-03 1.6120E-04 6.6730E-05 0.0000E+00 8.8475E-04 1.5811E-03 1.2822E-04 1.3842E-04 5.7599E-04 3.8215E-04
+     3 3.0415E-04 1.3842E-04 2.0380E-05 0.0000E+00 1.5601E-04 2.7979E-04 6.6730E-05 1.0275E-04 9.9225E-05 7.0469E-05
+     4 9.8959E-07 1.0275E-04 0.0000E+00 0.0000E+00 1.6133E-05 8.0397E-07 2.0380E-05 8.0188E-05 9.3582E-06 9.1388E-06
+     5 2.7996E-01 0.0000E+00 2.2224E-02 3.7579E-04 4.5047E-04 2.7284E-01 0.0000E+00 2.8366E-02 8.7138E-04 9.2865E-04
+     6 2.8399E-01 2.8366E-02 1.1482E-02 3.8215E-04 4.5754E-04 2.7620E-01 2.2224E-02 2.4424E-02 8.8475E-04 9.4252E-04
+     7 5.1306E-02 2.4424E-02 3.7823E-03 7.0469E-05 8.3449E-05 4.9403E-02 1.1482E-02 1.8459E-02 1.5601E-04 1.6628E-04
+     8 1.7209E-04 1.8459E-02 0.0000E+00 9.1388E-06 1.0583E-05 1.4672E-04 3.7823E-03 1.4688E-02 1.6133E-05 1.7319E-05
+     9 1.8879E-03 0.0000E+00 1.5056E-04 9.2865E-04 1.3512E-04 1.8204E-03 0.0000E+00 1.8846E-04 4.5047E-04 6.4282E-04
+    10 1.9230E-03 1.8846E-04 7.8364E-05 9.4252E-04 1.3703E-04 1.8476E-03 1.5056E-04 1.6114E-04 4.5754E-04 6.5251E-04
+    11 3.4437E-04 1.6114E-04 2.3938E-05 1.6628E-04 2.3161E-05 3.2554E-04 7.8364E-05 1.1907E-04 8.3449E-05 1.1247E-04
+    12 1.1204E-06 1.1907E-04 0.0000E+00 1.7319E-05 2.1417E-06 9.3483E-07 2.3938E-05 9.3312E-05 1.0583E-05 1.0886E-05
+    13 6.0348E-06 0.0000E+00 1.6647E-05 6.4282E-04 0.0000E+00 5.1363E-06 0.0000E+00 1.9540E-05 1.3512E-04 5.0571E-04
+    14 6.1429E-06 1.9540E-05 9.4961E-06 6.5251E-04 0.0000E+00 5.2087E-06 1.6647E-05 1.5912E-05 1.3703E-04 5.1289E-04
+    15 1.0665E-06 1.5912E-05 2.1055E-06 1.1247E-04 0.0000E+00 8.8688E-07 9.4961E-06 1.0936E-05 2.3161E-05 8.7071E-05
+    16 1.1923E-07 1.0936E-05 0.0000E+00 1.0886E-05 0.0000E+00 8.9797E-08 2.1055E-06 8.8782E-06 2.1417E-06 8.7261E-06
+0
+
+
+0COARSE MESH BALANCE TABLE FOR GROUP   9
+
+
+
+0ZONE  SOURCE      LEFT       RIGHT     BOTTOM       TOP     ABSORPTION   LEFT       RIGHT      BOTTOM      TOP
+        INFLOW     INFLOW     INFLOW     INFLOW                OUTFLOW    OUTFLOW    OUTFLOW    OUTFLOW
+
+     1 1.6218E-03 0.0000E+00 1.3406E-04 0.0000E+00 9.0988E-04 1.5230E-03 0.0000E+00 1.6601E-04 5.7675E-04 4.0000E-04
+     2 1.6482E-03 1.6601E-04 6.9195E-05 0.0000E+00 9.2066E-04 1.5410E-03 1.3406E-04 1.4033E-04 5.8368E-04 4.0502E-04
+     3 2.9229E-04 1.4033E-04 1.8353E-05 0.0000E+00 1.5933E-04 2.6708E-04 6.9195E-05 1.0260E-04 9.8662E-05 7.2759E-05
+     4 6.8410E-07 1.0260E-04 0.0000E+00 0.0000E+00 1.6335E-05 1.0946E-06 1.8353E-05 8.1830E-05 9.3638E-06 8.9822E-06
+     5 2.8274E-01 0.0000E+00 2.4093E-02 4.0000E-04 4.8611E-04 2.7565E-01 0.0000E+00 3.0179E-02 9.0988E-04 9.7407E-04
+     6 2.8629E-01 3.0179E-02 1.2377E-02 4.0502E-04 4.9163E-04 2.7817E-01 2.4093E-02 2.5581E-02 9.2066E-04 9.8519E-04
+     7 5.1279E-02 2.5581E-02 3.5125E-03 7.2759E-05 8.7313E-05 4.8771E-02 1.2377E-02 1.9054E-02 1.5933E-04 1.7057E-04
+     8 1.2484E-04 1.9054E-02 0.0000E+00 8.9822E-06 1.0565E-05 2.0594E-04 3.5125E-03 1.5446E-02 1.6335E-05 1.7605E-05
+     9 1.8892E-03 0.0000E+00 1.5920E-04 9.7407E-04 1.2605E-04 1.8008E-03 0.0000E+00 1.9644E-04 4.8611E-04 6.6511E-04
+    10 1.9183E-03 1.9644E-04 8.2078E-05 9.8519E-04 1.2731E-04 1.8206E-03 1.5920E-04 1.6538E-04 4.9163E-04 6.7256E-04
+    11 3.3876E-04 1.6538E-04 2.1759E-05 1.7057E-04 2.1104E-05 3.1413E-04 8.2078E-05 1.2034E-04 8.7313E-05 1.1371E-04
+    12 7.9542E-07 1.2034E-04 0.0000E+00 1.7605E-05 1.9457E-06 1.2844E-06 2.1759E-05 9.6090E-05 1.0565E-05 1.0986E-05
+    13 4.3703E-06 0.0000E+00 1.7080E-05 6.6511E-04 0.0000E+00 7.2357E-06 0.0000E+00 2.0064E-05 1.2605E-04 5.3321E-04
+    14 4.4319E-06 2.0064E-05 9.4887E-06 6.7256E-04 0.0000E+00 7.3079E-06 1.7080E-05 1.6216E-05 1.2731E-04 5.3864E-04
+    15 7.5463E-07 1.6216E-05 1.9101E-06 1.1371E-04 0.0000E+00 1.2205E-06 9.4887E-06 1.1055E-05 2.1104E-05 8.9724E-05
+    16 7.6414E-08 1.1055E-05 0.0000E+00 1.0986E-05 0.0000E+00 1.2368E-07 1.9101E-06 9.1502E-06 1.9457E-06 8.9881E-06
+0
+
+
+0COARSE MESH BALANCE TABLE FOR GROUP  10
+
+
+
+0ZONE  SOURCE      LEFT       RIGHT     BOTTOM       TOP     ABSORPTION   LEFT       RIGHT      BOTTOM      TOP
+        INFLOW     INFLOW     INFLOW     INFLOW                OUTFLOW    OUTFLOW    OUTFLOW    OUTFLOW
+
+     1 1.4743E-03 0.0000E+00 1.1226E-04 0.0000E+00 7.6685E-04 1.4015E-03 0.0000E+00 1.3826E-04 4.7729E-04 3.3630E-04
+     2 1.4924E-03 1.3826E-04 5.6913E-05 0.0000E+00 7.7309E-04 1.4125E-03 1.1226E-04 1.1561E-04 4.8116E-04 3.3912E-04
+     3 2.5931E-04 1.1561E-04 1.3591E-05 0.0000E+00 1.3128E-04 2.4012E-04 5.6913E-05 8.3326E-05 7.9854E-05 5.9584E-05
+     4 7.2256E-07 8.3326E-05 0.0000E+00 0.0000E+00 1.3425E-05 9.4854E-07 1.3591E-05 6.8116E-05 7.6610E-06 7.1577E-06
+     5 2.6575E-01 0.0000E+00 2.0681E-02 3.3630E-04 4.1159E-04 2.5984E-01 0.0000E+00 2.5746E-02 7.6685E-04 8.2390E-04
+     6 2.6828E-01 2.5746E-02 1.0460E-02 3.3912E-04 4.1457E-04 2.6134E-01 2.0681E-02 2.1609E-02 7.7309E-04 8.3025E-04
+     7 4.7145E-02 2.1609E-02 2.6602E-03 5.9584E-05 7.2043E-05 4.4949E-02 1.0460E-02 1.5866E-02 1.3128E-04 1.4105E-04
+     8 1.3595E-04 1.5866E-02 0.0000E+00 7.1577E-06 8.4859E-06 1.8246E-04 2.6602E-03 1.3147E-02 1.3425E-05 1.4509E-05
+     9 1.7404E-03 0.0000E+00 1.3380E-04 8.2390E-04 9.5867E-05 1.6630E-03 0.0000E+00 1.6428E-04 4.1159E-04 5.5505E-04
+    10 1.7603E-03 1.6428E-04 6.7736E-05 8.3025E-04 9.6432E-05 1.6747E-03 1.3380E-04 1.3684E-04 4.1457E-04 5.5911E-04
+    11 3.0449E-04 1.3684E-04 1.6170E-05 1.4105E-04 1.5718E-05 2.8351E-04 6.7736E-05 9.8183E-05 7.2043E-05 9.2801E-05
+    12 8.4787E-07 9.8183E-05 0.0000E+00 1.4509E-05 1.4463E-06 1.1164E-06 1.6170E-05 8.0210E-05 8.4859E-06 9.0035E-06
+    13 4.7764E-06 0.0000E+00 1.4128E-05 5.5505E-04 0.0000E+00 6.4334E-06 0.0000E+00 1.6664E-05 9.5867E-05 4.5500E-04
+    14 4.8240E-06 1.6664E-05 7.6264E-06 5.5911E-04 0.0000E+00 6.4713E-06 1.4128E-05 1.3398E-05 9.6432E-05 4.5779E-04
+    15 8.0567E-07 1.3398E-05 1.4182E-06 9.2801E-05 0.0000E+00 1.0624E-06 7.6264E-06 9.0763E-06 1.5718E-05 7.4940E-05
+    16 8.1644E-08 9.0763E-06 0.0000E+00 9.0035E-06 0.0000E+00 1.0822E-07 1.4182E-06 7.6653E-06 1.4463E-06 7.5235E-06
+0
+
+
+0COARSE MESH BALANCE TABLE FOR GROUP  11
+
+
+
+0ZONE  SOURCE      LEFT       RIGHT     BOTTOM       TOP     ABSORPTION   LEFT       RIGHT      BOTTOM      TOP
+        INFLOW     INFLOW     INFLOW     INFLOW                OUTFLOW    OUTFLOW    OUTFLOW    OUTFLOW
+
+     1 1.3908E-03 0.0000E+00 1.0573E-04 0.0000E+00 7.2840E-04 1.3307E-03 0.0000E+00 1.3007E-04 4.4798E-04 3.1620E-04
+     2 1.4026E-03 1.3007E-04 5.2598E-05 0.0000E+00 7.3151E-04 1.3358E-03 1.0573E-04 1.0784E-04 4.4983E-04 3.1756E-04
+     3 2.3917E-04 1.0784E-04 1.2576E-05 0.0000E+00 1.2245E-04 2.2396E-04 5.2598E-05 7.6868E-05 7.3627E-05 5.4987E-05
+     4 6.9852E-07 7.6868E-05 0.0000E+00 0.0000E+00 1.2406E-05 1.3303E-06 1.2576E-05 6.2486E-05 7.0026E-06 6.5774E-06
+     5 2.5686E-01 0.0000E+00 1.9868E-02 3.1620E-04 3.8876E-04 2.5123E-01 0.0000E+00 2.4689E-02 7.2840E-04 7.8493E-04
+     6 2.5847E-01 2.4689E-02 9.8605E-03 3.1756E-04 3.9002E-04 2.5178E-01 1.9868E-02 2.0561E-02 7.3151E-04 7.8793E-04
+     7 4.4587E-02 2.0561E-02 2.5056E-03 5.4987E-05 6.6821E-05 4.2736E-02 9.8605E-03 1.4925E-02 1.2245E-04 1.3195E-04
+     8 1.3451E-04 1.4925E-02 0.0000E+00 6.5774E-06 7.8254E-06 2.6058E-04 2.5056E-03 1.2282E-02 1.2406E-05 1.3449E-05
+     9 1.6491E-03 0.0000E+00 1.2642E-04 7.8493E-04 9.0445E-05 1.5840E-03 0.0000E+00 1.5507E-04 3.8876E-04 5.2315E-04
+    10 1.6617E-03 1.5507E-04 6.2817E-05 7.8793E-04 9.0617E-05 1.5887E-03 1.2642E-04 1.2808E-04 3.9002E-04 5.2490E-04
+    11 2.8218E-04 1.2808E-04 1.5012E-05 1.3195E-04 1.4592E-05 2.6534E-04 6.2817E-05 9.0904E-05 6.6821E-05 8.5933E-05
+    12 8.2225E-07 9.0904E-05 0.0000E+00 1.3449E-05 1.3343E-06 1.5711E-06 1.5012E-05 7.3836E-05 7.8254E-06 8.2654E-06
+    13 4.7434E-06 0.0000E+00 1.3235E-05 5.2315E-04 0.0000E+00 9.2043E-06 0.0000E+00 1.5597E-05 9.0445E-05 4.2588E-04
+    14 4.7701E-06 1.5597E-05 7.0341E-06 5.2490E-04 0.0000E+00 9.2217E-06 1.3235E-05 1.2425E-05 9.0617E-05 4.2680E-04
+    15 7.8252E-07 1.2425E-05 1.3086E-06 8.5933E-05 0.0000E+00 1.4953E-06 7.0341E-06 8.3319E-06 1.4592E-05 6.8996E-05
+    16 7.9657E-08 8.3319E-06 0.0000E+00 8.2654E-06 0.0000E+00 1.5121E-07 1.3086E-06 7.0062E-06 1.3343E-06 6.8767E-06
+0
+
+
+0COARSE MESH BALANCE TABLE FOR GROUP  12
+
+
+
+0ZONE  SOURCE      LEFT       RIGHT     BOTTOM       TOP     ABSORPTION   LEFT       RIGHT      BOTTOM      TOP
+        INFLOW     INFLOW     INFLOW     INFLOW                OUTFLOW    OUTFLOW    OUTFLOW    OUTFLOW
+
+     1 9.7116E-04 0.0000E+00 5.4228E-05 0.0000E+00 3.7422E-04 9.4239E-04 0.0000E+00 6.6539E-05 2.2782E-04 1.6285E-04
+     2 9.7553E-04 6.6539E-05 2.6739E-05 0.0000E+00 3.7480E-04 9.4342E-04 5.4228E-05 5.4754E-05 2.2814E-04 1.6308E-04
+     3 1.6393E-04 5.4754E-05 6.2356E-06 0.0000E+00 6.2111E-05 1.5666E-04 2.6739E-05 3.8682E-05 3.6996E-05 2.7953E-05
+     4 7.3090E-07 3.8682E-05 0.0000E+00 0.0000E+00 6.2024E-06 1.4624E-06 6.2356E-06 3.1148E-05 3.4689E-06 3.3003E-06
+     5 1.8282E-01 0.0000E+00 1.0318E-02 1.6285E-04 2.0034E-04 1.7993E-01 0.0000E+00 1.2787E-02 3.7422E-04 4.0411E-04
+     6 1.8332E-01 1.2787E-02 5.0757E-03 1.6308E-04 2.0041E-04 1.7987E-01 1.0318E-02 1.0575E-02 3.7480E-04 4.0456E-04
+     7 3.1182E-02 1.0575E-02 1.2567E-03 2.7953E-05 3.4006E-05 3.0266E-02 5.0757E-03 7.6043E-03 6.2111E-05 6.7074E-05
+     8 1.4368E-04 7.6043E-03 0.0000E+00 3.3003E-06 3.9314E-06 2.8989E-04 1.2567E-03 6.1957E-03 6.2024E-06 6.7375E-06
+     9 1.1554E-03 0.0000E+00 6.4905E-05 4.0411E-04 4.5421E-05 1.1231E-03 0.0000E+00 7.9426E-05 2.0034E-04 2.6693E-04
+    10 1.1596E-03 7.9426E-05 3.1972E-05 4.0456E-04 4.5384E-05 1.1234E-03 6.4905E-05 6.5120E-05 2.0041E-04 2.6710E-04
+    11 1.9411E-04 6.5120E-05 7.4529E-06 6.7074E-05 7.2451E-06 1.8588E-04 3.1972E-05 4.5819E-05 3.4006E-05 4.3325E-05
+    12 8.6351E-07 4.5819E-05 0.0000E+00 6.7375E-06 6.5696E-07 1.7297E-06 7.4529E-06 3.6856E-05 3.9314E-06 4.1066E-06
+    13 5.0775E-06 0.0000E+00 6.6965E-06 2.6693E-04 0.0000E+00 1.0254E-05 0.0000E+00 7.8759E-06 4.5421E-05 2.1516E-04
+    14 5.0838E-06 7.8759E-06 3.5351E-06 2.6710E-04 0.0000E+00 1.0245E-05 6.6965E-06 6.2273E-06 4.5384E-05 2.1504E-04
+    15 8.2195E-07 6.2273E-06 6.4434E-07 4.3325E-05 0.0000E+00 1.6466E-06 3.5351E-06 4.1397E-06 7.2451E-06 3.4452E-05
+    16 8.2751E-08 4.1397E-06 0.0000E+00 4.1066E-06 0.0000E+00 1.6471E-07 6.4434E-07 3.4631E-06 6.5696E-07 3.4000E-06
+0
+
+
+0COARSE MESH BALANCE TABLE FOR GROUP  13
+
+
+
+0ZONE  SOURCE      LEFT       RIGHT     BOTTOM       TOP     ABSORPTION   LEFT       RIGHT      BOTTOM      TOP
+        INFLOW     INFLOW     INFLOW     INFLOW                OUTFLOW    OUTFLOW    OUTFLOW    OUTFLOW
+
+     1 8.3814E-04 0.0000E+00 4.3907E-05 0.0000E+00 2.9539E-04 8.1094E-04 0.0000E+00 5.2931E-05 1.7536E-04 1.3819E-04
+     2 8.4000E-04 5.2931E-05 2.2114E-05 0.0000E+00 2.9527E-04 8.1026E-04 4.3907E-05 4.2778E-05 1.7526E-04 1.3811E-04
+     3 1.4000E-04 4.2778E-05 4.7435E-06 0.0000E+00 4.8418E-05 1.3284E-04 2.2114E-05 2.9611E-05 2.8124E-05 2.3255E-05
+     4 9.3578E-07 2.9611E-05 0.0000E+00 0.0000E+00 4.7098E-06 1.7573E-06 4.7435E-06 2.3593E-05 2.5812E-06 2.5820E-06
+     5 1.5932E-01 0.0000E+00 8.4751E-03 1.3819E-04 1.6826E-04 1.5718E-01 0.0000E+00 1.0303E-02 2.9539E-04 3.2018E-04
+     6 1.5942E-01 1.0303E-02 4.2680E-03 1.3811E-04 1.6800E-04 1.5684E-01 8.4751E-03 8.3662E-03 2.9527E-04 3.1991E-04
+     7 2.6915E-02 8.3662E-03 9.6863E-04 2.3255E-05 2.8051E-05 2.6036E-02 4.2680E-03 5.8966E-03 4.8418E-05 5.2473E-05
+     8 1.8691E-04 5.8966E-03 0.0000E+00 2.5820E-06 3.0677E-06 3.5318E-04 9.6863E-04 4.7575E-03 4.7098E-06 5.1285E-06
+     9 9.9830E-04 0.0000E+00 5.2562E-05 3.2018E-04 3.5068E-05 9.6725E-04 0.0000E+00 6.3226E-05 1.6826E-04 2.0738E-04
+    10 9.9968E-04 6.3226E-05 2.6433E-05 3.1991E-04 3.4971E-05 9.6565E-04 5.2562E-05 5.0925E-05 1.6800E-04 2.0709E-04
+    11 1.6600E-04 5.0925E-05 5.6740E-06 5.2473E-05 5.5188E-06 1.5777E-04 2.6433E-05 3.5113E-05 2.8051E-05 3.3227E-05
+    12 1.1073E-06 3.5113E-05 0.0000E+00 5.1285E-06 4.9149E-07 2.0807E-06 5.6740E-06 2.7945E-05 3.0677E-06 3.0732E-06
+    13 6.6187E-06 0.0000E+00 5.2080E-06 2.0738E-04 0.0000E+00 1.2516E-05 0.0000E+00 6.0713E-06 3.5068E-05 1.6555E-04
+    14 6.6075E-06 6.0713E-06 2.7628E-06 2.0709E-04 0.0000E+00 1.2481E-05 5.2080E-06 4.7431E-06 3.4971E-05 1.6513E-04
+    15 1.0546E-06 4.7431E-06 4.8204E-07 3.3227E-05 0.0000E+00 1.9821E-06 2.7628E-06 3.0984E-06 5.5188E-06 2.6144E-05
+    16 1.0413E-07 3.0984E-06 0.0000E+00 3.0732E-06 0.0000E+00 1.9404E-07 4.8204E-07 2.5769E-06 4.9149E-07 2.5313E-06
+0
+
+
+0COARSE MESH BALANCE TABLE FOR GROUP  14
+
+
+
+0ZONE  SOURCE      LEFT       RIGHT     BOTTOM       TOP     ABSORPTION   LEFT       RIGHT      BOTTOM      TOP
+        INFLOW     INFLOW     INFLOW     INFLOW                OUTFLOW    OUTFLOW    OUTFLOW    OUTFLOW
+
+     1 6.0027E-04 0.0000E+00 2.5104E-05 0.0000E+00 1.6205E-04 5.8107E-04 0.0000E+00 2.9436E-05 9.2031E-05 8.4887E-05
+     2 6.0020E-04 2.9436E-05 1.3113E-05 0.0000E+00 1.6171E-04 5.7966E-04 2.5104E-05 2.3161E-05 9.1829E-05 8.4701E-05
+     3 9.8577E-05 2.3161E-05 2.4814E-06 0.0000E+00 2.6125E-05 9.3323E-05 1.3113E-05 1.5476E-05 1.4524E-05 1.3908E-05
+     4 1.1188E-06 1.5476E-05 0.0000E+00 0.0000E+00 2.4408E-06 1.6538E-06 2.4814E-06 1.2201E-05 1.2924E-06 1.4066E-06
+     5 1.1593E-01 0.0000E+00 4.9424E-03 8.4887E-05 1.0176E-04 1.1489E-01 0.0000E+00 5.8307E-03 1.6205E-04 1.7653E-04
+     6 1.1574E-01 5.8307E-03 2.5871E-03 8.4701E-05 1.0145E-04 1.1446E-01 4.9424E-03 4.6037E-03 1.6171E-04 1.7609E-04
+     7 1.9261E-02 4.6037E-03 5.1565E-04 1.3908E-05 1.6555E-05 1.8637E-02 2.5871E-03 3.1319E-03 2.6125E-05 2.8444E-05
+     8 2.2893E-04 3.1319E-03 0.0000E+00 1.4066E-06 1.6623E-06 3.3842E-04 5.1565E-04 2.5048E-03 2.4408E-06 2.6651E-06
+     9 7.1538E-04 0.0000E+00 3.0036E-05 1.7653E-04 1.8713E-05 6.9331E-04 0.0000E+00 3.5167E-05 1.0176E-04 1.1042E-04
+    10 7.1472E-04 3.5167E-05 1.5655E-05 1.7609E-04 1.8629E-05 6.9109E-04 3.0036E-05 2.7586E-05 1.0145E-04 1.1009E-04
+    11 1.1698E-04 2.7586E-05 2.9687E-06 2.8444E-05 2.8904E-06 1.1089E-04 1.5655E-05 1.8364E-05 1.6555E-05 1.7400E-05
+    12 1.3245E-06 1.8364E-05 0.0000E+00 2.6651E-06 2.5018E-07 1.9598E-06 2.9687E-06 1.4461E-05 1.6623E-06 1.5521E-06
+    13 8.1338E-06 0.0000E+00 2.7954E-06 1.1042E-04 0.0000E+00 1.2023E-05 0.0000E+00 3.2123E-06 1.8713E-05 8.7405E-05
+    14 8.0948E-06 3.2123E-06 1.5011E-06 1.1009E-04 0.0000E+00 1.1971E-05 2.7954E-06 2.4674E-06 1.8629E-05 8.7041E-05
+    15 1.2629E-06 2.4674E-06 2.4535E-07 1.7400E-05 0.0000E+00 1.8692E-06 1.5011E-06 1.5652E-06 2.8904E-06 1.3550E-05
+    16 1.2068E-07 1.5652E-06 0.0000E+00 1.5521E-06 0.0000E+00 1.7689E-07 2.4535E-07 1.2936E-06 2.5018E-07 1.2719E-06
+0
+
+
+0COARSE MESH BALANCE TABLE FOR GROUP  15
+
+
+
+0ZONE  SOURCE      LEFT       RIGHT     BOTTOM       TOP     ABSORPTION   LEFT       RIGHT      BOTTOM      TOP
+        INFLOW     INFLOW     INFLOW     INFLOW                OUTFLOW    OUTFLOW    OUTFLOW    OUTFLOW
+
+     1 9.5125E-04 0.0000E+00 4.1375E-05 0.0000E+00 2.5895E-04 9.1856E-04 0.0000E+00 4.6863E-05 1.3210E-04 1.5405E-04
+     2 9.4587E-04 4.6863E-05 2.1935E-05 0.0000E+00 2.5680E-04 9.1103E-04 4.1375E-05 3.5164E-05 1.3111E-04 1.5279E-04
+     3 1.4752E-04 3.5164E-05 3.3845E-06 0.0000E+00 3.9343E-05 1.3876E-04 2.1935E-05 2.1449E-05 1.9807E-05 2.3459E-05
+     4 1.5102E-06 2.1449E-05 0.0000E+00 0.0000E+00 3.3836E-06 2.5103E-06 3.3845E-06 1.6740E-05 1.6782E-06 2.0300E-06
+     5 1.9495E-01 0.0000E+00 8.6529E-03 1.5405E-04 1.8102E-04 1.9356E-01 0.0000E+00 9.8297E-03 2.5895E-04 2.8376E-04
+     6 1.9333E-01 9.8297E-03 4.6020E-03 1.5279E-04 1.7943E-04 1.9154E-01 8.6529E-03 7.3672E-03 2.5680E-04 2.8127E-04
+     7 3.0312E-02 7.3672E-03 7.3578E-04 2.3459E-05 2.7460E-05 2.9236E-02 4.6020E-03 4.5454E-03 3.9343E-05 4.3070E-05
+     8 3.2789E-04 4.5454E-03 0.0000E+00 2.0300E-06 2.3804E-06 5.3719E-04 7.3578E-04 3.5976E-03 3.3836E-06 3.7039E-06
+     9 1.1304E-03 0.0000E+00 4.9293E-05 2.8376E-04 2.6873E-05 1.0923E-03 0.0000E+00 5.5792E-05 1.8102E-04 1.6122E-04
+    10 1.1233E-03 5.5792E-05 2.6081E-05 2.8127E-04 2.6600E-05 1.0826E-03 4.9293E-05 4.1773E-05 1.7943E-04 1.5990E-04
+    11 1.7478E-04 4.1773E-05 4.0391E-06 4.3070E-05 3.9413E-06 1.6452E-04 2.6081E-05 2.5415E-05 2.7460E-05 2.4127E-05
+    12 1.7841E-06 2.5415E-05 0.0000E+00 3.7039E-06 3.2391E-07 2.9702E-06 4.0391E-06 1.9806E-05 2.3804E-06 2.0312E-06
+    13 1.1743E-05 0.0000E+00 4.0755E-06 1.6122E-04 0.0000E+00 1.9203E-05 0.0000E+00 4.6101E-06 2.6873E-05 1.2635E-04
+    14 1.1607E-05 4.6101E-06 2.1579E-06 1.5990E-04 0.0000E+00 1.9018E-05 4.0755E-06 3.4388E-06 2.6600E-05 1.2514E-04
+    15 1.7059E-06 3.4388E-06 3.1749E-07 2.4127E-05 0.0000E+00 2.8389E-06 2.1579E-06 2.0495E-06 3.9413E-06 1.8602E-05
+    16 1.5109E-07 2.0495E-06 0.0000E+00 2.0312E-06 0.0000E+00 2.5428E-07 3.1749E-07 1.6817E-06 3.2391E-07 1.6544E-06
+0
+
+
+0COARSE MESH BALANCE TABLE FOR GROUP  16
+
+
+
+0ZONE  SOURCE      LEFT       RIGHT     BOTTOM       TOP     ABSORPTION   LEFT       RIGHT      BOTTOM      TOP
+        INFLOW     INFLOW     INFLOW     INFLOW                OUTFLOW    OUTFLOW    OUTFLOW    OUTFLOW
+
+     1 2.5753E-03 0.0000E+00 1.2543E-04 0.0000E+00 7.8421E-04 2.5035E-03 0.0000E+00 1.3688E-04 3.1974E-04 5.2482E-04
+     2 2.5361E-03 1.3688E-04 6.5876E-05 0.0000E+00 7.6938E-04 2.4577E-03 1.2543E-04 9.5599E-05 3.1417E-04 5.1534E-04
+     3 3.5629E-04 9.5599E-05 7.3902E-06 0.0000E+00 1.0543E-04 3.3711E-04 6.5876E-05 4.7798E-05 4.3169E-05 7.0764E-05
+     4 3.1260E-06 4.7798E-05 0.0000E+00 0.0000E+00 7.6404E-06 6.2270E-06 7.3902E-06 3.6865E-05 3.3298E-06 4.7524E-06
+     5 5.9282E-01 0.0000E+00 2.9368E-02 5.2482E-04 6.0423E-04 5.8959E-01 0.0000E+00 3.2081E-02 7.8421E-04 8.6402E-04
+     6 5.8173E-01 3.2081E-02 1.5327E-02 5.1534E-04 5.9307E-04 5.7698E-01 2.9368E-02 2.2279E-02 7.6938E-04 8.4738E-04
+     7 8.0865E-02 2.2279E-02 1.7377E-03 7.0764E-05 8.1353E-05 7.8393E-02 1.5327E-02 1.1092E-02 1.0543E-04 1.1607E-04
+     8 7.2793E-04 1.1092E-02 0.0000E+00 4.7524E-06 5.5073E-06 1.4504E-03 1.7377E-03 8.6259E-03 7.6404E-06 8.3830E-06
+     9 3.0379E-03 0.0000E+00 1.4801E-04 8.6402E-04 6.4104E-05 2.9507E-03 0.0000E+00 1.6149E-04 6.0423E-04 3.9762E-04
+    10 2.9904E-03 1.6149E-04 7.7667E-05 8.4738E-04 6.2855E-05 2.8956E-03 1.4801E-04 1.1266E-04 5.9307E-04 3.9051E-04
+    11 4.1987E-04 1.1266E-04 8.7623E-06 1.1607E-04 8.5805E-06 3.9696E-04 7.7667E-05 5.6317E-05 8.1353E-05 5.3646E-05
+    12 3.6779E-06 5.6317E-05 0.0000E+00 8.3830E-06 6.4227E-07 7.3275E-06 8.7623E-06 4.3363E-05 5.5073E-06 4.0602E-06
+    13 2.6303E-05 0.0000E+00 9.9140E-06 3.9762E-04 0.0000E+00 5.2393E-05 0.0000E+00 1.1006E-05 6.4104E-05 3.0634E-04
+    14 2.5821E-05 1.1006E-05 5.0232E-06 3.9051E-04 0.0000E+00 5.1382E-05 9.9140E-06 7.8216E-06 6.2855E-05 3.0039E-04
+    15 3.5295E-06 7.8216E-06 6.2905E-07 5.3646E-05 0.0000E+00 7.0289E-06 5.0232E-06 4.1017E-06 8.5805E-06 4.0892E-05
+    16 2.7854E-07 4.1017E-06 0.0000E+00 4.0602E-06 0.0000E+00 5.6853E-07 6.2905E-07 3.3263E-06 6.4227E-07 3.2743E-06
+0
+
+
+0COARSE MESH BALANCE TABLE FOR GROUP  17
+
+
+
+0ZONE  SOURCE      LEFT       RIGHT     BOTTOM       TOP     ABSORPTION   LEFT       RIGHT      BOTTOM      TOP
+        INFLOW     INFLOW     INFLOW     INFLOW                OUTFLOW    OUTFLOW    OUTFLOW    OUTFLOW
+
+     1 4.3779E-03 0.0000E+00 2.7581E-04 0.0000E+00 1.6885E-03 4.2277E-03 0.0000E+00 2.9331E-04 5.6660E-04 1.2546E-03
+     2 4.2967E-03 2.9331E-04 1.4858E-04 0.0000E+00 1.6507E-03 4.1359E-03 2.7581E-04 1.9544E-04 5.5466E-04 1.2275E-03
+     3 5.7924E-04 1.9544E-04 1.2435E-05 0.0000E+00 2.1376E-04 5.3800E-04 1.4858E-04 8.2092E-05 7.2351E-05 1.5985E-04
+     4 4.4178E-06 8.2092E-05 0.0000E+00 0.0000E+00 1.2977E-05 1.1919E-05 1.2435E-05 6.1510E-05 5.0219E-06 8.6018E-06
+     5 1.0519E+00 0.0000E+00 6.8088E-02 1.2546E-03 1.4292E-03 1.0467E+00 0.0000E+00 7.2469E-02 1.6885E-03 1.8678E-03
+     6 1.0289E+00 7.2469E-02 3.6280E-02 1.2275E-03 1.3979E-03 1.0207E+00 6.8088E-02 4.7993E-02 1.6507E-03 1.8254E-03
+     7 1.3671E-01 4.7993E-02 3.0517E-03 1.5985E-04 1.8190E-04 1.3138E-01 3.6280E-02 1.9990E-02 2.1376E-04 2.3629E-04
+     8 1.0598E-03 1.9990E-02 0.0000E+00 8.6018E-06 9.8910E-06 2.9110E-03 3.0517E-03 1.5079E-02 1.2977E-05 1.4272E-05
+     9 5.1496E-03 0.0000E+00 3.2379E-04 1.8678E-03 1.1315E-04 4.9597E-03 0.0000E+00 3.4433E-04 1.4292E-03 7.2105E-04
+    10 5.0520E-03 3.4433E-04 1.7431E-04 1.8254E-03 1.1056E-04 4.8502E-03 3.2379E-04 2.2924E-04 1.3979E-03 7.0553E-04
+    11 6.8090E-04 2.2924E-04 1.4679E-05 2.3629E-04 1.4409E-05 6.3086E-04 1.7431E-04 9.6364E-05 1.8190E-04 9.2082E-05
+    12 5.1897E-06 9.6364E-05 0.0000E+00 1.4272E-05 9.8465E-07 1.3976E-05 1.4679E-05 7.2075E-05 9.8910E-06 6.1892E-06
+    13 3.8461E-05 0.0000E+00 1.7799E-05 7.2105E-04 0.0000E+00 1.0577E-04 0.0000E+00 1.9424E-05 1.1315E-04 5.3897E-04
+    14 3.7662E-05 1.9424E-05 9.0689E-06 7.0553E-04 0.0000E+00 1.0335E-04 1.7799E-05 1.3355E-05 1.1056E-04 5.2663E-04
+    15 4.9919E-06 1.3355E-05 9.6395E-07 9.2082E-05 0.0000E+00 1.3445E-05 9.0689E-06 6.2584E-06 1.4409E-05 6.8212E-05
+    16 3.6290E-07 6.2584E-06 0.0000E+00 6.1892E-06 0.0000E+00 9.7481E-07 9.6395E-07 4.9775E-06 9.8465E-07 4.9096E-06
+0
+
+
+0COARSE MESH BALANCE TABLE FOR GROUP  18
+
+
+
+0ZONE  SOURCE      LEFT       RIGHT     BOTTOM       TOP     ABSORPTION   LEFT       RIGHT      BOTTOM      TOP
+        INFLOW     INFLOW     INFLOW     INFLOW                OUTFLOW    OUTFLOW    OUTFLOW    OUTFLOW
+
+     1 2.9702E-03 0.0000E+00 1.4609E-04 0.0000E+00 8.4826E-04 2.8768E-03 0.0000E+00 1.5130E-04 2.2202E-04 7.1444E-04
+     2 2.9096E-03 1.5130E-04 8.2610E-05 0.0000E+00 8.2914E-04 2.8138E-03 1.4609E-04 9.6730E-05 2.1735E-04 6.9861E-04
+     3 3.8527E-04 9.6730E-05 4.8270E-06 0.0000E+00 1.0528E-04 3.5944E-04 8.2610E-05 3.2983E-05 2.7891E-05 8.9188E-05
+     4 2.3060E-06 3.2983E-05 0.0000E+00 0.0000E+00 4.9239E-06 7.2583E-06 4.8270E-06 2.2826E-05 1.6518E-06 3.6505E-06
+     5 7.2639E-01 0.0000E+00 3.6738E-02 7.1444E-04 8.0627E-04 7.2478E-01 0.0000E+00 3.8069E-02 8.4826E-04 9.4296E-04
+     6 7.0922E-01 3.8069E-02 2.0524E-02 6.9861E-04 7.8814E-04 7.0665E-01 3.6738E-02 2.4165E-02 8.2914E-04 9.2140E-04
+     7 9.2520E-02 2.4165E-02 1.2052E-03 8.9188E-05 1.0055E-04 8.9184E-02 2.0524E-02 8.1495E-03 1.0528E-04 1.1695E-04
+     8 5.6319E-04 8.1495E-03 0.0000E+00 3.6505E-06 4.1735E-06 1.8070E-03 1.2052E-03 5.6979E-03 4.9239E-06 5.4344E-06
+     9 3.4891E-03 0.0000E+00 1.7115E-04 9.4296E-04 4.4803E-05 3.3692E-03 0.0000E+00 1.7725E-04 8.0627E-04 2.9529E-04
+    10 3.4166E-03 1.7725E-04 9.6698E-05 9.2140E-04 4.3777E-05 3.2943E-03 1.7115E-04 1.1324E-04 7.8814E-04 2.8891E-04
+    11 4.5235E-04 1.1324E-04 5.6888E-06 1.1695E-04 5.5942E-06 4.2080E-04 9.6698E-05 3.8673E-05 1.0055E-04 3.7100E-05
+    12 2.7039E-06 3.8673E-05 0.0000E+00 5.4344E-06 3.4358E-07 8.5079E-06 5.6888E-06 2.6701E-05 4.1735E-06 2.0831E-06
+    13 2.0462E-05 0.0000E+00 7.1492E-06 2.9529E-04 0.0000E+00 6.5934E-05 0.0000E+00 7.6371E-06 4.4803E-05 2.0453E-04
+    14 1.9995E-05 7.6371E-06 3.8551E-06 2.8891E-04 0.0000E+00 6.4450E-05 7.1492E-06 5.1017E-06 4.3777E-05 1.9992E-04
+    15 2.6012E-06 5.1017E-06 3.3648E-07 3.7100E-05 0.0000E+00 8.2129E-06 3.8551E-06 2.1113E-06 5.5942E-06 2.5366E-05
+    16 1.8860E-07 2.1113E-06 0.0000E+00 2.0831E-06 0.0000E+00 5.1028E-07 3.3648E-07 1.6008E-06 3.4358E-07 1.5918E-06
+0
+
+
+0COARSE MESH BALANCE TABLE FOR ALL GROUPS
+
+
+
+0ZONE  SOURCE      LEFT       RIGHT     BOTTOM       TOP     ABSORPTION   LEFT       RIGHT      BOTTOM      TOP
+        INFLOW     INFLOW     INFLOW     INFLOW                OUTFLOW    OUTFLOW    OUTFLOW    OUTFLOW
+
+     1 1.9441E-03 0.0000E+00 2.2668E-03 0.0000E+00 1.8713E-02 1.1724E-03 0.0000E+00 3.2470E-03 1.1857E-02 6.6487E-03
+     2 1.9077E-03 3.2470E-03 1.0353E-03 0.0000E+00 1.8950E-02 1.1515E-03 2.2668E-03 2.9586E-03 1.2107E-02 6.6572E-03
+     3 2.5541E-04 2.9586E-03 1.9760E-04 0.0000E+00 3.2799E-03 1.5546E-04 1.0353E-03 2.2439E-03 2.1731E-03 1.0839E-03
+     4 0.0000E+00 2.2439E-03 0.0000E+00 0.0000E+00 3.9343E-04 2.1881E-05 1.9760E-04 2.0241E-03 2.7596E-04 1.1780E-04
+     5 4.7052E-01 0.0000E+00 4.3387E-01 6.6487E-03 7.8689E-03 2.8198E-01 0.0000E+00 5.9825E-01 1.8713E-02 1.9945E-02
+     6 4.5997E-01 5.9825E-01 1.9895E-01 6.6572E-03 7.8802E-03 2.7582E-01 4.3387E-01 5.2290E-01 1.8950E-02 2.0178E-02
+     7 6.0581E-02 5.2290E-01 3.6043E-02 1.0839E-03 1.2828E-03 3.6544E-02 1.9895E-01 3.7963E-01 3.2799E-03 3.4791E-03
+     8 0.0000E+00 3.7963E-01 0.0000E+00 1.1780E-04 1.3905E-04 5.0071E-03 3.6043E-02 3.3803E-01 3.9343E-04 4.1509E-04
+     9 2.2826E-03 0.0000E+00 2.6248E-03 1.9945E-02 1.3020E-03 1.3762E-03 0.0000E+00 3.7192E-03 7.8689E-03 1.3191E-02
+    10 2.2390E-03 3.7192E-03 1.2039E-03 2.0178E-02 1.3198E-03 1.3511E-03 2.6248E-03 3.3629E-03 7.8802E-03 1.3442E-02
+    11 2.9964E-04 3.3629E-03 2.2856E-04 3.4791E-03 2.2319E-04 1.8227E-04 1.2039E-03 2.5328E-03 1.2828E-03 2.3918E-03
+    12 0.0000E+00 2.5328E-03 0.0000E+00 4.1509E-04 2.3158E-05 2.5614E-05 2.2856E-04 2.2779E-03 1.3905E-04 2.9990E-04
+    13 0.0000E+00 0.0000E+00 2.6804E-04 1.3191E-02 0.0000E+00 1.8085E-04 0.0000E+00 4.0178E-04 1.3020E-03 1.1574E-02
+    14 0.0000E+00 4.0178E-04 1.2378E-04 1.3442E-02 0.0000E+00 1.7798E-04 2.6804E-04 3.8122E-04 1.3198E-03 1.1820E-02
+    15 0.0000E+00 3.8122E-04 2.2582E-05 2.3918E-03 0.0000E+00 2.4584E-05 1.2378E-04 3.0239E-04 2.2319E-04 2.1216E-03
+    16 0.0000E+00 3.0239E-04 0.0000E+00 2.9990E-04 0.0000E+00 1.9789E-06 2.2582E-05 2.8030E-04 2.3158E-05 2.7427E-04
+0
+
+
+
+
+ FINAL PRINTING 
+
+
+
+
+0              SOURCE     FISSION SOURCE          IN SCATTER        SELF SCATTER         OUT SCATTER         NET LEAKAGE
+   1   0.0000000E+00       2.5751468E-02       9.3132257E-09       6.6641602E-03       1.7568583E-02       7.3288521E-03
+   2   0.0000000E+00       1.1126240E-01       7.6280460E-03       5.4130990E-02       9.0402007E-02       2.6720779E-02
+   3   0.0000000E+00       6.2852669E-01       8.0522776E-02       7.7897018E-01       5.7399160E-01       1.3360363E-01
+   4   0.0000000E+00       1.1168889E-01       2.6333141E-01       1.9809555E-01       3.4428543E-01       3.0452732E-02
+   5   0.0000000E+00       8.0212496E-02       3.6727142E-01       3.6442947E-01       4.2036939E-01       2.6856203E-02
+   6   0.0000000E+00       3.5811067E-02       5.2622277E-01       5.4639238E-01       5.3485352E-01       2.6837341E-02
+   7   0.0000000E+00       6.4078048E-03       6.3863677E-01       9.8420978E-01       6.2057185E-01       2.3890480E-02
+   8   0.0000000E+00       3.2225382E-04       6.2293178E-01       9.4555485E-01       6.0486054E-01       1.7236564E-02
+   9   0.0000000E+00       1.6327078E-05       6.2813598E-01       1.0833389E+00       6.0616398E-01       1.8071758E-02
+  10   0.0000000E+00       5.4975862E-07       5.8835155E-01       8.8053036E-01       5.6317449E-01       1.5343742E-02
+  11   0.0000000E+00       0.0000000E+00       5.6668425E-01       8.4246236E-01       5.4200691E-01       1.4332357E-02
+  12   0.0000000E+00       0.0000000E+00       4.0209529E-01       3.4962833E-01       3.8988543E-01       7.2316155E-03
+  13   0.0000000E+00       0.0000000E+00       3.4984189E-01       2.9435632E-01       3.3770338E-01       5.5522788E-03
+  14   0.0000000E+00       0.0000000E+00       2.5402731E-01       1.5263410E-01       2.4341170E-01       2.9216637E-03
+  15   0.0000000E+00       0.0000000E+00       4.2342135E-01       3.3763519E-01       4.0394160E-01       4.1923109E-03
+  16   0.0000000E+00       0.0000000E+00       1.2681179E+00       1.6074269E+00       1.1946037E+00       1.0040794E-02
+  17   0.0000000E+00       0.0000000E+00       2.2387824E+00       5.8616405E+00       1.9892220E+00       1.7554602E-02
+  18   0.0000000E+00       0.0000000E+00       1.5423603E+00       4.9011750E+00       1.2913527E+00       6.6493126E-03
+  19   0.0000000E+00       1.0000000E+00       1.0768364E+01       2.0189276E+01       1.0768370E+01       3.9481708E-01
+
+
+
+          ABSORPTION     NEUTRON BALANCE        RIGHT LEAKAGE   HORIZONTAL LEAKAGE      TOP LEAKAGE        VERTICAL LEAKAGE
+   1   8.5402699E-04       5.9604645E-07       6.3064881E-03       6.3064881E-03       5.0168950E-04       1.0223642E-03
+   2   1.7675480E-03       1.0728836E-06       2.3099061E-02       2.3099061E-02       1.7809884E-03       3.6217181E-03
+   3   1.4537739E-03       6.5565109E-07       1.1612313E-01       1.1612313E-01       8.7417839E-03       1.7480498E-02
+   4   2.8209208E-04       1.7881393E-07       2.6519634E-02       2.6519634E-02       1.9897914E-03       3.9330982E-03
+   5   2.5838701E-04      -1.1920929E-07       2.3379019E-02       2.3379019E-02       1.7546891E-03       3.4771834E-03
+   6   3.4347607E-04      -8.3446503E-07       2.3324119E-02       2.3324119E-02       1.7498786E-03       3.5132221E-03
+   7   5.8170740E-04       8.3446503E-07       2.0708129E-02       2.0708129E-02       1.5535125E-03       3.1823516E-03
+   8   1.1569280E-03       0.0000000E+00       1.4870564E-02       1.4870564E-02       1.1144062E-03       2.3660001E-03
+   9   3.9170505E-03      -7.1525574E-07       1.5632739E-02       1.5632739E-02       1.1705626E-03       2.4390186E-03
+  10   9.8336367E-03       4.1723251E-07       1.3302526E-02       1.3302526E-02       9.9525042E-04       2.0412167E-03
+  11   1.0345469E-02      -8.3446503E-07       1.2425367E-02       1.2425367E-02       9.2855364E-04       1.9069902E-03
+  12   4.9782502E-03       0.0000000E+00       6.2671392E-03       6.2671392E-03       4.6804824E-04       9.6447626E-04
+  13   6.5865763E-03      -9.5367432E-07       4.8115985E-03       4.8115985E-03       3.5935076E-04       7.4068038E-04
+  14   7.6942807E-03      -1.4305115E-06       2.5327192E-03       2.5327192E-03       1.8926765E-04       3.8894446E-04
+  15   1.5287168E-02       6.5565109E-07       3.6358649E-03       3.6358649E-03       2.7174954E-04       5.5644603E-04
+  16   6.3473411E-02       0.0000000E+00       8.7094922E-03       8.7094922E-03       6.5089168E-04       1.3313019E-03
+  17   2.3200814E-01      -1.0728836E-06       1.5217254E-02       1.5217254E-02       1.1387193E-03       2.3373484E-03
+  18   2.4435377E-01       2.9206276E-06       5.7490030E-03       5.7490030E-03       4.3140064E-04       9.0030953E-04
+  19   6.0517567E-01       1.7881393E-07       3.4261382E-01       3.4261382E-01       2.5790529E-02       5.2203171E-02
+
+
+
+
+ TIME IN    OUTER       INNER       NEUTRON       EIGENVALUE     EIGENVALUE       LAMBDA        REBALANCE
+ MINUTES ITARATIONS  ITERATIONS     BALANCE                        SLOPE                       CONVERGENCE 
+                    TOTAL BY GROUP 
+  1.82E-01    65      83           1.78813934E-07 9.83377218E-01 0.00000000E+00 1.00000417E+00 4.10676003E-05
+0
+
+
+
+
+
+0***** TOTAL EXECUTION TIME IN MINUTES =   1.8227E-01
+
+ =========================== END OF SRAC CALCULATION ==========================

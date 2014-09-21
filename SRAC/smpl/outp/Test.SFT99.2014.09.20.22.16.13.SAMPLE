@@ -1,0 +1,531 @@
+0     *** === SRAC CODE SYSTEM RUN    DATE : 92-28-09 START TIME= 0: 0: 0:
+              (SRAC:Ver.2005.00, LAST MODIFIED 2005.01.28)
+0     **** CASE ID === TEST : C *** TITLE === UO2 pin cell problem in LWR next generation fuel benchmark (No burn-up)  ***
+
+
+     USE OF COLLISION PROB. ROUTINE (NO,CALL:0,1)             1
+     SELECT OF ROUTINE FOR FIX S CALC(NO,PIJ,1D SN ,2D SN , 
+      1D DIFF,2D DIFF:0,1,2,3,4,5)                            1
+     DANCOFF FACTOR BY(INPUT,PIJ,TONE:0,1,2)                  1
+     CALC OF THERMAL RANGE (EXCLUDED,INCLUDED:0,1)            1
+     PROCESS OF RESONANCE 2 RANGE(TABLELOOK,IR,PEACO:0,1,2)   2
+     FLUX CALCULATION BY RANGES(SKIP,CALC:0,1)                1
+     FAST RANGES FOR TRANSPORT CALC(0,1,2,3,4)                4
+     INDICATOR FOR ENRGY STRUCTURE OF UMCROSS (0,1,2,3)       3
+     CALC OF BARE REACTOR SPECTRUM(SKIP,P1,B1:0,1,2)         -2
+     COLLAPSE MACRO X-SECTION BY RANGE(SKIP,CALL:0,1)         1
+     INPUT OF GEOMETRY (NEW,SAME AS PREVIOUS CASE:0,1)        0
+     SELECT ROUTINE FOR EIGENVALUE CALC(NO,PIJ,1D SN,2D SN, 
+      1D DIFF,2D DIFF:0,1,2,3,4,5)                            0
+     COLLAPSE MACRO AFTER EIGENVALUE CALC(SKIP,CALL:0,1)      0
+     PREPARE MACRO FOR CITATION (SKIP,CALL:0,1)               0
+     TOTAL MICRO X-SECTION BY (HARMONIC,ARITHMETIC AV:1,2)    1
+     TRANSPORT MACRO X-SECTION BY (P0,P1,B1,SN:0,1,2,3)       2
+     DIFF COEF (INVERSE TR,BENOIST ISO,BENOIST ANISO:1,2,3)   1
+     REACTION RATE CALCULATION (0,1)                          0
+     PRINT OF MACRO-X (0,1,2)                                 0
+     BURN-UP CALCULATION (0,1:SKIP,EXECUTE)                   0
+0                     << INFORMATION OF PDS-FILES >> 
+
+      PDS FILE NAME             DATA SET NAME                                                       IWR DISP    I/O METHOD        
+   --------------------------------------------------------------------------------------------------------------------------------
+    PUBLIC FAST LIBRARY       E:/SRACW/SRACLIB-EDF70/pds/pfast                                       1  OLD       FILE    
+    PUBLIC THERMAL  LIBRARY   E:/SRACW/SRACLIB-EDF70/pds/pthml                                       1  OLD       FILE    
+    PUBLIC MCROSS LIBRARY     E:/SRACW/SRACLIB-EDF70/pds/pmcrs                                       1  OLD       FILE    
+    USERS  FAST LIBRARY       E:\SRACW\SRAC\tmp\Test/UFAST                                           3  SCRATCH   CORE    
+    USERS  THERMAL  LIBRARY   E:\SRACW\SRAC\tmp\Test/UTHERMAL                                        3  SCRATCH   CORE    
+    USERS  MCROSS LIBRARY     E:\SRACW\SRAC\tmp\Test/UMCROSS                                         3  SCRATCH   CORE    
+    USERS  MACROSCOPIC FINE   E:\SRACW\SRAC\tmp\Test/MACROWRK                                        3  SCRATCH   CORE    
+    USERS  MACROSCOPIC BROAD  E:\SRACW\SRAC\tmp\Test/MACRO                                           3  SCRATCH   CORE    
+    USERS  FLUX               E:\SRACW\SRAC\tmp\Test/FLUX                                            3  SCRATCH   CORE    
+    USERS  MICROSCOPIC        E:\SRACW\SRAC\tmp\Test/MICREF                                          3  SCRATCH   CORE    
+   --------------------------------------------------------------------------------------------------------------------------------
+     NUMBER OF USER'S FAST GROUPS                          62
+     NUMBER OF USER'S THERMAL GROUPS                       45
+     NUMBER OF USER'S CONDENSED FAST GROUPS                 8
+     NUMBER OF USER'S CONDENSED THERMAL GROUPS              8
+
+     NUMBER OF LIBRARY GROUPS IN THE USER'S FAST GROUP
+                1           1           1           1           1           1           1           1           1           1
+
+                1           1           1           1           1           1           1           1           1           1
+
+                1           1           1           1           1           1           1           1           1           1
+
+                1           1           1           1           1           1           1           1           1           1
+
+                1           1           1           1           1           1           1           1           1           1
+
+                1           1           1           1           1           1           1           1           1           1
+
+                1           1
+     NUMBER OF LIBRARY GROUPS IN THE USER'S THERMAL GROUPS
+                1           1           1           1           1           1           1           1           1           1
+
+                1           1           1           1           1           1           1           1           1           1
+
+                1           1           1           1           1           1           1           1           1           1
+
+                1           1           1           1           1           1           1           1           1           1
+
+                1           1           1           1           1
+     NUMBER OF USER'S GROUPS IN THE CONDENSED FAST GROUP
+                8          11           9           9           9           9           4           3
+     NUMBER OF USER'S GROUPS IN THE CONDENSED THERMAL GROUP
+                3           3           3           6           3          10           9           8
+1
+
+                     ### USERFL START ###
+
+
+                                ENERGY GROUP STRUCTURE 
+
+           NEFL: TOTAL NBR OF PUBLIC FAST GROUPS -----  74
+           NETL: TOTAL NBR OF PUBLIC THERMAL GROUPS --  48
+           NEF : TOTAL NBR OF USERS  FAST GROUPS -----  62
+           NET : TOTAL NBR OF USERS  THERMAL GROUPS --  45
+0                FINE   FAST    ENERGY GROUP STRUCTURE (M=1.67482E-24 GRAM,  EV=1.60210E-12 ERG)
+0   GROUP          ENERGY RANGE (EV)               VELOCITY RANGE (CM/SEC)           LETHARGY RANGE
+       1         .10000E+08     .77880E+07         .43740E+10     .38600E+10          .0000      .2500
+       2         .77880E+07     .60653E+07         .38600E+10     .34065E+10          .2500      .5000
+       3         .60653E+07     .47237E+07         .34065E+10     .30062E+10          .5000      .7500
+       4         .47237E+07     .36788E+07         .30062E+10     .26529E+10          .7500     1.0000
+       5         .36788E+07     .28651E+07         .26529E+10     .23412E+10         1.0000     1.2500
+       6         .28651E+07     .22313E+07         .23412E+10     .20661E+10         1.2500     1.5000
+       7         .22313E+07     .17377E+07         .20661E+10     .18233E+10         1.5000     1.7500
+       8         .17377E+07     .13534E+07         .18233E+10     .16091E+10         1.7500     2.0000
+       9         .13534E+07     .10540E+07         .16091E+10     .14200E+10         2.0000     2.2500
+      10         .10540E+07     .82085E+06         .14200E+10     .12532E+10         2.2500     2.5000
+      11         .82085E+06     .63928E+06         .12532E+10     .11059E+10         2.5000     2.7500
+      12         .63928E+06     .49787E+06         .11059E+10     .97596E+09         2.7500     3.0000
+      13         .49787E+06     .38774E+06         .97596E+09     .86129E+09         3.0000     3.2500
+      14         .38774E+06     .30197E+06         .86129E+09     .76008E+09         3.2500     3.5000
+      15         .30197E+06     .23518E+06         .76008E+09     .67077E+09         3.5000     3.7500
+      16         .23518E+06     .18316E+06         .67077E+09     .59195E+09         3.7500     4.0000
+      17         .18316E+06     .14264E+06         .59195E+09     .52240E+09         4.0000     4.2500
+      18         .14264E+06     .11109E+06         .52240E+09     .46101E+09         4.2500     4.5000
+      19         .11109E+06     .86517E+05         .46101E+09     .40684E+09         4.5000     4.7500
+      20         .86517E+05     .67380E+05         .40684E+09     .35904E+09         4.7500     5.0000
+      21         .67380E+05     .52475E+05         .35904E+09     .31685E+09         5.0000     5.2500
+      22         .52475E+05     .40868E+05         .31685E+09     .27962E+09         5.2500     5.5000
+      23         .40868E+05     .31828E+05         .27962E+09     .24676E+09         5.5000     5.7500
+      24         .31828E+05     .24788E+05         .24676E+09     .21777E+09         5.7500     6.0000
+      25         .24788E+05     .19305E+05         .21777E+09     .19218E+09         6.0000     6.2500
+      26         .19305E+05     .15034E+05         .19218E+09     .16960E+09         6.2500     6.5000
+      27         .15034E+05     .11709E+05         .16960E+09     .14967E+09         6.5000     6.7500
+      28         .11709E+05     .91188E+04         .14967E+09     .13208E+09         6.7500     7.0000
+      29         .91188E+04     .71017E+04         .13208E+09     .11656E+09         7.0000     7.2500
+      30         .71017E+04     .55308E+04         .11656E+09     .10287E+09         7.2500     7.5000
+      31         .55308E+04     .43074E+04         .10287E+09     .90779E+08         7.5000     7.7500
+      32         .43074E+04     .33546E+04         .90779E+08     .80112E+08         7.7500     8.0000
+      33         .33546E+04     .26126E+04         .80112E+08     .70699E+08         8.0000     8.2500
+      34         .26126E+04     .20347E+04         .70699E+08     .62391E+08         8.2500     8.5000
+      35         .20347E+04     .15846E+04         .62391E+08     .55060E+08         8.5000     8.7500
+      36         .15846E+04     .12341E+04         .55060E+08     .48590E+08         8.7500     9.0000
+      37         .12341E+04     .96112E+03         .48590E+08     .42881E+08         9.0000     9.2500
+      38         .96112E+03     .74852E+03         .42881E+08     .37842E+08         9.2500     9.5000
+      39         .74852E+03     .58295E+03         .37842E+08     .33396E+08         9.5000     9.7500
+      40         .58295E+03     .45400E+03         .33396E+08     .29472E+08         9.7500    10.0000
+      41         .45400E+03     .35358E+03         .29472E+08     .26009E+08        10.0000    10.2500
+      42         .35358E+03     .27536E+03         .26009E+08     .22953E+08        10.2500    10.5000
+      43         .27536E+03     .21445E+03         .22953E+08     .20255E+08        10.5000    10.7500
+      44         .21445E+03     .16702E+03         .20255E+08     .17875E+08        10.7500    11.0000
+      45         .16702E+03     .13007E+03         .17875E+08     .15775E+08        11.0000    11.2500
+      46         .13007E+03     .10130E+03         .15775E+08     .13921E+08        11.2500    11.5000
+      47         .10130E+03     .78893E+02         .13921E+08     .12286E+08        11.5000    11.7500
+      48         .78893E+02     .61442E+02         .12286E+08     .10842E+08        11.7500    12.0000
+      49         .61442E+02     .47851E+02         .10842E+08     .95680E+07        12.0000    12.2500
+      50         .47851E+02     .37266E+02         .95680E+07     .84437E+07        12.2500    12.5000
+      51         .37266E+02     .29023E+02         .84437E+07     .74516E+07        12.5000    12.7500
+      52         .29023E+02     .22603E+02         .74516E+07     .65760E+07        12.7500    13.0000
+      53         .22603E+02     .17604E+02         .65760E+07     .58033E+07        13.0000    13.2500
+      54         .17604E+02     .13710E+02         .58033E+07     .51214E+07        13.2500    13.5000
+0                FINE   FAST    ENERGY GROUP STRUCTURE (M=1.67482E-24 GRAM,  EV=1.60210E-12 ERG)
+0   GROUP          ENERGY RANGE (EV)               VELOCITY RANGE (CM/SEC)           LETHARGY RANGE
+      55         .13710E+02     .10677E+02         .51214E+07     .45196E+07        13.5000    13.7500
+      56         .10677E+02     .83153E+01         .45196E+07     .39885E+07        13.7500    14.0000
+      57         .83153E+01     .64759E+01         .39885E+07     .35199E+07        14.0000    14.2500
+      58         .64759E+01     .50435E+01         .35199E+07     .31063E+07        14.2500    14.5000
+      59         .50435E+01     .39279E+01         .31063E+07     .27413E+07        14.5000    14.7500
+      60         .39279E+01     .30590E+01         .27413E+07     .24192E+07        14.7500    15.0000
+      61         .30590E+01     .23824E+01         .24192E+07     .21349E+07        15.0000    15.2500
+      62         .23824E+01     .18554E+01         .21349E+07     .18841E+07        15.2500    15.5000
+
+                     ### USERFL END ###
+
+
+0                FINE   THERMAL ENERGY GROUP STRUCTURE (M=1.67482E-24 GRAM,  EV=1.60210E-12 ERG)
+0   GROUP          ENERGY RANGE (EV)               VELOCITY RANGE (CM/SEC)           LETHARGY RANGE
+       1         .18554E+01     .16374E+01         .18841E+07     .17699E+07        15.5000    15.6250
+       2         .16374E+01     .14450E+01         .17699E+07     .16627E+07        15.6250    15.7500
+       3         .14450E+01     .12752E+01         .16627E+07     .15619E+07        15.7500    15.8750
+       4         .12752E+01     .11253E+01         .15619E+07     .14673E+07        15.8750    16.0000
+       5         .11253E+01     .99312E+00         .14673E+07     .13784E+07        16.0000    16.1250
+       6         .99312E+00     .87643E+00         .13784E+07     .12949E+07        16.1250    16.2500
+       7         .87643E+00     .77344E+00         .12949E+07     .12164E+07        16.2500    16.3750
+       8         .77344E+00     .68256E+00         .12164E+07     .11427E+07        16.3750    16.5000
+       9         .68256E+00     .60236E+00         .11427E+07     .10735E+07        16.5000    16.6250
+      10         .60236E+00     .53158E+00         .10735E+07     .10085E+07        16.6250    16.7500
+      11         .53158E+00     .46912E+00         .10085E+07     .94736E+06        16.7500    16.8750
+      12         .46912E+00     .41399E+00         .94736E+06     .88996E+06        16.8750    17.0000
+      13         .41399E+00     .38925E+00         .88996E+06     .86296E+06        17.0000    17.0616
+      14         .38925E+00     .36528E+00         .86296E+06     .83596E+06        17.0616    17.1252
+      15         .36528E+00     .34206E+00         .83596E+06     .80896E+06        17.1252    17.1909
+      16         .34206E+00     .31961E+00         .80896E+06     .78196E+06        17.1909    17.2587
+      17         .31961E+00     .29792E+00         .78196E+06     .75496E+06        17.2587    17.3290
+      18         .29792E+00     .27699E+00         .75496E+06     .72796E+06        17.3290    17.4019
+      19         .27699E+00     .25683E+00         .72796E+06     .70096E+06        17.4019    17.4774
+      20         .25683E+00     .23742E+00         .70096E+06     .67396E+06        17.4774    17.5560
+      21         .23742E+00     .21878E+00         .67396E+06     .64696E+06        17.5560    17.6378
+      22         .21878E+00     .20090E+00         .64696E+06     .61996E+06        17.6378    17.7230
+      23         .20090E+00     .18378E+00         .61996E+06     .59296E+06        17.7230    17.8121
+      24         .18378E+00     .16743E+00         .59296E+06     .56596E+06        17.8121    17.9053
+      25         .16743E+00     .15183E+00         .56596E+06     .53896E+06        17.9053    18.0031
+      26         .15183E+00     .13700E+00         .53896E+06     .51196E+06        18.0031    18.1059
+      27         .13700E+00     .12293E+00         .51196E+06     .48496E+06        18.1059    18.2142
+      28         .12293E+00     .10963E+00         .48496E+06     .45797E+06        18.2142    18.3288
+      29         .10963E+00     .97080E-01         .45797E+06     .43096E+06        18.3288    18.4503
+      30         .97080E-01     .85297E-01         .43096E+06     .40396E+06        18.4503    18.5797
+      31         .85297E-01     .74276E-01         .40396E+06     .37696E+06        18.5797    18.7181
+      32         .74276E-01     .64017E-01         .37696E+06     .34996E+06        18.7181    18.8667
+      33         .64017E-01     .54520E-01         .34996E+06     .32296E+06        18.8667    19.0273
+      34         .54520E-01     .45785E-01         .32296E+06     .29596E+06        19.0273    19.2019
+      35         .45785E-01     .37813E-01         .29596E+06     .26896E+06        19.2019    19.3932
+      36         .37813E-01     .30602E-01         .26896E+06     .24196E+06        19.3932    19.6048
+      37         .30602E-01     .24154E-01         .24196E+06     .21496E+06        19.6048    19.8414
+      38         .24154E-01     .18467E-01         .21496E+06     .18796E+06        19.8414    20.1099
+      39         .18467E-01     .13543E-01         .18796E+06     .16096E+06        20.1099    20.4200
+      40         .13543E-01     .93805E-02         .16096E+06     .13396E+06        20.4200    20.7872
+      41         .93805E-02     .59804E-02         .13396E+06     .10696E+06        20.7872    21.2374
+      42         .59804E-02     .33423E-02         .10696E+06     .79964E+05        21.2374    21.8192
+      43         .33423E-02     .14663E-02         .79964E+05     .52964E+05        21.8192    22.6431
+      44         .14663E-02     .35238E-03         .52964E+05     .25964E+05        22.6431    24.0689
+      45         .35238E-03     .10000E-04         .25964E+05     .43740E+04        24.0689    27.6310
+1TEST : CUO2 pin cell problem in LWR next generation fuel benchmark (No burn-up) *** STEP *** INPUT FOR PIJ *** 
+                     GEOMETRY TYPE                             4     ( SQUARE CYLINDER )                                             
+                     NUMBER OF SUB - REGIONS                   7
+                     NUMBER OF  T  - REGIONS                   7
+                     NUMBER OF  R  - REGIONS                   3
+                     NUMBER OF  X  - REGIONS                   1
+                     OUTER BOUNDARY CONDITION (-1,0,1,2)       1
+                     DIRECTIONAL PIJ (1,2)                     1  INDICATED BY IC17
+                     NUMBER OF R OR X MESH                     7
+                     NUMBER OF THETA OR Y MESH                 0
+                     TOTAL NUMBER OF PIN RODS                  0
+                     NUMBER OF RINGS OF PIN ROD ARRAY          0
+                     NUMBER OF LATTICE CELLS TRACED            5
+                     PRINT CONTROL OF PIJ (0,1)                0
+                     ORDER OF GAUSS RADIAL INTEGRATION         6
+                     NO. OF DIVISION FOR ANGULAR INTEGRATION  15
+                     NUMBER OF ANNULAR DIVISION IN A PIN ROD   0
+                     DIVISION BY RPP  (0,1,2)                  0
+                     ANGLE RANGE BY DEGREE                    45
+                     PLOTER OPTION  (0,1)                      0
+0         ===R-REGION NO./T  ===
+                     1           1           1           2           3           3           3
+0         ===X-REGION NO./R  ===
+                     1           1           1
+0         ===MATERIAL NO./R  ===
+                     1           2           3
+0         ===R-X DIVISION    ===
+            .00000E+00  .23800E+00  .33600E+00  .41200E+00  .47600E+00  .52800E+00  .58000E+00  .63250E+00
+  STRAGE USED      69026 FROM    7000000
+
+          VOLUME OF (S)-REGION
+        1) 1.7795E-01   2) 1.7672E-01   3) 1.7859E-01   4) 1.7854E-01   5) 1.6402E-01   6) 1.8101E-01   7) 5.4339E-01
+          VOLUME OF (T)-REGION
+        1) 1.7795E-01   2) 1.7672E-01   3) 1.7859E-01   4) 1.7854E-01   5) 1.6402E-01   6) 1.8101E-01   7) 5.4339E-01
+          VOLUME OF (R)-REGION
+        1) 5.3327E-01   2) 1.7854E-01   3) 8.8841E-01
+          VOLUME OF (X)-REGION
+        1) 1.6002E+00
+          TOTAL VOLUME                    1.6002E+00
+
+          VOLUME(NUMERICAL)/VOLUME(ANALYTICAL) 
+            1) 1.00027     2)  .99924     3)  .99967     4)  .99978     5)  .99986     6)  .99988     7)  .99916
+0 ***  594 LINES DRAWN ON FT84 ***                                                  ****ELAPSED CPU TIME       0 SEC
+
+     NO. OF MATERIALS USED IN THE CASE =  3
+
+1
+
+                     MACROF
+
+           CASE I.D. : TEST : C
+           TITLE     : UO2 pin cell problem in LWR next generation fuel benchmark (No burn-up) 
+
+
+
+                     COMPOSITION DATA LIST
+
+
+                               ## MATERIAL NAME -----  1   FUELX01X ##
+
+           NUMBER OF NUCLIDE -----------        3
+           TEMPERATURE (K) -------------     900.00
+           MEAN CHORD LENGTH -----------     .82400
+           DANCOFF FACTOR --------------     .00000
+           WEIGHTING FLUX NAME FOR CHI - ASYMPTO.
+           IDENTIFICATION OF NUCLIDE ---    U050009     U080009     O060009
+           NUMBER DENSITY --------------  1.51220E-03 2.14770E-02 4.59450E-02
+           RESONANT INDICATOR ----------      2           2           0
+           LXMICR ----------------------      0           0           0
+           NUCLIDE-WISE DANCOFF FACTOR WILL BE CALCULATED AT SUBROUTINE(MAFSIG) ]] 
+
+                               ## MATERIAL NAME -----  2   CLADX02X ##
+
+           NUMBER OF NUCLIDE -----------        1
+           TEMPERATURE (K) -------------     600.00
+           MEAN CHORD LENGTH -----------     .12800
+           DANCOFF FACTOR --------------     .00000
+           WEIGHTING FLUX NAME FOR CHI - ASYMPTO.
+           IDENTIFICATION OF NUCLIDE ---    ZRN0008
+           NUMBER DENSITY --------------  4.31070E-02
+           RESONANT INDICATOR ----------      2
+           LXMICR ----------------------      0
+           NUCLIDE-WISE DANCOFF FACTOR WILL BE CALCULATED AT SUBROUTINE(MAFSIG) ]] 
+
+                               ## MATERIAL NAME -----  3   MODEX03X ##
+
+           NUMBER OF NUCLIDE -----------        2
+           TEMPERATURE (K) -------------     600.00
+           MEAN CHORD LENGTH -----------    1.00000
+           DANCOFF FACTOR --------------     .00000
+           WEIGHTING FLUX NAME FOR CHI - ASYMPTO.
+           IDENTIFICATION OF NUCLIDE ---    H01H008     O060008
+           NUMBER DENSITY --------------  4.41480E-02 2.20740E-02
+           RESONANT INDICATOR ----------      0           0
+           LXMICR ----------------------      0           0
+
+                               ## RESONANT NUCLIDE NAME LIST ##
+
+           NUMBER OF RESONANT NUCLIDE --      3
+           RESONANT NUCLIDE NAME -------  U05   U08   ZRN
+
+                               ## STANDARD TEMPERATUE ARRAY LIST (STND) ##
+
+  TAG         :    1        2        3        4        5        6        7        8        9        A
+  TAG         :    B        C
+  TEMPERATURE :    300.00   325.00   350.00   400.00   450.00   500.00   550.00   600.00   900.00  1200.00
+  TEMPERATURE :   1600.00  2100.00
+          STRAGE USED      87765 WITHIN    7000000 IN PIJ2-STEP
+          STRAGE USED      87765 WITHIN    7000000 IN PIJ2-STEP
+
+
+
+                                    ******************************************
+                                    * CALCULATED NUCLIDE-WISE DANCOFF FACTOR *
+                                    ******************************************
+
+
+                               ## MATERIAL NAME -----  1   FUELX01X ##
+
+           IDENTIFICATION OF NUCLIDE ----    U050009     U080009     O060009
+           NUCLIDE-WISE DANCOFF FACTOR---     .366814     .366814    1.000000
+
+                               ## MATERIAL NAME -----  2   CLADX02X ##
+
+           IDENTIFICATION OF NUCLIDE ----    ZRN0008
+           NUCLIDE-WISE DANCOFF FACTOR---     .550249
+          STRAGE USED      44158 WITHIN    7000000 IN PIJ2-STEP
+1
+
+          ===PIJ3 STEP===
+          ***TEST : C***UO2 pin cell problem in LWR next generation fuel benchmark (No burn-up) *** IN FAST     RANGE ***
+
+          ITERATION PARAMETERS 
+          PRINT (1+2+4+8)(FLUX,XEC,PIJ,S)              0
+          MAX OF INNER ITERATIONS PER OUTER           50
+          MAX OF OUTER ITERATIONS                     50
+          EARLIST EXTRAPOLATION                        5
+          NUMBER OF ITERATIONS TESTED                  5
+          MINIMUM DELAY                                5
+          MONITOR PRINT(0,1)(SKIP,PRINT)              -1
+          CONVERGENCE CRITERION OF INNER      .10000E-03
+          CONVERGENCE CRITERION OF OUTER      .10000E-04
+          EXTRAPOLATION CRITERION             .10000E-02
+          OVER-RELAXATION (INITIAL)           .10000E+01
+          MAX EXTRAPOLATION                   .10000E+02
+          BASE FACTOR OF OVER-RELAXATION      .50000E+00
+
+          PROBLEM TYPE  
+          ITYPE (0/1  =EIGENVALUE/FIXED S)             1
+          IRANG (0/1/2=FAST/THERMAL/ALL)               0
+          IFIXS (0/1/2)                                0
+
+0            ITERATION POWER-SCALING   RESIDUE CRITERON
+
+              1          .24588E+00  .14130E+00  .10000E-04
+              2          .27733E+00  .31452E-01  .10000E-04
+              3          .28433E+00  .70011E-02  .10000E-04
+              4          .28511E+00  .42798E-02  .10000E-04
+              5          .28558E+00  .26163E-02  .10000E-04
+              6          .28588E+00  .15993E-02  .10000E-04
+              7          .28605E+00  .97761E-03  .10000E-04
+              8          .28616E+00  .59766E-03  .10000E-04
+              9          .28623E+00  .36532E-03  .10000E-04
+             10          .28627E+00  .22331E-03  .10000E-04
+             11          .28629E+00  .13655E-03  .10000E-04
+             12          .28631E+00  .83476E-04  .10000E-04
+             13          .28632E+00  .50962E-04  .10000E-04
+             14          .28632E+00  .31203E-04  .10000E-04
+             15          .28633E+00  .19103E-04  .10000E-04
+             16          .28633E+00  .11653E-04  .10000E-04
+
+
+
+          === ITERATION END IN PIJF STEP ===
+          === FIXED SOURCE TYPE PROBLEM ===
+          TOTAL THERMAL INNER ITERATION COUNT             0
+          INITIAL SOURCE NORMALIZATION FACTOR    .57520E+01
+          THERMAL SOURCE NORMALIZATION FACTOR    .10000E+01
+          RENORMALIZATION FACTOR (INNER)         .00000E+00
+          RESIDUE IN FINAL INNER ITERATION       .00000E+00
+          FINAL FISSION SOURCE NORMALIZATION     .28633E+00
+          RESIDUE IN FINAL FISSION RATE          .11653E-04
+          NOTE ---> NUCLIDE 0ZRN0008(CLADF022) IS NOT TREATED WITH PEACO BECAUSE IT HAS NO MCROSS LIBRARY
+          STRAGE USED     138515 WITHIN    7000000 IN PIJ2-STEP
+
+
+
+         *** MIX-X-SECTION STEP IN *** FAST ENERGY RANGE
+          *** TEST : C***UO2 pin cell problem in LWR next generation fuel benchmark (No burn-up) ***
+0         X-REGION  1***
+          SIGNED MAT ID BY R-REG =   1   2   3
+          ONE GROUP CONSTANTS
+          * ACTIVATION CROSS SECTION      .41651E-01
+          * FISSION    CROSS SECTION      .40621E-02
+          * NU*FISSION CROSS SECTION      .10248E-01
+          * TOTAL      CROSS SECTION      .23078E+00
+          * DIFFUSION  COEFFICIENT 1      .14444E+01
+          * DIFFUSION  COEFFICIENT 2      .14444E+01
+          * ABSORPTION CROSS SECTION      .11525E-01
+          * SCATTEROUT CROSS SECTION      .13544E-01
+          * INTEGRATED FLUX-X-REGION      .49828E+02
+          STRAGE USED     124206 WITHIN    7000000 IN PIJ2-STEP
+1
+
+          ===PIJ3 STEP===
+          ***TEST : C***UO2 pin cell problem in LWR next generation fuel benchmark (No burn-up) *** IN THERMAL  RANGE ***
+
+          ITERATION PARAMETERS 
+          PRINT (1+2+4+8)(FLUX,XEC,PIJ,S)              0
+          MAX OF INNER ITERATIONS PER OUTER          200
+          MAX OF OUTER ITERATIONS                      1
+          EARLIST EXTRAPOLATION                        5
+          NUMBER OF ITERATIONS TESTED                  5
+          MINIMUM DELAY                                5
+          MONITOR PRINT(0,1)(SKIP,PRINT)              -1
+          CONVERGENCE CRITERION OF INNER      .10000E-03
+          CONVERGENCE CRITERION OF OUTER      .10000E-04
+          EXTRAPOLATION CRITERION             .10000E-02
+          OVER-RELAXATION (INITIAL)           .10000E+01
+          MAX EXTRAPOLATION                   .10000E+02
+          BASE FACTOR OF OVER-RELAXATION      .50000E+00
+
+          PROBLEM TYPE  
+          ITYPE (0/1  =EIGENVALUE/FIXED S)             1
+          IRANG (0/1/2=FAST/THERMAL/ALL)               1
+          IFIXS (0/1/2)                                0
+
+
+
+
+          === ITERATION END IN PIJF STEP ===
+          === FIXED SOURCE TYPE PROBLEM ===
+          TOTAL THERMAL INNER ITERATION COUNT            23
+          INITIAL SOURCE NORMALIZATION FACTOR    .67487E+00
+          THERMAL SOURCE NORMALIZATION FACTOR    .10000E+01
+          RENORMALIZATION FACTOR (INNER)         .10000E+01
+          RESIDUE IN FINAL INNER ITERATION       .10573E-05
+          FINAL FISSION SOURCE NORMALIZATION     .00000E+00
+          RESIDUE IN FINAL FISSION RATE          .11178E-11
+
+
+
+         *** MIX-X-SECTION STEP IN *** THER ENERGY RANGE
+          *** TEST : C***UO2 pin cell problem in LWR next generation fuel benchmark (No burn-up) ***
+0         X-REGION  1***
+          SIGNED MAT ID BY R-REG =   1   2   3
+          ONE GROUP CONSTANTS
+          * ACTIVATION CROSS SECTION      .25234E+01
+          * FISSION    CROSS SECTION      .86940E-01
+          * NU*FISSION CROSS SECTION      .21185E+00
+          * TOTAL      CROSS SECTION      .69153E+00
+          * DIFFUSION  COEFFICIENT 1      .48202E+00
+          * DIFFUSION  COEFFICIENT 2      .48202E+00
+          * ABSORPTION CROSS SECTION      .11328E+00
+          * SCATTEROUT CROSS SECTION      .38280E-03
+          * INTEGRATED FLUX-X-REGION      .59373E+01
+1            ***  BARE REACTOR SPECTRUM CALCULATION *** OF STEP 15 ***
+          ***TEST : C***UO2 pin cell problem in LWR next generation fuel benchmark (No burn-up) ***
+          *** BY B1 APPROXIMATION *** BUCKLING SERACH OPTION IS         0 (0/1:NO/YES) 
+          RATIO OF THERMAL SOURCE TO REMOVAL   .10000E+01
+          NEUTRON SPECTRUM PER LETHARGY
+            .37166E+00  .10627E+01  .23064E+01  .35546E+01  .51074E+01  .72902E+01  .66476E+01  .70638E+01  .66221E+01  .63785E+01
+            .78037E+01  .66980E+01  .45396E+01  .52941E+01  .47493E+01  .41047E+01  .36125E+01  .32136E+01  .29120E+01  .26641E+01
+            .24842E+01  .22947E+01  .22193E+01  .21008E+01  .20067E+01  .19666E+01  .19083E+01  .18601E+01  .18181E+01  .18032E+01
+            .17721E+01  .17493E+01  .16933E+01  .17274E+01  .16845E+01  .16723E+01  .16453E+01  .16242E+01  .15911E+01  .15758E+01
+            .15641E+01  .15228E+01  .14920E+01  .14619E+01  .14559E+01  .13555E+01  .14038E+01  .13321E+01  .13212E+01  .12821E+01
+            .11153E+01  .12306E+01  .98424E+00  .11621E+01  .11121E+01  .10664E+01  .87792E+00  .90404E+00  .10269E+01  .10117E+01
+            .10288E+01  .10155E+01  .10994E+01  .10739E+01  .10583E+01  .10113E+01  .10015E+01  .10339E+01  .10542E+01  .10653E+01
+            .10790E+01  .10876E+01  .10988E+01  .11068E+01  .11193E+01  .11213E+01  .11297E+01  .11439E+01  .11690E+01  .12013E+01
+            .12535E+01  .13211E+01  .13884E+01  .14565E+01  .15182E+01  .15627E+01  .15916E+01  .15994E+01  .15782E+01  .15313E+01
+            .14523E+01  .13478E+01  .12164E+01  .10677E+01  .90530E+00  .74077E+00  .58072E+00  .43382E+00  .30647E+00  .20234E+00
+            .12293E+00  .67146E-01  .31503E-01  .12045E-01  .31847E-02  .40552E-03  .99307E-05
+          NEUTRON CURRENT PER LETHARGY
+            .13782E-19  .39502E-19  .76979E-19  .10216E-18  .13402E-18  .19858E-18  .16600E-18  .15572E-18  .12750E-18  .99003E-19
+            .12375E-18  .10739E-18  .60016E-19  .62496E-19  .55982E-19  .48152E-19  .41230E-19  .35456E-19  .31122E-19  .27444E-19
+            .24871E-19  .22133E-19  .21022E-19  .19573E-19  .18204E-19  .17196E-19  .16759E-19  .16403E-19  .15631E-19  .15038E-19
+            .14998E-19  .14388E-19  .13809E-19  .14229E-19  .14139E-19  .13998E-19  .13680E-19  .13361E-19  .12854E-19  .12991E-19
+            .12878E-19  .11988E-19  .11821E-19  .11053E-19  .11902E-19  .99903E-20  .11562E-19  .10295E-19  .10728E-19  .95618E-20
+            .82832E-20  .98880E-20  .72059E-20  .97227E-20  .90308E-20  .85354E-20  .68019E-20  .75689E-20  .86660E-20  .84515E-20
+            .87492E-20  .86164E-20  .94781E-20  .91838E-20  .91166E-20  .84183E-20  .82057E-20  .85035E-20  .85846E-20  .85593E-20
+            .85010E-20  .83726E-20  .81960E-20  .79390E-20  .77320E-20  .75379E-20  .73533E-20  .71880E-20  .70757E-20  .70232E-20
+            .70914E-20  .72411E-20  .73785E-20  .74884E-20  .75316E-20  .74683E-20  .73089E-20  .70400E-20  .66459E-20  .61511E-20
+            .55512E-20  .48848E-20  .41638E-20  .34341E-20  .27180E-20  .20571E-20  .14746E-20  .99328E-21  .62290E-21  .35898E-21
+            .18704E-21  .85897E-22  .32986E-22  .99719E-23  .19286E-23  .15124E-24  .17054E-26
+          FAST FISSION              .40466E+00
+          FAST ABSORPTION           .45533E+00
+          FAST LEAKAGE              .56121E-18
+          TOTAL FISSION             .14232E+01
+          TOTAL ABSORPTION          .10000E+01
+          TOTAL LEAKAGE             .58765E-18
+          K-EFF= 1.42321 K-INF= 1.42321 UNDER GEOMTRICAL BUCKLING=  .10000E-19
+0                COARSE WHOLE   ENERGY GROUP STRUCTURE (M=1.67482E-24 GRAM,  EV=1.60210E-12 ERG)
+0   GROUP          ENERGY RANGE (EV)               VELOCITY RANGE (CM/SEC)           LETHARGY RANGE
+       1         .10000E+08     .13534E+07         .43740E+10     .16091E+10          .0000     2.0000
+       2         .13534E+07     .86517E+05         .16091E+10     .40684E+09         2.0000     4.7500
+       3         .86517E+05     .91188E+04         .40684E+09     .13208E+09         4.7500     7.0000
+       4         .91188E+04     .96112E+03         .13208E+09     .42881E+08         7.0000     9.2500
+       5         .96112E+03     .10130E+03         .42881E+08     .13921E+08         9.2500    11.5000
+       6         .10130E+03     .10677E+02         .13921E+08     .45196E+07        11.5000    13.7500
+       7         .10677E+02     .39279E+01         .45196E+07     .27413E+07        13.7500    14.7500
+       8         .39279E+01     .18554E+01         .27413E+07     .18841E+07        14.7500    15.5000
+       9         .18554E+01     .12752E+01         .18841E+07     .15619E+07        15.5000    15.8750
+      10         .12752E+01     .87643E+00         .15619E+07     .12949E+07        15.8750    16.2500
+      11         .87643E+00     .60236E+00         .12949E+07     .10735E+07        16.2500    16.6250
+      12         .60236E+00     .34206E+00         .10735E+07     .80896E+06        16.6250    17.1909
+      13         .34206E+00     .27699E+00         .80896E+06     .72796E+06        17.1909    17.4019
+      14         .27699E+00     .10963E+00         .72796E+06     .45797E+06        17.4019    18.3288
+      15         .10963E+00     .24154E-01         .45797E+06     .21496E+06        18.3288    19.8414
+      16         .24154E-01     .10000E-04         .21496E+06     .43740E+04        19.8414    27.6310
+
+
+1
+ *** STEP 20 FOR EFFECTIVE X-SECTION IN
+ ===CASEID=TEST : C=TITLE=UO2 pin cell problem in LWR next generation fuel benchmark (No burn-up) ===
+
+                MATERIAL-WISE POWER DISTRIBUTION 
+
+          MTNAME     VOLUME      RELATIVE    FISSILE     FERTILE     CONVERSION
+          NAME        (CC)       POWER       ABSORPTION  CAPTURE     RATIO
+
+          FUELX01X   5.33266E-01 5.78516E-01 6.86756E-01 2.51708E-01 3.66517E-01
+           TOTAL     5.33266E-01 5.78516E-01 6.86756E-01 2.51708E-01 3.66517E-01
+
+1     **** CASE ID ===          *** TITLE ===                                                                          ***
+
+
+
+ =========================== END OF SRAC CALCULATION ==========================
